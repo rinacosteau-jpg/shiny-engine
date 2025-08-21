@@ -59,15 +59,16 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
         if (dialogueBox != null) dialogueBox.SetActive(true);
 
 
-        // IFlowObject -> IArticyObject
-        var startAsArticy = startObject as IArticyObject;
-        if (startAsArticy == null) {
-            Debug.LogError("[DialogueUI] startObject не приводится к IArticyObject — не могу запустить диалог.");
+        // Убедимся, что стартуем именно с нужного DialogueFragment
+        var startFragment = startObject as DialogueFragment;
+        if (startFragment == null) {
+            Debug.LogError("[DialogueUI] startObject не является DialogueFragment — не могу запустить диалог.");
             return;
         }
 
-
-        flowPlayer.StartOn = startAsArticy;
+        // Задаём стартовую точку и не проигрываем первый узел автоматически
+        flowPlayer.StartOn = startFragment;
+        flowPlayer.StartPaused = true;
         flowPlayer.Play();
 
     }
