@@ -21,11 +21,9 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
 
     [Header("Input")]
     [Tooltip("Имя действия в Input System, которое подтверждает реплику/\"Далее\"")]
-    [SerializeField] private string advanceActionName = "Interact";
-
+    [SerializeField] private string advanceActionName = "Dialogue";
 
     private InputAction advanceAction;
-    private float suppressAdvanceUntil = 0f; // гашим подтверждение сразу после запуска диалога
 
     private bool dialogueFinished = false;
     private string lastDisplayedText = null;
@@ -56,11 +54,10 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
             && dialogueBox.activeSelf
             && !dialogueFinished
             && advanceAction != null
-            && Time.time >= suppressAdvanceUntil
-            && advanceAction.triggered) {
-            if (responseHandler != null && responseHandler.ResponsesCount > 0) {
+            && advanceAction.triggered)
+        {
+            if (responseHandler != null && responseHandler.ResponsesCount > 0)
                 responseHandler.ClickFirstResponse();
-            }
         }
     }
 
@@ -85,7 +82,6 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
         lastDisplayedText = null;
         dialogueFinished = false;
         if (dialogueBox != null) dialogueBox.SetActive(true);
-        advanceAction?.Reset();
 
 
         // IFlowObject -> IArticyObject
