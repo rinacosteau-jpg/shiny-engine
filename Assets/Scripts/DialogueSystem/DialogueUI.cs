@@ -20,6 +20,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
 
     private bool dialogueFinished = false;
     private string lastDisplayedText = null;
+    public bool IsDialogueOpen { get; private set; }
 
     private void Awake() {
         if (dialogueBox != null)
@@ -68,6 +69,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
 
         // Задаём стартовую точку и не проигрываем первый узел автоматически
         flowPlayer.StartOn = startFragment;
+        IsDialogueOpen = true;
 
     }
 
@@ -76,6 +78,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
         dialogueBox?.SetActive(false);
         dialogueFinished = false;
         responseHandler?.ClearResponses();
+        IsDialogueOpen = false;
         Debug.Log("[DialogueUI] Dialogue closed by user.");
     }
 
