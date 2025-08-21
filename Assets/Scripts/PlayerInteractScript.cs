@@ -10,12 +10,16 @@ public class PlayerInteractScript : MonoBehaviour {
 
     void Update() {
         if (interactAction != null && interactAction.triggered) {
+            Debug.Log("called");
             float interactRange = 2f;
             Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
             foreach (Collider collider in colliderArray) {
                 var interactable = collider.GetComponent(typeof(IInteractable)) as IInteractable;
+
                 if (interactable != null) {
+                    
                     interactable.Interact();
+                    
                 }
             }
         }

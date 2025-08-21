@@ -889,7 +889,7 @@ MonoBehaviour:
   dialogueStart:
     instanceId: 0
     referencingMode: 0
-    lowId: 2309
+    lowId: 1645
     highId: 16777216
 --- !u!1 &892772443
 GameObject:
@@ -2064,7 +2064,7 @@ MonoBehaviour:
   dialogueStart:
     instanceId: 0
     referencingMode: 0
-    lowId: 2295
+    lowId: 1048
     highId: 16777216
 --- !u!1 &1433459820
 GameObject:
@@ -3015,7 +3015,7 @@ MonoBehaviour:
     referencingMode: 0
     lowId: 0
     highId: 0
-  pauseOn: 7
+  pauseOn: 4
   ignoreInvalidBranches: 1
   continuouslyRecalculateBranches: 0
   continouslyRecalculateInterval: 1
@@ -3036,11 +3036,6 @@ MonoBehaviour:
   textLabel: {fileID: 1590275849}
   dialogueSpeaker: {fileID: 989809984}
   responseHandler: {fileID: 1380361250}
-  dialogueStart:
-    instanceId: 0
-    referencingMode: 0
-    lowId: 1931
-    highId: 16777216
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

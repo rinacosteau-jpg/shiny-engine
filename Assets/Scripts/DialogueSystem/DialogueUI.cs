@@ -68,8 +68,6 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
 
         // Задаём стартовую точку и не проигрываем первый узел автоматически
         flowPlayer.StartOn = startFragment;
-        flowPlayer.StartPaused = true;
-        flowPlayer.Play();
 
     }
 
