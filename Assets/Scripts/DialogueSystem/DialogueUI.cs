@@ -89,11 +89,10 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
             return;
         }
 
-        // краткий дебаунс, чтобы стартовое нажатие Interact не листало первую реплику
-        suppressAdvanceUntil = Time.time + 0.2f;
 
         flowPlayer.StartOn = startAsArticy;
         flowPlayer.Play();
+
     }
 
     /// <summary>Принудительно закрыть текущий диалог (например, кнопкой "Esc").</summary>
@@ -118,7 +117,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
         if (!string.IsNullOrEmpty(currentText)) {
             // У нас есть текст — сразу показываем и запоминаем
             lastDisplayedText = currentText;
-            if (textLabel != null) textLabel.text = currentText;
+            if (textLabel != null) textLabel.text = currentText; //сюда сморим
             dialogueFinished = false;
             return;
         }
