@@ -22,6 +22,8 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
     [Header("Input")]
     [Tooltip("Имя действия в Input System, которое подтверждает реплику/\"Далее\"")]
     [SerializeField] private string advanceActionName = "Interact";
+
+
     private InputAction advanceAction;
     private float suppressAdvanceUntil = 0f; // гашим подтверждение сразу после запуска диалога
 
@@ -41,6 +43,8 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
         // Находим действие подтверждения
         if (!string.IsNullOrEmpty(advanceActionName))
             advanceAction = InputSystem.actions.FindAction(advanceActionName);
+
+        
 
         // ВАЖНО: ничего не запускаем автоматически!
         // Раньше могло быть: flowPlayer.StartOn = ...; flowPlayer.Play();
@@ -81,6 +85,8 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
         lastDisplayedText = null;
         dialogueFinished = false;
         if (dialogueBox != null) dialogueBox.SetActive(true);
+        advanceAction?.Reset();
+
 
         // IFlowObject -> IArticyObject
         var startAsArticy = startObject as IArticyObject;
@@ -177,7 +183,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
     private string GetTextFromFlowObject(IFlowObject obj) {
         if (obj == null) return null;
 
-        if (obj is IObjectWithText tw && !string.IsNullOrEmpty(tw.Text)) return tw.Text;
+        if (obj is IObjectWithText tw /*&& !string.IsNullOrEmpty(tw.Text)*/) return tw.Text;
 
         try {
             var type = obj.GetType();

@@ -3037,6 +3037,11 @@ MonoBehaviour:
   dialogueSpeaker: {fileID: 989809984}
   responseHandler: {fileID: 1380361250}
   advanceActionName: Interact
+  dialogueStart:
+    instanceId: 0
+    referencingMode: 0
+    lowId: 1931
+    highId: 16777216
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

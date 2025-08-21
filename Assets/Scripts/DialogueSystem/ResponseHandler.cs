@@ -23,6 +23,7 @@ public class ResponseHandler : MonoBehaviour {
         if (tempResponseButtons.Count == 0) return;
         var btn = tempResponseButtons[0].GetComponent<Button>();
         if (btn != null) btn.onClick.Invoke();
+        Debug.Log("[ResponseHandler] ClickFirstResponse called");
     }
 
     /// <summary>
@@ -77,6 +78,7 @@ public class ResponseHandler : MonoBehaviour {
 
         tempResponseButtons.Add(buttonObj);
         responseBox.gameObject.SetActive(true);
+        Debug.Log("[ResponseHandler] Single button created: " + text);
     }
 
     /// <summary>
@@ -126,6 +128,7 @@ public class ResponseHandler : MonoBehaviour {
 
         if (flowPlayer != null && branch != null)
             flowPlayer.Play(branch);
+        Debug.Log("picked");
     }
 
     /// <summary>
