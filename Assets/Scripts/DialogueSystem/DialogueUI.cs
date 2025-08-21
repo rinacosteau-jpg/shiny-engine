@@ -139,6 +139,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
         if (branches == null || branches.Count == 0) {
             // Терминальная нода — оставляем последнюю фразу видимой, не закрываем автоматически
             dialogueFinished = true;
+            CloseDialogueByUser();
             return;
         }
 
@@ -280,7 +281,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
         if (s.Length <= max) return s.Replace("\n", "\\n");
         return s.Substring(0, max).Replace("\n", "\\n") + "...";
     }
-
+    
     // Пустые реализации интерфейса
     public void OnExecutionEngineStarted() { }
     public void OnExecutionEngineStopped() { }
