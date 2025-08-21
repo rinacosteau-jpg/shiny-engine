@@ -1,23 +1,41 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerInteractScript : MonoBehaviour {
-    InputAction interactAction;
+/// <summary>
+/// Handles player interaction with nearby objects.
+/// </summary>
+public class PlayerInteractScript : MonoBehaviour
+{
+    [SerializeField] private float interactRange = 2f;
 
-    void Start() {
+    private InputAction interactAction;
+
+    private void Awake()
+    {
         interactAction = InputSystem.actions.FindAction("Interact");
     }
 
-    void Update() {
-        if (interactAction != null && interactAction.triggered) {
-            float interactRange = 2f;
-            Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
-            foreach (Collider collider in colliderArray) {
-                var interactable = collider.GetComponent(typeof(IInteractable)) as IInteractable;
-                if (interactable != null) {
-                    interactable.Interact();
-                }
-            }
+    private void OnEnable()
+    {
+        interactAction?.Enable();
+        if (interactAction != null)
+            interactAction.performed += OnInteractPerformed;
+    }
+
+    private void OnDisable()
+    {
+        if (interactAction != null)
+            interactAction.performed -= OnInteractPerformed;
+        interactAction?.Disable();
+    }
+
+    private void OnInteractPerformed(InputAction.CallbackContext context)
+    {
+        var hits = Physics.OverlapSphere(transform.position, interactRange);
+        foreach (var hit in hits)
+        {
+            if (hit.TryGetComponent<IInteractable>(out var interactable))
+                interactable.Interact();
         }
     }
 }
