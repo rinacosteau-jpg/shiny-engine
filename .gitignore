@@ -7,13 +7,13 @@
 [Ll]ogs/
 [Mm]emoryCaptures/
 sysinfo.txt
+UserSettings/
 
-# Visual Studio
+# IDE
 .vs/
 *.csproj
 *.sln
 *.user
-*.unityproj
 *.pidb
 *.suo
 *.userprefs
@@ -28,4 +28,3 @@ sysinfo.txt
 # OS
 .DS_Store
 Thumbs.db
-
