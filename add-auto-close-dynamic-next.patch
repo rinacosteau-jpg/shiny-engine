@@ -1,0 +1,154 @@
+diff --git a/Assets/Scripts/Articy/AutoCloseDynamicNext.cs b/Assets/Scripts/Articy/AutoCloseDynamicNext.cs
+new file mode 100644
+index 0000000..1a2b3c4
+--- /dev/null
++++ b/Assets/Scripts/Articy/AutoCloseDynamicNext.cs
+@@ -0,0 +1,154 @@
++using System.Linq;
++using UnityEngine;
++using UnityEngine.Events;
++using UnityEngine.UI;
++#if ARTICY_UNITY
++using Articy.Unity;
++#endif
++
++/// <summary>
++/// Автозакрытие окна диалога при последнем "Далее".
++/// Ничего не требует в инспекторе от кнопки: кнопку ищет динамически при каждом изменении детей у панели.
++/// Вешайте этот компонент на корневой объект окна диалога (или укажите panel вручную).
++/// </summary>
++public class AutoCloseDynamicNext : MonoBehaviour
++{
++    [Header("UI")]
++    [Tooltip("Корневой объект окна диалога. Если пусто — возьмётся текущий GameObject.")]
++    [SerializeField] private GameObject panel;
++
++    [Tooltip("Имя кнопки 'Далее' (будет найдено в иерархии панели). Оставь пустым, если хочешь искать по тегу.")]
++    [SerializeField] private string nextButtonName = "Next";
++
++    [Tooltip("Тег кнопки 'Далее' (если имя пустое). Оставь пустым, чтобы отключить поиск по тегу.")]
++    [SerializeField] private string nextButtonTag = "";
++
++    [Header("Close Animation (optional)")]
++    [SerializeField] private Animator animator;
++    [SerializeField] private string closeTrigger = "Close";
++
++#if ARTICY_UNITY
++    [Header("Articy")]
++    [SerializeField] private ArticyFlowPlayer flowPlayer;
++#endif
++
++    [Header("Events")]
++    public UnityEvent OnDialogueFinished;
++
++    private Button _wiredButton;
++
++    private Transform PanelTransform => (panel ? panel : gameObject).transform;
++
++    private void OnEnable()
++    {
++        TryWireNextButton();
++    }
++
++    // Unity вызовет это, когда у объекта меняется состав детей (кнопка появилась/удалилась)
++    private void OnTransformChildrenChanged()
++    {
++        // Если изменилась структура где-то глубже (внуки/правнуки),
++        // безопаснее просто попытаться перевесить обработчик ещё раз.
++        TryWireNextButton();
++    }
++
++    private void TryWireNextButton()
++    {
++        // 1) Снимаем старый обработчик (если кнопку пересоздали)
++        if (_wiredButton != null)
++        {
++            _wiredButton.onClick.RemoveListener(OnNextClicked);
++            _wiredButton = null;
++        }
++
++        // 2) Ищем новую кнопку:
++        Button candidate = null;
++
++        if (!string.IsNullOrEmpty(nextButtonName))
++        {
++            // ищем по имени среди всех детей
++            candidate = PanelTransform.GetComponentsInChildren<Button>(true)
++                .FirstOrDefault(b => b.name == nextButtonName);
++        }
++
++        if (candidate == null && !string.IsNullOrEmpty(nextButtonTag))
++        {
++            // ищем по тегу (если задан)
++            candidate = PanelTransform.GetComponentsInChildren<Button>(true)
++                .FirstOrDefault(b => b.CompareTag(nextButtonTag));
++        }
++
++        if (candidate == null)
++        {
++            // если имя/тег не заданы или не нашли — подстрахуемся: возьмём первую кнопку с текстом "Далее"/"Next"
++            candidate = PanelTransform.GetComponentsInChildren<Button>(true)
++                .FirstOrDefault(b =>
++                {
++                    var txt = b.GetComponentInChildren<TMPro.TMP_Text>(true);
++                    if (txt != null)
++                    {
++                        var t = txt.text?.Trim();
++                        return t == "Далее" || t == "Next" || t == "Continue";
++                    }
++                    return false;
++                });
++        }
++
++        if (candidate == null) return; // кнопки ещё нет — подождём следующего события изменения детей
++
++        // 3) Вешаем обработчик
++        _wiredButton = candidate;
++        _wiredButton.onClick.AddListener(OnNextClicked);
++    }
++
++    private void OnDisable()
++    {
++        if (_wiredButton != null)
++        {
++            _wiredButton.onClick.RemoveListener(OnNextClicked);
++            _wiredButton = null;
++        }
++    }
++
++    /// <summary>
++    /// Реакция на клик "Далее": если FlowPlayer может продолжать — продолжаем,
++    /// иначе закрываем окно.
++    /// </summary>
++    private void OnNextClicked()
++    {
++#if ARTICY_UNITY
++        if (flowPlayer != null && flowPlayer.CanContinue)
++        {
++            flowPlayer.Play();
++            return;
++        }
++#endif
++        CloseDialogueWindow();
++    }
++
++    /// <summary>Закрывает окно диалога (анимация/деактивация) и шлёт событие завершения.</summary>
++    private void CloseDialogueWindow()
++    {
++        // Блокируем кнопку от повторных кликов
++        if (_wiredButton != null) _wiredButton.interactable = false;
++
++        if (animator != null && !string.IsNullOrEmpty(closeTrigger))
++        {
++            animator.ResetTrigger(closeTrigger);
++            animator.SetTrigger(closeTrigger);
++        }
++        else
++        {
++            var root = panel ? panel : gameObject;
++            if (root != null) root.SetActive(false);
++        }
++
++        OnDialogueFinished?.Invoke();
++    }
++}

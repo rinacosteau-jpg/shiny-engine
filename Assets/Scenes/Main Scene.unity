@@ -1900,7 +1900,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1380361249}
-  - component: {fileID: 1380361248}
+  - component: {fileID: 1380361250}
   m_Layer: 0
   m_Name: ResponseHandler
   m_TagString: Untagged
@@ -1908,22 +1908,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1380361248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1380361247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7c137a7d8eb3394c821fce27736ed98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  responseBox: {fileID: 1474090640}
-  responseButtonTemplate: {fileID: 420521553}
-  responseContainer: {fileID: 1866397249}
-  verboseLogs: 1
 --- !u!4 &1380361249
 Transform:
   m_ObjectHideFlags: 0
@@ -1939,6 +1923,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1380361250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380361247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86024a744fc718648b844231eacee0ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  responseBox: {fileID: 1474090640}
+  responseButtonTemplate: {fileID: 420521553}
+  responseContainer: {fileID: 1866397249}
 --- !u!1 &1394194077
 GameObject:
   m_ObjectHideFlags: 0
@@ -3011,11 +3010,8 @@ MonoBehaviour:
   dialogueBox: {fileID: 1465434757}
   textLabel: {fileID: 1590275849}
   dialogueSpeaker: {fileID: 989809984}
-  responseHandler: {fileID: 1380361248}
+  responseHandler: {fileID: 1380361250}
   advanceActionName: Dialogue
-  verboseLogs: 1
-  dumpAutoFlagsOnStart: 1
-  forceDisableAutoFollow: 1
 --- !u!114 &2139869255
 MonoBehaviour:
   m_ObjectHideFlags: 0
