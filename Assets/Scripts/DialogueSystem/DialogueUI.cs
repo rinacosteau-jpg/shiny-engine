@@ -23,7 +23,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
     [Tooltip("Имя действия в Input System, которое подтверждает реплику/\"Далее\"")]
     [SerializeField] private string advanceActionName = "Interact";
     private InputAction advanceAction;
-    private float suppressAdvanceUntil = 0f; // гашим подтверждение сразу после запуска диалога
+    private bool waitingForAdvanceRelease = false; // ждём отпускания клавиши после запуска диалога
 
     private bool dialogueFinished = false;
     private string lastDisplayedText = null;
@@ -47,12 +47,18 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
     }
 
     private void Update() {
+        if (waitingForAdvanceRelease) {
+            if (advanceAction == null || !advanceAction.IsPressed())
+                waitingForAdvanceRelease = false;
+            else
+                return;
+        }
+
         // подтверждение "Далее" по клавише после запуска и только когда диалог открыт
         if (dialogueBox != null
             && dialogueBox.activeSelf
             && !dialogueFinished
             && advanceAction != null
-            && Time.time >= suppressAdvanceUntil
             && advanceAction.triggered) {
             if (responseHandler != null && responseHandler.ResponsesCount > 0) {
                 responseHandler.ClickFirstResponse();
@@ -80,6 +86,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
         responseHandler?.ClearResponses();
         lastDisplayedText = null;
         dialogueFinished = false;
+        waitingForAdvanceRelease = true;
         if (dialogueBox != null) dialogueBox.SetActive(true);
 
         // IFlowObject -> IArticyObject
