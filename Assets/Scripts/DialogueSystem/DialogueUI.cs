@@ -6,7 +6,6 @@ using System.Text.RegularExpressions;
 using Articy.Unity;
 using Articy.Unity.Interfaces;
 using Articy.World_Of_Red_Moon;
-using UnityEngine.InputSystem;
 
 public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
     [Header("Articy")]
@@ -18,14 +17,6 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
     [SerializeField] private TMP_Text textLabel;
     [SerializeField] private TMP_Text dialogueSpeaker;
     [SerializeField] private ResponseHandler responseHandler;
-
-    [Header("Input")]
-    [Tooltip("Имя действия в Input System, которое подтверждает реплику/\"Далее\"")]
-    [SerializeField] private string advanceActionName = "Interact";
-
-
-    private InputAction advanceAction;
-    private float suppressAdvanceUntil = 0f; // гашим подтверждение сразу после запуска диалога
 
     private bool dialogueFinished = false;
     private string lastDisplayedText = null;
@@ -40,28 +31,9 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
             Debug.LogError("[DialogueUI] flowPlayer не назначен.");
             return;
         }
-        // Находим действие подтверждения
-        if (!string.IsNullOrEmpty(advanceActionName))
-            advanceAction = InputSystem.actions.FindAction(advanceActionName);
-
-        
 
         // ВАЖНО: ничего не запускаем автоматически!
         // Раньше могло быть: flowPlayer.StartOn = ...; flowPlayer.Play();
-    }
-
-    private void Update() {
-        // подтверждение "Далее" по клавише после запуска и только когда диалог открыт
-        if (dialogueBox != null
-            && dialogueBox.activeSelf
-            && !dialogueFinished
-            && advanceAction != null
-            && Time.time >= suppressAdvanceUntil
-            && advanceAction.triggered) {
-            if (responseHandler != null && responseHandler.ResponsesCount > 0) {
-                responseHandler.ClickFirstResponse();
-            }
-        }
     }
 
     // ======== ПУБЛИЧНЫЕ API ДЛЯ ЗАПУСКА ДИАЛОГА ========
@@ -85,7 +57,6 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
         lastDisplayedText = null;
         dialogueFinished = false;
         if (dialogueBox != null) dialogueBox.SetActive(true);
-        advanceAction?.Reset();
 
 
         // IFlowObject -> IArticyObject

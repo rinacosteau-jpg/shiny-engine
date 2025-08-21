@@ -15,21 +15,11 @@ public class ResponseHandler : MonoBehaviour {
 
     private List<GameObject> tempResponseButtons = new List<GameObject>();
 
-    // Кол-во текущих ответов (для клавишного подтверждения)
-    public int ResponsesCount => tempResponseButtons.Count;
-
-    // Программно "кликнуть" по первой кнопке (клавишный confirm)
-    public void ClickFirstResponse() {
-        if (tempResponseButtons.Count == 0) return;
-        var btn = tempResponseButtons[0].GetComponent<Button>();
-        if (btn != null) btn.onClick.Invoke();
-        Debug.Log("[ResponseHandler] ClickFirstResponse called");
-    }
 
     /// <summary>
-    /// Показывает кнопки для веток.
-    /// Если playerEntity != null — показываются только ветки, чей target.speaker == playerEntity.
-    /// Если playerEntity == null — показываются все ветки.
+    /// ГЏГ®ГЄГ Г§Г»ГўГ ГҐГІ ГЄГ­Г®ГЇГЄГЁ Г¤Г«Гї ГўГҐГІГ®ГЄ.
+    /// Г…Г±Г«ГЁ playerEntity != null вЂ” ГЇГ®ГЄГ Г§Г»ГўГ ГѕГІГ±Гї ГІГ®Г«ГјГЄГ® ГўГҐГІГЄГЁ, Г·ГҐГ© target.speaker == playerEntity.
+    /// Г…Г±Г«ГЁ playerEntity == null вЂ” ГЇГ®ГЄГ Г§Г»ГўГ ГѕГІГ±Гї ГўГ±ГҐ ГўГҐГІГЄГЁ.
     /// </summary>
     public void ShowResponses(IList<Branch> branches, ArticyFlowPlayer flowPlayer, Entity playerEntity = null) {
         if (branches == null || flowPlayer == null) return;
@@ -39,11 +29,11 @@ public class ResponseHandler : MonoBehaviour {
         foreach (var branch in branches) {
             if (branch == null || branch.Target == null) continue;
 
-            // Фильтрация по спикеру (если задан playerEntity)
+            // Г”ГЁГ«ГјГІГ°Г Г¶ГЁГї ГЇГ® Г±ГЇГЁГЄГҐГ°Гі (ГҐГ±Г«ГЁ Г§Г Г¤Г Г­ playerEntity)
             if (playerEntity != null) {
                 var targetSpeaker = GetSpeakerEntity(branch.Target);
                 if (targetSpeaker == null || !ReferenceEquals(targetSpeaker, playerEntity))
-                    continue; // не ответ игрока — пропускаем
+                    continue; // Г­ГҐ Г®ГІГўГҐГІ ГЁГЈГ°Г®ГЄГ  вЂ” ГЇГ°Г®ГЇГіГ±ГЄГ ГҐГ¬
             }
 
             CreateButtonForBranch(branch, flowPlayer);
@@ -53,8 +43,8 @@ public class ResponseHandler : MonoBehaviour {
     }
 
     /// <summary>
-    /// Создаёт одну кнопку-ответ с текстом. Если передан branch, при клике будет выполнен flowPlayer.Play(branch).
-    /// Удобно для кнопки "Далее".
+    /// Г‘Г®Г§Г¤Г ВёГІ Г®Г¤Г­Гі ГЄГ­Г®ГЇГЄГі-Г®ГІГўГҐГІ Г± ГІГҐГЄГ±ГІГ®Г¬. Г…Г±Г«ГЁ ГЇГҐГ°ГҐГ¤Г Г­ branch, ГЇГ°ГЁ ГЄГ«ГЁГЄГҐ ГЎГіГ¤ГҐГІ ГўГ»ГЇГ®Г«Г­ГҐГ­ flowPlayer.Play(branch).
+    /// Г“Г¤Г®ГЎГ­Г® Г¤Г«Гї ГЄГ­Г®ГЇГЄГЁ "Г„Г Г«ГҐГҐ".
     /// </summary>
     public void CreateSingleResponse(string text, Branch branch, ArticyFlowPlayer flowPlayer) {
         if (string.IsNullOrEmpty(text) || flowPlayer == null) return;
@@ -82,7 +72,7 @@ public class ResponseHandler : MonoBehaviour {
     }
 
     /// <summary>
-    /// Удаляет все текущие кнопки и прячет контейнер.
+    /// Г“Г¤Г Г«ГїГҐГІ ГўГ±ГҐ ГІГҐГЄГіГ№ГЁГҐ ГЄГ­Г®ГЇГЄГЁ ГЁ ГЇГ°ГїГ·ГҐГІ ГЄГ®Г­ГІГҐГ©Г­ГҐГ°.
     /// </summary>
     public void ClearResponses() {
         foreach (var btn in tempResponseButtons)
@@ -93,7 +83,7 @@ public class ResponseHandler : MonoBehaviour {
             responseBox.gameObject.SetActive(false);
     }
 
-    // --- Внутренние вспомогательные методы ---
+    // --- Г‚Г­ГіГІГ°ГҐГ­Г­ГЁГҐ ГўГ±ГЇГ®Г¬Г®ГЈГ ГІГҐГ«ГјГ­Г»ГҐ Г¬ГҐГІГ®Г¤Г» ---
 
     private void CreateButtonForBranch(Branch branch, ArticyFlowPlayer flowPlayer) {
         if (branch == null || branch.Target == null || flowPlayer == null) return;
@@ -101,7 +91,7 @@ public class ResponseHandler : MonoBehaviour {
         GameObject buttonObj = Instantiate(responseButtonTemplate.gameObject, responseContainer);
         buttonObj.SetActive(true);
 
-        // Для кнопки сначала пробуем MenuText, затем Text, затем fallback
+        // Г„Г«Гї ГЄГ­Г®ГЇГЄГЁ Г±Г­Г Г·Г Г«Г  ГЇГ°Г®ГЎГіГҐГ¬ MenuText, Г§Г ГІГҐГ¬ Text, Г§Г ГІГҐГ¬ fallback
         string buttonText = GetMenuTextFromFlowObject(branch.Target);
         if (string.IsNullOrEmpty(buttonText))
             buttonText = GetTextFromFlowObject(branch.Target);
@@ -111,7 +101,7 @@ public class ResponseHandler : MonoBehaviour {
         TMP_Text tmpText = buttonObj.GetComponentInChildren<TMP_Text>();
         if (tmpText != null) tmpText.text = buttonText;
 
-        var localBranch = branch; // фиксируем для замыкания
+        var localBranch = branch; // ГґГЁГЄГ±ГЁГ°ГіГҐГ¬ Г¤Г«Гї Г§Г Г¬Г»ГЄГ Г­ГЁГї
         Button btnComponent = buttonObj.GetComponent<Button>();
         if (btnComponent != null) {
             btnComponent.onClick.RemoveAllListeners();
@@ -132,7 +122,7 @@ public class ResponseHandler : MonoBehaviour {
     }
 
     /// <summary>
-    /// Получает MenuText из FlowObject (IObjectWithMenuText или через reflection).
+    /// ГЏГ®Г«ГіГ·Г ГҐГІ MenuText ГЁГ§ FlowObject (IObjectWithMenuText ГЁГ«ГЁ Г·ГҐГ°ГҐГ§ reflection).
     /// </summary>
     private string GetMenuTextFromFlowObject(IFlowObject obj) {
         if (obj == null) return null;
@@ -154,7 +144,7 @@ public class ResponseHandler : MonoBehaviour {
     }
 
     /// <summary>
-    /// Безопасно вытягивает текст из FlowObject — интерфейс, property Text или Properties.Text
+    /// ГЃГҐГ§Г®ГЇГ Г±Г­Г® ГўГ»ГІГїГЈГЁГўГ ГҐГІ ГІГҐГЄГ±ГІ ГЁГ§ FlowObject вЂ” ГЁГ­ГІГҐГ°ГґГҐГ©Г±, property Text ГЁГ«ГЁ Properties.Text
     /// </summary>
     private string GetTextFromFlowObject(IFlowObject obj) {
         if (obj == null) return null;
@@ -188,7 +178,7 @@ public class ResponseHandler : MonoBehaviour {
     }
 
     /// <summary>
-    /// Пытается достать Entity-спикера из FlowObject.
+    /// ГЏГ»ГІГ ГҐГІГ±Гї Г¤Г®Г±ГІГ ГІГј Entity-Г±ГЇГЁГЄГҐГ°Г  ГЁГ§ FlowObject.
     /// </summary>
     private Entity GetSpeakerEntity(IFlowObject obj) {
         if (obj == null) return null;

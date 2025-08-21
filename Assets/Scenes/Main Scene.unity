@@ -3036,7 +3036,6 @@ MonoBehaviour:
   textLabel: {fileID: 1590275849}
   dialogueSpeaker: {fileID: 989809984}
   responseHandler: {fileID: 1380361250}
-  advanceActionName: Interact
   dialogueStart:
     instanceId: 0
     referencingMode: 0
