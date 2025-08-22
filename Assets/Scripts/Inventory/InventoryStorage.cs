@@ -10,6 +10,16 @@ public static class InventoryStorage
     // Internal list that holds the player's objects.
     private static readonly List<GameObject> _items = new List<GameObject>();
 
+    // Static constructor to seed the inventory with test items.
+    static InventoryStorage()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            var testItem = new GameObject($"TestItem_" + i);
+            _items.Add(testItem);
+        }
+    }
+
     /// <summary>
     /// Adds a new object to the inventory if it is not null and not already stored.
     /// </summary>
