@@ -2194,6 +2194,7 @@ MonoBehaviour:
   textLabel: {fileID: 1590275849}
   dialogueSpeaker: {fileID: 989809984}
   responseHandler: {fileID: 1380361250}
+  textScrollRect: {fileID: 8200000000000000002, guid: 9ac2b374a99046840892831c86df9b05, type: 3}
 --- !u!1001 &3344996593718879415
 PrefabInstance:
   m_ObjectHideFlags: 0
