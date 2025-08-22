@@ -55,7 +55,8 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
 
         // сброс состояния UI
         responseHandler?.ClearResponses();
-        lastDisplayedText = null;
+        lastDisplayedText = string.Empty;
+        if (textLabel != null) textLabel.text = string.Empty;
         dialogueFinished = false;
         if (dialogueBox != null) dialogueBox.SetActive(true);
 
@@ -94,14 +95,18 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
         string currentText = GetTextFromFlowObject(aObject);
 
         if (!string.IsNullOrEmpty(currentText)) {
-            // У нас есть текст — сразу показываем и запоминаем
-            lastDisplayedText = currentText;
-            if (textLabel != null) textLabel.text = currentText; //сюда сморим
+            // У нас есть текст — добавляем его к уже отображённому
+            if (textLabel != null) {
+                textLabel.text = string.IsNullOrEmpty(textLabel.text)
+                    ? currentText
+                    : textLabel.text + "\n" + currentText;
+                lastDisplayedText = textLabel.text;
+            }
             dialogueFinished = false;
             return;
         }
 
-        // Текущий объект не содержит текста — оставляем последнюю реплику видимой
+        // Текущий объект не содержит текста — оставляем весь предыдущий диалог видимым
         dialogueFinished = false;
         if (string.IsNullOrEmpty(lastDisplayedText)) {
             if (textLabel != null) textLabel.text = "<<< NO TEXT >>>";
