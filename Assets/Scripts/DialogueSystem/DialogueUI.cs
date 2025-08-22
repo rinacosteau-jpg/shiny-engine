@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
 using System.Reflection;
@@ -17,6 +18,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
     [SerializeField] private TMP_Text textLabel;
     [SerializeField] private TMP_Text dialogueSpeaker;
     [SerializeField] private ResponseHandler responseHandler;
+    [SerializeField] private ScrollRect dialogueScrollRect;
 
     private bool dialogueFinished = false;
     private string lastDisplayedText = null;
@@ -96,7 +98,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
         if (!string.IsNullOrEmpty(currentText)) {
             // У нас есть текст — сразу показываем и запоминаем
             lastDisplayedText = currentText;
-            if (textLabel != null) textLabel.text = currentText; //сюда сморим
+            SetDialogueText(currentText); //сюда смотрим
             dialogueFinished = false;
             return;
         }
@@ -104,9 +106,9 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
         // Текущий объект не содержит текста — оставляем последнюю реплику видимой
         dialogueFinished = false;
         if (string.IsNullOrEmpty(lastDisplayedText)) {
-            if (textLabel != null) textLabel.text = "<<< NO TEXT >>>";
+            SetDialogueText("<<< NO TEXT >>>");
         } else {
-            if (textLabel != null) textLabel.text = lastDisplayedText;
+            SetDialogueText(lastDisplayedText);
         }
     }
 
@@ -150,6 +152,18 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
                 dialogueFinished = false;
             }
         }
+    }
+
+    private void SetDialogueText(string text) {
+        if (textLabel != null)
+            textLabel.text = text;
+        ResetScroll();
+    }
+
+    private void ResetScroll() {
+        if (dialogueScrollRect == null) return;
+        Canvas.ForceUpdateCanvases();
+        dialogueScrollRect.verticalNormalizedPosition = 1f;
     }
 
     // -------------------- Вспомогательные безопасные методы --------------------
