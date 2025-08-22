@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
 using System.Reflection;
@@ -18,7 +17,6 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
     [SerializeField] private TMP_Text textLabel;
     [SerializeField] private TMP_Text dialogueSpeaker;
     [SerializeField] private ResponseHandler responseHandler;
-    [SerializeField] private ScrollRect textScrollRect;
 
     private bool dialogueFinished = false;
     private string lastDisplayedText = null;
@@ -99,7 +97,6 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
             // У нас есть текст — сразу показываем и запоминаем
             lastDisplayedText = currentText;
             if (textLabel != null) textLabel.text = currentText; //сюда сморим
-            if (textScrollRect != null) textScrollRect.verticalNormalizedPosition = 1f;
             dialogueFinished = false;
             return;
         }
@@ -108,10 +105,8 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
         dialogueFinished = false;
         if (string.IsNullOrEmpty(lastDisplayedText)) {
             if (textLabel != null) textLabel.text = "<<< NO TEXT >>>";
-            if (textScrollRect != null) textScrollRect.verticalNormalizedPosition = 1f;
         } else {
             if (textLabel != null) textLabel.text = lastDisplayedText;
-            if (textScrollRect != null) textScrollRect.verticalNormalizedPosition = 1f;
         }
     }
 
