@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5324567563803582706
+--- !u!114 &-9075879471282541
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -37,8 +37,8 @@ MonoBehaviour:
   m_Script: {fileID: -1676762633, guid: df2ec02f61e861546b9427c26ccacb8d, type: 3}
   m_Name: ArticyDatabase
   m_EditorClassIdentifier: 
-  mHierarchy: {fileID: 7413450634549648567}
-  mLocalization: {fileID: -5324567563803582706}
+  mHierarchy: {fileID: 2922932314124925709}
+  mLocalization: {fileID: -9075879471282541}
   mRuleSetId: 269
   mArticyAssetsUseResourcesFolder: 1
   mInternalProject:
@@ -64,13 +64,77 @@ MonoBehaviour:
   - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1705_Shady_Game_Character_remix_01k391g1nee32ra8q8yft1rnvm.png"
   - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1756_Revenge-Driven_Game_Character_remix_01k394d5bwf22t9g3jbb3626zd.png"
   - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1754_Game_Character_Portrait_remix_01k3948yxreacsvh79vk46m5xa.png"
-  mDefaultGlobalVariables: {fileID: 8493772584341519141}
+  mDefaultGlobalVariables: {fileID: 1869717595154656004}
   mPackages:
   - PackageId: 72057594037928208
     PackageName: "\u0412\u0441\u0435 \u043E\u0431\u044A\u0435\u043A\u0442\u044B"
     PackagePath: package_0x100000000000110
     mIsDefaultPackage: 1
---- !u!114 &7413450634549648567
+--- !u!114 &1869717595154656004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65213dc888abacb419e6db477e6764ea, type: 3}
+  m_Name: DefaultGlobalVariables
+  m_EditorClassIdentifier: 
+  mBoolVariableCache:
+  - mFullQualifiedName: NKNW.guardHasMyGun
+    mVar:
+      values: 00
+  - mFullQualifiedName: NKNW.ratCanDistractGuard
+    mVar:
+      values: 00
+  - mFullQualifiedName: NKNW.tomasSus
+    mVar:
+      values: 00
+  - mFullQualifiedName: NKNW.aoBlamesHimself
+    mVar:
+      values: 00
+  - mFullQualifiedName: NKNW.popularNovel
+    mVar:
+      values: 00
+  - mFullQualifiedName: RQUE.hasTalkToRuObj
+    mVar:
+      values: 00
+  - mFullQualifiedName: RFLG.murderAttempt
+    mVar:
+      values: 00
+  - mFullQualifiedName: RFLG.talkedToRu
+    mVar:
+      values: 00
+  - mFullQualifiedName: ITM.kotsukiGaveNote
+    mVar:
+      values: 00
+  mIntVariableCache:
+  - mFullQualifiedName: NSKI.PER
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RCNT.askLibAbtPeople
+    mVar:
+      values: 00000000
+  mStringVariableCache: []
+  mLiveBoolVariableCache: []
+  mLiveIntVariableCache: []
+  mLiveStringVariableCache: []
+  mIsInitialized: 1
+  mNKNW:
+    _VariableStorage: {fileID: 1869717595154656004}
+  mRQUE:
+    _VariableStorage: {fileID: 1869717595154656004}
+  mRFLG:
+    _VariableStorage: {fileID: 1869717595154656004}
+  mITM:
+    _VariableStorage: {fileID: 1869717595154656004}
+  mNSKI:
+    _VariableStorage: {fileID: 1869717595154656004}
+  mRCNT:
+    _VariableStorage: {fileID: 1869717595154656004}
+--- !u!114 &2922932314124925709
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,16 +182,6 @@ MonoBehaviour:
     technicalName: GlobalVariables
     articyType: GlobalVariables
     childCount: 6
-  - id: 72057594037931188
-    parent: 216172782840400980
-    technicalName: 
-    articyType: VariableSet
-    childCount: 0
-  - id: 72057594037930738
-    parent: 216172782840400980
-    technicalName: 
-    articyType: VariableSet
-    childCount: 0
   - id: 72057594037930876
     parent: 216172782840400980
     technicalName: 
@@ -138,12 +192,22 @@ MonoBehaviour:
     technicalName: 
     articyType: VariableSet
     childCount: 0
-  - id: 72057594037930736
+  - id: 72057594037930987
     parent: 216172782840400980
     technicalName: 
     articyType: VariableSet
     childCount: 0
-  - id: 72057594037930987
+  - id: 72057594037931188
+    parent: 216172782840400980
+    technicalName: 
+    articyType: VariableSet
+    childCount: 0
+  - id: 72057594037930738
+    parent: 216172782840400980
+    technicalName: 
+    articyType: VariableSet
+    childCount: 0
+  - id: 72057594037930736
     parent: 216172782840400980
     technicalName: 
     articyType: VariableSet
@@ -1733,65 +1797,3 @@ MonoBehaviour:
     technicalName: Ufo_CDF30863
     articyType: AssetsUserFolder
     childCount: 0
---- !u!114 &8493772584341519141
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65213dc888abacb419e6db477e6764ea, type: 3}
-  m_Name: DefaultGlobalVariables
-  m_EditorClassIdentifier: 
-  mBoolVariableCache:
-  - mFullQualifiedName: KNW.guardHasMyGun
-    mVar:
-      values: 00
-  - mFullQualifiedName: KNW.ratCanDistractGuard
-    mVar:
-      values: 00
-  - mFullQualifiedName: KNW.tomasSus
-    mVar:
-      values: 00
-  - mFullQualifiedName: KNW.aoBlamesHimself
-    mVar:
-      values: 00
-  - mFullQualifiedName: KNW.popularNovel
-    mVar:
-      values: 00
-  - mFullQualifiedName: FLG.runakoTlkd
-    mVar:
-      values: 00
-  - mFullQualifiedName: FLG.murderAttempt
-    mVar:
-      values: 00
-  - mFullQualifiedName: ITM.kotsukiGaveNote
-    mVar:
-      values: 00
-  - mFullQualifiedName: SK.talkToRunako
-    mVar:
-      values: 00
-  mIntVariableCache:
-  - mFullQualifiedName: SK.PER
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: COUNT.askLibAbtPeople
-    mVar:
-      values: 00000000
-  mStringVariableCache: []
-  mLiveBoolVariableCache: []
-  mLiveIntVariableCache: []
-  mLiveStringVariableCache: []
-  mIsInitialized: 1
-  mKNW:
-    _VariableStorage: {fileID: 8493772584341519141}
-  mFLG:
-    _VariableStorage: {fileID: 8493772584341519141}
-  mITM:
-    _VariableStorage: {fileID: 8493772584341519141}
-  mSK:
-    _VariableStorage: {fileID: 8493772584341519141}
-  mCOUNT:
-    _VariableStorage: {fileID: 8493772584341519141}

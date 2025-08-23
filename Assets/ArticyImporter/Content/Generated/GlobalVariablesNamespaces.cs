@@ -21,13 +21,13 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
     
     // nonresettable knowlege
     [Serializable()]
-    public class KNW : IArticyNamespace
+    public class NKNW : IArticyNamespace
     {
         
         [SerializeField()]
         private BaseGlobalVariables _VariableStorage;
         
-        // 
+        // Мой револьвер у стражников
         public bool guardHasMyGun
         {
             get
@@ -40,7 +40,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             }
         }
         
-        // 
+        // Торгаш может отвлечь охрану
         public bool ratCanDistractGuard
         {
             get
@@ -53,7 +53,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             }
         }
         
-        // 
+        // Томас ведет себя подозрительно
         public bool tomasSus
         {
             get
@@ -66,7 +66,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             }
         }
         
-        // 
+        // Ао винит себя в произошедшем
         public bool aoBlamesHimself
         {
             get
@@ -79,7 +79,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             }
         }
         
-        // 
+        // Все говорят о новом популярном романе
         public bool popularNovel
         {
             get
@@ -95,11 +95,11 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         public void RegisterVariables(BaseGlobalVariables aStorage)
         {
             _VariableStorage = aStorage;
-            aStorage.RegisterVariable("KNW.guardHasMyGun", false);
-            aStorage.RegisterVariable("KNW.ratCanDistractGuard", false);
-            aStorage.RegisterVariable("KNW.tomasSus", false);
-            aStorage.RegisterVariable("KNW.aoBlamesHimself", false);
-            aStorage.RegisterVariable("KNW.popularNovel", false);
+            aStorage.RegisterVariable("NKNW.guardHasMyGun", false);
+            aStorage.RegisterVariable("NKNW.ratCanDistractGuard", false);
+            aStorage.RegisterVariable("NKNW.tomasSus", false);
+            aStorage.RegisterVariable("NKNW.aoBlamesHimself", false);
+            aStorage.RegisterVariable("NKNW.popularNovel", false);
         }
     }
 }
@@ -107,15 +107,16 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
 {
     
     
+    // resetable active quest
     [Serializable()]
-    public class FLG : IArticyNamespace
+    public class RQUE : IArticyNamespace
     {
         
         [SerializeField()]
         private BaseGlobalVariables _VariableStorage;
         
-        // 
-        public bool runakoTlkd
+        // сходи епта поговори с рунако
+        public bool hasTalkToRuObj
         {
             get
             {
@@ -126,6 +127,24 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
                 _VariableStorage.Internal_SetVariableValueBoolean(5, value);
             }
         }
+        
+        public void RegisterVariables(BaseGlobalVariables aStorage)
+        {
+            _VariableStorage = aStorage;
+            aStorage.RegisterVariable("RQUE.hasTalkToRuObj", false);
+        }
+    }
+}
+namespace Articy.World_Of_Red_Moon.GlobalVariables
+{
+    
+    
+    [Serializable()]
+    public class RFLG : IArticyNamespace
+    {
+        
+        [SerializeField()]
+        private BaseGlobalVariables _VariableStorage;
         
         // 
         public bool murderAttempt
@@ -140,27 +159,8 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             }
         }
         
-        public void RegisterVariables(BaseGlobalVariables aStorage)
-        {
-            _VariableStorage = aStorage;
-            aStorage.RegisterVariable("FLG.runakoTlkd", false);
-            aStorage.RegisterVariable("FLG.murderAttempt", false);
-        }
-    }
-}
-namespace Articy.World_Of_Red_Moon.GlobalVariables
-{
-    
-    
-    [Serializable()]
-    public class ITM : IArticyNamespace
-    {
-        
-        [SerializeField()]
-        private BaseGlobalVariables _VariableStorage;
-        
         // 
-        public bool kotsukiGaveNote
+        public bool talkedToRu
         {
             get
             {
@@ -175,6 +175,39 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         public void RegisterVariables(BaseGlobalVariables aStorage)
         {
             _VariableStorage = aStorage;
+            aStorage.RegisterVariable("RFLG.murderAttempt", false);
+            aStorage.RegisterVariable("RFLG.talkedToRu", false);
+        }
+    }
+}
+namespace Articy.World_Of_Red_Moon.GlobalVariables
+{
+    
+    
+    // items given to player by npcs, resetable if player don't have an artefact
+    [Serializable()]
+    public class ITM : IArticyNamespace
+    {
+        
+        [SerializeField()]
+        private BaseGlobalVariables _VariableStorage;
+        
+        // 
+        public bool kotsukiGaveNote
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueBoolean(8);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueBoolean(8, value);
+            }
+        }
+        
+        public void RegisterVariables(BaseGlobalVariables aStorage)
+        {
+            _VariableStorage = aStorage;
             aStorage.RegisterVariable("ITM.kotsukiGaveNote", false);
         }
     }
@@ -183,8 +216,9 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
 {
     
     
+    // nonresetable player skillset
     [Serializable()]
-    public class SK : IArticyNamespace
+    public class NSKI : IArticyNamespace
     {
         
         [SerializeField()]
@@ -203,24 +237,10 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             }
         }
         
-        // 
-        public bool talkToRunako
-        {
-            get
-            {
-                return _VariableStorage.Internal_GetVariableValueBoolean(8);
-            }
-            set
-            {
-                _VariableStorage.Internal_SetVariableValueBoolean(8, value);
-            }
-        }
-        
         public void RegisterVariables(BaseGlobalVariables aStorage)
         {
             _VariableStorage = aStorage;
-            aStorage.RegisterVariable("SK.PER", 0);
-            aStorage.RegisterVariable("SK.talkToRunako", false);
+            aStorage.RegisterVariable("NSKI.PER", 0);
         }
     }
 }
@@ -230,7 +250,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
     
     // counters
     [Serializable()]
-    public class COUNT : IArticyNamespace
+    public class RCNT : IArticyNamespace
     {
         
         [SerializeField()]
@@ -252,7 +272,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         public void RegisterVariables(BaseGlobalVariables aStorage)
         {
             _VariableStorage = aStorage;
-            aStorage.RegisterVariable("COUNT.askLibAbtPeople", 0);
+            aStorage.RegisterVariable("RCNT.askLibAbtPeople", 0);
         }
     }
 }

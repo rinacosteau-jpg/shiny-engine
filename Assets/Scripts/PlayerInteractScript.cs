@@ -4,7 +4,6 @@ using UnityEngine.InputSystem;
 public class PlayerInteractScript : MonoBehaviour {
     InputAction interactAction;
     private DialogueUI dialogueUI;
-    public PlayerState player;
 
     void Start() {
         interactAction = InputSystem.actions.FindAction("Interact");

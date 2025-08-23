@@ -83,6 +83,8 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
         responseHandler?.ClearResponses();
         IsDialogueOpen = false;
         Debug.Log("[DialogueUI] Dialogue closed by user.");
+        GlobalVariables.Instance?.GetKnowledge();
+        GlobalVariables.Instance?.GetTempObjectives();
     }
 
     // ======== IArticyFlowPlayerCallbacks ========

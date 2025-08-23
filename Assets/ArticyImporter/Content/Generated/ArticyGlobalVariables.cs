@@ -26,11 +26,15 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         
         [SerializeField()]
         [HideInInspector()]
-        private KNW mKNW = new KNW();
+        private NKNW mNKNW = new NKNW();
         
         [SerializeField()]
         [HideInInspector()]
-        private FLG mFLG = new FLG();
+        private RQUE mRQUE = new RQUE();
+        
+        [SerializeField()]
+        [HideInInspector()]
+        private RFLG mRFLG = new RFLG();
         
         [SerializeField()]
         [HideInInspector()]
@@ -38,42 +42,50 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         
         [SerializeField()]
         [HideInInspector()]
-        private SK mSK = new SK();
+        private NSKI mNSKI = new NSKI();
         
         [SerializeField()]
         [HideInInspector()]
-        private COUNT mCOUNT = new COUNT();
+        private RCNT mRCNT = new RCNT();
         
         #region Initialize static VariableName set
         static ArticyGlobalVariables()
         {
-            variableNames.Add("KNW.guardHasMyGun");
-            variableNames.Add("KNW.ratCanDistractGuard");
-            variableNames.Add("KNW.tomasSus");
-            variableNames.Add("KNW.aoBlamesHimself");
-            variableNames.Add("KNW.popularNovel");
-            variableNames.Add("FLG.runakoTlkd");
-            variableNames.Add("FLG.murderAttempt");
+            variableNames.Add("NKNW.guardHasMyGun");
+            variableNames.Add("NKNW.ratCanDistractGuard");
+            variableNames.Add("NKNW.tomasSus");
+            variableNames.Add("NKNW.aoBlamesHimself");
+            variableNames.Add("NKNW.popularNovel");
+            variableNames.Add("RQUE.hasTalkToRuObj");
+            variableNames.Add("RFLG.murderAttempt");
+            variableNames.Add("RFLG.talkedToRu");
             variableNames.Add("ITM.kotsukiGaveNote");
-            variableNames.Add("SK.PER");
-            variableNames.Add("SK.talkToRunako");
-            variableNames.Add("COUNT.askLibAbtPeople");
+            variableNames.Add("NSKI.PER");
+            variableNames.Add("RCNT.askLibAbtPeople");
         }
         #endregion
         
-        public KNW KNW
+        public NKNW NKNW
         {
             get
             {
-                return mKNW;
+                return mNKNW;
             }
         }
         
-        public FLG FLG
+        public RQUE RQUE
         {
             get
             {
-                return mFLG;
+                return mRQUE;
+            }
+        }
+        
+        public RFLG RFLG
+        {
+            get
+            {
+                return mRFLG;
             }
         }
         
@@ -85,19 +97,19 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             }
         }
         
-        public SK SK
+        public NSKI NSKI
         {
             get
             {
-                return mSK;
+                return mNSKI;
             }
         }
         
-        public COUNT COUNT
+        public RCNT RCNT
         {
             get
             {
-                return mCOUNT;
+                return mRCNT;
             }
         }
         
@@ -111,11 +123,12 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         
         public override void Init()
         {
-            KNW.RegisterVariables(this);
-            FLG.RegisterVariables(this);
+            NKNW.RegisterVariables(this);
+            RQUE.RegisterVariables(this);
+            RFLG.RegisterVariables(this);
             ITM.RegisterVariables(this);
-            SK.RegisterVariables(this);
-            COUNT.RegisterVariables(this);
+            NSKI.RegisterVariables(this);
+            RCNT.RegisterVariables(this);
         }
         
         public static ArticyGlobalVariables CreateGlobalVariablesClone()
