@@ -7,15 +7,15 @@ using TMPro;
 /// </summary>
 public class InventoryItemUI : MonoBehaviour
 {
-    private int _id;
+    private Item _item;
 
-    /// <summary>Initializes the item UI with a specific identifier.</summary>
-    public void Initialize(int id)
+    /// <summary>Initializes the item UI with a specific inventory item.</summary>
+    public void Initialize(Item item)
     {
-        _id = id;
+        _item = item;
         var text = GetComponentInChildren<TMP_Text>();
         if (text != null)
-            text.text = id.ToString();
+            text.text = $"{item.TechnicalName} ({item.ItemCount})";
 
         var button = GetComponent<Button>();
         if (button != null)
@@ -27,6 +27,7 @@ public class InventoryItemUI : MonoBehaviour
 
     private void OnClick()
     {
-        Debug.Log($"Clicked inventory item with id {_id}");
+        if (_item != null)
+            Debug.Log($"Clicked inventory item {_item.TechnicalName}");
     }
 }
