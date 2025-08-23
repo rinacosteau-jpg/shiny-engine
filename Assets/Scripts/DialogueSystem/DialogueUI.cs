@@ -102,6 +102,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
                     : textLabel.text + "\n" + currentText;
                 lastDisplayedText = textLabel.text;
             }
+
             dialogueFinished = false;
             return;
         }
