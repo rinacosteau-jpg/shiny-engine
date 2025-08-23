@@ -15,3 +15,244 @@ using System.Collections;
 using UnityEngine;
 
 
+namespace Articy.World_Of_Red_Moon.GlobalVariables
+{
+    
+    
+    // nonresettable knowlege
+    [Serializable()]
+    public class KNW : IArticyNamespace
+    {
+        
+        [SerializeField()]
+        private BaseGlobalVariables _VariableStorage;
+        
+        // 
+        public bool guardHasMyGun
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueBoolean(0);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueBoolean(0, value);
+            }
+        }
+        
+        // 
+        public bool ratCanDistractGuard
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueBoolean(1);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueBoolean(1, value);
+            }
+        }
+        
+        // 
+        public bool tomasSus
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueBoolean(2);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueBoolean(2, value);
+            }
+        }
+        
+        // 
+        public bool aoBlamesHimself
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueBoolean(3);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueBoolean(3, value);
+            }
+        }
+        
+        // 
+        public bool popularNovel
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueBoolean(4);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueBoolean(4, value);
+            }
+        }
+        
+        public void RegisterVariables(BaseGlobalVariables aStorage)
+        {
+            _VariableStorage = aStorage;
+            aStorage.RegisterVariable("KNW.guardHasMyGun", false);
+            aStorage.RegisterVariable("KNW.ratCanDistractGuard", false);
+            aStorage.RegisterVariable("KNW.tomasSus", false);
+            aStorage.RegisterVariable("KNW.aoBlamesHimself", false);
+            aStorage.RegisterVariable("KNW.popularNovel", false);
+        }
+    }
+}
+namespace Articy.World_Of_Red_Moon.GlobalVariables
+{
+    
+    
+    [Serializable()]
+    public class FLG : IArticyNamespace
+    {
+        
+        [SerializeField()]
+        private BaseGlobalVariables _VariableStorage;
+        
+        // 
+        public bool runakoTlkd
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueBoolean(5);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueBoolean(5, value);
+            }
+        }
+        
+        // 
+        public bool murderAttempt
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueBoolean(6);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueBoolean(6, value);
+            }
+        }
+        
+        public void RegisterVariables(BaseGlobalVariables aStorage)
+        {
+            _VariableStorage = aStorage;
+            aStorage.RegisterVariable("FLG.runakoTlkd", false);
+            aStorage.RegisterVariable("FLG.murderAttempt", false);
+        }
+    }
+}
+namespace Articy.World_Of_Red_Moon.GlobalVariables
+{
+    
+    
+    [Serializable()]
+    public class ITM : IArticyNamespace
+    {
+        
+        [SerializeField()]
+        private BaseGlobalVariables _VariableStorage;
+        
+        // 
+        public bool kotsukiGaveNote
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueBoolean(7);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueBoolean(7, value);
+            }
+        }
+        
+        public void RegisterVariables(BaseGlobalVariables aStorage)
+        {
+            _VariableStorage = aStorage;
+            aStorage.RegisterVariable("ITM.kotsukiGaveNote", false);
+        }
+    }
+}
+namespace Articy.World_Of_Red_Moon.GlobalVariables
+{
+    
+    
+    [Serializable()]
+    public class SK : IArticyNamespace
+    {
+        
+        [SerializeField()]
+        private BaseGlobalVariables _VariableStorage;
+        
+        // 
+        public int PER
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueInt32(0);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueInt32(0, value);
+            }
+        }
+        
+        // 
+        public bool talkToRunako
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueBoolean(8);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueBoolean(8, value);
+            }
+        }
+        
+        public void RegisterVariables(BaseGlobalVariables aStorage)
+        {
+            _VariableStorage = aStorage;
+            aStorage.RegisterVariable("SK.PER", 0);
+            aStorage.RegisterVariable("SK.talkToRunako", false);
+        }
+    }
+}
+namespace Articy.World_Of_Red_Moon.GlobalVariables
+{
+    
+    
+    // counters
+    [Serializable()]
+    public class COUNT : IArticyNamespace
+    {
+        
+        [SerializeField()]
+        private BaseGlobalVariables _VariableStorage;
+        
+        // 
+        public int askLibAbtPeople
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueInt32(1);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueInt32(1, value);
+            }
+        }
+        
+        public void RegisterVariables(BaseGlobalVariables aStorage)
+        {
+            _VariableStorage = aStorage;
+            aStorage.RegisterVariable("COUNT.askLibAbtPeople", 0);
+        }
+    }
+}

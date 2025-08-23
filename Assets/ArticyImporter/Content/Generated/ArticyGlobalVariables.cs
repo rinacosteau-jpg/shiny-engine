@@ -24,11 +24,82 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
     public class ArticyGlobalVariables : BaseGlobalVariables
     {
         
+        [SerializeField()]
+        [HideInInspector()]
+        private KNW mKNW = new KNW();
+        
+        [SerializeField()]
+        [HideInInspector()]
+        private FLG mFLG = new FLG();
+        
+        [SerializeField()]
+        [HideInInspector()]
+        private ITM mITM = new ITM();
+        
+        [SerializeField()]
+        [HideInInspector()]
+        private SK mSK = new SK();
+        
+        [SerializeField()]
+        [HideInInspector()]
+        private COUNT mCOUNT = new COUNT();
+        
         #region Initialize static VariableName set
         static ArticyGlobalVariables()
         {
+            variableNames.Add("KNW.guardHasMyGun");
+            variableNames.Add("KNW.ratCanDistractGuard");
+            variableNames.Add("KNW.tomasSus");
+            variableNames.Add("KNW.aoBlamesHimself");
+            variableNames.Add("KNW.popularNovel");
+            variableNames.Add("FLG.runakoTlkd");
+            variableNames.Add("FLG.murderAttempt");
+            variableNames.Add("ITM.kotsukiGaveNote");
+            variableNames.Add("SK.PER");
+            variableNames.Add("SK.talkToRunako");
+            variableNames.Add("COUNT.askLibAbtPeople");
         }
         #endregion
+        
+        public KNW KNW
+        {
+            get
+            {
+                return mKNW;
+            }
+        }
+        
+        public FLG FLG
+        {
+            get
+            {
+                return mFLG;
+            }
+        }
+        
+        public ITM ITM
+        {
+            get
+            {
+                return mITM;
+            }
+        }
+        
+        public SK SK
+        {
+            get
+            {
+                return mSK;
+            }
+        }
+        
+        public COUNT COUNT
+        {
+            get
+            {
+                return mCOUNT;
+            }
+        }
         
         public static ArticyGlobalVariables Default
         {
@@ -40,6 +111,11 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         
         public override void Init()
         {
+            KNW.RegisterVariables(this);
+            FLG.RegisterVariables(this);
+            ITM.RegisterVariables(this);
+            SK.RegisterVariables(this);
+            COUNT.RegisterVariables(this);
         }
         
         public static ArticyGlobalVariables CreateGlobalVariablesClone()

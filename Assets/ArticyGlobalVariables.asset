@@ -12,10 +12,86 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65213dc888abacb419e6db477e6764ea, type: 3}
   m_Name: ArticyGlobalVariables
   m_EditorClassIdentifier: 
-  mBoolVariableCache: []
-  mIntVariableCache: []
+  mBoolVariableCache:
+  - mFullQualifiedName: KNW.guardHasMyGun
+    mVar:
+      values: 00
+  - mFullQualifiedName: KNW.ratCanDistractGuard
+    mVar:
+      values: 00
+  - mFullQualifiedName: KNW.tomasSus
+    mVar:
+      values: 00
+  - mFullQualifiedName: KNW.aoBlamesHimself
+    mVar:
+      values: 00
+  - mFullQualifiedName: KNW.popularNovel
+    mVar:
+      values: 00
+  - mFullQualifiedName: FLG.runakoTlkd
+    mVar:
+      values: 00
+  - mFullQualifiedName: FLG.murderAttempt
+    mVar:
+      values: 00
+  - mFullQualifiedName: ITM.kotsukiGaveNote
+    mVar:
+      values: 00
+  - mFullQualifiedName: SK.talkToRunako
+    mVar:
+      values: 00
+  mIntVariableCache:
+  - mFullQualifiedName: SK.PER
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: COUNT.askLibAbtPeople
+    mVar:
+      values: 00000000
   mStringVariableCache: []
-  mLiveBoolVariableCache: []
-  mLiveIntVariableCache: []
+  mLiveBoolVariableCache:
+  - mFullQualifiedName: KNW.guardHasMyGun
+    mVar:
+      values: 00
+  - mFullQualifiedName: KNW.ratCanDistractGuard
+    mVar:
+      values: 00
+  - mFullQualifiedName: KNW.tomasSus
+    mVar:
+      values: 00
+  - mFullQualifiedName: KNW.aoBlamesHimself
+    mVar:
+      values: 00
+  - mFullQualifiedName: KNW.popularNovel
+    mVar:
+      values: 00
+  - mFullQualifiedName: FLG.runakoTlkd
+    mVar:
+      values: 00
+  - mFullQualifiedName: FLG.murderAttempt
+    mVar:
+      values: 00
+  - mFullQualifiedName: ITM.kotsukiGaveNote
+    mVar:
+      values: 00
+  - mFullQualifiedName: SK.talkToRunako
+    mVar:
+      values: 00
+  mLiveIntVariableCache:
+  - mFullQualifiedName: SK.PER
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: COUNT.askLibAbtPeople
+    mVar:
+      values: 00000000
   mLiveStringVariableCache: []
   mIsInitialized: 1
+  mKNW:
+    _VariableStorage: {fileID: 11400000}
+  mFLG:
+    _VariableStorage: {fileID: 11400000}
+  mITM:
+    _VariableStorage: {fileID: 11400000}
+  mSK:
+    _VariableStorage: {fileID: 11400000}
+  mCOUNT:
+    _VariableStorage: {fileID: 11400000}

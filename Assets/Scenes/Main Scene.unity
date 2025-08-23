@@ -732,7 +732,7 @@ MonoBehaviour:
   dialogueStart:
     instanceId: 0
     referencingMode: 0
-    lowId: 1645
+    lowId: 2743
     highId: 16777216
 --- !u!1 &892772443
 GameObject:
@@ -765,11 +765,11 @@ Transform:
   m_Children:
   - {fileID: 1773274257}
   - {fileID: 1267550327}
-  - {fileID: 1919015028}
-  - {fileID: 193907479}
-  - {fileID: 1458487820}
-  - {fileID: 1996614246}
   - {fileID: 1219576295}
+  - {fileID: 1996614246}
+  - {fileID: 193907479}
+  - {fileID: 1919015028}
+  - {fileID: 1458487820}
   - {fileID: 1216681174}
   - {fileID: 1733290081}
   - {fileID: 1297800497}
@@ -1040,7 +1040,7 @@ Transform:
   m_GameObject: {fileID: 1216681173}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.99, y: 1, z: -5.98}
+  m_LocalPosition: {x: -23.69, y: 1, z: -5.77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1675,7 +1675,7 @@ MonoBehaviour:
   dialogueStart:
     instanceId: 0
     referencingMode: 0
-    lowId: 1048
+    lowId: 2743
     highId: 16777216
 --- !u!1 &1433459820
 GameObject:
@@ -1811,7 +1811,7 @@ Transform:
   m_GameObject: {fileID: 1458487819}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.47, y: 1, z: 6.9}
+  m_LocalPosition: {x: -23.47, y: 1, z: -16.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2163,7 +2163,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 23.17, y: 1}
+  m_AnchoredPosition: {x: -23.67, y: 1}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &1919015029
@@ -2344,7 +2344,7 @@ Transform:
   m_GameObject: {fileID: 1996614245}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.67, y: 1, z: 0}
+  m_LocalPosition: {x: 22.81, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2534,8 +2534,8 @@ MonoBehaviour:
   dialogueStart:
     instanceId: 0
     referencingMode: 0
-    lowId: 0
-    highId: 0
+    lowId: 1048
+    highId: 16777216
 --- !u!1 &789364492068116198
 GameObject:
   m_ObjectHideFlags: 0
@@ -2587,7 +2587,7 @@ MonoBehaviour:
   dialogueStart:
     instanceId: 0
     referencingMode: 0
-    lowId: 1048
+    lowId: 3009
     highId: 16777216
 --- !u!114 &1493544560888369998
 MonoBehaviour:
@@ -2604,8 +2604,8 @@ MonoBehaviour:
   dialogueStart:
     instanceId: 0
     referencingMode: 0
-    lowId: 0
-    highId: 0
+    lowId: 2418
+    highId: 16777216
 --- !u!136 &1582231086670591417
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2629,23 +2629,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1807168579431206539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3628093066062746388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b556625e1e14e0347bf2e385ef6c58b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueStart:
-    instanceId: 0
-    referencingMode: 0
-    lowId: 1048
-    highId: 16777216
 --- !u!1 &1984437066431966746
 GameObject:
   m_ObjectHideFlags: 0
@@ -2742,7 +2725,7 @@ MonoBehaviour:
   dialogueStart:
     instanceId: 0
     referencingMode: 0
-    lowId: 1048
+    lowId: 3027
     highId: 16777216
 --- !u!136 &2413255971194661666
 CapsuleCollider:
@@ -2782,7 +2765,7 @@ MonoBehaviour:
   dialogueStart:
     instanceId: 0
     referencingMode: 0
-    lowId: 1048
+    lowId: 2872
     highId: 16777216
 --- !u!4 &2489821883553353824
 Transform:
@@ -2852,8 +2835,8 @@ MonoBehaviour:
   dialogueStart:
     instanceId: 0
     referencingMode: 0
-    lowId: 0
-    highId: 0
+    lowId: 2879
+    highId: 16777216
 --- !u!33 &3179770691131938043
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2876,7 +2859,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 157126854375036643, guid: 9ac2b374a99046840892831c86df9b05, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -373.71002
+      value: -373.71008
       objectReference: {fileID: 0}
     - target: {fileID: 1000291609259739226, guid: 9ac2b374a99046840892831c86df9b05, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3092,7 +3075,6 @@ GameObject:
   - component: {fileID: 3878055616633132681}
   - component: {fileID: 7610185559662446623}
   - component: {fileID: 6407681368469041778}
-  - component: {fileID: 1807168579431206539}
   - component: {fileID: 8695617874114827102}
   - component: {fileID: 3177240490282800828}
   m_Layer: 0
@@ -3284,7 +3266,7 @@ MonoBehaviour:
   dialogueStart:
     instanceId: 0
     referencingMode: 0
-    lowId: 1048
+    lowId: 3082
     highId: 16777216
 --- !u!114 &4706243797996613723
 MonoBehaviour:
@@ -3301,8 +3283,8 @@ MonoBehaviour:
   dialogueStart:
     instanceId: 0
     referencingMode: 0
-    lowId: 0
-    highId: 0
+    lowId: 1645
+    highId: 16777216
 --- !u!23 &5742274825807541403
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3454,7 +3436,7 @@ MonoBehaviour:
   dialogueStart:
     instanceId: 0
     referencingMode: 0
-    lowId: 1048
+    lowId: 3120
     highId: 16777216
 --- !u!23 &6843753613832643081
 MeshRenderer:
@@ -3734,7 +3716,7 @@ MonoBehaviour:
   dialogueStart:
     instanceId: 0
     referencingMode: 0
-    lowId: 1048
+    lowId: 1645
     highId: 16777216
 --- !u!114 &8486825157225639616
 MonoBehaviour:
