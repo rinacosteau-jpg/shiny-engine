@@ -19,6 +19,9 @@ public class LoopResetInputScript : MonoBehaviour {
         }
 
         InventoryStorage.Clear();
+        GameTime.Instance.Hours = 12;
+        GameTime.Instance.Minutes = 12;
+
     }
 
     void Update() {

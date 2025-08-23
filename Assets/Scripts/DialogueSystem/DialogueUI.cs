@@ -22,6 +22,8 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
     private string lastDisplayedText = null;
     public bool IsDialogueOpen { get; private set; }
 
+    public IObjectWithFeatureDuration kek;
+
     private void Awake() {
         if (dialogueBox != null)
             dialogueBox.SetActive(false); // диалог скрыт до начала взаимодействия
@@ -75,7 +77,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
     }
 
     /// <summary>Принудительно закрыть текущий диалог (например, кнопкой "Esc").</summary>
-    public void CloseDialogueByUser() {
+    public void CloseDialogue() {
         dialogueBox?.SetActive(false);
         dialogueFinished = false;
         responseHandler?.ClearResponses();
@@ -86,12 +88,16 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
     // ======== IArticyFlowPlayerCallbacks ========
     public void OnFlowPlayerPaused(IFlowObject aObject) {
         // Добавим время из свойства Duration
-        if (aObject is DialogueFragment)
+        if (aObject is IObjectWithFeatureDuration)
         {
-            int duration = GetDurationFromFlowObject(aObject);
+            kek = (IObjectWithFeatureDuration)aObject;
+            int duration = ((int)kek.GetFeatureDuration().Minutes);
+
+            Debug.Log(duration);
             if (duration > 0)
             {
                 GameTime.Instance?.AddMinutes(duration);
+                Debug.Log("Added minutes");
             }
         }
 
@@ -133,7 +139,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
         if (branches == null || branches.Count == 0) {
             // Терминальная нода — оставляем последнюю фразу видимой, не закрываем автоматически
             dialogueFinished = true;
-            CloseDialogueByUser();
+            CloseDialogue();
             return;
         }
 
@@ -217,15 +223,18 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
 
     private int GetDurationFromFlowObject(IFlowObject obj)
     {
-        if (obj == null) return 0;
 
-        try
-        {
+        //if (obj == null) return 0;
+
+        try {
+
             var type = obj.GetType();
             var durProp = type.GetProperty("Duration", BindingFlags.Public | BindingFlags.Instance);
+            Debug.Log(durProp);
             if (durProp != null)
             {
                 var val = durProp.GetValue(obj);
+                Debug.Log(val);
                 if (val is int i) return i;
                 if (val != null && int.TryParse(val.ToString(), out i)) return i;
             }
@@ -246,6 +255,11 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
                 }
             }
         }
+
+       
+
+        
+
         catch { }
 
         return 0;

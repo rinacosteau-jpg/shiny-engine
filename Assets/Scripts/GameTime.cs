@@ -8,8 +8,8 @@ public class GameTime : MonoBehaviour {
 
     public static GameTime Instance { get; private set; }
 
-    public int Hours { get; private set; } = 12;
-    public int Minutes { get; private set; } = 12;
+    public int Hours { get; set; } = 12;
+    public int Minutes { get; set; } = 12;
 
     void Awake() => Instance = this;
 
@@ -21,6 +21,7 @@ public class GameTime : MonoBehaviour {
             (loopReset ??= FindObjectOfType<LoopResetInputScript>())?.LoopReset();
         }
         //     OnTimeChanged
+        Update();
     }
 
     public override string ToString() => $"{Hours:D2}:{Minutes:D2}";
