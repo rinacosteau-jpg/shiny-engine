@@ -4,6 +4,7 @@ using UnityEngine;
 public class GameTime : MonoBehaviour {
 
     [SerializeField] TMP_Text clockText;
+    [SerializeField] private LoopResetInputScript loopReset;
 
     public static GameTime Instance { get; private set; }
 
@@ -16,7 +17,10 @@ public class GameTime : MonoBehaviour {
         Minutes += delta;
         while (Minutes >= 60) { Hours++; Minutes -= 60; }
         if (Hours >= 24) Hours = 0;
-        // тут можно бросать событие OnTimeChanged
+        if (Hours > 13 || (Hours == 13 && Minutes > 1)) {
+            (loopReset ??= FindObjectOfType<LoopResetInputScript>())?.LoopReset();
+        }
+        //     OnTimeChanged
     }
 
     public override string ToString() => $"{Hours:D2}:{Minutes:D2}";
@@ -24,4 +28,4 @@ public class GameTime : MonoBehaviour {
     public void Update() {
         clockText.text = GameTime.Instance.ToString();
     }
-    }
+}

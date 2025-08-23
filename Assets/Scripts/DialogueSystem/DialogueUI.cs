@@ -85,6 +85,16 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
 
     // ======== IArticyFlowPlayerCallbacks ========
     public void OnFlowPlayerPaused(IFlowObject aObject) {
+        // Добавим время из свойства Duration
+        if (aObject is DialogueFragment)
+        {
+            int duration = GetDurationFromFlowObject(aObject);
+            if (duration > 0)
+            {
+                GameTime.Instance?.AddMinutes(duration);
+            }
+        }
+
         // Очистим старые ответы (если были)
         responseHandler?.ClearResponses();
 
@@ -203,6 +213,42 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
         } catch { }
 
         return null;
+    }
+
+    private int GetDurationFromFlowObject(IFlowObject obj)
+    {
+        if (obj == null) return 0;
+
+        try
+        {
+            var type = obj.GetType();
+            var durProp = type.GetProperty("Duration", BindingFlags.Public | BindingFlags.Instance);
+            if (durProp != null)
+            {
+                var val = durProp.GetValue(obj);
+                if (val is int i) return i;
+                if (val != null && int.TryParse(val.ToString(), out i)) return i;
+            }
+
+            var propsProp = type.GetProperty("Properties", BindingFlags.Public | BindingFlags.Instance);
+            if (propsProp != null)
+            {
+                var props = propsProp.GetValue(obj);
+                if (props != null)
+                {
+                    var inner = props.GetType().GetProperty("Duration", BindingFlags.Public | BindingFlags.Instance);
+                    if (inner != null)
+                    {
+                        var val = inner.GetValue(props);
+                        if (val is int j) return j;
+                        if (val != null && int.TryParse(val.ToString(), out j)) return j;
+                    }
+                }
+            }
+        }
+        catch { }
+
+        return 0;
     }
 
     private string GetSpeakerDisplayName(IFlowObject obj) {
