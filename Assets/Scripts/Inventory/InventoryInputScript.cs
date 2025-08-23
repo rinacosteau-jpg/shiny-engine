@@ -16,12 +16,16 @@ public class InventoryInputScript : MonoBehaviour {
         if (inventoryUI == null)
             return;
 
-        if (inventoryAction != null && inventoryAction.triggered)
+        if (inventoryAction != null && inventoryAction.triggered) {
             Debug.Log("opened inv");
             inventoryUI.Show();
+        }
+            
 
-        if (escapeAction != null && escapeAction.triggered)
+        if (escapeAction != null && escapeAction.triggered) {
             Debug.Log("close inv");
-        inventoryUI.Hide();
+            inventoryUI.Hide();
+        }
+            
     }
 }

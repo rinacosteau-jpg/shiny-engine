@@ -11,6 +11,7 @@ public class InventoryUI : MonoBehaviour
     [Header("UI References")]
     [SerializeField] private GameObject inventoryPanel;
     [SerializeField] private GameObject itemButtonPrefab;
+    [SerializeField] private GameObject itemContainer;
     [SerializeField] private Transform itemsParent;
 
     private readonly List<GameObject> _spawnedItems = new List<GameObject>();
