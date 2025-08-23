@@ -17,14 +17,17 @@ public class PlayerInteractScript : MonoBehaviour {
         if (interactAction != null && interactAction.triggered) {
             Debug.Log("called");
             float interactRange = 2f;
-            Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
+            Collider[] colliderArray = Physics.OverlapSphere(
+                transform.position,
+                interactRange,
+                ~0,
+                QueryTriggerInteraction.Collide);
             foreach (Collider collider in colliderArray) {
-                var interactable = collider.GetComponent(typeof(IInteractable)) as IInteractable;
+                var interactable = collider.GetComponentInParent<IInteractable>() ??
+                                   collider.GetComponentInChildren<IInteractable>();
 
                 if (interactable != null) {
-                    
                     interactable.Interact();
-                    
                 }
             }
         }
