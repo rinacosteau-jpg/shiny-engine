@@ -1,51 +1,63 @@
 using System.Collections.Generic;
-using UnityEngine;
 
 /// <summary>
-/// Stores references to the objects currently held by the player.
-/// Provides methods to add, remove and clear stored objects.
+/// Stores item entries currently held by the player.
+/// Provides methods to add, remove and clear stored items.
 /// </summary>
 public static class InventoryStorage
 {
-    // Internal list that holds the player's objects.
-    private static readonly List<GameObject> _items = new List<GameObject>();
+    // Internal list that holds the player's items.
+    private static readonly List<Item> _items = new List<Item>();
 
     // Static constructor to seed the inventory with test items.
     static InventoryStorage()
     {
         for (int i = 0; i < 5; i++)
         {
-            var testItem = new GameObject($"TestItem_" + i);
-            _items.Add(testItem);
+            _items.Add(new Item($"TestItem_{i}"));
         }
     }
 
     /// <summary>
-    /// Adds a new object to the inventory if it is not null and not already stored.
+    /// Adds a new item to the inventory. If an item with the same technical name
+    /// already exists, increases its count instead of adding a new entry.
     /// </summary>
-    /// <param name="item">The object to store.</param>
-    public static void Add(GameObject item)
+    /// <param name="item">The item to store.</param>
+    public static void Add(Item item)
     {
-        if (item != null && !_items.Contains(item))
+        if (item == null || string.IsNullOrEmpty(item.TechnicalName))
+            return;
+
+        var existing = _items.Find(i => i.TechnicalName == item.TechnicalName);
+        if (existing != null)
+        {
+            existing.ItemCount += item.ItemCount;
+        }
+        else
         {
             _items.Add(item);
         }
     }
 
     /// <summary>
-    /// Removes an object from the inventory if it exists.
+    /// Removes a certain amount of an item from the inventory based on its technical name.
+    /// If the count drops to zero or below, the item is removed entirely.
     /// </summary>
-    /// <param name="item">The object to remove.</param>
-    public static void Remove(GameObject item)
+    /// <param name="technicalName">The identifier of the item to remove.</param>
+    /// <param name="count">How many of the item to remove.</param>
+    public static void Remove(string technicalName, int count = 1)
     {
-        if (item != null)
-        {
-            _items.Remove(item);
-        }
+        var existing = _items.Find(i => i.TechnicalName == technicalName);
+        if (existing == null)
+            return;
+
+        existing.ItemCount -= count;
+        if (existing.ItemCount <= 0)
+            _items.Remove(existing);
     }
 
     /// <summary>
-    /// Clears all objects from the inventory.
+    /// Clears all items from the inventory.
     /// </summary>
     public static void Clear()
     {
@@ -55,5 +67,5 @@ public static class InventoryStorage
     /// <summary>
     /// Returns a read-only list of the items currently stored.
     /// </summary>
-    public static IReadOnlyList<GameObject> Items => _items.AsReadOnly();
+    public static IReadOnlyList<Item> Items => _items.AsReadOnly();
 }

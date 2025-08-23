@@ -66,7 +66,7 @@ public class InventoryUI : MonoBehaviour
             var itemUi = obj.GetComponent<InventoryItemUI>();
             if (itemUi == null)
                 itemUi = obj.AddComponent<InventoryItemUI>();
-            itemUi.Initialize(i);
+            itemUi.Initialize(items[i]);
         }
     }
 }
