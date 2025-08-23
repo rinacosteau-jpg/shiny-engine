@@ -19,11 +19,18 @@ public class LoopResetInputScript : MonoBehaviour {
         resettableObjects = list.ToArray();
     }
 
+    public void LoopReset()
+    {
+        foreach (var resettable in resettableObjects) {
+            resettable.OnLoopReset();
+        }
+
+        InventoryStorage.Clear();
+    }
+
     void Update() {
         if (resetAction != null && resetAction.triggered) {
-            foreach (var resettable in resettableObjects) {
-                resettable.OnLoopReset();
-            }
+            LoopReset();
         }
     }
 }
