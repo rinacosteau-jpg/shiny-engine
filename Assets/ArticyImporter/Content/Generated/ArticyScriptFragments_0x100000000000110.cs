@@ -132,7 +132,7 @@ aGlobalVariablesState.RQUE.advertise_Obj_A == 0;
         /// </summary>
         public bool Script_720575940379282080x100000000000C1CExpression(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
         {
-            return aGlobalVariablesState.RFLG.murderAttempt;
+            return aGlobalVariablesState.EVT.event_murderAttempt == 1;
         }
         
         /// <summary>

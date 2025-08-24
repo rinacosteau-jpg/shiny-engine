@@ -92,6 +92,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         CloseDialogue();
     }
 
+
     // ======== IArticyFlowPlayerCallbacks ========
     public void OnFlowPlayerPaused(IFlowObject aObject) {
         // Добавим время из свойства Duration
