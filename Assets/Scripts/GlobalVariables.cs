@@ -17,6 +17,8 @@ public class GlobalVariables : MonoBehaviour {
         if (!setOfKnowledge) setOfKnowledge = GetComponent<TMP_Text>();
     }
 
+
+
     public void GetKnowledge() {
 
         var knw = ArticyGlobalVariables.Default.NKNW;
@@ -29,19 +31,17 @@ public class GlobalVariables : MonoBehaviour {
                 bool value = (bool)prop.GetValue(knw);
                 if (value) {
                     string name = prop.Name;
-                    knowledgeDisplay += " ";
-                    knowledgeDisplay += prop.Name;
-                    Debug.Log(name);
+                    KnowledgeManager.AddKnowledge(name);
                 }
             }
         }
 
-        setOfKnowledge.text = knowledgeDisplay;
+        setOfKnowledge.text = KnowledgeManager.DisplayKnowledges();
     }
 
     public void GetTempObjectives() {
 
-        var rque = ArticyGlobalVariables.Default.RQUE;
+        /*var rque = ArticyGlobalVariables.Default.RQUE;
 
         string questDisplay = "Quests: ";
 
@@ -51,10 +51,13 @@ public class GlobalVariables : MonoBehaviour {
                 bool value = (bool)prop.GetValue(rque);
                 if (value) {
                     string name = prop.Name;
+                  //  QuestManager.AddQuest(name, true);
                 }
             }
         }
 
-        setOfQuests.text = QuestManager.Instance.displayQuests();
+        setOfQuests.text = QuestManager.DisplayQuests();*/
+        QuestManager.SyncFromArticy();                   // подтянуть из Articy
+        setOfQuests.text = "Quests:\n" + QuestManager.DisplayQuests();  // показать
     }
 }

@@ -27,7 +27,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         [SerializeField()]
         private BaseGlobalVariables _VariableStorage;
         
-        // Мой револьвер у стражников
+        // 
         public bool guardHasMyGun
         {
             get
@@ -40,7 +40,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             }
         }
         
-        // Торгаш может отвлечь охрану
+        // 
         public bool ratCanDistractGuard
         {
             get
@@ -53,7 +53,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             }
         }
         
-        // Томас ведет себя подозрительно
+        // 
         public bool tomasSus
         {
             get
@@ -66,7 +66,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             }
         }
         
-        // Ао винит себя в произошедшем
+        // 
         public bool aoBlamesHimself
         {
             get
@@ -79,7 +79,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             }
         }
         
-        // Все говорят о новом популярном романе
+        // 
         public bool popularNovel
         {
             get
@@ -115,7 +115,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         [SerializeField()]
         private BaseGlobalVariables _VariableStorage;
         
-        // сходи епта поговори с рунако
+        // 
         public bool hasTalkToRuObj
         {
             get
@@ -128,10 +128,108 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             }
         }
         
+        // 
+        public int advertise_State
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueInt32(0);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueInt32(0, value);
+            }
+        }
+        
+        // 
+        public int advertise_Obj_A
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueInt32(1);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueInt32(1, value);
+            }
+        }
+        
+        // 
+        public int advertise_TalkedCount
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueInt32(2);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueInt32(2, value);
+            }
+        }
+        
+        // 
+        public int advertise_Obj_B
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueInt32(3);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueInt32(3, value);
+            }
+        }
+        
+        // 
+        public int advertise_Obj_C
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueInt32(4);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueInt32(4, value);
+            }
+        }
+        
+        // 
+        public int advertise_Result
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueInt32(5);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueInt32(5, value);
+            }
+        }
+        
+        // 
+        public bool advertise_Stage
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueBoolean(6);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueBoolean(6, value);
+            }
+        }
+        
         public void RegisterVariables(BaseGlobalVariables aStorage)
         {
             _VariableStorage = aStorage;
             aStorage.RegisterVariable("RQUE.hasTalkToRuObj", false);
+            aStorage.RegisterVariable("RQUE.advertise_State", 0);
+            aStorage.RegisterVariable("RQUE.advertise_Obj_A", 0);
+            aStorage.RegisterVariable("RQUE.advertise_TalkedCount", 0);
+            aStorage.RegisterVariable("RQUE.advertise_Obj_B", 0);
+            aStorage.RegisterVariable("RQUE.advertise_Obj_C", 0);
+            aStorage.RegisterVariable("RQUE.advertise_Result", 0);
+            aStorage.RegisterVariable("RQUE.advertise_Stage", false);
         }
     }
 }
@@ -151,11 +249,11 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         {
             get
             {
-                return _VariableStorage.Internal_GetVariableValueBoolean(6);
+                return _VariableStorage.Internal_GetVariableValueBoolean(7);
             }
             set
             {
-                _VariableStorage.Internal_SetVariableValueBoolean(6, value);
+                _VariableStorage.Internal_SetVariableValueBoolean(7, value);
             }
         }
         
@@ -164,11 +262,11 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         {
             get
             {
-                return _VariableStorage.Internal_GetVariableValueBoolean(7);
+                return _VariableStorage.Internal_GetVariableValueBoolean(8);
             }
             set
             {
-                _VariableStorage.Internal_SetVariableValueBoolean(7, value);
+                _VariableStorage.Internal_SetVariableValueBoolean(8, value);
             }
         }
         
@@ -197,11 +295,11 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         {
             get
             {
-                return _VariableStorage.Internal_GetVariableValueBoolean(8);
+                return _VariableStorage.Internal_GetVariableValueBoolean(9);
             }
             set
             {
-                _VariableStorage.Internal_SetVariableValueBoolean(8, value);
+                _VariableStorage.Internal_SetVariableValueBoolean(9, value);
             }
         }
         
@@ -229,11 +327,11 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         {
             get
             {
-                return _VariableStorage.Internal_GetVariableValueInt32(0);
+                return _VariableStorage.Internal_GetVariableValueInt32(6);
             }
             set
             {
-                _VariableStorage.Internal_SetVariableValueInt32(0, value);
+                _VariableStorage.Internal_SetVariableValueInt32(6, value);
             }
         }
         
@@ -261,11 +359,11 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         {
             get
             {
-                return _VariableStorage.Internal_GetVariableValueInt32(1);
+                return _VariableStorage.Internal_GetVariableValueInt32(7);
             }
             set
             {
-                _VariableStorage.Internal_SetVariableValueInt32(1, value);
+                _VariableStorage.Internal_SetVariableValueInt32(7, value);
             }
         }
         

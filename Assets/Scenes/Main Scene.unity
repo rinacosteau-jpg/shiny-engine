@@ -2385,6 +2385,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1458487820}
   - component: {fileID: 1458487821}
+  - component: {fileID: 1458487822}
   m_Layer: 0
   m_Name: Kotsuki
   m_TagString: Untagged
@@ -2401,7 +2402,7 @@ Transform:
   m_GameObject: {fileID: 1458487819}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.47, y: 1, z: -16.05}
+  m_LocalPosition: {x: -12.2, y: 1, z: -12.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2425,6 +2426,19 @@ MonoBehaviour:
     referencingMode: 0
     lowId: 3009
     highId: 16777216
+--- !u!114 &1458487822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458487819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35f67fed33254dfaaa9f3afda8dce34e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resetActiveState: 0
 --- !u!1 &1465434757 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 501480876588535169, guid: 9ac2b374a99046840892831c86df9b05, type: 3}
@@ -3659,8 +3673,6 @@ GameObject:
   - component: {fileID: 9133528419763326710}
   - component: {fileID: 5742274825807541403}
   - component: {fileID: 8066240109147035063}
-  - component: {fileID: 4272741366491648085}
-  - component: {fileID: 9133528419763326711}
   m_Layer: 0
   m_Name: Kotsuki_Visual
   m_TagString: Untagged
@@ -3707,7 +3719,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 157126854375036643, guid: 9ac2b374a99046840892831c86df9b05, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -373.71002
+      value: -373.71008
       objectReference: {fileID: 0}
     - target: {fileID: 1000291609259739226, guid: 9ac2b374a99046840892831c86df9b05, type: 3}
       propertyPath: m_AnchorMax.x
@@ -4022,23 +4034,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1996614246}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4272741366491648085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2667700726283310589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b556625e1e14e0347bf2e385ef6c58b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueStart:
-    instanceId: 0
-    referencingMode: 0
-    lowId: 0
-    highId: 0
 --- !u!136 &4400321984899321786
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4544,19 +4539,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2667700726283310589}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &9133528419763326711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2667700726283310589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35f67fed33254dfaaa9f3afda8dce34e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resetActiveState: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

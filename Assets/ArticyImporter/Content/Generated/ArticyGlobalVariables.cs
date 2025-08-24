@@ -57,6 +57,13 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             variableNames.Add("NKNW.aoBlamesHimself");
             variableNames.Add("NKNW.popularNovel");
             variableNames.Add("RQUE.hasTalkToRuObj");
+            variableNames.Add("RQUE.advertise_State");
+            variableNames.Add("RQUE.advertise_Obj_A");
+            variableNames.Add("RQUE.advertise_TalkedCount");
+            variableNames.Add("RQUE.advertise_Obj_B");
+            variableNames.Add("RQUE.advertise_Obj_C");
+            variableNames.Add("RQUE.advertise_Result");
+            variableNames.Add("RQUE.advertise_Stage");
             variableNames.Add("RFLG.murderAttempt");
             variableNames.Add("RFLG.talkedToRu");
             variableNames.Add("ITM.kotsukiGaveNote");

@@ -57,7 +57,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         /// </summary>
         public bool Script_720575940379282080x100000000000B06Expression(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
         {
-            return aGlobalVariablesState.RFLG.talkedToRu;
+            return aGlobalVariablesState.RQUE.advertise_TalkedCount > 0;
         }
         
         /// <summary>
@@ -66,7 +66,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         /// </summary>
         public bool Script_720575940379282080x100000000000B0DExpression(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
         {
-            return aGlobalVariablesState.RQUE.hasTalkToRuObj;
+            return aGlobalVariablesState.RQUE.advertise_State == 0;
         }
         
         /// <summary>
@@ -75,7 +75,8 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         /// </summary>
         public bool Script_720575940379282080x100000000000B45Expression(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
         {
-            return aGlobalVariablesState.RQUE.hasTalkToRuObj;
+            return aGlobalVariablesState.RQUE.advertise_State == 1 &&
+aGlobalVariablesState.RQUE.advertise_Obj_A == 0;
         }
         
         /// <summary>
@@ -135,6 +136,46 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         }
         
         /// <summary>
+        /// ObjectID: 0x100000000000E37
+        /// Articy Object ref: articy://localhost/view/6b45a52e-5605-4c95-a051-48da04bae055/72057594037931575?pane=selected&amp;tab=current
+        /// </summary>
+        public bool Script_720575940379282080x100000000000E37Expression(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
+        {
+            return aGlobalVariablesState.RQUE.advertise_State == 1 &&
+aGlobalVariablesState.RQUE.advertise_Obj_B == 0;
+        }
+        
+        /// <summary>
+        /// ObjectID: 0x100000000000E5D
+        /// Articy Object ref: articy://localhost/view/6b45a52e-5605-4c95-a051-48da04bae055/72057594037931613?pane=selected&amp;tab=current
+        /// </summary>
+        public bool Script_720575940379282080x100000000000E5DExpression(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
+        {
+            return aGlobalVariablesState.RQUE.advertise_State == 1 &&
+aGlobalVariablesState.RQUE.advertise_Obj_C == 0;
+        }
+        
+        /// <summary>
+        /// ObjectID: 0x100000000000EA9
+        /// Articy Object ref: articy://localhost/view/6b45a52e-5605-4c95-a051-48da04bae055/72057594037931689?pane=selected&amp;tab=current
+        /// </summary>
+        public bool Script_720575940379282080x100000000000EA9Expression(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
+        {
+            return aGlobalVariablesState.RQUE.advertise_TalkedCount == 1 &&
+aGlobalVariablesState.RQUE.advertise_Obj_A == 1;
+        }
+        
+        /// <summary>
+        /// ObjectID: 0x100000000000EBA
+        /// Articy Object ref: articy://localhost/view/6b45a52e-5605-4c95-a051-48da04bae055/72057594037931706?pane=selected&amp;tab=current
+        /// </summary>
+        public bool Script_720575940379282080x100000000000EBAExpression(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
+        {
+            return aGlobalVariablesState.RQUE.advertise_TalkedCount == 1 &&
+aGlobalVariablesState.RQUE.advertise_Obj_B == 1;
+        }
+        
+        /// <summary>
         /// ObjectID: 0x100000000000D70
         /// Articy Object ref: articy://localhost/view/6b45a52e-5605-4c95-a051-48da04bae055/72057594037931376?pane=selected&amp;tab=current
         /// </summary>
@@ -149,7 +190,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         /// </summary>
         public void Script_720575940379282080x100000000000AF4Expression(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
         {
-            aGlobalVariablesState.RQUE.hasTalkToRuObj = true;;
+            aGlobalVariablesState.RQUE.advertise_State = 1;;
         }
         
         /// <summary>
@@ -158,7 +199,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         /// </summary>
         public void Script_720575940379282080x100000000000B23Expression(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
         {
-            aGlobalVariablesState.NKNW.ratCanDistractGuard = true;
+            aGlobalVariablesState.RQUE.advertise_State = 2; aGlobalVariablesState.NKNW.ratCanDistractGuard = true;
         }
         
         /// <summary>
@@ -167,7 +208,8 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         /// </summary>
         public void Script_720575940379282080x100000000000B6FExpression(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
         {
-            aGlobalVariablesState.RFLG.talkedToRu = true;
+            aGlobalVariablesState.RQUE.advertise_Obj_A = 1;
+aGlobalVariablesState.RQUE.advertise_TalkedCount++;
         }
         
         /// <summary>
@@ -216,6 +258,25 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         {
             aGlobalVariablesState.NKNW.guardHasMyGun = true;
         }
+        
+        /// <summary>
+        /// ObjectID: 0x100000000000E56
+        /// Articy Object ref: articy://localhost/view/6b45a52e-5605-4c95-a051-48da04bae055/72057594037931606?pane=selected&amp;tab=current
+        /// </summary>
+        public void Script_720575940379282080x100000000000E56Expression(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
+        {
+            aGlobalVariablesState.RQUE.advertise_Obj_B = 1;
+aGlobalVariablesState.RQUE.advertise_TalkedCount++;
+        }
+        
+        /// <summary>
+        /// ObjectID: 0x100000000000E9C
+        /// Articy Object ref: articy://localhost/view/6b45a52e-5605-4c95-a051-48da04bae055/72057594037931676?pane=selected&amp;tab=current
+        /// </summary>
+        public void Script_720575940379282080x100000000000E9CExpression(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
+        {
+            aGlobalVariablesState.RQUE.advertise_State = 3;
+        }
         #endregion
         
         #region Unity serialization
@@ -233,6 +294,10 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             Conditions.Add(2786149564u, this.Script_720575940379282080x100000000000B89Expression);
             Conditions.Add(1114527520u, this.Script_720575940379282080x100000000000BBBExpression);
             Conditions.Add(241329004u, this.Script_720575940379282080x100000000000C1CExpression);
+            Conditions.Add(728244293u, this.Script_720575940379282080x100000000000E37Expression);
+            Conditions.Add(3742530231u, this.Script_720575940379282080x100000000000E5DExpression);
+            Conditions.Add(1676078437u, this.Script_720575940379282080x100000000000EA9Expression);
+            Conditions.Add(1575498244u, this.Script_720575940379282080x100000000000EBAExpression);
             Instructions.Add(4095767507u, this.Script_720575940379282080x100000000000D70Expression);
             Instructions.Add(81506079u, this.Script_720575940379282080x100000000000AF4Expression);
             Instructions.Add(1980341054u, this.Script_720575940379282080x100000000000B23Expression);
@@ -242,6 +307,8 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             Instructions.Add(1206301501u, this.Script_720575940379282080x100000000000BFCExpression);
             Instructions.Add(3130008133u, this.Script_720575940379282080x100000000000B9EExpression);
             Instructions.Add(2503436162u, this.Script_720575940379282080x100000000000A3DExpression);
+            Instructions.Add(4293424625u, this.Script_720575940379282080x100000000000E56Expression);
+            Instructions.Add(1565428924u, this.Script_720575940379282080x100000000000E9CExpression);
         }
         #endregion
     }
