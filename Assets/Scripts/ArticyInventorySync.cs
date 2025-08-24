@@ -35,7 +35,7 @@ public static class ArticyInventorySync {
 
                 string itemId = name.Substring(Prefix.Length, name.Length - Prefix.Length - SuffixDelta.Length);
 
-                if (delta > 0) InventoryStorage.Add(new Item(itemId, delta));
+                if (delta > 0) InventoryStorage.Add(itemId, delta);
                 else InventoryStorage.Remove(itemId, -delta);
 
                 p.SetValue(itm, 0); // чтобы не применить второй раз
