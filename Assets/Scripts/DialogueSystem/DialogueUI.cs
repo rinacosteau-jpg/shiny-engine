@@ -61,6 +61,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         if (textLabel != null) textLabel.text = string.Empty;
         dialogueFinished = false;
         if (dialogueBox != null) dialogueBox.SetActive(true);
+        if (flowPlayer != null) flowPlayer.enabled = true;
 
 
         // Убедимся, что стартуем именно с нужного DialogueFragment
@@ -82,6 +83,11 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         dialogueFinished = false;
         responseHandler?.ClearResponses();
         IsDialogueOpen = false;
+        if (flowPlayer != null) {
+            var stopMethod = flowPlayer.GetType().GetMethod("Stop", BindingFlags.Public | BindingFlags.Instance);
+            stopMethod?.Invoke(flowPlayer, null);
+            flowPlayer.enabled = false;
+        }
 
         Debug.Log("[DialogueUI] Dialogue closed by user.");
         GlobalVariables.Instance?.GetKnowledge();
