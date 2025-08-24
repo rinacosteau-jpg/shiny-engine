@@ -44,10 +44,10 @@ public static class ArticyInventorySync {
 
             if (applied > 0) {
                 PushAllCountsToArticy();
-                Debug.Log($"[ArticyInventorySync] Applied {applied} item deltas from ITM.");
+                // Debug.Log($"[ArticyInventorySync] Applied {applied} item deltas from ITM.");
             }
         } catch (Exception e) {
-            Debug.LogWarning($"[ArticyInventorySync] ApplyItemDeltasFromArticy error: {e.Message}");
+            // Debug.LogWarning($"[ArticyInventorySync] ApplyItemDeltasFromArticy error: {e.Message}");
         }
     }
 
@@ -82,7 +82,7 @@ public static class ArticyInventorySync {
                     p.SetValue(itm, 0);
             }
         } catch (Exception e) {
-            Debug.LogWarning($"[ArticyInventorySync] PushAllCountsToArticy error: {e.Message}");
+            // Debug.LogWarning($"[ArticyInventorySync] PushAllCountsToArticy error: {e.Message}");
         }
     }
 
@@ -103,9 +103,9 @@ public static class ArticyInventorySync {
                 }
             }
             if (cleared > 0)
-                Debug.Log($"[ArticyInventorySync] Cleared {cleared} item deltas in ITM.");
+                // Debug.Log($"[ArticyInventorySync] Cleared {cleared} item deltas in ITM.");
         } catch (Exception e) {
-            Debug.LogWarning($"[ArticyInventorySync] ResetAllItemDeltas error: {e.Message}");
+            // Debug.LogWarning($"[ArticyInventorySync] ResetAllItemDeltas error: {e.Message}");
         }
     }
 }

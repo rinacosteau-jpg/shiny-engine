@@ -15,7 +15,7 @@ public class PlayerInteractScript : MonoBehaviour {
             return;
 
         if (interactAction != null && interactAction.triggered) {
-            Debug.Log("called");
+            // Debug.Log("called");
             float interactRange = 2f;
             Collider[] colliderArray = Physics.OverlapSphere(
                 transform.position,

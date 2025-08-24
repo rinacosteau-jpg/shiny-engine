@@ -33,9 +33,9 @@ public static class ArticyReset {
                 changed++;
             }
 
-            Debug.Log($"[ArticyReset] RQUE cleared: {changed} variables.");
+            // Debug.Log($"[ArticyReset] RQUE cleared: {changed} variables.");
         } catch (Exception e) {
-            Debug.LogWarning($"[ArticyReset] ResetRQUE error: {e.Message}");
+            // Debug.LogWarning($"[ArticyReset] ResetRQUE error: {e.Message}");
         }
     }
 
@@ -66,9 +66,9 @@ public static class ArticyReset {
                 changed++;
             }
 
-            Debug.Log($"[ArticyReset] EVT cleared: {changed} variables.");
+            // Debug.Log($"[ArticyReset] EVT cleared: {changed} variables.");
         } catch (Exception e) {
-            Debug.LogWarning($"[ArticyReset] ResetEVT error: {e.Message}");
+            // Debug.LogWarning($"[ArticyReset] ResetEVT error: {e.Message}");
         }
     }
 }

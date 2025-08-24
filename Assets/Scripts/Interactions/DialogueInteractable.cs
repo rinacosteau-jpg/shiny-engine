@@ -27,13 +27,13 @@ public abstract class DialogueInteractable : MonoBehaviour, IInteractable
 
         if (cachedDialogueUI == null)
         {
-            Debug.LogWarning($"[{nameof(DialogueInteractable)}] DialogueUI not found.");
+            // Debug.LogWarning($"[{nameof(DialogueInteractable)}] DialogueUI not found.");
             return;
         }
 
         if (dialogueStart == null)
         {
-            Debug.LogWarning($"[{nameof(DialogueInteractable)}] dialogueStart is not assigned for {name}.");
+            // Debug.LogWarning($"[{nameof(DialogueInteractable)}] dialogueStart is not assigned for {name}.");
             return;
         }
 
