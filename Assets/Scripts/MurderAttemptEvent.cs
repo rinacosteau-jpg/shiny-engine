@@ -15,10 +15,22 @@ public class MurderAttemptEvent : MonoBehaviour, ILoopResettable {
 
     [SerializeField] Transform spawnAo1, spawnTomas1, spawnAo2, spawnTomas2, spawnTasha, spawnGuardM, spawnGuardD;
 
+    [Header("Camera")]
+    [SerializeField] private Camera mainCamera;
+    [SerializeField] private float zoomedOutSize = 8f;
+    [SerializeField] private float zoomDuration = 1f;
+
+    private float defaultCameraSize;
+
     private bool triggered;
 
     void Start() {
         GameTime.Instance.OnTimeChanged += OnTimeChanged;
+
+        if (mainCamera == null)
+            mainCamera = Camera.main;
+        if (mainCamera != null)
+            defaultCameraSize = mainCamera.orthographic ? mainCamera.orthographicSize : mainCamera.fieldOfView;
     }
 
     void OnDestroy() {
@@ -40,6 +52,9 @@ public class MurderAttemptEvent : MonoBehaviour, ILoopResettable {
         if (playerMovement != null) playerMovement.enabled = false;
         if (playerInteract != null) playerInteract.enabled = false;
 
+        if (mainCamera != null)
+            yield return StartCoroutine(ZoomCamera(zoomedOutSize));
+
         yield return new WaitForSeconds(3f);
 
         if (firstNpcA != null) firstNpcA.position = spawnAo1.position; // TODO: specify target position
@@ -55,6 +70,9 @@ public class MurderAttemptEvent : MonoBehaviour, ILoopResettable {
 
         ArticyGlobalVariables.Default.EVT.event_murderAttempt = 1;
 
+        if (mainCamera != null)
+            yield return StartCoroutine(ZoomCamera(defaultCameraSize));
+
         if (playerMovement != null) playerMovement.enabled = true;
         if (playerInteract != null) playerInteract.enabled = true;
 
@@ -63,5 +81,25 @@ public class MurderAttemptEvent : MonoBehaviour, ILoopResettable {
 
     public void OnLoopReset() {
         triggered = false;
+    }
+
+    private IEnumerator ZoomCamera(float targetSize) {
+        float startSize = mainCamera.orthographic ? mainCamera.orthographicSize : mainCamera.fieldOfView;
+        float elapsed = 0f;
+        while (elapsed < zoomDuration) {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / zoomDuration);
+            float size = Mathf.Lerp(startSize, targetSize, t);
+            if (mainCamera.orthographic)
+                mainCamera.orthographicSize = size;
+            else
+                mainCamera.fieldOfView = size;
+            yield return null;
+        }
+
+        if (mainCamera.orthographic)
+            mainCamera.orthographicSize = targetSize;
+        else
+            mainCamera.fieldOfView = targetSize;
     }
 }
