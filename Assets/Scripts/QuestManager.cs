@@ -102,10 +102,20 @@ public static class QuestManager {
     }
 
     public static void ResetTemporary() {
+        Debug.Log("started clearibg");
         var toRemove = new List<string>();
-        foreach (var kv in quests) if (kv.Value.IsTemporary) toRemove.Add(kv.Key);
-        foreach (var k in toRemove) quests.Remove(k);
+        foreach (var kv in quests)
+            if (kv.Value.IsTemporary) toRemove.Add(kv.Key);
+
+        foreach (var name in toRemove) {
+            // 1) обнуляем зеркальные переменные в Articy
+            ClearQuestInArticy(name);
+
+            // 2) убираем из локального реестра
+            quests.Remove(name);
+        }
     }
+
 
     public static void ResetAll() => quests.Clear();
 
@@ -155,6 +165,27 @@ public static class QuestManager {
             Debug.LogWarning($"QuestManager.PushToArticy: {e.Message}");
         }
     }
+
+    private static void ClearQuestInArticy(string questName) {
+        try {
+            Debug.Log("started clearibg");
+            var rque = ArticyGlobalVariables.Default.RQUE;
+            var type = rque.GetType();
+            foreach (var p in type.GetProperties()) {
+                // Стираем любые int/bool, начинающиеся с "<questName>_"
+                //if (!p.Name.StartsWith(questName + "_")) continue;
+
+                if (p.PropertyType == typeof(int))
+                    p.SetValue(rque, 0);
+                else if (p.PropertyType == typeof(bool))
+                    p.SetValue(rque, false);
+            }
+        } catch (System.Exception e) {
+            UnityEngine.Debug.LogWarning($"ClearQuestInArticy({questName}): {e.Message}");
+        }
+    }
+
+
 
     // Подтяжка состояния из Articy в локальное хранилище.
     // Реагируем на: *_State, *_Stage, *_Obj_*

@@ -9,15 +9,15 @@ public class LoopResetInputScript : MonoBehaviour {
 
     }
 
-    public void LoopReset()
-    {
+    public void LoopReset() {
+
+        ArticyReset.ResetRQUE();
         QuestManager.ResetTemporary();
 
         GameTime.Instance.Hours = 12;
         GameTime.Instance.Minutes = 12;
 
-        if (GlobalVariables.Instance == null || !GlobalVariables.Instance.player.hasArtifact)
-        {
+        if (GlobalVariables.Instance == null || !GlobalVariables.Instance.player.hasArtifact) {
             InventoryStorage.Clear();
         }
 
@@ -28,6 +28,8 @@ public class LoopResetInputScript : MonoBehaviour {
             }
         }
 
+        // (необязательно) если хочешь сразу обновить UI:
+        //setOfQuests.text = "Quests:\n" + QuestManager.DisplayQuests();
     }
 
     void Update() {
