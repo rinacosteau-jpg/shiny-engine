@@ -6,7 +6,6 @@ public class LoopResetInputScript : MonoBehaviour {
 
     void Start() {
         resetAction = InputSystem.actions.FindAction("Reset");
-
     }
 
     public void LoopReset() {
@@ -17,8 +16,9 @@ public class LoopResetInputScript : MonoBehaviour {
         GameTime.Instance.Hours = 12;
         GameTime.Instance.Minutes = 12;
 
-        // Надёжная проверка наличия артефакта: сначала из GlobalVariables, если он уже жив,
-        // иначе — прямо из InventoryStorage (фоллбек).
+        ArticyReset.ResetRQUE();
+        ArticyReset.ResetEVT();
+
         bool hasArtefactNow =
             (GlobalVariables.Instance != null && GlobalVariables.Instance.player.hasArtifact)
             || InventoryStorage.Contains("InventoryArtefact");

@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -11,6 +12,8 @@ public class GameTime : MonoBehaviour {
     public int Hours { get; set; } = 12;
     public int Minutes { get; set; } = 12;
 
+    public event Action<int, int> OnTimeChanged;
+
     void Awake() => Instance = this;
 
     public void AddMinutes(int delta) {
@@ -20,8 +23,8 @@ public class GameTime : MonoBehaviour {
         if (Hours > 13 || (Hours == 13 && Minutes > 1)) {
             (loopReset ??= FindObjectOfType<LoopResetInputScript>())?.LoopReset();
         }
-        //     OnTimeChanged
         Update();
+        OnTimeChanged?.Invoke(Hours, Minutes);
     }
 
     public override string ToString() => $"{Hours:D2}:{Minutes:D2}";
