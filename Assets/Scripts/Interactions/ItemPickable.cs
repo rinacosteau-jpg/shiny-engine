@@ -2,13 +2,19 @@ using System;
 using UnityEngine;
 
 public class ItemPickable : MonoBehaviour, IInteractable, ILoopResettable {
-    [SerializeField] private string itemID; 
+    [SerializeField] private string itemID;
+    [SerializeField] private string instanceID;
 
     public bool isPicked = false;
 
+    private void Awake() {
+        if (string.IsNullOrEmpty(instanceID))
+            instanceID = Guid.NewGuid().ToString();
+    }
+
     public void Interact() {
         if (isPicked) return;
-        InventoryStorage.Add(new Item(itemID));
+        InventoryStorage.Add(itemID, instanceId: instanceID);
         isPicked = true;
         gameObject.SetActive(false);
     }
@@ -16,7 +22,7 @@ public class ItemPickable : MonoBehaviour, IInteractable, ILoopResettable {
     public void OnLoopReset() {
         if (GlobalVariables.Instance != null &&
             GlobalVariables.Instance.player.hasArtifact &&
-            InventoryStorage.Contains(itemID)) {
+            InventoryStorage.ContainsInstance(itemID, instanceID)) {
             // item already in inventory, do not respawn
             gameObject.SetActive(false);
             return;
