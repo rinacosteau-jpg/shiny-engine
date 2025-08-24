@@ -2,8 +2,7 @@ using System;
 using UnityEngine;
 
 public class ItemPickable : MonoBehaviour, IInteractable, ILoopResettable {
-    [SerializeField] private string itemID;
-    [SerializeField] private bool dontRespawnIfHasArtefact; // <- добавь
+    [SerializeField] private string itemID; 
 
     public bool isPicked = false;
 
@@ -15,11 +14,10 @@ public class ItemPickable : MonoBehaviour, IInteractable, ILoopResettable {
     }
 
     public void OnLoopReset() {
-        if (dontRespawnIfHasArtefact &&
-            GlobalVariables.Instance != null &&
+        if (GlobalVariables.Instance != null &&
             GlobalVariables.Instance.player.hasArtifact &&
-            itemID.Equals(ItemIds.InventoryArtefact, StringComparison.OrdinalIgnoreCase)) {
-            // не респавним, игрок уже владеет артефактом
+            InventoryStorage.Contains(itemID)) {
+            // item already in inventory, do not respawn
             gameObject.SetActive(false);
             return;
         }
