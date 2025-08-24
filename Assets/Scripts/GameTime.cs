@@ -21,7 +21,7 @@ public class GameTime : MonoBehaviour {
         while (Minutes >= 60) { Hours++; Minutes -= 60; }
         if (Hours >= 24) Hours = 0;
         if (Hours > 13 || (Hours == 13 && Minutes > 1)) {
-            (loopReset ??= FindObjectOfType<LoopResetInputScript>())?.LoopReset();
+            LoopResetInputScript.TryLoopReset();
         }
         Update();
         OnTimeChanged?.Invoke(Hours, Minutes);

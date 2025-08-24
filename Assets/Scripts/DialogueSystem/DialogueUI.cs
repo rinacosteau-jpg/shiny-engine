@@ -104,10 +104,10 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
 
     // ======== IArticyFlowPlayerCallbacks ========
     public void OnFlowPlayerPaused(IFlowObject aObject) {
-        if (suppressOnFlowPause) {
+        /*if (suppressOnFlowPause) {
             suppressOnFlowPause = false;
             return;
-        }
+        }*/
         // Добавим время из свойства Duration
         if (aObject is IObjectWithFeatureDuration)
         {
@@ -125,7 +125,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         // Очистим старые ответы (если были)
         responseHandler?.ClearResponses();
 
-      //  dialogueBox?.SetActive(true);
+      //dialogueBox?.SetActive(true);
         if (dialogueSpeaker != null) dialogueSpeaker.text = GetSpeakerDisplayName(aObject);
 
         // Попытаемся получить текст прямо с текущего объекта

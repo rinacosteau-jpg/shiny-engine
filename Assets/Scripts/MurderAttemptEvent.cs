@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using Articy.World_Of_Red_Moon.GlobalVariables;
-using Cinemachine;
 
 public class MurderAttemptEvent : MonoBehaviour, ILoopResettable {
     [SerializeField] private Transform firstNpcA;
@@ -17,7 +16,7 @@ public class MurderAttemptEvent : MonoBehaviour, ILoopResettable {
     [SerializeField] Transform spawnAo1, spawnTomas1, spawnAo2, spawnTomas2, spawnTasha, spawnGuardM, spawnGuardD;
 
     [Header("Camera")]
-    [SerializeField] private CinemachineVirtualCamera virtualCamera;
+    [SerializeField] private Unity.Cinemachine.CinemachineCamera virtualCamera;
     [SerializeField] private float zoomedOutSize = 8f;
     [SerializeField] private float zoomDuration = 1f;
 
@@ -30,12 +29,12 @@ public class MurderAttemptEvent : MonoBehaviour, ILoopResettable {
 
         if (virtualCamera == null)
         {
-            var brain = Camera.main != null ? Camera.main.GetComponent<CinemachineBrain>() : null;
+            var brain = Camera.main != null ? Camera.main.GetComponent<Unity.Cinemachine.CinemachineBrain>() : null;
             if (brain != null)
-                virtualCamera = brain.ActiveVirtualCamera as CinemachineVirtualCamera;
+                virtualCamera = brain.ActiveVirtualCamera as Unity.Cinemachine.CinemachineCamera;
         }
         if (virtualCamera != null)
-            defaultCameraSize = virtualCamera.m_Lens.Orthographic ? virtualCamera.m_Lens.OrthographicSize : virtualCamera.m_Lens.FieldOfView;
+            defaultCameraSize = virtualCamera.Lens.Orthographic ? virtualCamera.Lens.OrthographicSize : virtualCamera.Lens.FieldOfView;
     }
 
     void OnDestroy() {
@@ -93,23 +92,23 @@ public class MurderAttemptEvent : MonoBehaviour, ILoopResettable {
 
     private IEnumerator ZoomCamera(float targetSize)
     {
-        float startSize = virtualCamera.m_Lens.Orthographic ? virtualCamera.m_Lens.OrthographicSize : virtualCamera.m_Lens.FieldOfView;
+        float startSize = virtualCamera.Lens.Orthographic ? virtualCamera.Lens.OrthographicSize : virtualCamera.Lens.FieldOfView;
         float elapsed = 0f;
         while (elapsed < zoomDuration)
         {
             elapsed += Time.deltaTime;
             float t = Mathf.Clamp01(elapsed / zoomDuration);
             float size = Mathf.Lerp(startSize, targetSize, t);
-            if (virtualCamera.m_Lens.Orthographic)
-                virtualCamera.m_Lens.OrthographicSize = size;
+            if (virtualCamera.Lens.Orthographic)
+                virtualCamera.Lens.OrthographicSize = size;
             else
-                virtualCamera.m_Lens.FieldOfView = size;
+                virtualCamera.Lens.FieldOfView = size;
             yield return null;
         }
 
-        if (virtualCamera.m_Lens.Orthographic)
-            virtualCamera.m_Lens.OrthographicSize = targetSize;
+        if (virtualCamera.Lens.Orthographic)
+            virtualCamera.Lens.OrthographicSize = targetSize;
         else
-            virtualCamera.m_Lens.FieldOfView = targetSize;
+            virtualCamera.Lens.FieldOfView = targetSize;
     }
 }

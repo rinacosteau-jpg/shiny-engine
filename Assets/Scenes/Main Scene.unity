@@ -536,7 +536,6 @@ GameObject:
   - component: {fileID: 540866315}
   - component: {fileID: 540866314}
   - component: {fileID: 540866317}
-  - component: {fileID: 540866318}
   - component: {fileID: 540866319}
   m_Layer: 0
   m_Name: EventSystem
@@ -618,18 +617,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 673167d7705846b4b866f2b441819e80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &540866318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 540866313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a4ee09e78fe4eddbe14ce237607a7b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &540866319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -658,8 +645,8 @@ MonoBehaviour:
   spawnTasha: {fileID: 1344155862}
   spawnGuardM: {fileID: 1599200179}
   spawnGuardD: {fileID: 620121002}
-  mainCamera: {fileID: 183941010}
-  zoomedOutSize: 20
+  virtualCamera: {fileID: 252997172}
+  zoomedOutSize: 150
   zoomDuration: 1
 --- !u!1 &558561536
 GameObject:
@@ -1498,6 +1485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4ee09e78fe4eddbe14ce237607a7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resetActionReference: {fileID: 0}
 --- !u!1 &1104872353
 GameObject:
   m_ObjectHideFlags: 0
@@ -1734,6 +1722,17 @@ MonoBehaviour:
     referencingMode: 0
     lowId: 2418
     highId: 16777216
+--- !u!114 &1237568736 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3260609792018532760, guid: 9ac2b374a99046840892831c86df9b05, type: 3}
+  m_PrefabInstance: {fileID: 3344996593718879415}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1246963560 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7754383730278605997, guid: 9ac2b374a99046840892831c86df9b05, type: 3}
@@ -2828,6 +2827,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1503669647}
   - component: {fileID: 1503669648}
+  - component: {fileID: 1503669649}
   m_Layer: 0
   m_Name: WorldState
   m_TagString: Untagged
@@ -2865,6 +2865,19 @@ MonoBehaviour:
   dialogueUI: {fileID: 2139869256}
   setOfKnowledge: {fileID: 1246963560}
   setOfQuests: {fileID: 559874447}
+--- !u!114 &1503669649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503669646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6abb12ff043608647b6207f2f6fb56e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loopText: {fileID: 1237568736}
 --- !u!1 &1524858635
 GameObject:
   m_ObjectHideFlags: 0
