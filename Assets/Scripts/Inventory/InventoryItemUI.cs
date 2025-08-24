@@ -28,6 +28,6 @@ public class InventoryItemUI : MonoBehaviour
     private void OnClick()
     {
         if (_item != null)
-            Debug.Log($"Clicked inventory item {_item.TechnicalName}");
+            // Debug.Log($"Clicked inventory item {_item.TechnicalName}");
     }
 }

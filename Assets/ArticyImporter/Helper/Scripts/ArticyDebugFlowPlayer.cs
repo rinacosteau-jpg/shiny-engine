@@ -41,7 +41,7 @@ public class ArticyDebugFlowPlayer : MonoBehaviour, IArticyFlowPlayerCallbacks
 	{
 		// you could assign this via the inspector but this works equally well for our purpose.
 		flowPlayer = GetComponent<ArticyFlowPlayer>();
-		Debug.Assert(flowPlayer != null, "ArticyDebugFlowPlayer needs the ArticyFlowPlayer component!.");
+		// Debug.Assert(flowPlayer != null, "ArticyDebugFlowPlayer needs the ArticyFlowPlayer component!.");
 
 		// by clearing at start we can safely have a prefab instantiated in the editor for our convenience and automatically get rid of it when we play.
 		ClearAllBranches();
@@ -170,6 +170,6 @@ public class ArticyDebugFlowPlayer : MonoBehaviour, IArticyFlowPlayerCallbacks
 		var pointerData = aData as PointerEventData;
 		if (pointerData != null)
 			GUIUtility.systemCopyBuffer = pointerData.pointerPress.GetComponent<Text>().text;
-		Debug.LogFormat("Copied text \"{0}\" into clipboard!", GUIUtility.systemCopyBuffer);
+		// Debug.LogFormat("Copied text \"{0}\" into clipboard!", GUIUtility.systemCopyBuffer);
 	}
 }

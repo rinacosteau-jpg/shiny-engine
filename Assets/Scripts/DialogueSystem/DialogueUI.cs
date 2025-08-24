@@ -32,7 +32,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
 
     private void Start() {
         if (flowPlayer == null) {
-            Debug.LogError("[DialogueUI] flowPlayer не назначен.");
+            // Debug.LogError("[DialogueUI] flowPlayer не назначен.");
             return;
         }
 
@@ -43,7 +43,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
     // ======== ПУБЛИЧНЫЕ API ДЛЯ ЗАПУСКА ДИАЛОГА ========
     public void StartDialogue(ArticyRef startRef) {
         if (startRef == null || flowPlayer == null) {
-            Debug.LogWarning("[DialogueUI] StartDialogue(ArticyRef) — пустой startRef или flowPlayer.");
+            // Debug.LogWarning("[DialogueUI] StartDialogue(ArticyRef) — пустой startRef или flowPlayer.");
             return;
         }
         var obj = startRef.GetObject() as IFlowObject;
@@ -52,7 +52,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
 
     public void StartDialogue(IFlowObject startObject) {
         if (startObject == null || flowPlayer == null) {
-            Debug.LogWarning("[DialogueUI] StartDialogue(IFlowObject) — пустой startObject или flowPlayer.");
+            // Debug.LogWarning("[DialogueUI] StartDialogue(IFlowObject) — пустой startObject или flowPlayer.");
             return;
         }
 
@@ -68,7 +68,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         // Убедимся, что стартуем именно с нужного DialogueFragment
         var startFragment = startObject as DialogueFragment;
         if (startFragment == null) {
-            Debug.LogError("[DialogueUI] startObject не является DialogueFragment — не могу запустить диалог.");
+            // Debug.LogError("[DialogueUI] startObject не является DialogueFragment — не могу запустить диалог.");
             return;
         }
 
@@ -91,7 +91,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
             flowPlayer.enabled = false;
         }
 
-        Debug.Log("[DialogueUI] Dialogue closed by user.");
+        // Debug.Log("[DialogueUI] Dialogue closed by user.");
         GlobalVariables.Instance?.GetKnowledge();
         GlobalVariables.Instance?.GetTempObjectives();
         GlobalVariables.Instance?.GetItems();
@@ -114,18 +114,16 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
             kek = (IObjectWithFeatureDuration)aObject;
             int duration = ((int)kek.GetFeatureDuration().Minutes);
 
-            Debug.Log(duration);
+            // Debug.Log(duration);
             if (duration > 0)
             {
                 GameTime.Instance?.AddMinutes(duration);
-                Debug.Log("Added minutes");
+                // Debug.Log("Added minutes");
             }
         }
 
         // Очистим старые ответы (если были)
         responseHandler?.ClearResponses();
-
-      //  dialogueBox?.SetActive(true);
         if (dialogueSpeaker != null) dialogueSpeaker.text = GetSpeakerDisplayName(aObject);
 
         // Попытаемся получить текст прямо с текущего объекта
@@ -245,17 +243,15 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
     private int GetDurationFromFlowObject(IFlowObject obj)
     {
 
-        //if (obj == null) return 0;
-
         try {
 
             var type = obj.GetType();
             var durProp = type.GetProperty("Duration", BindingFlags.Public | BindingFlags.Instance);
-            Debug.Log(durProp);
+            // Debug.Log(durProp);
             if (durProp != null)
             {
                 var val = durProp.GetValue(obj);
-                Debug.Log(val);
+                // Debug.Log(val);
                 if (val is int i) return i;
                 if (val != null && int.TryParse(val.ToString(), out i)) return i;
             }

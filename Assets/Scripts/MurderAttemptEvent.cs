@@ -60,16 +60,16 @@ public class MurderAttemptEvent : MonoBehaviour, ILoopResettable {
 
         yield return new WaitForSeconds(3f);
 
-        if (firstNpcA != null) firstNpcA.position = spawnAo1.position; // TODO: specify target position
-        if (firstNpcB != null) firstNpcB.position = spawnTomas1.position; // TODO: specify target position
+        if (firstNpcA != null) firstNpcA.position = spawnAo1.position;
+        if (firstNpcB != null) firstNpcB.position = spawnTomas1.position;
 
         yield return new WaitForSeconds(3f);
 
-        if (secondNpcA != null) secondNpcA.position =spawnAo2.position;
-        if (secondNpcB != null) secondNpcB.position = spawnTomas2.position;// TODO: specify target position
-        if (secondNpcC != null) secondNpcC.position = spawnTasha.position; // TODO: specify target position
-        if (secondNpcD != null) secondNpcD.position = spawnGuardM.position; // TODO: specify target position
-        if (secondNpcE != null) secondNpcE.position = spawnGuardD.position; // TODO: specify target position
+        if (secondNpcA != null) secondNpcA.position = spawnAo2.position;
+        if (secondNpcB != null) secondNpcB.position = spawnTomas2.position;
+        if (secondNpcC != null) secondNpcC.position = spawnTasha.position;
+        if (secondNpcD != null) secondNpcD.position = spawnGuardM.position;
+        if (secondNpcE != null) secondNpcE.position = spawnGuardD.position;
 
         ArticyGlobalVariables.Default.EVT.event_murderAttempt = 1;
 
@@ -78,7 +78,7 @@ public class MurderAttemptEvent : MonoBehaviour, ILoopResettable {
 
         if (playerMovement != null) playerMovement.enabled = true;
         if (playerInteract != null) playerInteract.enabled = true;
-
+        Debug.Log("[MurderAttemptEvent] event ended");
         yield break;
     }
 
