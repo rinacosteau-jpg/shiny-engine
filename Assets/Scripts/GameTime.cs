@@ -23,15 +23,13 @@ public class GameTime : MonoBehaviour {
         if (Hours > 13 || (Hours == 13 && Minutes > 1)) {
             LoopResetInputScript.TryLoopReset();
         }
-        RefreshClockText();
+        Update();
         OnTimeChanged?.Invoke(Hours, Minutes);
     }
 
     public override string ToString() => $"{Hours:D2}:{Minutes:D2}";
 
-    public void RefreshClockText() {
+    public void Update() {
         clockText.text = GameTime.Instance.ToString();
     }
-
-    private void Update() => RefreshClockText();
 }
