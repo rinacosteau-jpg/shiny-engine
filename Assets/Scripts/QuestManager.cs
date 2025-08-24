@@ -1,30 +1,40 @@
+// QuestManager.cs
 using System;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using Articy.Unity;
-using Articy.World_Of_Red_Moon;
+using Articy.World_Of_Red_Moon; // замени на свой, если Articy сгенерил другой namespace
 using Articy.World_Of_Red_Moon.GlobalVariables;
 
 public enum QuestState { NotStarted = 0, Active = 1, Completed = 2, Failed = 3 }
 
 public static class QuestManager {
+    // ======== Модель ========
     public class Objective {
-        public string Id;
+        public string Id;                 // напр. "A", "B", "C"
         public QuestState State;
         public bool Optional;
     }
 
     public class Quest {
-        public string Name;
+        public string Name;               // это и есть ID квеста
         public QuestState State;
-        public int Stage;
-        public bool IsTemporary;
+        public int Stage;                 // линейный прогресс/чекпоинт
+        public bool IsTemporary;          // чтобы подчистить на сбросе петли
         public readonly Dictionary<string, Objective> Objectives = new();
     }
+
+    // ======== События ========
     public static event Action<Quest> OnQuestChanged;
+
+    // ======== Хранилище ========
     private static readonly Dictionary<string, Quest> quests = new();
+
+    // Глушилка для PushToArticy во время Sync
     private static bool _mutePush;
+
+    // ======== Хелперы ========
     private static Quest Ensure(string name, bool isTemp = false) {
         if (!quests.TryGetValue(name, out var q)) {
             q = new Quest { Name = name, IsTemporary = isTemp, State = QuestState.NotStarted, Stage = 0 };
@@ -39,10 +49,9 @@ public static class QuestManager {
         obj.State = state;
     }
 
-    private static void RaiseQuestChanged(Quest q) {
-        Debug.Log($"[Quest] Updated: {q.Name}");
-        OnQuestChanged?.Invoke(q);
-    }
+    private static void RaiseQuestChanged(Quest q) => OnQuestChanged?.Invoke(q);
+
+    // ======== Публичный API ========
     public static bool Has(string name) => quests.ContainsKey(name);
     public static Quest Get(string name) => quests.TryGetValue(name, out var q) ? q : null;
     public static bool IsActive(string name) => quests.TryGetValue(name, out var q) && q.State == QuestState.Active;
@@ -93,14 +102,18 @@ public static class QuestManager {
     }
 
     public static void ResetTemporary() {
+        Debug.Log("started clearibg");
         var toRemove = new List<string>();
         foreach (var kv in quests)
             if (kv.Value.IsTemporary) toRemove.Add(kv.Key);
 
         foreach (var name in toRemove) {
+            // 1) обнуляем зеркальные переменные в Articy
+            ClearQuestInArticy(name);
 
-            // Debug.LogWarning($"QuestManager.PushToArticy: {e.Message}");
-            // UnityEngine.Debug.LogWarning($"ClearQuestInArticy({questName}): {e.Message}");
+            // 2) убираем из локального реестра
+            quests.Remove(name);
+        }
     }
 
 
@@ -125,12 +138,12 @@ public static class QuestManager {
         return sb.ToString();
     }
 
-    // ======== Г‘ГЁГ­ГµГ°Г®Г­ГЁГ§Г Г¶ГЁГї Г± Articy ========
-    // ГЏГіГё Гў Articy ГЇГ® Г±Г®ГЈГ«Г ГёГҐГ­ГЁГѕ ГЁГ¬ВёГ­:
+    // ======== Синхронизация с Articy ========
+    // Пуш в Articy по соглашению имён:
     // <Quest>_State (int), <Quest>_Stage (int), <Quest>_Obj_<Id> (int)
-    // Г„Г®ГЇГ®Г«Г­ГЁГІГҐГ«ГјГ­Г®: <Quest>_ObjectivesCompleted (int) ГҐГ±Г«ГЁ Г±ГўГ®Г©Г±ГІГўГ® Г±ГіГ№ГҐГ±ГІГўГіГҐГІ.
+    // Дополнительно: <Quest>_ObjectivesCompleted (int) если свойство существует.
     private static void PushToArticy(Quest q) {
-        if (_mutePush) return; // Г­ГҐ ГіГ±ГІГ°Г ГЁГўГ ГҐГ¬ ГЇГЁГ­ГЈ-ГЇГ®Г­ГЈ ГўГ® ГўГ°ГҐГ¬Гї Sync
+        if (_mutePush) return; // не устраиваем пинг-понг во время Sync
 
         try {
             var rque = ArticyGlobalVariables.Default.RQUE;
@@ -144,9 +157,9 @@ public static class QuestManager {
                 if (obj.State == QuestState.Completed) completedObjectives++;
             }
 
-            // ГЋГЎГ№ГҐГҐ ГЁГ¬Гї Г±Г·ВёГІГ·ГЁГЄГ :
+            // Общее имя счётчика:
             SetIntIfExists(rque, $"{q.Name}_ObjectivesCompleted", completedObjectives);
-            // Г‘Г®ГўГ¬ГҐГ±ГІГЁГ¬Г®Г±ГІГј Г± В«advertise_TalkedCountВ», ГҐГ±Г«ГЁ ГІГ ГЄГ Гї ГЇГҐГ°ГҐГ¬ГҐГ­Г­Г Гї ГҐГ±ГІГј:
+            // Совместимость с «advertise_TalkedCount», если такая переменная есть:
             SetIntIfExists(rque, $"{q.Name}_TalkedCount", completedObjectives);
         } catch (Exception e) {
             Debug.LogWarning($"QuestManager.PushToArticy: {e.Message}");
@@ -159,7 +172,7 @@ public static class QuestManager {
             var rque = ArticyGlobalVariables.Default.RQUE;
             var type = rque.GetType();
             foreach (var p in type.GetProperties()) {
-                // Г‘ГІГЁГ°Г ГҐГ¬ Г«ГѕГЎГ»ГҐ int/bool, Г­Г Г·ГЁГ­Г ГѕГ№ГЁГҐГ±Гї Г± "<questName>_"
+                // Стираем любые int/bool, начинающиеся с "<questName>_"
                 //if (!p.Name.StartsWith(questName + "_")) continue;
 
                 if (p.PropertyType == typeof(int))
@@ -174,9 +187,9 @@ public static class QuestManager {
 
 
 
-    // ГЏГ®Г¤ГІГїГ¦ГЄГ  Г±Г®Г±ГІГ®ГїГ­ГЁГї ГЁГ§ Articy Гў Г«Г®ГЄГ Г«ГјГ­Г®ГҐ ГµГ°Г Г­ГЁГ«ГЁГ№ГҐ.
-    // ГђГҐГ ГЈГЁГ°ГіГҐГ¬ Г­Г : *_State, *_Stage, *_Obj_*
-    // Г‘ГІГ Г°Г»ГҐ bool (Г­Г ГЇГ°ГЁГ¬ГҐГ° *_Started) ГЄГ®Г­ГўГҐГ°ГІГЁГ°ГіГҐГ¬ Гў Active Г®Г¤ГЁГ­ Г°Г Г§.
+    // Подтяжка состояния из Articy в локальное хранилище.
+    // Реагируем на: *_State, *_Stage, *_Obj_*
+    // Старые bool (например *_Started) конвертируем в Active один раз.
     public static void SyncFromArticy() {
         _mutePush = true;
         try {
@@ -210,7 +223,12 @@ public static class QuestManager {
                         }
                     }
                 } else if (p.PropertyType == typeof(bool)) {
-                // Debug.LogWarning($"Advertise.TryCompleteAndReward push error: {e.Message}");
+                    // Легаси: *_Started == true -> активируем квест
+                    bool started = (bool)p.GetValue(rque);
+                    if (started && p.Name.EndsWith("_Started")) {
+                        string questName = p.Name.Substring(0, p.Name.Length - "_Started".Length);
+                        var q = Ensure(questName);
+                        if (q.State == QuestState.NotStarted) {
                             q.State = QuestState.Active;
                             if (q.Stage == 0) q.Stage = 1;
                             RaiseQuestChanged(q);
@@ -223,7 +241,7 @@ public static class QuestManager {
         }
     }
 
-    // ======== ГђГҐГґГ«ГҐГЄГ±ГЁГї-ГЇГ®Г¬Г®Г№Г­ГЁГЄГЁ ========
+    // ======== Рефлексия-помощники ========
     private static void SetInt(object rque, string propName, int value) {
         var p = rque.GetType().GetProperty(propName);
         if (p != null && p.PropertyType == typeof(int)) p.SetValue(rque, value);
@@ -240,7 +258,7 @@ public static class QuestManager {
     }
 
     // ======================================================================
-    //                    ГЉГ‚Г…Г‘Г’ "ГђГ…ГЉГ‹ГЂГЊГЂ" (advertise)
+    //                    КВЕСТ "РЕКЛАМА" (advertise)
     // ======================================================================
     public static class Advertise {
         public const string Name = "advertise";
@@ -248,18 +266,18 @@ public static class QuestManager {
         private const string B = "B";
         private const string C = "C";
 
-        // 0 = Г­ГҐГІ Г°ГҐГ§ГіГ«ГјГІГ ГІГ , 1 = ГІГ®Г«ГјГЄГ® A, 2 = ГІГ®Г«ГјГЄГ® B, 3 = ГІГ®Г«ГјГЄГ® C, 4 = Г¤ГўГ  ГЁГ«ГЁ ГІГ°ГЁ
+        // 0 = нет результата, 1 = только A, 2 = только B, 3 = только C, 4 = два или три
         public static int ResultCode { get; private set; }
 
         public static void Start(bool isTemp = true) => QuestManager.Start(Name, isTemp);
         public static void Fail() => QuestManager.Fail(Name);
 
-        // ГўГ»Г§Г»ГўГ ГІГј ГЁГ§ Г¤ГЁГ Г«Г®ГЈГ®Гў Г± ГЄГ®Г­ГЄГ°ГҐГІГ­Г»Г¬ГЁ NPC, ГЄГ®ГЈГ¤Г  ГўГ®Г±ГЇГ°Г®ГЁГ§ГўГҐГ¤ГҐГ­Г  В«Г°ГҐГЄГ«Г Г¬Г­Г ГїВ» Г°ГҐГЇГ«ГЁГЄГ :
+        // вызывать из диалогов с конкретными NPC, когда воспроизведена «рекламная» реплика:
         public static void TalkedToA() => QuestManager.SetObjectiveState(Name, A, QuestState.Completed);
         public static void TalkedToB() => QuestManager.SetObjectiveState(Name, B, QuestState.Completed);
         public static void TalkedToC() => QuestManager.SetObjectiveState(Name, C, QuestState.Completed);
 
-        // Г±Г¤Г Г·Г  ГЄГўГҐГ±ГІГ  Гі ГЄГўГҐГ±ГІГЈГЁГўГҐГ°Г ; ГўГ®Г§ГўГ°Г Г№Г ГҐГІ true ГҐГ±Г«ГЁ Г§Г ГўГҐГ°ГёВёГ­
+        // сдача квеста у квестгивера; возвращает true если завершён
         public static bool TryCompleteAndReward() {
             if (!QuestManager.IsActive(Name)) return false;
 
@@ -268,9 +286,9 @@ public static class QuestManager {
             bool c = QuestManager.GetObjectiveState(Name, C) == QuestState.Completed;
 
             int count = (a ? 1 : 0) + (b ? 1 : 0) + (c ? 1 : 0);
-            if (count == 0) return false; // Г­ГЁГ·ГҐГЈГ® Г­ГҐ Г±Г¤ГҐГ«Г Г« В— ГЄГўГҐГ±ГІ Г®Г±ГІГ ВёГІГ±Гї Г ГЄГІГЁГўГ­Г»Г¬
+            if (count == 0) return false; // ничего не сделал — квест остаётся активным
 
-            // ГђГ Г±ГЄГ«Г Г¤ Г°ГҐГ§ГіГ«ГјГІГ ГІГ 
+            // Расклад результата
             if (count >= 2) ResultCode = 4;
             else if (a) ResultCode = 1;
             else if (b) ResultCode = 2;
@@ -278,11 +296,11 @@ public static class QuestManager {
 
             QuestManager.Complete(Name);
 
-            // ГЌГ ГЈГ°Г Г¤Г  ГЁ Г§ГҐГ°ГЄГ Г«ГјГ­Г»ГҐ ГЇГҐГ°ГҐГ¬ГҐГ­Г­Г»ГҐ Г¤Г«Гї ГіГ±Г«Г®ГўГЁГ© Гў Г¤ГЁГ Г«Г®ГЈГҐ Г±Г¤Г Г·ГЁ
+            // Награда и зеркальные переменные для условий в диалоге сдачи
             try {
                 var rque = ArticyGlobalVariables.Default.RQUE;
                 SetInt(rque, $"{Name}_Result", ResultCode);     // 1/2/3/4
-                SetBool(rque, "ratCanDistractGuard", true);     // Г§Г­Г Г­ГЁГҐ-Г­Г ГЈГ°Г Г¤Г 
+                SetBool(rque, "ratCanDistractGuard", true);     // знание-награда
             } catch (Exception e) {
                 Debug.LogWarning($"Advertise.TryCompleteAndReward push error: {e.Message}");
             }
