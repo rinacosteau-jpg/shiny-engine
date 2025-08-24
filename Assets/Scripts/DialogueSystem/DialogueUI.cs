@@ -7,7 +7,7 @@ using Articy.Unity;
 using Articy.Unity.Interfaces;
 using Articy.World_Of_Red_Moon;
 
-public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
+public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResettable {
     [Header("Articy")]
     [SerializeField] private ArticyFlowPlayer flowPlayer;
     [SerializeField] private Entity playerEntity; // перетащи сюда Entity главного героя из Articy
@@ -85,6 +85,10 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks {
         Debug.Log("[DialogueUI] Dialogue closed by user.");
         GlobalVariables.Instance?.GetKnowledge();
         GlobalVariables.Instance?.GetTempObjectives();
+    }
+
+    public void OnLoopReset() {
+        CloseDialogue();
     }
 
     // ======== IArticyFlowPlayerCallbacks ========

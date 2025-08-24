@@ -6,7 +6,7 @@ using UnityEngine.UI;
 /// <summary>
 /// Controls the inventory interface and populates it based on items in <see cref="InventoryStorage"/>.
 /// </summary>
-public class InventoryUI : MonoBehaviour
+public class InventoryUI : MonoBehaviour, ILoopResettable
 {
     [Header("UI References")]
     [SerializeField] private GameObject inventoryPanel;
@@ -68,5 +68,11 @@ public class InventoryUI : MonoBehaviour
                 itemUi = obj.AddComponent<InventoryItemUI>();
             itemUi.Initialize(items[i]);
         }
+    }
+
+    public void OnLoopReset()
+    {
+        Hide();
+        Refresh();
     }
 }
