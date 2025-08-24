@@ -82,6 +82,10 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         dialogueFinished = false;
         responseHandler?.ClearResponses();
         IsDialogueOpen = false;
+
+        // остановим flowPlayer, чтобы он не открывал окно снова
+        flowPlayer?.Stop();
+
         Debug.Log("[DialogueUI] Dialogue closed by user.");
         GlobalVariables.Instance?.GetKnowledge();
         GlobalVariables.Instance?.GetTempObjectives();
