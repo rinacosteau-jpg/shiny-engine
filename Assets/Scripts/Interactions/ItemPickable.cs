@@ -15,7 +15,6 @@ public class ItemPickable : MonoBehaviour, IInteractable, ILoopResettable {
     public void Interact() {
         if (isPicked) return;
         InventoryStorage.Add(itemID, instanceId: instanceID);
-        Debug.Log($"[Item] Received: {itemID}");
         isPicked = true;
         gameObject.SetActive(false);
     }

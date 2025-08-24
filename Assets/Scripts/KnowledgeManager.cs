@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Text;
-using UnityEngine;
 
 public static class KnowledgeManager {
     public class Knowledge {
@@ -10,8 +9,7 @@ public static class KnowledgeManager {
     private static readonly Dictionary<string, Knowledge> knowledges = new();
 
     public static void AddKnowledge(string name) {
-        knowledges[name] = new Knowledge { Name = name };
-        Debug.Log($"[Knowledge] Received: {name}");
+        knowledges[name] = new Knowledge { Name = name};
     }
 
     public static string DisplayKnowledges() {
@@ -25,5 +23,6 @@ public static class KnowledgeManager {
 
     public static void ResetKnowledges() => knowledges.Clear();
 
+    // Удобные проверки для диалогов
     public static bool HasKnowledge(string name) => knowledges.ContainsKey(name);
 }
