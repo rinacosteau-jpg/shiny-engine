@@ -23,6 +23,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
     public bool IsDialogueOpen { get; private set; }
 
     public IObjectWithFeatureDuration kek;
+    private bool suppressOnFlowPause = false;
 
     private void Awake() {
         if (dialogueBox != null)
@@ -84,6 +85,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         responseHandler?.ClearResponses();
         IsDialogueOpen = false;
         if (flowPlayer != null) {
+            suppressOnFlowPause = true;
             var stopMethod = flowPlayer.GetType().GetMethod("Stop", BindingFlags.Public | BindingFlags.Instance);
             stopMethod?.Invoke(flowPlayer, null);
             flowPlayer.enabled = false;
@@ -102,6 +104,10 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
 
     // ======== IArticyFlowPlayerCallbacks ========
     public void OnFlowPlayerPaused(IFlowObject aObject) {
+        if (suppressOnFlowPause) {
+            suppressOnFlowPause = false;
+            return;
+        }
         // Добавим время из свойства Duration
         if (aObject is IObjectWithFeatureDuration)
         {
