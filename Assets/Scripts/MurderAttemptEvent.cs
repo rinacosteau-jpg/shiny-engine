@@ -46,9 +46,19 @@ public class MurderAttemptEvent : MonoBehaviour, ILoopResettable {
     }
 
     IEnumerator EventSequence() {
-
         GlobalVariables.Instance?.ForceCloseDialogue();
-
+        var monoBehaviours = FindObjectsOfType<MonoBehaviour>(true);
+        foreach (var mb in monoBehaviours) {
+            if (ReferenceEquals(mb, this))
+                continue;
+            if (mb is ILoopResettable resettable) {
+                try {
+                    resettable.OnLoopReset();
+                } catch (System.Exception e) {
+                    Debug.LogWarning($"[MurderAttemptEvent] OnLoopReset error on {mb.name}: {e}");
+                }
+            }
+        }
 
         if (playerMovement != null) playerMovement.enabled = false;
         if (playerInteract != null) playerInteract.enabled = false;
