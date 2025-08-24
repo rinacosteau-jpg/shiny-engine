@@ -12,6 +12,11 @@ public class GlobalVariables : MonoBehaviour {
     // === Синглтон ===
     public static GlobalVariables Instance { get; private set; }
 
+    [SerializeField] private DialogueUI dialogueUI; // перетащи в инспекторе
+
+    public void ForceCloseDialogue() => dialogueUI?.CloseDialogue();
+
+
     // === Публичное состояние игрока (как у тебя) ===
     public PlayerState player;
 

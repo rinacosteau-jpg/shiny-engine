@@ -658,6 +658,9 @@ MonoBehaviour:
   spawnTasha: {fileID: 1344155862}
   spawnGuardM: {fileID: 1599200179}
   spawnGuardD: {fileID: 620121002}
+  mainCamera: {fileID: 183941010}
+  zoomedOutSize: 20
+  zoomDuration: 1
 --- !u!1 &558561536
 GameObject:
   m_ObjectHideFlags: 0
@@ -2859,6 +2862,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e88da0305595eca449fd896be562794f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueUI: {fileID: 2139869256}
   setOfKnowledge: {fileID: 1246963560}
   setOfQuests: {fileID: 559874447}
 --- !u!1 &1524858635
@@ -3968,23 +3972,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &3027156188631221959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3768631683177005935}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b556625e1e14e0347bf2e385ef6c58b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueStart:
-    instanceId: 0
-    referencingMode: 0
-    lowId: 0
-    highId: 0
 --- !u!33 &3179770691131938043
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4007,7 +3994,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 157126854375036643, guid: 9ac2b374a99046840892831c86df9b05, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -373.71008
+      value: -373.71002
       objectReference: {fileID: 0}
     - target: {fileID: 1000291609259739226, guid: 9ac2b374a99046840892831c86df9b05, type: 3}
       propertyPath: m_AnchorMax.x
@@ -4254,7 +4241,6 @@ GameObject:
   - component: {fileID: 8037098589128415332}
   - component: {fileID: 6843753613832643081}
   - component: {fileID: 9131126881764033317}
-  - component: {fileID: 3027156188631221959}
   m_Layer: 0
   m_Name: Tomas_Visual
   m_TagString: Untagged
