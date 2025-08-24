@@ -416,3 +416,34 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         }
     }
 }
+namespace Articy.World_Of_Red_Moon.GlobalVariables
+{
+    
+    
+    [Serializable()]
+    public class EVT : IArticyNamespace
+    {
+        
+        [SerializeField()]
+        private BaseGlobalVariables _VariableStorage;
+        
+        // 
+        public int event_murderAttempt
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueInt32(12);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueInt32(12, value);
+            }
+        }
+        
+        public void RegisterVariables(BaseGlobalVariables aStorage)
+        {
+            _VariableStorage = aStorage;
+            aStorage.RegisterVariable("EVT.event_murderAttempt", 0);
+        }
+    }
+}

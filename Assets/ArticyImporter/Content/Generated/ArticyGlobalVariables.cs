@@ -48,6 +48,10 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         [HideInInspector()]
         private RCNT mRCNT = new RCNT();
         
+        [SerializeField()]
+        [HideInInspector()]
+        private EVT mEVT = new EVT();
+        
         #region Initialize static VariableName set
         static ArticyGlobalVariables()
         {
@@ -72,6 +76,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             variableNames.Add("ITM.item_InventoryArtefact_delta");
             variableNames.Add("NSKI.PER");
             variableNames.Add("RCNT.askLibAbtPeople");
+            variableNames.Add("EVT.event_murderAttempt");
         }
         #endregion
         
@@ -123,6 +128,14 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             }
         }
         
+        public EVT EVT
+        {
+            get
+            {
+                return mEVT;
+            }
+        }
+        
         public static ArticyGlobalVariables Default
         {
             get
@@ -139,6 +152,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             ITM.RegisterVariables(this);
             NSKI.RegisterVariables(this);
             RCNT.RegisterVariables(this);
+            EVT.RegisterVariables(this);
         }
         
         public static ArticyGlobalVariables CreateGlobalVariablesClone()

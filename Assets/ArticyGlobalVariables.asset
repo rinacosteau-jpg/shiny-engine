@@ -77,6 +77,9 @@ MonoBehaviour:
   - mFullQualifiedName: RCNT.askLibAbtPeople
     mVar:
       values: 00000000
+  - mFullQualifiedName: EVT.event_murderAttempt
+    mVar:
+      values: 00000000
   mStringVariableCache: []
   mLiveBoolVariableCache:
   - mFullQualifiedName: NKNW.guardHasMyGun
@@ -143,6 +146,9 @@ MonoBehaviour:
   - mFullQualifiedName: RCNT.askLibAbtPeople
     mVar:
       values: 00000000
+  - mFullQualifiedName: EVT.event_murderAttempt
+    mVar:
+      values: 00000000
   mLiveStringVariableCache: []
   mIsInitialized: 1
   mNKNW:
@@ -156,4 +162,6 @@ MonoBehaviour:
   mNSKI:
     _VariableStorage: {fileID: 11400000}
   mRCNT:
+    _VariableStorage: {fileID: 11400000}
+  mEVT:
     _VariableStorage: {fileID: 11400000}
