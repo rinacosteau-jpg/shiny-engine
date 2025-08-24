@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using Articy.World_Of_Red_Moon.GlobalVariables;
+using Cinemachine;
 
 public class MurderAttemptEvent : MonoBehaviour, ILoopResettable {
     [SerializeField] private Transform firstNpcA;
@@ -16,7 +17,7 @@ public class MurderAttemptEvent : MonoBehaviour, ILoopResettable {
     [SerializeField] Transform spawnAo1, spawnTomas1, spawnAo2, spawnTomas2, spawnTasha, spawnGuardM, spawnGuardD;
 
     [Header("Camera")]
-    [SerializeField] private Camera mainCamera;
+    [SerializeField] private CinemachineVirtualCamera virtualCamera;
     [SerializeField] private float zoomedOutSize = 8f;
     [SerializeField] private float zoomDuration = 1f;
 
@@ -27,10 +28,14 @@ public class MurderAttemptEvent : MonoBehaviour, ILoopResettable {
     void Start() {
         GameTime.Instance.OnTimeChanged += OnTimeChanged;
 
-        if (mainCamera == null)
-            mainCamera = Camera.main;
-        if (mainCamera != null)
-            defaultCameraSize = mainCamera.orthographic ? mainCamera.orthographicSize : mainCamera.fieldOfView;
+        if (virtualCamera == null)
+        {
+            var brain = Camera.main != null ? Camera.main.GetComponent<CinemachineBrain>() : null;
+            if (brain != null)
+                virtualCamera = brain.ActiveVirtualCamera as CinemachineVirtualCamera;
+        }
+        if (virtualCamera != null)
+            defaultCameraSize = virtualCamera.m_Lens.Orthographic ? virtualCamera.m_Lens.OrthographicSize : virtualCamera.m_Lens.FieldOfView;
     }
 
     void OnDestroy() {
@@ -55,7 +60,7 @@ public class MurderAttemptEvent : MonoBehaviour, ILoopResettable {
         if (playerMovement != null) playerMovement.enabled = false;
         if (playerInteract != null) playerInteract.enabled = false;
 
-        if (mainCamera != null)
+        if (virtualCamera != null)
             yield return StartCoroutine(ZoomCamera(zoomedOutSize));
 
         yield return new WaitForSeconds(3f);
@@ -73,7 +78,7 @@ public class MurderAttemptEvent : MonoBehaviour, ILoopResettable {
 
         ArticyGlobalVariables.Default.EVT.event_murderAttempt = 1;
 
-        if (mainCamera != null)
+        if (virtualCamera != null)
             yield return StartCoroutine(ZoomCamera(defaultCameraSize));
 
         if (playerMovement != null) playerMovement.enabled = true;
@@ -86,23 +91,25 @@ public class MurderAttemptEvent : MonoBehaviour, ILoopResettable {
         triggered = false;
     }
 
-    private IEnumerator ZoomCamera(float targetSize) {
-        float startSize = mainCamera.orthographic ? mainCamera.orthographicSize : mainCamera.fieldOfView;
+    private IEnumerator ZoomCamera(float targetSize)
+    {
+        float startSize = virtualCamera.m_Lens.Orthographic ? virtualCamera.m_Lens.OrthographicSize : virtualCamera.m_Lens.FieldOfView;
         float elapsed = 0f;
-        while (elapsed < zoomDuration) {
+        while (elapsed < zoomDuration)
+        {
             elapsed += Time.deltaTime;
             float t = Mathf.Clamp01(elapsed / zoomDuration);
             float size = Mathf.Lerp(startSize, targetSize, t);
-            if (mainCamera.orthographic)
-                mainCamera.orthographicSize = size;
+            if (virtualCamera.m_Lens.Orthographic)
+                virtualCamera.m_Lens.OrthographicSize = size;
             else
-                mainCamera.fieldOfView = size;
+                virtualCamera.m_Lens.FieldOfView = size;
             yield return null;
         }
 
-        if (mainCamera.orthographic)
-            mainCamera.orthographicSize = targetSize;
+        if (virtualCamera.m_Lens.Orthographic)
+            virtualCamera.m_Lens.OrthographicSize = targetSize;
         else
-            mainCamera.fieldOfView = targetSize;
+            virtualCamera.m_Lens.FieldOfView = targetSize;
     }
 }
