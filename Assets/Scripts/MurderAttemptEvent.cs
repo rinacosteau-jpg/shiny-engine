@@ -48,6 +48,8 @@ public class MurderAttemptEvent : MonoBehaviour, ILoopResettable {
     IEnumerator EventSequence() {
 
         GlobalVariables.Instance?.ForceCloseDialogue();
+        foreach (var dialogue in FindObjectsOfType<DialogueUI>(true))
+            dialogue.CloseDialogue();
 
 
         if (playerMovement != null) playerMovement.enabled = false;
