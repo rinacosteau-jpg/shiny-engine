@@ -66,7 +66,10 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             variableNames.Add("RQUE.advertise_Stage");
             variableNames.Add("RFLG.murderAttempt");
             variableNames.Add("RFLG.talkedToRu");
-            variableNames.Add("ITM.kotsukiGaveNote");
+            variableNames.Add("ITM.item_kotsukiNote_delta");
+            variableNames.Add("ITM.item_kotsukiNote_count");
+            variableNames.Add("ITM.item_InventoryArtefact_count");
+            variableNames.Add("ITM.item_InventoryArtefact_delta");
             variableNames.Add("NSKI.PER");
             variableNames.Add("RCNT.askLibAbtPeople");
         }

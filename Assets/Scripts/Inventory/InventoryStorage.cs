@@ -1,71 +1,71 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
-/// <summary>
-/// Stores item entries currently held by the player.
-/// Provides methods to add, remove and clear stored items.
-/// </summary>
-public static class InventoryStorage
-{
-    // Internal list that holds the player's items.
+public static class InventoryStorage {
     private static readonly List<Item> _items = new List<Item>();
 
-    // Static constructor to seed the inventory with test items.
-    static InventoryStorage()
-    {
-        for (int i = 0; i < 5; i++)
+    // события
+    public static event Action<string, int> OnItemCountChanged;
+    public static event Action OnInventoryCleared;
+
+    // какие предметы считаем уникальными (count ограничен 1)
+    private static readonly HashSet<string> UniqueItemIds =
+        new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
-            _items.Add(new Item($"TestItem_{i}"));
-        }
+            ItemIds.InventoryArtefact
+        };
+
+    static InventoryStorage() {
+        // Удали сиды в проде; оставлю пустым чтобы не мешало логике флагов
+        //_items.Add(new Item("TestItem_0"));
+        ArticyInventorySync.PushAllCountsToArticy();
     }
 
-    /// <summary>
-    /// Adds a new item to the inventory. If an item with the same technical name
-    /// already exists, increases its count instead of adding a new entry.
-    /// </summary>
-    /// <param name="item">The item to store.</param>
-    public static void Add(Item item)
-    {
-        if (item == null || string.IsNullOrEmpty(item.TechnicalName))
-            return;
+    public static void Add(Item item) {
+        if (item == null || string.IsNullOrEmpty(item.TechnicalName)) return;
 
-        var existing = _items.Find(i => i.TechnicalName == item.TechnicalName);
-        if (existing != null)
-        {
-            existing.ItemCount += item.ItemCount;
-        }
-        else
-        {
+        var existing = _items.Find(i => i.TechnicalName.Equals(item.TechnicalName, StringComparison.OrdinalIgnoreCase));
+        if (existing != null) {
+            if (UniqueItemIds.Contains(existing.TechnicalName))
+                existing.ItemCount = 1; // уникальный — максимум 1
+            else
+                existing.ItemCount += item.ItemCount;
+        } else {
+            if (UniqueItemIds.Contains(item.TechnicalName) && item.ItemCount > 1)
+                item = new Item(item.TechnicalName, 1);
             _items.Add(item);
         }
+
+        ArticyInventorySync.PushAllCountsToArticy();
+        Notify(item.TechnicalName);
     }
 
-    /// <summary>
-    /// Removes a certain amount of an item from the inventory based on its technical name.
-    /// If the count drops to zero or below, the item is removed entirely.
-    /// </summary>
-    /// <param name="technicalName">The identifier of the item to remove.</param>
-    /// <param name="count">How many of the item to remove.</param>
-    public static void Remove(string technicalName, int count = 1)
-    {
-        var existing = _items.Find(i => i.TechnicalName == technicalName);
-        if (existing == null)
-            return;
+    public static void Remove(string technicalName, int count = 1) {
+        var existing = _items.Find(i => i.TechnicalName.Equals(technicalName, StringComparison.OrdinalIgnoreCase));
+        if (existing == null) return;
 
         existing.ItemCount -= count;
-        if (existing.ItemCount <= 0)
-            _items.Remove(existing);
+        if (existing.ItemCount <= 0) _items.Remove(existing);
+
+        ArticyInventorySync.PushAllCountsToArticy();
+        Notify(technicalName);
     }
 
-    /// <summary>
-    /// Clears all items from the inventory.
-    /// </summary>
-    public static void Clear()
-    {
+    public static void Clear() {
         _items.Clear();
+        ArticyInventorySync.PushAllCountsToArticy();
+        OnInventoryCleared?.Invoke();
     }
 
-    /// <summary>
-    /// Returns a read-only list of the items currently stored.
-    /// </summary>
     public static IReadOnlyList<Item> Items => _items.AsReadOnly();
+
+    // утилиты
+    public static int GetCount(string technicalName)
+        => _items.FirstOrDefault(i => i.TechnicalName.Equals(technicalName, StringComparison.OrdinalIgnoreCase))?.ItemCount ?? 0;
+
+    public static bool Contains(string technicalName) => GetCount(technicalName) > 0;
+
+    private static void Notify(string id)
+        => OnItemCountChanged?.Invoke(id, GetCount(id));
 }

@@ -85,6 +85,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         Debug.Log("[DialogueUI] Dialogue closed by user.");
         GlobalVariables.Instance?.GetKnowledge();
         GlobalVariables.Instance?.GetTempObjectives();
+        GlobalVariables.Instance?.GetItems();
     }
 
     public void OnLoopReset() {

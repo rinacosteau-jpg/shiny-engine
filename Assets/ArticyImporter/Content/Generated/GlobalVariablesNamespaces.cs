@@ -291,22 +291,64 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         private BaseGlobalVariables _VariableStorage;
         
         // 
-        public bool kotsukiGaveNote
+        public int item_kotsukiNote_delta
         {
             get
             {
-                return _VariableStorage.Internal_GetVariableValueBoolean(9);
+                return _VariableStorage.Internal_GetVariableValueInt32(6);
             }
             set
             {
-                _VariableStorage.Internal_SetVariableValueBoolean(9, value);
+                _VariableStorage.Internal_SetVariableValueInt32(6, value);
+            }
+        }
+        
+        // 
+        public int item_kotsukiNote_count
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueInt32(7);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueInt32(7, value);
+            }
+        }
+        
+        // 
+        public int item_InventoryArtefact_count
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueInt32(8);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueInt32(8, value);
+            }
+        }
+        
+        // 
+        public int item_InventoryArtefact_delta
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueInt32(9);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueInt32(9, value);
             }
         }
         
         public void RegisterVariables(BaseGlobalVariables aStorage)
         {
             _VariableStorage = aStorage;
-            aStorage.RegisterVariable("ITM.kotsukiGaveNote", false);
+            aStorage.RegisterVariable("ITM.item_kotsukiNote_delta", 0);
+            aStorage.RegisterVariable("ITM.item_kotsukiNote_count", 0);
+            aStorage.RegisterVariable("ITM.item_InventoryArtefact_count", 0);
+            aStorage.RegisterVariable("ITM.item_InventoryArtefact_delta", 0);
         }
     }
 }
@@ -327,11 +369,11 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         {
             get
             {
-                return _VariableStorage.Internal_GetVariableValueInt32(6);
+                return _VariableStorage.Internal_GetVariableValueInt32(10);
             }
             set
             {
-                _VariableStorage.Internal_SetVariableValueInt32(6, value);
+                _VariableStorage.Internal_SetVariableValueInt32(10, value);
             }
         }
         
@@ -359,11 +401,11 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         {
             get
             {
-                return _VariableStorage.Internal_GetVariableValueInt32(7);
+                return _VariableStorage.Internal_GetVariableValueInt32(11);
             }
             set
             {
-                _VariableStorage.Internal_SetVariableValueInt32(7, value);
+                _VariableStorage.Internal_SetVariableValueInt32(11, value);
             }
         }
         

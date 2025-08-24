@@ -40,9 +40,6 @@ MonoBehaviour:
   - mFullQualifiedName: RFLG.talkedToRu
     mVar:
       values: 00
-  - mFullQualifiedName: ITM.kotsukiGaveNote
-    mVar:
-      values: 00
   mIntVariableCache:
   - mFullQualifiedName: RQUE.advertise_State
     mVar:
@@ -60,6 +57,18 @@ MonoBehaviour:
     mVar:
       values: 00000000
   - mFullQualifiedName: RQUE.advertise_Result
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: ITM.item_kotsukiNote_delta
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: ITM.item_kotsukiNote_count
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: ITM.item_InventoryArtefact_count
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: ITM.item_InventoryArtefact_delta
     mVar:
       values: 00000000
   - mFullQualifiedName: NSKI.PER
@@ -97,9 +106,6 @@ MonoBehaviour:
   - mFullQualifiedName: RFLG.talkedToRu
     mVar:
       values: 00
-  - mFullQualifiedName: ITM.kotsukiGaveNote
-    mVar:
-      values: 00
   mLiveIntVariableCache:
   - mFullQualifiedName: RQUE.advertise_State
     mVar:
@@ -117,6 +123,18 @@ MonoBehaviour:
     mVar:
       values: 00000000
   - mFullQualifiedName: RQUE.advertise_Result
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: ITM.item_kotsukiNote_delta
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: ITM.item_kotsukiNote_count
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: ITM.item_InventoryArtefact_count
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: ITM.item_InventoryArtefact_delta
     mVar:
       values: 00000000
   - mFullQualifiedName: NSKI.PER

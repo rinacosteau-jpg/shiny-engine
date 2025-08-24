@@ -49,26 +49,24 @@ public class InventoryUI : MonoBehaviour, ILoopResettable
     }
 
     /// <summary>Rebuilds the list of UI items based on <see cref="InventoryStorage.Items"/>.</summary>
-    public void Refresh()
-    {
+    public void Refresh() {
+        // 1) подтянуть награды/штрафы из диалога
+        ArticyInventorySync.ApplyItemDeltasFromArticy();
+
+        // 2) дальше как было
         foreach (var go in _spawnedItems)
-        {
-            if (go != null)
-                Destroy(go);
-        }
+            if (go != null) Destroy(go);
         _spawnedItems.Clear();
 
         var items = InventoryStorage.Items;
-        for (int i = 0; i < items.Count; i++)
-        {
+        for (int i = 0; i < items.Count; i++) {
             var obj = Instantiate(itemButtonPrefab, itemsParent);
             _spawnedItems.Add(obj);
-            var itemUi = obj.GetComponent<InventoryItemUI>();
-            if (itemUi == null)
-                itemUi = obj.AddComponent<InventoryItemUI>();
+            var itemUi = obj.GetComponent<InventoryItemUI>() ?? obj.AddComponent<InventoryItemUI>();
             itemUi.Initialize(items[i]);
         }
     }
+
 
     public void OnLoopReset()
     {
