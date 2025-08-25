@@ -3400,7 +3400,7 @@ MonoBehaviour:
   dialogueStart:
     instanceId: 0
     referencingMode: 0
-    lowId: 1048
+    lowId: 3944
     highId: 16777216
 --- !u!1 &1951663719
 GameObject:
@@ -3842,7 +3842,6 @@ GameObject:
   - component: {fileID: 2018226838648761223}
   - component: {fileID: 4634062070429332753}
   - component: {fileID: 8160269456196341628}
-  - component: {fileID: 3515037154718741381}
   - component: {fileID: 5872337629916638800}
   m_Layer: 0
   m_Name: Liberia_Visual
@@ -4125,6 +4124,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4196569806984217075, guid: 9ac2b374a99046840892831c86df9b05, type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196569806984217075, guid: 9ac2b374a99046840892831c86df9b05, type: 3}
+      propertyPath: m_fontStyle
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196569806984217075, guid: 9ac2b374a99046840892831c86df9b05, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196569806984217075, guid: 9ac2b374a99046840892831c86df9b05, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
     - target: {fileID: 6136380991610284348, guid: 9ac2b374a99046840892831c86df9b05, type: 3}
       propertyPath: m_Pivot.y
       value: 0.49999994
@@ -4191,23 +4206,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7748727435339328360}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &3515037154718741381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1984437066431966746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b556625e1e14e0347bf2e385ef6c58b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueStart:
-    instanceId: 0
-    referencingMode: 0
-    lowId: 1048
-    highId: 16777216
 --- !u!1 &3628093066062746388
 GameObject:
   m_ObjectHideFlags: 0

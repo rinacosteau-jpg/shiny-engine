@@ -25,6 +25,7 @@ public class LoopCounter : MonoBehaviour, ILoopResettable
     {
         Count++;
         ArticyGlobalVariables.Default.PS.loopCounter = Count;
+        Debug.Log("Articy loopcount: " + ArticyGlobalVariables.Default.PS.loopCounter);
         UpdateText();
     }
 

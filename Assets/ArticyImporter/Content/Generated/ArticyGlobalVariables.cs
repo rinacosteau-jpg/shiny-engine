@@ -52,10 +52,14 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         [HideInInspector()]
         private PS mPS = new PS();
         
+        [SerializeField()]
+        [HideInInspector()]
+        private NQUE mNQUE = new NQUE();
+        
         #region Initialize static VariableName set
         static ArticyGlobalVariables()
         {
-            variableNames.Add("NKNW.guardHasMyGun");
+            variableNames.Add("NKNW.hadGun");
             variableNames.Add("NKNW.ratCanDistractGuard");
             variableNames.Add("NKNW.tomasSus");
             variableNames.Add("NKNW.aoBlamesHimself");
@@ -63,7 +67,6 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             variableNames.Add("NKNW.libSusCounter");
             variableNames.Add("NKNW.code_shadyPeople");
             variableNames.Add("NKNW.tomAttemptsMurder");
-            variableNames.Add("RQUE.hasTalkToRuObj");
             variableNames.Add("RQUE.advertise_State");
             variableNames.Add("RQUE.advertise_Obj_A");
             variableNames.Add("RQUE.advertise_TalkedCount");
@@ -77,11 +80,16 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             variableNames.Add("ITM.item_kotsukiNote_count");
             variableNames.Add("ITM.item_InventoryArtefact_count");
             variableNames.Add("ITM.item_InventoryArtefact_delta");
+            variableNames.Add("ITM.item_Gun_count");
+            variableNames.Add("ITM.item_Gun_delta");
             variableNames.Add("RCNT.askLibAbtPeople");
             variableNames.Add("EVT.event_murderAttempt");
             variableNames.Add("PS.loopCounter");
             variableNames.Add("PS.skill_Persuasion");
             variableNames.Add("PS.skill_Perseption");
+            variableNames.Add("NQUE.getGun_Result");
+            variableNames.Add("NQUE.getGun_Stage");
+            variableNames.Add("NQUE.getGun_State");
         }
         #endregion
         
@@ -141,6 +149,14 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             }
         }
         
+        public NQUE NQUE
+        {
+            get
+            {
+                return mNQUE;
+            }
+        }
+        
         public static ArticyGlobalVariables Default
         {
             get
@@ -158,6 +174,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             RCNT.RegisterVariables(this);
             EVT.RegisterVariables(this);
             PS.RegisterVariables(this);
+            NQUE.RegisterVariables(this);
         }
         
         public static ArticyGlobalVariables CreateGlobalVariablesClone()

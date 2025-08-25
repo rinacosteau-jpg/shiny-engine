@@ -7,7 +7,7 @@ using Articy.World_Of_Red_Moon.GlobalVariables; // <-- проверь свой n
 public class GlobalVariables : MonoBehaviour {
     // === IDs уникальных предметов, влияющих на PlayerState ===
     private const string ArtefactId = "InventoryArtefact"; // TechnicalName предмета артефакта
-    private const string GunId = "Revolver";          // если пистолет тоже идёт через инвентарь
+    private const string GunId = "Gun";          // если пистолет тоже идёт через инвентарь
 
     // === Синглтон ===
     public static GlobalVariables Instance { get; private set; }
@@ -30,6 +30,8 @@ public class GlobalVariables : MonoBehaviour {
             return;
         }
         Instance = this;
+        player.skillPerseption = 10;
+        player.skillPersuasion = 10;
 
         if (!setOfKnowledge) setOfKnowledge = GetComponent<TMP_Text>();
 
@@ -102,5 +104,9 @@ public class GlobalVariables : MonoBehaviour {
     public void RecalculateFlagsFromInventory() {
         player.hasArtifact = InventoryStorage.Contains(ArtefactId);
         player.hasGun = InventoryStorage.Contains(GunId);
+
+
+        Debug.Log(player.hasArtifact);
+        Debug.Log(player.hasGun);
     }
 }

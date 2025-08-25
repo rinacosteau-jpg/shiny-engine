@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ArticyGlobalVariables
   m_EditorClassIdentifier: 
   mBoolVariableCache:
-  - mFullQualifiedName: NKNW.guardHasMyGun
+  - mFullQualifiedName: NKNW.hadGun
     mVar:
       values: 00
   - mFullQualifiedName: NKNW.ratCanDistractGuard
@@ -32,9 +32,6 @@ MonoBehaviour:
     mVar:
       values: 00
   - mFullQualifiedName: NKNW.tomAttemptsMurder
-    mVar:
-      values: 00
-  - mFullQualifiedName: RQUE.hasTalkToRuObj
     mVar:
       values: 00
   - mFullQualifiedName: RQUE.advertise_Stage
@@ -80,6 +77,12 @@ MonoBehaviour:
   - mFullQualifiedName: ITM.item_InventoryArtefact_delta
     mVar:
       values: 00000000
+  - mFullQualifiedName: ITM.item_Gun_count
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: ITM.item_Gun_delta
+    mVar:
+      values: 00000000
   - mFullQualifiedName: RCNT.askLibAbtPeople
     mVar:
       values: 00000000
@@ -95,9 +98,18 @@ MonoBehaviour:
   - mFullQualifiedName: PS.skill_Perseption
     mVar:
       values: 00000000
+  - mFullQualifiedName: NQUE.getGun_Result
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NQUE.getGun_Stage
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NQUE.getGun_State
+    mVar:
+      values: 00000000
   mStringVariableCache: []
   mLiveBoolVariableCache:
-  - mFullQualifiedName: NKNW.guardHasMyGun
+  - mFullQualifiedName: NKNW.hadGun
     mVar:
       values: 00
   - mFullQualifiedName: NKNW.ratCanDistractGuard
@@ -116,9 +128,6 @@ MonoBehaviour:
     mVar:
       values: 00
   - mFullQualifiedName: NKNW.tomAttemptsMurder
-    mVar:
-      values: 00
-  - mFullQualifiedName: RQUE.hasTalkToRuObj
     mVar:
       values: 00
   - mFullQualifiedName: RQUE.advertise_Stage
@@ -164,6 +173,12 @@ MonoBehaviour:
   - mFullQualifiedName: ITM.item_InventoryArtefact_delta
     mVar:
       values: 00000000
+  - mFullQualifiedName: ITM.item_Gun_count
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: ITM.item_Gun_delta
+    mVar:
+      values: 00000000
   - mFullQualifiedName: RCNT.askLibAbtPeople
     mVar:
       values: 00000000
@@ -177,6 +192,15 @@ MonoBehaviour:
     mVar:
       values: 00000000
   - mFullQualifiedName: PS.skill_Perseption
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NQUE.getGun_Result
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NQUE.getGun_Stage
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NQUE.getGun_State
     mVar:
       values: 00000000
   mLiveStringVariableCache: []
@@ -194,4 +218,6 @@ MonoBehaviour:
   mEVT:
     _VariableStorage: {fileID: 11400000}
   mPS:
+    _VariableStorage: {fileID: 11400000}
+  mNQUE:
     _VariableStorage: {fileID: 11400000}

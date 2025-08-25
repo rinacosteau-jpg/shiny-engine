@@ -21,7 +21,7 @@ public static class QuestManager {
         public string Name;               // это и есть ID квеста
         public QuestState State;
         public int Stage;                 // линейный прогресс/чекпоинт
-        public bool IsTemporary;          // чтобы подчистить на сбросе петли
+        public bool IsTemporary;          // RQUE = true, NQUE = false
         public readonly Dictionary<string, Objective> Objectives = new();
     }
 
@@ -34,11 +34,27 @@ public static class QuestManager {
     // Глушилка для PushToArticy во время Sync
     private static bool _mutePush;
 
+    // Быстрые ссылки на наборы глобалок Articy
+    private static object RQUE => ArticyGlobalVariables.Default.RQUE;
+    private static object NQUE => ArticyGlobalVariables.Default.NQUE;
+
     // ======== Хелперы ========
-    private static Quest Ensure(string name, bool isTemp = false) {
+    // isTemp: null — не трогаем; true — временный (RQUE); false — постоянный (NQUE).
+    private static Quest Ensure(string name, bool? isTemp = null) {
         if (!quests.TryGetValue(name, out var q)) {
-            q = new Quest { Name = name, IsTemporary = isTemp, State = QuestState.NotStarted, Stage = 0 };
+            q = new Quest {
+                Name = name,
+                IsTemporary = isTemp ?? false, // по умолчанию считаем персистентным
+                State = QuestState.NotStarted,
+                Stage = 0
+            };
             quests[name] = q;
+        } else if (isTemp.HasValue) {
+            // Если сведения пришли из NQUE — даём приоритет "не временным".
+            if (isTemp.Value == false && q.IsTemporary)
+                q.IsTemporary = false;
+            // Если уже non-temp, не переводим обратно в temp.
+            // Если был temp и пришло temp — оставляем temp.
         }
         return q;
     }
@@ -57,6 +73,7 @@ public static class QuestManager {
     public static bool IsActive(string name) => quests.TryGetValue(name, out var q) && q.State == QuestState.Active;
     public static bool IsCompleted(string name) => quests.TryGetValue(name, out var q) && q.State == QuestState.Completed;
 
+    /// <summary>Запусти постоянный квест: Start(name, isTemp:false) или временный: Start(name, isTemp:true)</summary>
     public static Quest Start(string name, bool isTemp = false) {
         var q = Ensure(name, isTemp);
         q.State = QuestState.Active;
@@ -81,7 +98,7 @@ public static class QuestManager {
     }
 
     public static void SetStage(string name, int stage) {
-        var q = Start(name);
+        var q = Start(name); // тип (temp/non-temp) уже должен быть определён ранее или по умолчанию non-temp
         q.Stage = stage;
         if (q.State == QuestState.NotStarted) q.State = QuestState.Active;
         PushToArticy(q);
@@ -102,27 +119,25 @@ public static class QuestManager {
     }
 
     public static void ResetTemporary() {
-        Debug.Log("started clearibg");
         var toRemove = new List<string>();
         foreach (var kv in quests)
             if (kv.Value.IsTemporary) toRemove.Add(kv.Key);
 
         foreach (var name in toRemove) {
-            // 1) обнуляем зеркальные переменные в Articy
-            ClearQuestInArticy(name);
+            // 1) обнуляем зеркальные переменные именно в RQUE (только по префиксу квеста)
+            ClearQuestInArticy(name, RQUE);
 
             // 2) убираем из локального реестра
             quests.Remove(name);
         }
     }
 
-
     public static void ResetAll() => quests.Clear();
 
     public static string DisplayQuests() {
         var sb = new StringBuilder();
         foreach (var q in quests.Values) {
-            sb.Append($"{q.Name} [State:{q.State}, Stage:{q.Stage}]");
+            sb.Append($"{q.Name} [State:{q.State}, Stage:{q.Stage}, Temp:{q.IsTemporary}]");
             if (q.Objectives.Count > 0) {
                 sb.Append(" {");
                 bool first = true;
@@ -146,69 +161,73 @@ public static class QuestManager {
         if (_mutePush) return; // не устраиваем пинг-понг во время Sync
 
         try {
-            var rque = ArticyGlobalVariables.Default.RQUE;
+            var gv = q.IsTemporary ? RQUE : NQUE;
 
-            SetInt(rque, $"{q.Name}_State", (int)q.State);
-            SetInt(rque, $"{q.Name}_Stage", q.Stage);
+            SetInt(gv, $"{q.Name}_State", (int)q.State);
+            SetInt(gv, $"{q.Name}_Stage", q.Stage);
 
             int completedObjectives = 0;
             foreach (var obj in q.Objectives.Values) {
-                SetInt(rque, $"{q.Name}_Obj_{obj.Id}", (int)obj.State);
+                SetInt(gv, $"{q.Name}_Obj_{obj.Id}", (int)obj.State);
                 if (obj.State == QuestState.Completed) completedObjectives++;
             }
 
-            // Общее имя счётчика:
-            SetIntIfExists(rque, $"{q.Name}_ObjectivesCompleted", completedObjectives);
+            // Общее имя счётчика (если есть — поставим):
+            SetIntIfExists(gv, $"{q.Name}_ObjectivesCompleted", completedObjectives);
             // Совместимость с «advertise_TalkedCount», если такая переменная есть:
-            SetIntIfExists(rque, $"{q.Name}_TalkedCount", completedObjectives);
+            SetIntIfExists(gv, $"{q.Name}_TalkedCount", completedObjectives);
         } catch (Exception e) {
             Debug.LogWarning($"QuestManager.PushToArticy: {e.Message}");
         }
     }
 
-    private static void ClearQuestInArticy(string questName) {
+    // Обнулить все int/bool переменные квеста по префиксу "<questName>_" внутри указанного набора (RQUE или NQUE).
+    private static void ClearQuestInArticy(string questName, object gvset) {
         try {
-            Debug.Log("started clearibg");
-            var rque = ArticyGlobalVariables.Default.RQUE;
-            var type = rque.GetType();
+            var type = gvset.GetType();
             foreach (var p in type.GetProperties()) {
-                // Стираем любые int/bool, начинающиеся с "<questName>_"
-                //if (!p.Name.StartsWith(questName + "_")) continue;
+                if (!p.Name.StartsWith(questName + "_")) continue;
 
                 if (p.PropertyType == typeof(int))
-                    p.SetValue(rque, 0);
+                    p.SetValue(gvset, 0);
                 else if (p.PropertyType == typeof(bool))
-                    p.SetValue(rque, false);
+                    p.SetValue(gvset, false);
             }
         } catch (System.Exception e) {
             UnityEngine.Debug.LogWarning($"ClearQuestInArticy({questName}): {e.Message}");
         }
     }
 
-
-
     // Подтяжка состояния из Articy в локальное хранилище.
-    // Реагируем на: *_State, *_Stage, *_Obj_*
+    // Теперь читаем и RQUE (isTemp=true), и NQUE (isTemp=false).
     // Старые bool (например *_Started) конвертируем в Active один раз.
     public static void SyncFromArticy() {
         _mutePush = true;
         try {
-            var rque = ArticyGlobalVariables.Default.RQUE;
-            var props = rque.GetType().GetProperties();
+            ProcessGVSet(RQUE, isTemp: true);
+            ProcessGVSet(NQUE, isTemp: false);
+        } finally {
+            _mutePush = false;
+        }
+    }
+
+    private static void ProcessGVSet(object gv, bool isTemp) {
+        try {
+            var props = gv.GetType().GetProperties();
 
             foreach (var p in props) {
                 if (p.PropertyType == typeof(int)) {
                     var key = p.Name;
-                    int val = (int)p.GetValue(rque);
+                    int val = (int)p.GetValue(gv);
 
                     if (key.EndsWith("_State")) {
                         var questName = key.Substring(0, key.Length - "_State".Length);
-                        var q = Ensure(questName);
+                        var q = Ensure(questName, isTemp);
                         q.State = (QuestState)val;
                         RaiseQuestChanged(q);
                     } else if (key.EndsWith("_Stage")) {
                         var questName = key.Substring(0, key.Length - "_Stage".Length);
-                        var q = Ensure(questName);
+                        var q = Ensure(questName, isTemp);
                         q.Stage = val;
                         if (q.State == QuestState.NotStarted && val > 0) q.State = QuestState.Active;
                         RaiseQuestChanged(q);
@@ -217,17 +236,17 @@ public static class QuestManager {
                         if (parts.Length == 2) {
                             var questName = parts[0];
                             var objId = parts[1];
-                            var q = Ensure(questName);
+                            var q = Ensure(questName, isTemp);
                             EnsureObjective(q, objId, (QuestState)val);
                             RaiseQuestChanged(q);
                         }
                     }
                 } else if (p.PropertyType == typeof(bool)) {
                     // Легаси: *_Started == true -> активируем квест
-                    bool started = (bool)p.GetValue(rque);
+                    bool started = (bool)p.GetValue(gv);
                     if (started && p.Name.EndsWith("_Started")) {
                         string questName = p.Name.Substring(0, p.Name.Length - "_Started".Length);
-                        var q = Ensure(questName);
+                        var q = Ensure(questName, isTemp);
                         if (q.State == QuestState.NotStarted) {
                             q.State = QuestState.Active;
                             if (q.Stage == 0) q.Stage = 1;
@@ -236,76 +255,24 @@ public static class QuestManager {
                     }
                 }
             }
-        } finally {
-            _mutePush = false;
+        } catch (Exception e) {
+            Debug.LogWarning($"QuestManager.ProcessGVSet({(isTemp ? "RQUE" : "NQUE")}): {e.Message}");
         }
     }
 
     // ======== Рефлексия-помощники ========
-    private static void SetInt(object rque, string propName, int value) {
-        var p = rque.GetType().GetProperty(propName);
-        if (p != null && p.PropertyType == typeof(int)) p.SetValue(rque, value);
+    private static void SetInt(object gv, string propName, int value) {
+        var p = gv.GetType().GetProperty(propName);
+        if (p != null && p.PropertyType == typeof(int)) p.SetValue(gv, value);
     }
 
-    private static void SetIntIfExists(object rque, string propName, int value) {
-        var p = rque.GetType().GetProperty(propName);
-        if (p != null && p.PropertyType == typeof(int)) p.SetValue(rque, value);
+    private static void SetIntIfExists(object gv, string propName, int value) {
+        var p = gv.GetType().GetProperty(propName);
+        if (p != null && p.PropertyType == typeof(int)) p.SetValue(gv, value);
     }
 
-    private static void SetBool(object rque, string propName, bool value) {
-        var p = rque.GetType().GetProperty(propName);
-        if (p != null && p.PropertyType == typeof(bool)) p.SetValue(rque, value);
-    }
-
-    // ======================================================================
-    //                    КВЕСТ "РЕКЛАМА" (advertise)
-    // ======================================================================
-    public static class Advertise {
-        public const string Name = "advertise";
-        private const string A = "A";
-        private const string B = "B";
-        private const string C = "C";
-
-        // 0 = нет результата, 1 = только A, 2 = только B, 3 = только C, 4 = два или три
-        public static int ResultCode { get; private set; }
-
-        public static void Start(bool isTemp = true) => QuestManager.Start(Name, isTemp);
-        public static void Fail() => QuestManager.Fail(Name);
-
-        // вызывать из диалогов с конкретными NPC, когда воспроизведена «рекламная» реплика:
-        public static void TalkedToA() => QuestManager.SetObjectiveState(Name, A, QuestState.Completed);
-        public static void TalkedToB() => QuestManager.SetObjectiveState(Name, B, QuestState.Completed);
-        public static void TalkedToC() => QuestManager.SetObjectiveState(Name, C, QuestState.Completed);
-
-        // сдача квеста у квестгивера; возвращает true если завершён
-        public static bool TryCompleteAndReward() {
-            if (!QuestManager.IsActive(Name)) return false;
-
-            bool a = QuestManager.GetObjectiveState(Name, A) == QuestState.Completed;
-            bool b = QuestManager.GetObjectiveState(Name, B) == QuestState.Completed;
-            bool c = QuestManager.GetObjectiveState(Name, C) == QuestState.Completed;
-
-            int count = (a ? 1 : 0) + (b ? 1 : 0) + (c ? 1 : 0);
-            if (count == 0) return false; // ничего не сделал — квест остаётся активным
-
-            // Расклад результата
-            if (count >= 2) ResultCode = 4;
-            else if (a) ResultCode = 1;
-            else if (b) ResultCode = 2;
-            else ResultCode = 3;
-
-            QuestManager.Complete(Name);
-
-            // Награда и зеркальные переменные для условий в диалоге сдачи
-            try {
-                var rque = ArticyGlobalVariables.Default.RQUE;
-                SetInt(rque, $"{Name}_Result", ResultCode);     // 1/2/3/4
-                SetBool(rque, "ratCanDistractGuard", true);     // знание-награда
-            } catch (Exception e) {
-                Debug.LogWarning($"Advertise.TryCompleteAndReward push error: {e.Message}");
-            }
-
-            return true;
-        }
+    private static void SetBool(object gv, string propName, bool value) {
+        var p = gv.GetType().GetProperty(propName);
+        if (p != null && p.PropertyType == typeof(bool)) p.SetValue(gv, value);
     }
 }

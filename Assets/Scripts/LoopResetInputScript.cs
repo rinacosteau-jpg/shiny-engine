@@ -1,3 +1,4 @@
+using Articy.World_Of_Red_Moon.GlobalVariables;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -29,7 +30,7 @@ public class LoopResetInputScript : MonoBehaviour {
 
     private void Update() {
         // Реагируем ровно один раз на нажатие
-        if (resetAction != null && resetAction.WasPressedThisFrame()) {
+        if (resetAction != null && resetAction.WasPressedThisFrame()&& GlobalVariables.Instance.player.hasGun) {
             TryLoopReset();
         }
     }
@@ -84,6 +85,7 @@ public class LoopResetInputScript : MonoBehaviour {
         }
 
         Debug.Log("[LoopReset] end");
+        Debug.Log("Articy loopcount: " + ArticyGlobalVariables.Default.PS.loopCounter);
     }
 
     public void LoopReset() => TryLoopReset(); // дергает тот же дебаунс
