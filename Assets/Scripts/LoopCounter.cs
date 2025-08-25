@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using Articy.World_Of_Red_Moon.GlobalVariables;
 
 public class LoopCounter : MonoBehaviour, ILoopResettable
 {
@@ -17,11 +18,13 @@ public class LoopCounter : MonoBehaviour, ILoopResettable
     void Start()
     {
         UpdateText();
+        ArticyGlobalVariables.Default.PS.loopCounter = Count;
     }
 
     public void OnLoopReset()
     {
         Count++;
+        ArticyGlobalVariables.Default.PS.loopCounter = Count;
         UpdateText();
     }
 
