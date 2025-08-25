@@ -28,6 +28,12 @@ MonoBehaviour:
   - mFullQualifiedName: NKNW.popularNovel
     mVar:
       values: 00
+  - mFullQualifiedName: NKNW.code_shadyPeople
+    mVar:
+      values: 00
+  - mFullQualifiedName: NKNW.tomAttemptsMurder
+    mVar:
+      values: 00
   - mFullQualifiedName: RQUE.hasTalkToRuObj
     mVar:
       values: 00
@@ -41,6 +47,9 @@ MonoBehaviour:
     mVar:
       values: 00
   mIntVariableCache:
+  - mFullQualifiedName: NKNW.libSusCounter
+    mVar:
+      values: 00000000
   - mFullQualifiedName: RQUE.advertise_State
     mVar:
       values: 00000000
@@ -71,13 +80,19 @@ MonoBehaviour:
   - mFullQualifiedName: ITM.item_InventoryArtefact_delta
     mVar:
       values: 00000000
-  - mFullQualifiedName: NSKI.PER
-    mVar:
-      values: 00000000
   - mFullQualifiedName: RCNT.askLibAbtPeople
     mVar:
       values: 00000000
   - mFullQualifiedName: EVT.event_murderAttempt
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: PS.loopCounter
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: PS.skill_Persuasion
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: PS.skill_Perseption
     mVar:
       values: 00000000
   mStringVariableCache: []
@@ -97,6 +112,12 @@ MonoBehaviour:
   - mFullQualifiedName: NKNW.popularNovel
     mVar:
       values: 00
+  - mFullQualifiedName: NKNW.code_shadyPeople
+    mVar:
+      values: 00
+  - mFullQualifiedName: NKNW.tomAttemptsMurder
+    mVar:
+      values: 00
   - mFullQualifiedName: RQUE.hasTalkToRuObj
     mVar:
       values: 00
@@ -110,6 +131,9 @@ MonoBehaviour:
     mVar:
       values: 00
   mLiveIntVariableCache:
+  - mFullQualifiedName: NKNW.libSusCounter
+    mVar:
+      values: 00000000
   - mFullQualifiedName: RQUE.advertise_State
     mVar:
       values: 00000000
@@ -140,13 +164,19 @@ MonoBehaviour:
   - mFullQualifiedName: ITM.item_InventoryArtefact_delta
     mVar:
       values: 00000000
-  - mFullQualifiedName: NSKI.PER
-    mVar:
-      values: 00000000
   - mFullQualifiedName: RCNT.askLibAbtPeople
     mVar:
       values: 00000000
   - mFullQualifiedName: EVT.event_murderAttempt
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: PS.loopCounter
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: PS.skill_Persuasion
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: PS.skill_Perseption
     mVar:
       values: 00000000
   mLiveStringVariableCache: []
@@ -159,9 +189,9 @@ MonoBehaviour:
     _VariableStorage: {fileID: 11400000}
   mITM:
     _VariableStorage: {fileID: 11400000}
-  mNSKI:
-    _VariableStorage: {fileID: 11400000}
   mRCNT:
     _VariableStorage: {fileID: 11400000}
   mEVT:
+    _VariableStorage: {fileID: 11400000}
+  mPS:
     _VariableStorage: {fileID: 11400000}

@@ -42,15 +42,15 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         
         [SerializeField()]
         [HideInInspector()]
-        private NSKI mNSKI = new NSKI();
-        
-        [SerializeField()]
-        [HideInInspector()]
         private RCNT mRCNT = new RCNT();
         
         [SerializeField()]
         [HideInInspector()]
         private EVT mEVT = new EVT();
+        
+        [SerializeField()]
+        [HideInInspector()]
+        private PS mPS = new PS();
         
         #region Initialize static VariableName set
         static ArticyGlobalVariables()
@@ -60,6 +60,9 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             variableNames.Add("NKNW.tomasSus");
             variableNames.Add("NKNW.aoBlamesHimself");
             variableNames.Add("NKNW.popularNovel");
+            variableNames.Add("NKNW.libSusCounter");
+            variableNames.Add("NKNW.code_shadyPeople");
+            variableNames.Add("NKNW.tomAttemptsMurder");
             variableNames.Add("RQUE.hasTalkToRuObj");
             variableNames.Add("RQUE.advertise_State");
             variableNames.Add("RQUE.advertise_Obj_A");
@@ -74,9 +77,11 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             variableNames.Add("ITM.item_kotsukiNote_count");
             variableNames.Add("ITM.item_InventoryArtefact_count");
             variableNames.Add("ITM.item_InventoryArtefact_delta");
-            variableNames.Add("NSKI.PER");
             variableNames.Add("RCNT.askLibAbtPeople");
             variableNames.Add("EVT.event_murderAttempt");
+            variableNames.Add("PS.loopCounter");
+            variableNames.Add("PS.skill_Persuasion");
+            variableNames.Add("PS.skill_Perseption");
         }
         #endregion
         
@@ -112,14 +117,6 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             }
         }
         
-        public NSKI NSKI
-        {
-            get
-            {
-                return mNSKI;
-            }
-        }
-        
         public RCNT RCNT
         {
             get
@@ -133,6 +130,14 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             get
             {
                 return mEVT;
+            }
+        }
+        
+        public PS PS
+        {
+            get
+            {
+                return mPS;
             }
         }
         
@@ -150,9 +155,9 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             RQUE.RegisterVariables(this);
             RFLG.RegisterVariables(this);
             ITM.RegisterVariables(this);
-            NSKI.RegisterVariables(this);
             RCNT.RegisterVariables(this);
             EVT.RegisterVariables(this);
+            PS.RegisterVariables(this);
         }
         
         public static ArticyGlobalVariables CreateGlobalVariablesClone()
