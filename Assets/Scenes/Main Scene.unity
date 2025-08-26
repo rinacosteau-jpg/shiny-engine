@@ -524,6 +524,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2398600873206488594, guid: 9ac2b374a99046840892831c86df9b05, type: 3}
   m_PrefabInstance: {fileID: 3344996593718879415}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &492393413 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2748360662369539372, guid: 9ac2b374a99046840892831c86df9b05, type: 3}
+  m_PrefabInstance: {fileID: 3344996593718879415}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &540866313
 GameObject:
   m_ObjectHideFlags: 0
@@ -4006,7 +4017,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 157126854375036643, guid: 9ac2b374a99046840892831c86df9b05, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -373.71002
+      value: -373.71008
       objectReference: {fileID: 0}
     - target: {fileID: 1000291609259739226, guid: 9ac2b374a99046840892831c86df9b05, type: 3}
       propertyPath: m_AnchorMax.x
@@ -4100,6 +4111,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2076718177845430212, guid: 9ac2b374a99046840892831c86df9b05, type: 3}
+      propertyPath: m_Name
+      value: ok
+      objectReference: {fileID: 0}
+    - target: {fileID: 2823189616015318475, guid: 9ac2b374a99046840892831c86df9b05, type: 3}
+      propertyPath: pointsLeftText
+      value: 
+      objectReference: {fileID: 492393413}
     - target: {fileID: 4003111838777967232, guid: 9ac2b374a99046840892831c86df9b05, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
