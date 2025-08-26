@@ -148,6 +148,7 @@ public class SkillSelectionUI : MonoBehaviour {
         var txt = textObj.GetComponent<TextMeshProUGUI>();
         txt.text = label;
         txt.alignment = TextAlignmentOptions.Center;
+        txt.raycastTarget = false;
 
         var rect = txt.rectTransform;
         rect.anchorMin = Vector2.zero;
