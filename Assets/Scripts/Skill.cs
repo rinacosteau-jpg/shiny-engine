@@ -13,7 +13,7 @@ public class Skill {
         if (_articyVar != null) {
             _value = (int)_articyVar.GetValue(gv);
         } else {
-            _value = 42;
+            _value = 0;
         }
     }
 
