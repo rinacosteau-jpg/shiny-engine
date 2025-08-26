@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -15,39 +16,45 @@ public class SkillSelectionUI : MonoBehaviour {
         [HideInInspector] public int value;
     }
 
-    [SerializeField] private SkillSlot[] slots;
+    [SerializeField] private RectTransform slotContainer;
     [SerializeField] private TMP_Text pointsLeftText;
     [SerializeField] private Button okButton;
+
+    private readonly List<SkillSlot> slots = new();
 
     private int pointsLeft;
     private PlayerState player;
 
     private void Awake() {
+        if (!slotContainer) {
+            var go = new GameObject("Slots", typeof(RectTransform), typeof(VerticalLayoutGroup));
+            slotContainer = go.GetComponent<RectTransform>();
+            slotContainer.SetParent(transform, false);
+            slotContainer.SetSiblingIndex(0);
+            var layout = slotContainer.GetComponent<VerticalLayoutGroup>();
+            layout.childControlHeight = true;
+            layout.childControlWidth = true;
+            layout.childForceExpandHeight = false;
+            layout.childForceExpandWidth = false;
+            layout.spacing = 5f;
+        }
         gameObject.SetActive(false);
     }
 
     public void Open(PlayerState player) {
         this.player = player;
         pointsLeft = 10;
-        foreach (var slot in slots) {
-            var field = typeof(PlayerState).GetField(slot.fieldName);
-            if (field != null && field.FieldType == typeof(Skill)) {
-                slot.skill = (Skill)field.GetValue(player);
-                if (slot.nameText)
-                    slot.nameText.text = slot.fieldName;
-            }
-            slot.value = 0;
-            if (slot.valueText)
-                slot.valueText.text = "0";
-            if (slot.plusButton) {
-                slot.plusButton.onClick.RemoveAllListeners();
-                slot.plusButton.onClick.AddListener(() => Change(slot, 1));
-            }
-            if (slot.minusButton) {
-                slot.minusButton.onClick.RemoveAllListeners();
-                slot.minusButton.onClick.AddListener(() => Change(slot, -1));
-            }
+
+        foreach (Transform child in slotContainer)
+            Destroy(child.gameObject);
+        slots.Clear();
+
+        foreach (var field in typeof(PlayerState).GetFields()) {
+            if (field.FieldType != typeof(Skill)) continue;
+            var skill = (Skill)field.GetValue(player);
+            slots.Add(CreateSlot(field.Name, skill));
         }
+
         UpdateUI();
         gameObject.SetActive(true);
     }
@@ -82,5 +89,63 @@ public class SkillSelectionUI : MonoBehaviour {
                 slot.skill.Value = slot.value;
         }
         gameObject.SetActive(false);
+    }
+
+    private SkillSlot CreateSlot(string name, Skill skill) {
+        var slotObj = new GameObject(name, typeof(RectTransform));
+        slotObj.transform.SetParent(slotContainer, false);
+        var layout = slotObj.AddComponent<HorizontalLayoutGroup>();
+        layout.childControlWidth = false;
+        layout.childControlHeight = true;
+        layout.childForceExpandWidth = false;
+        layout.childForceExpandHeight = false;
+        layout.spacing = 5f;
+
+        var nameObj = new GameObject("Name", typeof(RectTransform), typeof(TextMeshProUGUI));
+        nameObj.transform.SetParent(slotObj.transform, false);
+        var nameText = nameObj.GetComponent<TextMeshProUGUI>();
+        nameText.text = name;
+
+        var minus = CreateButton("-", slotObj.transform);
+        var valueObj = new GameObject("Value", typeof(RectTransform), typeof(TextMeshProUGUI));
+        valueObj.transform.SetParent(slotObj.transform, false);
+        var valueText = valueObj.GetComponent<TextMeshProUGUI>();
+        valueText.text = "0";
+        var plus = CreateButton("+", slotObj.transform);
+
+        var slot = new SkillSlot {
+            fieldName = name,
+            nameText = nameText,
+            valueText = valueText,
+            plusButton = plus,
+            minusButton = minus,
+            skill = skill,
+            value = 0
+        };
+
+        plus.onClick.AddListener(() => Change(slot, 1));
+        minus.onClick.AddListener(() => Change(slot, -1));
+        return slot;
+    }
+
+    private Button CreateButton(string label, Transform parent) {
+        var btnObj = new GameObject(label, typeof(RectTransform), typeof(Image), typeof(Button));
+        btnObj.transform.SetParent(parent, false);
+        var img = btnObj.GetComponent<Image>();
+        img.sprite = Resources.GetBuiltinResource<Sprite>("UI/Skin/UISprite.psd");
+
+        var textObj = new GameObject("Text", typeof(RectTransform), typeof(TextMeshProUGUI));
+        textObj.transform.SetParent(btnObj.transform, false);
+        var txt = textObj.GetComponent<TextMeshProUGUI>();
+        txt.text = label;
+        txt.alignment = TextAlignmentOptions.Center;
+
+        var rect = txt.rectTransform;
+        rect.anchorMin = Vector2.zero;
+        rect.anchorMax = Vector2.one;
+        rect.offsetMin = Vector2.zero;
+        rect.offsetMax = Vector2.zero;
+
+        return btnObj.GetComponent<Button>();
     }
 }
