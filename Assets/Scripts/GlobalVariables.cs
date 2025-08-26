@@ -32,7 +32,7 @@ public class GlobalVariables : MonoBehaviour {
         Instance = this;
         player = new PlayerState(null, false, false);
 
-        var selector = FindFirstObjectByType<SkillSelectionUI>();
+        var selector = FindFirstObjectByType<SkillSelectionUI>(FindObjectsInactive.Include);
         if (selector) {
             Debug.Log("selector");
             selector.Open(player);
