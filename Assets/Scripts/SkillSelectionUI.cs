@@ -138,7 +138,10 @@ public class SkillSelectionUI : MonoBehaviour {
         var btnObj = new GameObject(label, typeof(RectTransform), typeof(Image), typeof(Button));
         btnObj.transform.SetParent(parent, false);
         var img = btnObj.GetComponent<Image>();
-        img.sprite = Resources.GetBuiltinResource<Sprite>("UI/Skin/UISprite.psd");
+        var sprite = Sprite.Create(Texture2D.whiteTexture, new Rect(0f, 0f, 1f, 1f), new Vector2(0.5f, 0.5f));
+        img.sprite = sprite;
+        img.type = Image.Type.Sliced;
+        img.color = Color.gray;
 
         var textObj = new GameObject("Text", typeof(RectTransform), typeof(TextMeshProUGUI));
         textObj.transform.SetParent(btnObj.transform, false);
