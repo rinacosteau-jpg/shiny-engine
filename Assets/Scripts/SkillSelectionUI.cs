@@ -1,161 +1,132 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
 public class SkillSelectionUI : MonoBehaviour {
+    [Header("Общее")]
+    [SerializeField] private TMP_Text pointsLeftText;   // "Оставшиеся Skillpoints"
+    [SerializeField] private Button okButton;           // Активна только когда pointsLeft == 0
+    [SerializeField] private int startPoints = 10;      // Сколько очков выдаём на распределение
+
     [Serializable]
-    private class SkillSlot {
-        public string fieldName;
-        public TMP_Text nameText;
-        public TMP_Text valueText;
-        public Button plusButton;
-        public Button minusButton;
-        [HideInInspector] public Skill skill;
-        [HideInInspector] public int value;
+    private class SkillSlotUI {
+        [Header("UI")]
+        public string displayName;          // Подпись в UI (например, "Persuasion")
+        public TMP_Text nameText;           // Текст названия
+        public TMP_Text valueText;          // Текст текущего значения (распределённых очков)
+        public Button plusButton;           // "+"
+        public Button minusButton;          // "-"
+
+        [Header("Данные")]
+        public Skill skill;                 // Ссылка на объект Skill из PlayerState
+        [HideInInspector] public int value; // Сколько очков добавили локально (не абсолют)
     }
 
-    [SerializeField] private RectTransform slotContainer;
-    [SerializeField] private TMP_Text pointsLeftText;
-    [SerializeField] private Button okButton;
+    [Header("Скилл #1 (Persuasion)")]
+    [SerializeField] private SkillSlotUI skill1;
 
-    private readonly List<SkillSlot> slots = new();
+    [Header("Скилл #2 (Perseption)")]
+    [SerializeField] private SkillSlotUI skill2;
 
     private int pointsLeft;
-    private PlayerState player;
 
     private void Awake() {
-        if (!slotContainer) {
-            var go = new GameObject("Slots", typeof(RectTransform), typeof(VerticalLayoutGroup));
-            slotContainer = go.GetComponent<RectTransform>();
-            slotContainer.SetParent(transform, false);
-            slotContainer.anchorMin = Vector2.zero;
-            slotContainer.anchorMax = Vector2.one;
-            slotContainer.offsetMin = Vector2.zero;
-            slotContainer.offsetMax = Vector2.zero;
-            slotContainer.SetSiblingIndex(0);
-            if (transform.GetComponent<LayoutGroup>() && !slotContainer.GetComponent<LayoutElement>())
-                slotContainer.gameObject.AddComponent<LayoutElement>();
-            var layout = slotContainer.GetComponent<VerticalLayoutGroup>();
-            layout.childControlHeight = true;
-            layout.childControlWidth = true;
-            layout.childForceExpandHeight = false;
-            layout.childForceExpandWidth = false;
-            layout.spacing = 5f;
-        }
         gameObject.SetActive(false);
+
+        WireSlot(skill1);
+        WireSlot(skill2);
+
+        if (okButton)
+            okButton.onClick.AddListener(Confirm);
     }
 
-    public void Open(PlayerState player) {
-        this.player = player;
-        pointsLeft = 10;
+    /// <summary>
+    /// Открыть окно и привязать к скиллам из PlayerState.
+    /// Значения в UI стартуют с нуля (распределяем только дополнительные очки),
+    /// при Confirm() пишем абсолют в Skill.Value = локально_распределённое.
+    /// </summary>
+    public void Open(PlayerState player, int? pointsOverride = null) {
+        // Привязываем ссылки на реальные Skill из пришедшего PlayerState
+        skill1.skill = player.skillPersuasion;
+        skill2.skill = player.skillPerseption;
 
-        foreach (Transform child in slotContainer)
-            Destroy(child.gameObject);
-        slots.Clear();
+        pointsLeft = pointsOverride ?? startPoints;
 
-        foreach (var field in typeof(PlayerState).GetFields()) {
-            if (field.FieldType != typeof(Skill)) continue;
-            var skill = (Skill)field.GetValue(player);
-            slots.Add(CreateSlot(field.Name, skill));
-        }
+        ResetSlot(skill1);
+        ResetSlot(skill2);
+
+        // Подписи
+        if (skill1.nameText && !string.IsNullOrEmpty(skill1.displayName))
+            skill1.nameText.text = skill1.displayName;
+        if (skill2.nameText && !string.IsNullOrEmpty(skill2.displayName))
+            skill2.nameText.text = skill2.displayName;
 
         UpdateUI();
         gameObject.SetActive(true);
     }
 
-    private void Change(SkillSlot slot, int delta) {
-        if (delta > 0 && pointsLeft == 0) return;
-        if (delta < 0 && slot.value == 0) return;
-        slot.value += delta;
+    private void WireSlot(SkillSlotUI s) {
+        if (s == null) return;
+
+        if (s.valueText) s.valueText.text = "0";
+        if (s.plusButton) s.plusButton.onClick.AddListener(() => Change(s, +1));
+        if (s.minusButton) s.minusButton.onClick.AddListener(() => Change(s, -1));
+    }
+
+    private void ResetSlot(SkillSlotUI s) {
+        if (s == null) return;
+        s.value = 0;
+        if (s.valueText) s.valueText.text = "0";
+    }
+
+    private void Change(SkillSlotUI s, int delta) {
+        if (s == null) return;
+        if (delta > 0 && pointsLeft == 0) return; // нет очков — не добавляем
+        if (delta < 0 && s.value == 0) return;     // не уходим ниже нуля по локальному распределению
+
+        s.value += delta;
         pointsLeft -= delta;
-        if (slot.valueText)
-            slot.valueText.text = slot.value.ToString();
+
+        if (s.valueText)
+            s.valueText.text = s.value.ToString();
+
         UpdateUI();
     }
 
     private void UpdateUI() {
         if (pointsLeftText)
             pointsLeftText.text = pointsLeft.ToString();
+
         if (okButton)
-            okButton.interactable = pointsLeft == 0;
-        foreach (var slot in slots) {
-            if (slot.minusButton)
-                slot.minusButton.interactable = slot.value > 0;
-            if (slot.plusButton)
-                slot.plusButton.interactable = pointsLeft > 0;
-        }
+            okButton.interactable = (pointsLeft == 0);
+
+        UpdateSlotInteractable(skill1);
+        UpdateSlotInteractable(skill2);
+    }
+
+    private void UpdateSlotInteractable(SkillSlotUI s) {
+        if (s == null) return;
+        if (s.plusButton) s.plusButton.interactable = pointsLeft > 0;
+        if (s.minusButton) s.minusButton.interactable = s.value > 0;
     }
 
     public void Confirm() {
+        // На всякий случай проверка
         if (pointsLeft != 0) return;
-        foreach (var slot in slots) {
-            if (slot.skill != null)
-                slot.skill.Value = slot.value;
-        }
+
+        ApplySlot(skill1);
+        ApplySlot(skill2);
+
         gameObject.SetActive(false);
     }
 
-    private SkillSlot CreateSlot(string name, Skill skill) {
-        var slotObj = new GameObject(name, typeof(RectTransform));
-        slotObj.transform.SetParent(slotContainer, false);
-        var layout = slotObj.AddComponent<HorizontalLayoutGroup>();
-        layout.childControlWidth = false;
-        layout.childControlHeight = true;
-        layout.childForceExpandWidth = false;
-        layout.childForceExpandHeight = false;
-        layout.spacing = 5f;
-
-        var nameObj = new GameObject("Name", typeof(RectTransform), typeof(TextMeshProUGUI));
-        nameObj.transform.SetParent(slotObj.transform, false);
-        var nameText = nameObj.GetComponent<TextMeshProUGUI>();
-        nameText.text = name;
-
-        var minus = CreateButton("-", slotObj.transform);
-        var valueObj = new GameObject("Value", typeof(RectTransform), typeof(TextMeshProUGUI));
-        valueObj.transform.SetParent(slotObj.transform, false);
-        var valueText = valueObj.GetComponent<TextMeshProUGUI>();
-        valueText.text = "0";
-        var plus = CreateButton("+", slotObj.transform);
-
-        var slot = new SkillSlot {
-            fieldName = name,
-            nameText = nameText,
-            valueText = valueText,
-            plusButton = plus,
-            minusButton = minus,
-            skill = skill,
-            value = 0
-        };
-
-        plus.onClick.AddListener(() => Change(slot, 1));
-        minus.onClick.AddListener(() => Change(slot, -1));
-        return slot;
-    }
-
-    private Button CreateButton(string label, Transform parent) {
-        var btnObj = new GameObject(label, typeof(RectTransform), typeof(Image), typeof(Button));
-        btnObj.transform.SetParent(parent, false);
-        var img = btnObj.GetComponent<Image>();
-        var sprite = Sprite.Create(Texture2D.whiteTexture, new Rect(0f, 0f, 1f, 1f), new Vector2(0.5f, 0.5f));
-        img.sprite = sprite;
-        img.type = Image.Type.Sliced;
-        img.color = Color.gray;
-
-        var textObj = new GameObject("Text", typeof(RectTransform), typeof(TextMeshProUGUI));
-        textObj.transform.SetParent(btnObj.transform, false);
-        var txt = textObj.GetComponent<TextMeshProUGUI>();
-        txt.text = label;
-        txt.alignment = TextAlignmentOptions.Center;
-        txt.raycastTarget = false;
-
-        var rect = txt.rectTransform;
-        rect.anchorMin = Vector2.zero;
-        rect.anchorMax = Vector2.one;
-        rect.offsetMin = Vector2.zero;
-        rect.offsetMax = Vector2.zero;
-
-        return btnObj.GetComponent<Button>();
+    private void ApplySlot(SkillSlotUI s) {
+        if (s?.skill != null) {
+            // Текущая простая логика: пишем абсолют = распределённые очки
+            // Если захочешь делать "базовое + распределённое", замени на:
+            // s.skill.Value = s.skill.Value + s.value;
+            s.skill.Value = s.value;
+        }
     }
 }
