@@ -33,9 +33,10 @@ public class GlobalVariables : MonoBehaviour {
         player = new PlayerState(null, false, false);
 
         var selector = FindFirstObjectByType<SkillSelectionUI>();
-        if (selector)
+        if (selector) {
             Debug.Log("selector");
             selector.Open(player);
+        }
 
         if (!setOfKnowledge) setOfKnowledge = GetComponent<TMP_Text>();
 
