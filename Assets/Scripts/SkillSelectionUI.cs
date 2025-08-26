@@ -30,7 +30,13 @@ public class SkillSelectionUI : MonoBehaviour {
             var go = new GameObject("Slots", typeof(RectTransform), typeof(VerticalLayoutGroup));
             slotContainer = go.GetComponent<RectTransform>();
             slotContainer.SetParent(transform, false);
+            slotContainer.anchorMin = Vector2.zero;
+            slotContainer.anchorMax = Vector2.one;
+            slotContainer.offsetMin = Vector2.zero;
+            slotContainer.offsetMax = Vector2.zero;
             slotContainer.SetSiblingIndex(0);
+            if (transform.GetComponent<LayoutGroup>() && !slotContainer.GetComponent<LayoutElement>())
+                slotContainer.gameObject.AddComponent<LayoutElement>();
             var layout = slotContainer.GetComponent<VerticalLayoutGroup>();
             layout.childControlHeight = true;
             layout.childControlWidth = true;
