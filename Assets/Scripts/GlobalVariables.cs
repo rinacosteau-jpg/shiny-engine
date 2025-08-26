@@ -31,8 +31,10 @@ public class GlobalVariables : MonoBehaviour {
         }
         Instance = this;
         player = new PlayerState(null, false, false);
-        player.skillPerseption.Value = 5;
-        player.skillPersuasion.Value = 5;
+
+        var selector = FindObjectOfType<SkillSelectionUI>();
+        if (selector)
+            selector.Open(player);
 
         if (!setOfKnowledge) setOfKnowledge = GetComponent<TMP_Text>();
 
