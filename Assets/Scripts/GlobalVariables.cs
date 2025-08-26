@@ -30,8 +30,9 @@ public class GlobalVariables : MonoBehaviour {
             return;
         }
         Instance = this;
-        player.skillPerseption = 10;
-        player.skillPersuasion = 10;
+        player = new PlayerState();
+        player.skillPerseption.Value = 10;
+        player.skillPersuasion.Value = 10;
 
         if (!setOfKnowledge) setOfKnowledge = GetComponent<TMP_Text>();
 
