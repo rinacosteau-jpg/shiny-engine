@@ -72,6 +72,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         if (variableCacheField != null && (bool)variableCacheField.GetValue(null))
         {
             variableCacheField.SetValue(null, false);
+            Debug.Log("cache is real");
 
             if (currentFlowObject is DialogueFragment fragment)
             {

@@ -420,7 +420,7 @@ aGlobalVariablesState.RQUE.advertise_Obj_B == 0;
         /// </summary>
         public bool Script_720575940379282080x1000000000010CAExpression(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
         {
-            return aGlobalVariablesState.SCH.Accuracy>50;
+            return aGlobalVariablesState.SCH.Accuracy>5;
         }
         
         /// <summary>
