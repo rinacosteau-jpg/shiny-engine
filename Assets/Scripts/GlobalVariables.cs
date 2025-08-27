@@ -2,7 +2,8 @@
 using UnityEngine;
 using TMPro;
 using Articy.Unity;
-using Articy.World_Of_Red_Moon.GlobalVariables; // <-- проверь свой namespace от Articy
+using Articy.World_Of_Red_Moon.GlobalVariables;
+using System.Collections; // <-- проверь свой namespace от Articy
 
 public class GlobalVariables : MonoBehaviour {
     // === IDs уникальных предметов, влияющих на PlayerState ===
@@ -37,6 +38,9 @@ public class GlobalVariables : MonoBehaviour {
             Debug.Log("selector");
             selector.Open(player);
         }
+        StartCoroutine(DelayOpen());
+        IEnumerator DelayOpen() { yield return null; selector.Open(player); }
+
 
         if (!setOfKnowledge) setOfKnowledge = GetComponent<TMP_Text>();
 
