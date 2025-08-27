@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using Articy.Unity;
 using Articy.Unity.Interfaces;
 using Articy.World_Of_Red_Moon;
+using Articy.World_Of_Red_Moon.GlobalVariables;
 
 public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResettable {
     [Header("Articy")]
@@ -97,6 +98,10 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         GlobalVariables.Instance?.GetKnowledge();
         GlobalVariables.Instance?.GetTempObjectives();
         GlobalVariables.Instance?.GetItems();
+
+        if (ArticyGlobalVariables.Default.RFLG.neutralizedByGuard) {
+            LoopResetInputScript.TryLoopReset();
+        }
     }
 
     public void OnLoopReset() {
