@@ -21,6 +21,11 @@ public class GlobalVariables : MonoBehaviour {
     // === Публичное состояние игрока (как у тебя) ===
     public PlayerState player;
 
+    private int _prevPlayerMoralCap;
+    private int _prevPlayerMoralVal;
+    private int _prevArticyMoralCap;
+    private int _prevArticyMoralVal;
+
     // === UI (по желанию, для дебага/вывода) ===
     [SerializeField] public TMP_Text setOfKnowledge;
     [SerializeField] public TMP_Text setOfQuests;
@@ -33,6 +38,13 @@ public class GlobalVariables : MonoBehaviour {
         Instance = this;
         player = new PlayerState(null, false, false);
         Debug.Log("op");
+        var ps = ArticyGlobalVariables.Default.PS;
+        ps.moralCap = player.moralCap;
+        ps.moralVal = player.moralVal;
+        _prevPlayerMoralCap = player.moralCap;
+        _prevPlayerMoralVal = player.moralVal;
+        _prevArticyMoralCap = ps.moralCap;
+        _prevArticyMoralVal = ps.moralVal;
         var selector = FindFirstObjectByType<SkillSelectionUI>(FindObjectsInactive.Include);
         if (selector) {
             Debug.Log("selector");
@@ -58,6 +70,30 @@ public class GlobalVariables : MonoBehaviour {
         if (Instance == this) Instance = null;
         InventoryStorage.OnItemCountChanged -= OnItemCountChanged;
         InventoryStorage.OnInventoryCleared -= OnInventoryCleared;
+    }
+
+    private void Update() {
+        var ps = ArticyGlobalVariables.Default.PS;
+
+        if (ps.moralCap != _prevArticyMoralCap) {
+            player.moralCap = ps.moralCap;
+            _prevArticyMoralCap = ps.moralCap;
+            _prevPlayerMoralCap = player.moralCap;
+        } else if (player.moralCap != _prevPlayerMoralCap) {
+            ps.moralCap = player.moralCap;
+            _prevArticyMoralCap = ps.moralCap;
+            _prevPlayerMoralCap = player.moralCap;
+        }
+
+        if (ps.moralVal != _prevArticyMoralVal) {
+            player.moralVal = ps.moralVal;
+            _prevArticyMoralVal = ps.moralVal;
+            _prevPlayerMoralVal = player.moralVal;
+        } else if (player.moralVal != _prevPlayerMoralVal) {
+            ps.moralVal = player.moralVal;
+            _prevArticyMoralVal = ps.moralVal;
+            _prevPlayerMoralVal = player.moralVal;
+        }
     }
 
     // === Паблик-методы, которые ты уже дергаешь из UI/систем ===
