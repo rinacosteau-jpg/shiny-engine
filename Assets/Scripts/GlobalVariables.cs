@@ -160,7 +160,10 @@ public class GlobalVariables : MonoBehaviour {
                 int roll = UnityEngine.Random.Range(1, 101);
                 int skillValue = GetSkillValue(prop.Name);
                 int total = roll + skillValue;
+                Debug.Log(total);
+                Debug.Log(ArticyGlobalVariables.Default.SCH.Accuracy);
                 prop.SetValue(sch, total);
+                Debug.Log(ArticyGlobalVariables.Default.SCH.Accuracy);
             }
         }
     }

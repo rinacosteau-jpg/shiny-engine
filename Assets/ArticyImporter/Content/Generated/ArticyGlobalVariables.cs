@@ -56,6 +56,10 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         [HideInInspector()]
         private NQUE mNQUE = new NQUE();
         
+        [SerializeField()]
+        [HideInInspector()]
+        private SCH mSCH = new SCH();
+        
         #region Initialize static VariableName set
         static ArticyGlobalVariables()
         {
@@ -111,6 +115,9 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             variableNames.Add("NQUE.getGun_Result");
             variableNames.Add("NQUE.getGun_Stage");
             variableNames.Add("NQUE.getGun_State");
+            variableNames.Add("SCH.Perseption");
+            variableNames.Add("SCH.Persuasion");
+            variableNames.Add("SCH.Accuracy");
         }
         #endregion
         
@@ -178,6 +185,14 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             }
         }
         
+        public SCH SCH
+        {
+            get
+            {
+                return mSCH;
+            }
+        }
+        
         public static ArticyGlobalVariables Default
         {
             get
@@ -196,6 +211,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             EVT.RegisterVariables(this);
             PS.RegisterVariables(this);
             NQUE.RegisterVariables(this);
+            SCH.RegisterVariables(this);
         }
         
         public static ArticyGlobalVariables CreateGlobalVariablesClone()

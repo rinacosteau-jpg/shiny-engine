@@ -170,6 +170,15 @@ MonoBehaviour:
   - mFullQualifiedName: NQUE.getGun_State
     mVar:
       values: 00000000
+  - mFullQualifiedName: SCH.Perseption
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: SCH.Persuasion
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: SCH.Accuracy
+    mVar:
+      values: 00000000
   mStringVariableCache: []
   mLiveBoolVariableCache:
   - mFullQualifiedName: NKNW.hadGun
@@ -329,6 +338,15 @@ MonoBehaviour:
   - mFullQualifiedName: NQUE.getGun_State
     mVar:
       values: 00000000
+  - mFullQualifiedName: SCH.Perseption
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: SCH.Persuasion
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: SCH.Accuracy
+    mVar:
+      values: 00000000
   mLiveStringVariableCache: []
   mIsInitialized: 1
   mNKNW:
@@ -346,4 +364,6 @@ MonoBehaviour:
   mPS:
     _VariableStorage: {fileID: 11400000}
   mNQUE:
+    _VariableStorage: {fileID: 11400000}
+  mSCH:
     _VariableStorage: {fileID: 11400000}

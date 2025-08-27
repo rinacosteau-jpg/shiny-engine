@@ -1,6 +1,76 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5545142331772624362
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1676762633, guid: df2ec02f61e861546b9427c26ccacb8d, type: 3}
+  m_Name: ArticyDatabase
+  m_EditorClassIdentifier: 
+  mHierarchy: {fileID: 8299539027332214564}
+  mLocalization: {fileID: 4972374395006305332}
+  mRuleSetId: 269
+  mArticyAssetsUseResourcesFolder: 1
+  mInternalProject:
+    mName: world of red moon
+    mDetailName: 
+    mId: 6b45a52e-5605-4c95-a051-48da04bae055
+    mTechnicalName: World_Of_Red_Moon
+  mImportedAssets:
+  - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/\u0410\u0410\u0420\u0410\u0414\u0425\u0418\u042F.png"
+  - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/photomode_20092024_155726.png"
+  - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/photomode_20092024_154652_\u2014_\u043A\u043E\u043F\u0438\u044F.png"
+  - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/photomode_26092024_151241_\u2014_\u043A\u043E\u043F\u0438\u044F_\u2014_\u043A\u043E\u043F\u0438\u044F.png"
+  - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/\u0410\u0410\u0420\u0410\u0414\u0425\u0418\u042F2.0..png"
+  - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1015_Cyan_Background_Portrait_remix_01k38a0pg6fttr4tn9tc0r1bqe_(1).png"
+  - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1125_Mysterious_Female_Character_Portrait_remix_01k38e1w23ftxamgccafj7f0nn.png"
+  - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1244_Mystical_Veiled_Portrait_remix_01k38jhbeaf30vhm4r09gj4jh5.png"
+  - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1313_Mysterious_Male_Character_remix_01k38m6espe0kb4p415rce5qc1.png"
+  - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1335_Mysterious_Asian_Sorceress_remix_01k38ne504fjrvvt1nyxy7edg3.png"
+  - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1437_Gothic_Attire_Portrait_remix_01k38s10qbeynaayc0vq0cbvbv.png"
+  - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1624_Intense_Character_Portrait_remix_01k38z4q34ey38xgcxv992mfhp.png"
+  - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1645_Detailed_Portrait_Study_remix_01k390ad3deg29zwses6y7bpsc.png"
+  - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1703_Curious_Expression_Portrait_remix_01k391av94fhn83zctbv23nwcc.png"
+  - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1705_Shady_Game_Character_remix_01k391g1nee32ra8q8yft1rnvm.png"
+  - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1756_Revenge-Driven_Game_Character_remix_01k394d5bwf22t9g3jbb3626zd.png"
+  - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1754_Game_Character_Portrait_remix_01k3948yxreacsvh79vk46m5xa.png"
+  mDefaultGlobalVariables: {fileID: 6461708048380633942}
+  mPackages:
+  - PackageId: 72057594037928208
+    PackageName: "\u0412\u0441\u0435 \u043E\u0431\u044A\u0435\u043A\u0442\u044B"
+    PackagePath: package_0x100000000000110
+    mIsDefaultPackage: 1
+--- !u!114 &4972374395006305332
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1174674681, guid: df2ec02f61e861546b9427c26ccacb8d, type: 3}
+  m_Name: LocalizationManager
+  m_EditorClassIdentifier: 
+  mLocalizeObjectDefinitions: 0
+  mLanguageId: 127
+  mLanguages:
+  - mArticyLanguageId: 128
+    mCultureName: en
+    mLanguageName: English
+    mIsVoiceOver: 0
+  - mArticyLanguageId: 127
+    mCultureName: ru
+    mLanguageName: Russian
+    mIsVoiceOver: 0
+  mThrowOnMissingText: 0
+  mClearOnLanguageSwitch: 1
+--- !u!114 &6461708048380633942
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,97 +240,38 @@ MonoBehaviour:
   - mFullQualifiedName: NQUE.getGun_State
     mVar:
       values: 00000000
+  - mFullQualifiedName: SCH.Perseption
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: SCH.Persuasion
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: SCH.Accuracy
+    mVar:
+      values: 00000000
   mStringVariableCache: []
   mLiveBoolVariableCache: []
   mLiveIntVariableCache: []
   mLiveStringVariableCache: []
   mIsInitialized: 1
   mNKNW:
-    _VariableStorage: {fileID: -5545142331772624362}
+    _VariableStorage: {fileID: 6461708048380633942}
   mRQUE:
-    _VariableStorage: {fileID: -5545142331772624362}
+    _VariableStorage: {fileID: 6461708048380633942}
   mRFLG:
-    _VariableStorage: {fileID: -5545142331772624362}
+    _VariableStorage: {fileID: 6461708048380633942}
   mITM:
-    _VariableStorage: {fileID: -5545142331772624362}
+    _VariableStorage: {fileID: 6461708048380633942}
   mRCNT:
-    _VariableStorage: {fileID: -5545142331772624362}
+    _VariableStorage: {fileID: 6461708048380633942}
   mEVT:
-    _VariableStorage: {fileID: -5545142331772624362}
+    _VariableStorage: {fileID: 6461708048380633942}
   mPS:
-    _VariableStorage: {fileID: -5545142331772624362}
+    _VariableStorage: {fileID: 6461708048380633942}
   mNQUE:
-    _VariableStorage: {fileID: -5545142331772624362}
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1676762633, guid: df2ec02f61e861546b9427c26ccacb8d, type: 3}
-  m_Name: ArticyDatabase
-  m_EditorClassIdentifier: 
-  mHierarchy: {fileID: 8299539027332214564}
-  mLocalization: {fileID: 4972374395006305332}
-  mRuleSetId: 269
-  mArticyAssetsUseResourcesFolder: 1
-  mInternalProject:
-    mName: world of red moon
-    mDetailName: 
-    mId: 6b45a52e-5605-4c95-a051-48da04bae055
-    mTechnicalName: World_Of_Red_Moon
-  mImportedAssets:
-  - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/\u0410\u0410\u0420\u0410\u0414\u0425\u0418\u042F.png"
-  - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/photomode_20092024_155726.png"
-  - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/photomode_20092024_154652_\u2014_\u043A\u043E\u043F\u0438\u044F.png"
-  - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/photomode_26092024_151241_\u2014_\u043A\u043E\u043F\u0438\u044F_\u2014_\u043A\u043E\u043F\u0438\u044F.png"
-  - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/\u0410\u0410\u0420\u0410\u0414\u0425\u0418\u042F2.0..png"
-  - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1015_Cyan_Background_Portrait_remix_01k38a0pg6fttr4tn9tc0r1bqe_(1).png"
-  - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1125_Mysterious_Female_Character_Portrait_remix_01k38e1w23ftxamgccafj7f0nn.png"
-  - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1244_Mystical_Veiled_Portrait_remix_01k38jhbeaf30vhm4r09gj4jh5.png"
-  - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1313_Mysterious_Male_Character_remix_01k38m6espe0kb4p415rce5qc1.png"
-  - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1335_Mysterious_Asian_Sorceress_remix_01k38ne504fjrvvt1nyxy7edg3.png"
-  - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1437_Gothic_Attire_Portrait_remix_01k38s10qbeynaayc0vq0cbvbv.png"
-  - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1624_Intense_Character_Portrait_remix_01k38z4q34ey38xgcxv992mfhp.png"
-  - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1645_Detailed_Portrait_Study_remix_01k390ad3deg29zwses6y7bpsc.png"
-  - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1703_Curious_Expression_Portrait_remix_01k391av94fhn83zctbv23nwcc.png"
-  - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1705_Shady_Game_Character_remix_01k391g1nee32ra8q8yft1rnvm.png"
-  - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1756_Revenge-Driven_Game_Character_remix_01k394d5bwf22t9g3jbb3626zd.png"
-  - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1754_Game_Character_Portrait_remix_01k3948yxreacsvh79vk46m5xa.png"
-  mDefaultGlobalVariables: {fileID: -5545142331772624362}
-  mPackages:
-  - PackageId: 72057594037928208
-    PackageName: "\u0412\u0441\u0435 \u043E\u0431\u044A\u0435\u043A\u0442\u044B"
-    PackagePath: package_0x100000000000110
-    mIsDefaultPackage: 1
---- !u!114 &4972374395006305332
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1174674681, guid: df2ec02f61e861546b9427c26ccacb8d, type: 3}
-  m_Name: LocalizationManager
-  m_EditorClassIdentifier: 
-  mLocalizeObjectDefinitions: 0
-  mLanguageId: 127
-  mLanguages:
-  - mArticyLanguageId: 128
-    mCultureName: en
-    mLanguageName: English
-    mIsVoiceOver: 0
-  - mArticyLanguageId: 127
-    mCultureName: ru
-    mLanguageName: Russian
-    mIsVoiceOver: 0
-  mThrowOnMissingText: 0
-  mClearOnLanguageSwitch: 1
+    _VariableStorage: {fileID: 6461708048380633942}
+  mSCH:
+    _VariableStorage: {fileID: 6461708048380633942}
 --- !u!114 &8299539027332214564
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -308,7 +319,7 @@ MonoBehaviour:
     parent: 72057594037927937
     technicalName: GlobalVariables
     articyType: GlobalVariables
-    childCount: 8
+    childCount: 9
   - id: 72057594037931790
     parent: 216172782840400980
     technicalName: 
@@ -345,6 +356,11 @@ MonoBehaviour:
     articyType: VariableSet
     childCount: 0
   - id: 72057594037930736
+    parent: 216172782840400980
+    technicalName: 
+    articyType: VariableSet
+    childCount: 0
+  - id: 72057594037932263
     parent: 216172782840400980
     technicalName: 
     articyType: VariableSet
@@ -838,7 +854,12 @@ MonoBehaviour:
     parent: 216172783251375095
     technicalName: Dlg_1FB33FDD
     articyType: Dialogue
-    childCount: 40
+    childCount: 45
+  - id: 72057594037932180
+    parent: 72057594037930348
+    technicalName: DFr_2DD444E4
+    articyType: DialogueFragment
+    childCount: 0
   - id: 72057594037930808
     parent: 72057594037930348
     technicalName: DFr_51E5E710
@@ -849,9 +870,9 @@ MonoBehaviour:
     technicalName: DFr_79ED42A9
     articyType: DialogueFragment
     childCount: 0
-  - id: 72057594037932180
+  - id: 72057594037932268
     parent: 72057594037930348
-    technicalName: DFr_2DD444E4
+    technicalName: DFr_016EAB7E
     articyType: DialogueFragment
     childCount: 0
   - id: 72057594037930765
@@ -874,19 +895,29 @@ MonoBehaviour:
     technicalName: Cnd_943C005B
     articyType: Condition
     childCount: 0
-  - id: 72057594037932203
+  - id: 72057594037932234
     parent: 72057594037930348
-    technicalName: DFr_42355259
-    articyType: DialogueFragment
+    technicalName: Cnd_196019A7
+    articyType: Condition
     childCount: 0
   - id: 72057594037931681
     parent: 72057594037930348
     technicalName: DFr_F44DBDCE
     articyType: DialogueFragment
     childCount: 0
+  - id: 72057594037932240
+    parent: 72057594037930348
+    technicalName: DFr_87344F87
+    articyType: DialogueFragment
+    childCount: 0
   - id: 72057594037930354
     parent: 72057594037930348
     technicalName: DFr_2AE4BE13
+    articyType: DialogueFragment
+    childCount: 0
+  - id: 72057594037932247
+    parent: 72057594037930348
+    technicalName: DFr_46078695
     articyType: DialogueFragment
     childCount: 0
   - id: 72057594037930779
@@ -908,6 +939,16 @@ MonoBehaviour:
     parent: 72057594037930348
     technicalName: DFr_C609474B
     articyType: DialogueFragment
+    childCount: 0
+  - id: 72057594037932203
+    parent: 72057594037930348
+    technicalName: DFr_42355259
+    articyType: DialogueFragment
+    childCount: 0
+  - id: 72057594037931965
+    parent: 72057594037930348
+    technicalName: 
+    articyType: Comment
     childCount: 0
   - id: 72057594037931689
     parent: 72057594037930348
@@ -932,6 +973,11 @@ MonoBehaviour:
   - id: 72057594037930686
     parent: 72057594037930348
     technicalName: DFr_5810E334
+    articyType: DialogueFragment
+    childCount: 0
+  - id: 72057594037932256
+    parent: 72057594037930348
+    technicalName: DFr_95CF5186
     articyType: DialogueFragment
     childCount: 0
   - id: 72057594037931719
@@ -989,6 +1035,16 @@ MonoBehaviour:
     technicalName: DFr_957E5EA0
     articyType: DialogueFragment
     childCount: 0
+  - id: 72057594037930740
+    parent: 72057594037930348
+    technicalName: Ins_0E906465
+    articyType: Instruction
+    childCount: 0
+  - id: 72057594037930787
+    parent: 72057594037930348
+    technicalName: Ins_B39E28D2
+    articyType: Instruction
+    childCount: 0
   - id: 72057594037930722
     parent: 72057594037930348
     technicalName: DFr_B431D83E
@@ -1013,21 +1069,6 @@ MonoBehaviour:
     parent: 72057594037930348
     technicalName: DFr_3E3D7CF4
     articyType: DialogueFragment
-    childCount: 0
-  - id: 72057594037931965
-    parent: 72057594037930348
-    technicalName: 
-    articyType: Comment
-    childCount: 0
-  - id: 72057594037930740
-    parent: 72057594037930348
-    technicalName: Ins_0E906465
-    articyType: Instruction
-    childCount: 0
-  - id: 72057594037930787
-    parent: 72057594037930348
-    technicalName: Ins_B39E28D2
-    articyType: Instruction
     childCount: 0
   - id: 72057594037931960
     parent: 72057594037930348

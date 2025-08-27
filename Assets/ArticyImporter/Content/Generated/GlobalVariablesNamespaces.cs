@@ -884,3 +884,63 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         }
     }
 }
+namespace Articy.World_Of_Red_Moon.GlobalVariables
+{
+    
+    
+    // skillchecks call to unity, if -1 do check in unity, replace -1 with new value
+    [Serializable()]
+    public class SCH : IArticyNamespace
+    {
+        
+        [SerializeField()]
+        private BaseGlobalVariables _VariableStorage;
+        
+        // 
+        public int Perseption
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueInt32(42);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueInt32(42, value);
+            }
+        }
+        
+        // 
+        public int Persuasion
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueInt32(43);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueInt32(43, value);
+            }
+        }
+        
+        // 
+        public int Accuracy
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueInt32(44);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueInt32(44, value);
+            }
+        }
+        
+        public void RegisterVariables(BaseGlobalVariables aStorage)
+        {
+            _VariableStorage = aStorage;
+            aStorage.RegisterVariable("SCH.Perseption", 0);
+            aStorage.RegisterVariable("SCH.Persuasion", 0);
+            aStorage.RegisterVariable("SCH.Accuracy", 0);
+        }
+    }
+}
