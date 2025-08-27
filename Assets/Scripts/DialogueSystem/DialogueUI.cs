@@ -50,20 +50,11 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         }
     }
 
-    private MethodInfo recalcMethod;
     private FieldInfo variableCacheField;
+    private IFlowObject currentFlowObject;
 
     private void TryInitReflection()
     {
-        if (flowPlayer == null)
-            return;
-
-        if (recalcMethod == null)
-        {
-            var flags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
-            recalcMethod = flowPlayer.GetType().GetMethod("RecalculateBranches", flags);
-        }
-
         if (variableCacheField == null)
         {
             var gvType = typeof(ArticyGlobalVariables);
@@ -78,13 +69,15 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
 
         TryInitReflection();
 
-        if (recalcMethod != null && variableCacheField != null)
+        if (variableCacheField != null && (bool)variableCacheField.GetValue(null))
         {
-            var modified = (bool)variableCacheField.GetValue(null);
-            if (modified)
+            variableCacheField.SetValue(null, false);
+
+            if (currentFlowObject is DialogueFragment fragment)
             {
-                recalcMethod.Invoke(flowPlayer, null);
-                variableCacheField.SetValue(null, false);
+                CloseDialogue(true);
+                StartDialogue(fragment);
+                flowPlayer?.Play();
             }
         }
     }
@@ -144,7 +137,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
     }
 
     /// <summary>Принудительно закрыть текущий диалог (например, кнопкой "Esc").</summary>
-    public void CloseDialogue() {
+    public void CloseDialogue(bool skipPostClose = false) {
         dialogueBox?.SetActive(false);
         dialogueFinished = false;
         responseHandler?.ClearResponses();
@@ -160,12 +153,14 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
 
 
         Debug.Log("[DialogueUI] Dialogue closed by user.");
-        GlobalVariables.Instance?.GetKnowledge();
-        GlobalVariables.Instance?.GetTempObjectives();
-        GlobalVariables.Instance?.GetItems();
+        if (!skipPostClose) {
+            GlobalVariables.Instance?.GetKnowledge();
+            GlobalVariables.Instance?.GetTempObjectives();
+            GlobalVariables.Instance?.GetItems();
 
-        if (ArticyGlobalVariables.Default.RFLG.neutralizedByGuard) {
-            LoopResetInputScript.TryLoopReset();
+            if (ArticyGlobalVariables.Default.RFLG.neutralizedByGuard) {
+                LoopResetInputScript.TryLoopReset();
+            }
         }
     }
 
@@ -176,6 +171,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
 
     // ======== IArticyFlowPlayerCallbacks ========
     public void OnFlowPlayerPaused(IFlowObject aObject) {
+        currentFlowObject = aObject;
         /*if (suppressOnFlowPause) {
             suppressOnFlowPause = false;
             return;
