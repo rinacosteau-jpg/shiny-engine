@@ -50,20 +50,11 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         }
     }
 
-    private MethodInfo recalcMethod;
     private FieldInfo variableCacheField;
+    private IFlowObject currentFlowObject;
 
     private void TryInitReflection()
     {
-        if (flowPlayer == null)
-            return;
-
-        if (recalcMethod == null)
-        {
-            var flags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
-            recalcMethod = flowPlayer.GetType().GetMethod("RecalculateBranches", flags);
-        }
-
         if (variableCacheField == null)
         {
             var gvType = typeof(ArticyGlobalVariables);
@@ -78,13 +69,15 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
 
         TryInitReflection();
 
-        if (recalcMethod != null && variableCacheField != null)
+        if (variableCacheField != null && (bool)variableCacheField.GetValue(null))
         {
-            var modified = (bool)variableCacheField.GetValue(null);
-            if (modified)
+            variableCacheField.SetValue(null, false);
+
+            if (currentFlowObject is DialogueFragment fragment)
             {
-                recalcMethod.Invoke(flowPlayer, null);
-                variableCacheField.SetValue(null, false);
+                CloseDialogue();
+                StartDialogue(fragment);
+                flowPlayer?.Play();
             }
         }
     }
@@ -176,6 +169,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
 
     // ======== IArticyFlowPlayerCallbacks ========
     public void OnFlowPlayerPaused(IFlowObject aObject) {
+        currentFlowObject = aObject;
         /*if (suppressOnFlowPause) {
             suppressOnFlowPause = false;
             return;
