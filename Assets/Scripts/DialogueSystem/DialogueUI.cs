@@ -75,7 +75,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
 
             if (currentFlowObject is DialogueFragment fragment)
             {
-                CloseDialogue(true);
+                CloseDialogue();
                 StartDialogue(fragment);
                 flowPlayer?.Play();
             }
