@@ -20,6 +20,7 @@ public class GlobalVariables : MonoBehaviour {
 
     // Public player state
     public PlayerState player;
+    
 
     // Optional UI for debugging / displaying
     [SerializeField] public TMP_Text setOfKnowledge;
@@ -37,6 +38,8 @@ public class GlobalVariables : MonoBehaviour {
         }
         Instance = this;
         player = new PlayerState(null, false, false);
+        player.moralCap = 10;
+        player.moralVal = 10;
         Debug.Log("op");
         var selector = FindFirstObjectByType<SkillSelectionUI>(FindObjectsInactive.Include);
         if (selector) {
@@ -58,8 +61,10 @@ public class GlobalVariables : MonoBehaviour {
 
         // Sync moral values from Unity to Articy at start
         SyncMoralToArticy();
+
         lastPlayerMoralVal = player.moralVal;
         lastPlayerMoralCap = player.moralCap;
+        
         lastArticyMoralVal = ArticyGlobalVariables.Default.PS.moralVal;
         lastArticyMoralCap = ArticyGlobalVariables.Default.PS.moralCap;
 

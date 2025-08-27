@@ -153,6 +153,24 @@ aGlobalVariablesState.RQUE.getArtefact_State = 2
         }
         
         /// <summary>
+        /// ObjectID: 0x1000000000010BF
+        /// Articy Object ref: articy://localhost/view/6b45a52e-5605-4c95-a051-48da04bae055/72057594037932223?pane=selected&amp;tab=current
+        /// </summary>
+        public bool Script_720575940379282080x1000000000010BFText(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
+        {
+            return aGlobalVariablesState.PS.moralVal>8;
+        }
+        
+        /// <summary>
+        /// ObjectID: 0x1000000000010C0
+        /// Articy Object ref: articy://localhost/view/6b45a52e-5605-4c95-a051-48da04bae055/72057594037932224?pane=selected&amp;tab=current
+        /// </summary>
+        public void Script_720575940379282080x1000000000010C0Text(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
+        {
+            aGlobalVariablesState.PS.moralVal = 4;
+        }
+        
+        /// <summary>
         /// ObjectID: 0x100000000001044
         /// Articy Object ref: articy://localhost/view/6b45a52e-5605-4c95-a051-48da04bae055/72057594037932100?pane=selected&amp;tab=current
         /// </summary>
@@ -497,6 +515,8 @@ aGlobalVariablesState.NQUE.getGun_State = 1;
             Instructions.Add(1371414435u, this.Script_720575940379282080x100000000001083Text);
             Conditions.Add(4285050060u, this.Script_720575940379282080x100000000001097Text);
             Instructions.Add(1648604767u, this.Script_720575940379282080x100000000001098Text);
+            Conditions.Add(3200512599u, this.Script_720575940379282080x1000000000010BFText);
+            Instructions.Add(2496866337u, this.Script_720575940379282080x1000000000010C0Text);
             Conditions.Add(3143786061u, this.Script_720575940379282080x100000000001044Text);
             Instructions.Add(654511513u, this.Script_720575940379282080x100000000001045Text);
             Instructions.Add(2611131124u, this.Script_720575940379282080x1000000000010AFText);
