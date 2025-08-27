@@ -4,6 +4,7 @@ using TMPro;
 using Articy.Unity;
 using Articy.World_Of_Red_Moon.GlobalVariables;
 using System.Collections;
+using System.Reflection;
 
 public class GlobalVariables : MonoBehaviour {
     // IDs of unique items affecting PlayerState
@@ -141,6 +142,36 @@ public class GlobalVariables : MonoBehaviour {
         ArticyGlobalVariables.Default.PS.moralCap = player.moralCap;
     }
 
+    private void ResolveSkillChecks() {
+        var schProperty = typeof(ArticyGlobalVariables).GetProperty("SCH");
+        if (schProperty == null)
+            return;
+
+        var sch = schProperty.GetValue(ArticyGlobalVariables.Default);
+        if (sch == null)
+            return;
+
+        foreach (var prop in sch.GetType().GetProperties()) {
+            if (prop.PropertyType != typeof(int))
+                continue;
+
+            int value = (int)prop.GetValue(sch);
+            if (value == -1) {
+                int roll = UnityEngine.Random.Range(1, 101);
+                int skillValue = GetSkillValue(prop.Name);
+                int total = roll + skillValue;
+                prop.SetValue(sch, total);
+            }
+        }
+    }
+
+    private int GetSkillValue(string name) {
+        var field = typeof(PlayerState).GetField($"skill{name}", BindingFlags.Instance | BindingFlags.Public);
+        if (field?.GetValue(player) is Skill skill)
+            return skill.Value;
+        return 0;
+    }
+
     private void Update() {
         var articyMoralVal = ArticyGlobalVariables.Default.PS.moralVal;
         if (articyMoralVal != lastArticyMoralVal) {
@@ -167,5 +198,7 @@ public class GlobalVariables : MonoBehaviour {
             lastPlayerMoralCap = player.moralCap;
             lastArticyMoralCap = player.moralCap;
         }
+
+        ResolveSkillChecks();
     }
 }
