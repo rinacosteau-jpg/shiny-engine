@@ -26,6 +26,45 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
     public IObjectWithFeatureDuration kek;
     private bool suppressOnFlowPause = false;
 
+    private MethodInfo recalcMethod;
+    private FieldInfo variableCacheField;
+
+    private void TryInitReflection()
+    {
+        if (flowPlayer == null)
+            return;
+
+        if (recalcMethod == null)
+        {
+            var flags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
+            recalcMethod = flowPlayer.GetType().GetMethod("RecalculateBranches", flags);
+        }
+
+        if (variableCacheField == null)
+        {
+            var gvType = typeof(ArticyGlobalVariables);
+            variableCacheField = gvType.GetField("variableCacheModified", BindingFlags.NonPublic | BindingFlags.Static);
+        }
+    }
+
+    private void Update()
+    {
+        if (!IsDialogueOpen)
+            return;
+
+        TryInitReflection();
+
+        if (recalcMethod != null && variableCacheField != null)
+        {
+            var modified = (bool)variableCacheField.GetValue(null);
+            if (modified)
+            {
+                recalcMethod.Invoke(flowPlayer, null);
+                variableCacheField.SetValue(null, false);
+            }
+        }
+    }
+
     private void Awake() {
         if (dialogueBox != null)
             dialogueBox.SetActive(false); // диалог скрыт до начала взаимодействия
@@ -63,7 +102,8 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         if (textLabel != null) textLabel.text = string.Empty;
         dialogueFinished = false;
         if (dialogueBox != null) dialogueBox.SetActive(true);
-        if (flowPlayer != null) flowPlayer.enabled = true;
+        if (flowPlayer != null)
+            flowPlayer.enabled = true;
 
 
         // Убедимся, что стартуем именно с нужного DialogueFragment
