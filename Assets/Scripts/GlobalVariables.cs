@@ -3,27 +3,32 @@ using UnityEngine;
 using TMPro;
 using Articy.Unity;
 using Articy.World_Of_Red_Moon.GlobalVariables;
-using System.Collections; // <-- проверь свой namespace от Articy
+using System.Collections;
 
 public class GlobalVariables : MonoBehaviour {
-    // === IDs уникальных предметов, влияющих на PlayerState ===
-    private const string ArtefactId = "InventoryArtefact"; // TechnicalName предмета артефакта
-    private const string GunId = "Gun";          // если пистолет тоже идёт через инвентарь
+    // IDs of unique items affecting PlayerState
+    private const string ArtefactId = "InventoryArtefact"; // Technical name of the artefact item
+    private const string GunId = "Gun";          // if the gun is also managed via inventory
 
-    // === Синглтон ===
+    // Singleton
     public static GlobalVariables Instance { get; private set; }
 
-    [SerializeField] private DialogueUI dialogueUI; // перетащи в инспекторе
+    [SerializeField] private DialogueUI dialogueUI; // assign in inspector
 
     public void ForceCloseDialogue() => dialogueUI?.CloseDialogue();
 
 
-    // === Публичное состояние игрока (как у тебя) ===
+    // Public player state
     public PlayerState player;
 
-    // === UI (по желанию, для дебага/вывода) ===
+    // Optional UI for debugging / displaying
     [SerializeField] public TMP_Text setOfKnowledge;
     [SerializeField] public TMP_Text setOfQuests;
+
+    private int lastPlayerMoralVal;
+    private int lastPlayerMoralCap;
+    private int lastArticyMoralVal;
+    private int lastArticyMoralCap;
 
     private void Awake() {
         if (Instance != null && Instance != this) {
@@ -44,13 +49,19 @@ public class GlobalVariables : MonoBehaviour {
 
         if (!setOfKnowledge) setOfKnowledge = GetComponent<TMP_Text>();
 
-        // Подписки на инвентарь: обновляем флаги при любом изменении
+        // Subscribe to inventory events to update flags on any change
         InventoryStorage.OnItemCountChanged += OnItemCountChanged;
         InventoryStorage.OnInventoryCleared += OnInventoryCleared;
 
-        // Первичный пересчёт флагов на старте (если предметы уже лежат в инвентаре)
+        // Initial flag calculation on start in case items are already present
         RecalculateFlagsFromInventory();
 
+        // Sync moral values from Unity to Articy at start
+        SyncMoralToArticy();
+        lastPlayerMoralVal = player.moralVal;
+        lastPlayerMoralCap = player.moralCap;
+        lastArticyMoralVal = ArticyGlobalVariables.Default.PS.moralVal;
+        lastArticyMoralCap = ArticyGlobalVariables.Default.PS.moralCap;
 
     }
 
@@ -60,9 +71,9 @@ public class GlobalVariables : MonoBehaviour {
         InventoryStorage.OnInventoryCleared -= OnInventoryCleared;
     }
 
-    // === Паблик-методы, которые ты уже дергаешь из UI/систем ===
+    // Public methods used by UI/systems
 
-    // Подтянуть знания из Articy (сет NKNW: bool-флаги → KnowledgeManager)
+    // Pull knowledge from Articy (namespace NKNW: bool flags → KnowledgeManager)
     public void GetKnowledge() {
         var knw = ArticyGlobalVariables.Default.NKNW;
 
@@ -80,34 +91,34 @@ public class GlobalVariables : MonoBehaviour {
             setOfKnowledge.text = KnowledgeManager.DisplayKnowledges();
     }
 
-    // Подтянуть квесты из Articy и отрисовать список
+    // Pull quests from Articy and render list
     public void GetTempObjectives() {
         QuestManager.SyncFromArticy();
         if (setOfQuests)
             setOfQuests.text = "Quests:\n" + QuestManager.DisplayQuests();
     }
 
-    // Применить item_*_delta из ITM → InventoryStorage; синкнуть *_count обратно
-    // Полезно вызывать после узлов диалога, которые выдают/забирают предметы
+    // Apply item_*_delta from ITM → InventoryStorage; sync *_count back
+    // Useful to call after dialogue nodes that give or remove items
     public void GetItems() {
         ArticyInventorySync.ApplyItemDeltasFromArticy();
-        RecalculateFlagsFromInventory(); // чтобы флаги моментально обновились
+        RecalculateFlagsFromInventory(); // update flags immediately
     }
 
-    // === Внутренняя логика обновления флагов по инвентарю ===
+    // Internal logic for updating flags based on inventory
 
     private void OnItemCountChanged(string id, int count) {
-        // Артефакт уникальный: наличие предмета ↔ флаг
+        // Artefact is unique: presence of item ↔ flag
         if (id.Equals(ArtefactId, StringComparison.OrdinalIgnoreCase))
             player.hasArtifact = count > 0;
 
-        // Если пистолет тоже хранится в инвентаре — поддержим флаг
+        // If gun is also stored in inventory, support the flag
         if (id.Equals(GunId, StringComparison.OrdinalIgnoreCase))
             player.hasGun = count > 0;
     }
 
     private void OnInventoryCleared() {
-        // Если инвентарь подчистили (например, при сбросе петли) — сбрасываем флаги предметов
+        // If inventory was cleared (e.g., loop reset) reset item flags
         player.hasArtifact = false;
         player.hasGun = false;
     }
@@ -116,8 +127,40 @@ public class GlobalVariables : MonoBehaviour {
         player.hasArtifact = InventoryStorage.Contains(ArtefactId);
         player.hasGun = InventoryStorage.Contains(GunId);
 
-
         Debug.Log(player.hasArtifact);
         Debug.Log(player.hasGun);
+    }
+
+    private void SyncMoralToArticy() {
+        ArticyGlobalVariables.Default.PS.moralVal = player.moralVal;
+        ArticyGlobalVariables.Default.PS.moralCap = player.moralCap;
+    }
+
+    private void Update() {
+        var articyMoralVal = ArticyGlobalVariables.Default.PS.moralVal;
+        if (articyMoralVal != lastArticyMoralVal) {
+            player.moralVal = articyMoralVal;
+            lastArticyMoralVal = articyMoralVal;
+            lastPlayerMoralVal = player.moralVal;
+        }
+
+        var articyMoralCap = ArticyGlobalVariables.Default.PS.moralCap;
+        if (articyMoralCap != lastArticyMoralCap) {
+            player.moralCap = articyMoralCap;
+            lastArticyMoralCap = articyMoralCap;
+            lastPlayerMoralCap = player.moralCap;
+        }
+
+        if (player.moralVal != lastPlayerMoralVal) {
+            ArticyGlobalVariables.Default.PS.moralVal = player.moralVal;
+            lastPlayerMoralVal = player.moralVal;
+            lastArticyMoralVal = player.moralVal;
+        }
+
+        if (player.moralCap != lastPlayerMoralCap) {
+            ArticyGlobalVariables.Default.PS.moralCap = player.moralCap;
+            lastPlayerMoralCap = player.moralCap;
+            lastArticyMoralCap = player.moralCap;
+        }
     }
 }
