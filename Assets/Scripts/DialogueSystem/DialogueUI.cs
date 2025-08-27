@@ -137,7 +137,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
     }
 
     /// <summary>Принудительно закрыть текущий диалог (например, кнопкой "Esc").</summary>
-    public void CloseDialogue() {
+    public void CloseDialogue(bool skipPostClose = false) {
         dialogueBox?.SetActive(false);
         dialogueFinished = false;
         responseHandler?.ClearResponses();
@@ -153,12 +153,14 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
 
 
         Debug.Log("[DialogueUI] Dialogue closed by user.");
-        GlobalVariables.Instance?.GetKnowledge();
-        GlobalVariables.Instance?.GetTempObjectives();
-        GlobalVariables.Instance?.GetItems();
+        if (!skipPostClose) {
+            GlobalVariables.Instance?.GetKnowledge();
+            GlobalVariables.Instance?.GetTempObjectives();
+            GlobalVariables.Instance?.GetItems();
 
-        if (ArticyGlobalVariables.Default.RFLG.neutralizedByGuard) {
-            LoopResetInputScript.TryLoopReset();
+            if (ArticyGlobalVariables.Default.RFLG.neutralizedByGuard) {
+                LoopResetInputScript.TryLoopReset();
+            }
         }
     }
 
