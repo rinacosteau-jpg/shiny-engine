@@ -179,24 +179,48 @@ public class GlobalVariables : MonoBehaviour {
         var articyMoralVal = ArticyGlobalVariables.Default.PS.moralVal;
         if (articyMoralVal != lastArticyMoralVal) {
             player.moralVal = articyMoralVal;
-            lastArticyMoralVal = articyMoralVal;
+            if (player.moralVal > player.moralCap) {
+                player.moralVal = player.moralCap;
+                ArticyGlobalVariables.Default.PS.moralVal = player.moralVal;
+            }
+            lastArticyMoralVal = player.moralVal;
             lastPlayerMoralVal = player.moralVal;
         }
 
         var articyMoralCap = ArticyGlobalVariables.Default.PS.moralCap;
         if (articyMoralCap != lastArticyMoralCap) {
             player.moralCap = articyMoralCap;
+            if (player.moralCap <= 0) {
+                GameOver.Trigger();
+            }
+            if (player.moralVal > player.moralCap) {
+                player.moralVal = player.moralCap;
+                ArticyGlobalVariables.Default.PS.moralVal = player.moralVal;
+                lastArticyMoralVal = player.moralVal;
+                lastPlayerMoralVal = player.moralVal;
+            }
             lastArticyMoralCap = articyMoralCap;
             lastPlayerMoralCap = player.moralCap;
         }
 
         if (player.moralVal != lastPlayerMoralVal) {
+            if (player.moralVal > player.moralCap)
+                player.moralVal = player.moralCap;
             ArticyGlobalVariables.Default.PS.moralVal = player.moralVal;
             lastPlayerMoralVal = player.moralVal;
             lastArticyMoralVal = player.moralVal;
         }
 
         if (player.moralCap != lastPlayerMoralCap) {
+            if (player.moralCap <= 0) {
+                GameOver.Trigger();
+            }
+            if (player.moralVal > player.moralCap) {
+                player.moralVal = player.moralCap;
+                ArticyGlobalVariables.Default.PS.moralVal = player.moralVal;
+                lastPlayerMoralVal = player.moralVal;
+                lastArticyMoralVal = player.moralVal;
+            }
             ArticyGlobalVariables.Default.PS.moralCap = player.moralCap;
             lastPlayerMoralCap = player.moralCap;
             lastArticyMoralCap = player.moralCap;
