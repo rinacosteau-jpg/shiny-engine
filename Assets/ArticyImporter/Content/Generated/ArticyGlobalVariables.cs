@@ -87,9 +87,16 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             variableNames.Add("PS.loopCounter");
             variableNames.Add("PS.skill_Persuasion");
             variableNames.Add("PS.skill_Perseption");
+            variableNames.Add("PS.skill_Test1");
+            variableNames.Add("PS.skill_Test2");
+            variableNames.Add("PS.skill_Test3");
+            variableNames.Add("PS.skill_Test4");
             variableNames.Add("NQUE.getGun_Result");
             variableNames.Add("NQUE.getGun_Stage");
             variableNames.Add("NQUE.getGun_State");
+            variableNames.Add("NQUE.getArtefact_Stage");
+            variableNames.Add("NQUE.getArtefact_State");
+            variableNames.Add("NQUE.getArtefact_Result");
         }
         #endregion
         

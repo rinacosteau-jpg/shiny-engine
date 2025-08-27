@@ -30,7 +30,7 @@ public class LoopResetInputScript : MonoBehaviour {
 
     private void Update() {
         // Реагируем ровно один раз на нажатие
-        if (resetAction != null && resetAction.WasPressedThisFrame()&& GlobalVariables.Instance.player.hasGun) {
+        if (resetAction != null && resetAction.WasPressedThisFrame()/*&& GlobalVariables.Instance.player.hasGun*/) {
             TryLoopReset();
         }
     }

@@ -31,7 +31,7 @@ public class GlobalVariables : MonoBehaviour {
         }
         Instance = this;
         player = new PlayerState(null, false, false);
-
+        Debug.Log("op");
         var selector = FindFirstObjectByType<SkillSelectionUI>(FindObjectsInactive.Include);
         if (selector) {
             Debug.Log("selector");
@@ -46,6 +46,8 @@ public class GlobalVariables : MonoBehaviour {
 
         // Первичный пересчёт флагов на старте (если предметы уже лежат в инвентаре)
         RecalculateFlagsFromInventory();
+
+
     }
 
     private void OnDestroy() {

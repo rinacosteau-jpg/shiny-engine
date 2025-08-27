@@ -1,132 +1,192 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
 public class SkillSelectionUI : MonoBehaviour {
-    [Header("Общее")]
-    [SerializeField] private TMP_Text pointsLeftText;   // "Оставшиеся Skillpoints"
-    [SerializeField] private Button okButton;           // Активна только когда pointsLeft == 0
-    [SerializeField] private int startPoints = 10;      // Сколько очков выдаём на распределение
+    [Header("UI refs")]
+    [SerializeField] private TMP_Text pointsLeftText;     // "Оставшиеся Skillpoints"
+    [SerializeField] private Button okButton;             // активна только когда pointsLeft == 0
+    [SerializeField] private RectTransform slotContainer; // контейнер со VerticalLayoutGroup
+    [SerializeField] private RectTransform slotTemplate;  // ЕДИНСТВЕННЫЙ шаблон слота (деактивирован)
 
-    [Serializable]
-    private class SkillSlotUI {
-        [Header("UI")]
-        public string displayName;          // Подпись в UI (например, "Persuasion")
-        public TMP_Text nameText;           // Текст названия
-        public TMP_Text valueText;          // Текст текущего значения (распределённых очков)
-        public Button plusButton;           // "+"
-        public Button minusButton;          // "-"
+    [Header("Config")]
+    [SerializeField] private int startPoints = 10;
 
-        [Header("Данные")]
-        public Skill skill;                 // Ссылка на объект Skill из PlayerState
-        [HideInInspector] public int value; // Сколько очков добавили локально (не абсолют)
+    // внутренняя модель слота
+    private class RuntimeSlot {
+        public string fieldName;
+        public Skill skill;
+        public int value; // локально распределённые очки (с нуля)
+
+        // ui
+        public TMP_Text nameText;
+        public TMP_Text valueText;
+        public Button plusButton;
+        public Button minusButton;
+        public GameObject go;
     }
 
-    [Header("Скилл #1 (Persuasion)")]
-    [SerializeField] private SkillSlotUI skill1;
-
-    [Header("Скилл #2 (Perseption)")]
-    [SerializeField] private SkillSlotUI skill2;
-
+    private readonly List<RuntimeSlot> _slots = new();
     private int pointsLeft;
 
     private void Awake() {
+        // Автопоиск контейнера/шаблона если не проткнули руками
+        if (!slotContainer) {
+            var vg = GetComponentInChildren<VerticalLayoutGroup>(true);
+            if (vg) slotContainer = vg.GetComponent<RectTransform>();
+        }
+        if (!slotTemplate && slotContainer && slotContainer.childCount > 0) {
+            // предполагаем, что первый/единственный ребёнок — шаблон
+            slotTemplate = slotContainer.GetChild(0) as RectTransform;
+        }
+
+        if (okButton) okButton.onClick.AddListener(Confirm);
+
+        // окно скрыто по умолчанию
         gameObject.SetActive(false);
 
-        WireSlot(skill1);
-        WireSlot(skill2);
-
-        if (okButton)
-            okButton.onClick.AddListener(Confirm);
+        // на всякий — убедимся, что шаблон выключен
+        if (slotTemplate) slotTemplate.gameObject.SetActive(false);
     }
 
     /// <summary>
-    /// Открыть окно и привязать к скиллам из PlayerState.
-    /// Значения в UI стартуют с нуля (распределяем только дополнительные очки),
-    /// при Confirm() пишем абсолют в Skill.Value = локально_распределённое.
+    /// Открыть окно, сгенерировать слоты под все Skill-поля из PlayerState.
     /// </summary>
     public void Open(PlayerState player, int? pointsOverride = null) {
-        // Привязываем ссылки на реальные Skill из пришедшего PlayerState
-        skill1.skill = player.skillPersuasion;
-        skill2.skill = player.skillPerseption;
+        if (!slotContainer || !slotTemplate) {
+            Debug.LogError("[SkillSelectionUI] Не задан slotContainer или slotTemplate.");
+            return;
+        }
+
+        // сброс
+        foreach (Transform child in slotContainer) {
+            if (child == slotTemplate) continue;
+            Destroy(child.gameObject);
+        }
+        _slots.Clear();
 
         pointsLeft = pointsOverride ?? startPoints;
 
-        ResetSlot(skill1);
-        ResetSlot(skill2);
+        // находим все public instance-поля типа Skill
+        var fields = typeof(PlayerState)
+            .GetFields(BindingFlags.Public | BindingFlags.Instance)
+            .Where(f => f.FieldType == typeof(Skill))
+            .OrderBy(f => f.Name) // стабильный порядок
+            .ToList();
 
-        // Подписи
-        if (skill1.nameText && !string.IsNullOrEmpty(skill1.displayName))
-            skill1.nameText.text = skill1.displayName;
-        if (skill2.nameText && !string.IsNullOrEmpty(skill2.displayName))
-            skill2.nameText.text = skill2.displayName;
+        foreach (var f in fields) {
+            var skillObj = f.GetValue(player) as Skill;
+            if (skillObj == null) continue;
+
+            var displayName = MakeDisplayName(f.Name); // например skillPerseption -> Perseption
+            var slot = CreateSlot(displayName, skillObj);
+            _slots.Add(slot);
+        }
 
         UpdateUI();
         gameObject.SetActive(true);
     }
 
-    private void WireSlot(SkillSlotUI s) {
-        if (s == null) return;
+    private RuntimeSlot CreateSlot(string displayName, Skill skill) {
+        var go = Instantiate(slotTemplate, slotContainer);
+        go.gameObject.name = $"Slot_{displayName}";
+        go.gameObject.SetActive(true);
 
-        if (s.valueText) s.valueText.text = "0";
-        if (s.plusButton) s.plusButton.onClick.AddListener(() => Change(s, +1));
-        if (s.minusButton) s.minusButton.onClick.AddListener(() => Change(s, -1));
+        // ищем элементы по предсказуемым именам
+        TMP_Text nameText = FindIn<TMP_Text>(go, "Name");
+        TMP_Text valueText = FindIn<TMP_Text>(go, "Value");
+        Button btnPlus = FindIn<Button>(go, "Plus");
+        Button btnMinus = FindIn<Button>(go, "Minus");
+
+        if (nameText) nameText.text = displayName;
+        if (valueText) valueText.text = "0";
+
+        var slot = new RuntimeSlot {
+            fieldName = displayName,
+            skill = skill,
+            value = 0,
+            nameText = nameText,
+            valueText = valueText,
+            plusButton = btnPlus,
+            minusButton = btnMinus,
+            go = go.gameObject
+        };
+
+        if (btnPlus) btnPlus.onClick.AddListener(() => Change(slot, +1));
+        if (btnMinus) btnMinus.onClick.AddListener(() => Change(slot, -1));
+
+        return slot;
     }
 
-    private void ResetSlot(SkillSlotUI s) {
-        if (s == null) return;
-        s.value = 0;
-        if (s.valueText) s.valueText.text = "0";
+    private static T FindIn<T>(RectTransform root, string childName) where T : Component {
+        var t = root.Find(childName);
+        if (t) return t.GetComponent<T>();
+        // запасной вариант — поиск по всем потомкам
+        return root.GetComponentsInChildren<T>(true)
+                   .FirstOrDefault(c => string.Equals(c.gameObject.name, childName, StringComparison.Ordinal));
     }
 
-    private void Change(SkillSlotUI s, int delta) {
-        if (s == null) return;
-        if (delta > 0 && pointsLeft == 0) return; // нет очков — не добавляем
-        if (delta < 0 && s.value == 0) return;     // не уходим ниже нуля по локальному распределению
+    private void Change(RuntimeSlot s, int delta) {
+        if (delta > 0 && pointsLeft == 0) return;
+        if (delta < 0 && s.value == 0) return;
 
         s.value += delta;
         pointsLeft -= delta;
 
-        if (s.valueText)
-            s.valueText.text = s.value.ToString();
-
+        if (s.valueText) s.valueText.text = s.value.ToString();
         UpdateUI();
     }
 
     private void UpdateUI() {
-        if (pointsLeftText)
-            pointsLeftText.text = pointsLeft.ToString();
+        if (pointsLeftText) pointsLeftText.text = pointsLeft.ToString();
+        if (okButton) okButton.interactable = (pointsLeft == 0);
 
-        if (okButton)
-            okButton.interactable = (pointsLeft == 0);
-
-        UpdateSlotInteractable(skill1);
-        UpdateSlotInteractable(skill2);
-    }
-
-    private void UpdateSlotInteractable(SkillSlotUI s) {
-        if (s == null) return;
-        if (s.plusButton) s.plusButton.interactable = pointsLeft > 0;
-        if (s.minusButton) s.minusButton.interactable = s.value > 0;
+        foreach (var s in _slots) {
+            if (s.plusButton) s.plusButton.interactable = pointsLeft > 0;
+            if (s.minusButton) s.minusButton.interactable = s.value > 0;
+        }
     }
 
     public void Confirm() {
-        // На всякий случай проверка
-        if (pointsLeft != 0) return;
+        if (pointsLeft != 0) return; // на всякий
 
-        ApplySlot(skill1);
-        ApplySlot(skill2);
+        foreach (var s in _slots) {
+            if (s.skill != null) {
+                // простая логика: абсолют = распределённые очки
+                // если хочешь прибавлять к текущему, замени на: s.skill.Value += s.value;
+                s.skill.Value = s.value;
+            }
+        }
 
         gameObject.SetActive(false);
     }
 
-    private void ApplySlot(SkillSlotUI s) {
-        if (s?.skill != null) {
-            // Текущая простая логика: пишем абсолют = распределённые очки
-            // Если захочешь делать "базовое + распределённое", замени на:
-            // s.skill.Value = s.skill.Value + s.value;
-            s.skill.Value = s.value;
+    // "skillPerseption" -> "Perseption", "skillPersuasion" -> "Persuasion"
+    private static string MakeDisplayName(string fieldName) {
+        const string prefix = "skill";
+        if (fieldName.StartsWith(prefix, StringComparison.OrdinalIgnoreCase)) {
+            var tail = fieldName.Substring(prefix.Length);
+            if (tail.Length == 0) return fieldName;
+            // делаем первую букву заглавной
+            return char.ToUpperInvariant(tail[0]) + tail.Substring(1);
         }
+        // разбиваем CamelCase на слова (если нужно)
+        return SplitCamel(fieldName);
+    }
+
+    private static string SplitCamel(string s) {
+        if (string.IsNullOrEmpty(s)) return s;
+        var result = new System.Text.StringBuilder(s.Length + 8);
+        result.Append(char.ToUpperInvariant(s[0]));
+        for (int i = 1; i < s.Length; i++) {
+            var ch = s[i];
+            if (char.IsUpper(ch)) result.Append(' ');
+            result.Append(ch);
+        }
+        return result.ToString();
     }
 }

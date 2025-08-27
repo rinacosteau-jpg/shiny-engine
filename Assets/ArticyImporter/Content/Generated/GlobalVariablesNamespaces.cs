@@ -522,12 +522,68 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             }
         }
         
+        // 
+        public int skill_Test1
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueInt32(18);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueInt32(18, value);
+            }
+        }
+        
+        // 
+        public bool skill_Test2
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueBoolean(10);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueBoolean(10, value);
+            }
+        }
+        
+        // 
+        public bool skill_Test3
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueBoolean(11);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueBoolean(11, value);
+            }
+        }
+        
+        // 
+        public bool skill_Test4
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueBoolean(12);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueBoolean(12, value);
+            }
+        }
+        
         public void RegisterVariables(BaseGlobalVariables aStorage)
         {
             _VariableStorage = aStorage;
             aStorage.RegisterVariable("PS.loopCounter", 0);
             aStorage.RegisterVariable("PS.skill_Persuasion", 0);
             aStorage.RegisterVariable("PS.skill_Perseption", 0);
+            aStorage.RegisterVariable("PS.skill_Test1", 0);
+            aStorage.RegisterVariable("PS.skill_Test2", false);
+            aStorage.RegisterVariable("PS.skill_Test3", false);
+            aStorage.RegisterVariable("PS.skill_Test4", false);
         }
     }
 }
@@ -547,19 +603,6 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         {
             get
             {
-                return _VariableStorage.Internal_GetVariableValueInt32(18);
-            }
-            set
-            {
-                _VariableStorage.Internal_SetVariableValueInt32(18, value);
-            }
-        }
-        
-        // 
-        public int getGun_Stage
-        {
-            get
-            {
                 return _VariableStorage.Internal_GetVariableValueInt32(19);
             }
             set
@@ -569,7 +612,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         }
         
         // 
-        public int getGun_State
+        public int getGun_Stage
         {
             get
             {
@@ -581,12 +624,67 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             }
         }
         
+        // 
+        public int getGun_State
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueInt32(21);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueInt32(21, value);
+            }
+        }
+        
+        // 
+        public int getArtefact_Stage
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueInt32(22);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueInt32(22, value);
+            }
+        }
+        
+        // 
+        public int getArtefact_State
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueInt32(23);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueInt32(23, value);
+            }
+        }
+        
+        // 
+        public int getArtefact_Result
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueInt32(24);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueInt32(24, value);
+            }
+        }
+        
         public void RegisterVariables(BaseGlobalVariables aStorage)
         {
             _VariableStorage = aStorage;
             aStorage.RegisterVariable("NQUE.getGun_Result", 0);
             aStorage.RegisterVariable("NQUE.getGun_Stage", 0);
             aStorage.RegisterVariable("NQUE.getGun_State", 0);
+            aStorage.RegisterVariable("NQUE.getArtefact_Stage", 0);
+            aStorage.RegisterVariable("NQUE.getArtefact_State", 0);
+            aStorage.RegisterVariable("NQUE.getArtefact_Result", 0);
         }
     }
 }

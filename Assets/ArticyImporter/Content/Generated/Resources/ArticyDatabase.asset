@@ -25,134 +25,6 @@ MonoBehaviour:
     mIsVoiceOver: 0
   mThrowOnMissingText: 0
   mClearOnLanguageSwitch: 1
---- !u!114 &-4028937979132298818
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65213dc888abacb419e6db477e6764ea, type: 3}
-  m_Name: DefaultGlobalVariables
-  m_EditorClassIdentifier: 
-  mBoolVariableCache:
-  - mFullQualifiedName: NKNW.hadGun
-    mVar:
-      values: 00
-  - mFullQualifiedName: NKNW.ratCanDistractGuard
-    mVar:
-      values: 00
-  - mFullQualifiedName: NKNW.tomasSus
-    mVar:
-      values: 00
-  - mFullQualifiedName: NKNW.aoBlamesHimself
-    mVar:
-      values: 00
-  - mFullQualifiedName: NKNW.popularNovel
-    mVar:
-      values: 00
-  - mFullQualifiedName: NKNW.code_shadyPeople
-    mVar:
-      values: 00
-  - mFullQualifiedName: NKNW.tomAttemptsMurder
-    mVar:
-      values: 00
-  - mFullQualifiedName: RQUE.advertise_Stage
-    mVar:
-      values: 00
-  - mFullQualifiedName: RFLG.murderAttempt
-    mVar:
-      values: 00
-  - mFullQualifiedName: RFLG.talkedToRu
-    mVar:
-      values: 00
-  mIntVariableCache:
-  - mFullQualifiedName: NKNW.libSusCounter
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.advertise_State
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.advertise_Obj_A
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.advertise_TalkedCount
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.advertise_Obj_B
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.advertise_Obj_C
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.advertise_Result
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: ITM.item_kotsukiNote_delta
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: ITM.item_kotsukiNote_count
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: ITM.item_InventoryArtefact_count
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: ITM.item_InventoryArtefact_delta
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: ITM.item_Gun_count
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: ITM.item_Gun_delta
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RCNT.askLibAbtPeople
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: EVT.event_murderAttempt
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: PS.loopCounter
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: PS.skill_Persuasion
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: PS.skill_Perseption
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: NQUE.getGun_Result
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: NQUE.getGun_Stage
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: NQUE.getGun_State
-    mVar:
-      values: 00000000
-  mStringVariableCache: []
-  mLiveBoolVariableCache: []
-  mLiveIntVariableCache: []
-  mLiveStringVariableCache: []
-  mIsInitialized: 1
-  mNKNW:
-    _VariableStorage: {fileID: -4028937979132298818}
-  mRQUE:
-    _VariableStorage: {fileID: -4028937979132298818}
-  mRFLG:
-    _VariableStorage: {fileID: -4028937979132298818}
-  mITM:
-    _VariableStorage: {fileID: -4028937979132298818}
-  mRCNT:
-    _VariableStorage: {fileID: -4028937979132298818}
-  mEVT:
-    _VariableStorage: {fileID: -4028937979132298818}
-  mPS:
-    _VariableStorage: {fileID: -4028937979132298818}
-  mNQUE:
-    _VariableStorage: {fileID: -4028937979132298818}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,7 +64,7 @@ MonoBehaviour:
   - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1705_Shady_Game_Character_remix_01k391g1nee32ra8q8yft1rnvm.png"
   - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1756_Revenge-Driven_Game_Character_remix_01k394d5bwf22t9g3jbb3626zd.png"
   - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1754_Game_Character_Portrait_remix_01k3948yxreacsvh79vk46m5xa.png"
-  mDefaultGlobalVariables: {fileID: -4028937979132298818}
+  mDefaultGlobalVariables: {fileID: 8866587936906798342}
   mPackages:
   - PackageId: 72057594037928208
     PackageName: "\u0412\u0441\u0435 \u043E\u0431\u044A\u0435\u043A\u0442\u044B"
@@ -295,11 +167,16 @@ MonoBehaviour:
     parent: 216172783251375095
     technicalName: Dlg_4609965F
     articyType: Dialogue
-    childCount: 44
+    childCount: 45
   - id: 72057594037931880
     parent: 72057594037928818
     technicalName: DFr_3A7940B5
     articyType: DialogueFragment
+    childCount: 0
+  - id: 72057594037932121
+    parent: 72057594037928818
+    technicalName: Cnd_8E10DB75
+    articyType: Condition
     childCount: 0
   - id: 72057594037931806
     parent: 72057594037928818
@@ -2041,3 +1918,152 @@ MonoBehaviour:
     technicalName: Ufo_CDF30863
     articyType: AssetsUserFolder
     childCount: 0
+--- !u!114 &8866587936906798342
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65213dc888abacb419e6db477e6764ea, type: 3}
+  m_Name: DefaultGlobalVariables
+  m_EditorClassIdentifier: 
+  mBoolVariableCache:
+  - mFullQualifiedName: NKNW.hadGun
+    mVar:
+      values: 00
+  - mFullQualifiedName: NKNW.ratCanDistractGuard
+    mVar:
+      values: 00
+  - mFullQualifiedName: NKNW.tomasSus
+    mVar:
+      values: 00
+  - mFullQualifiedName: NKNW.aoBlamesHimself
+    mVar:
+      values: 00
+  - mFullQualifiedName: NKNW.popularNovel
+    mVar:
+      values: 00
+  - mFullQualifiedName: NKNW.code_shadyPeople
+    mVar:
+      values: 00
+  - mFullQualifiedName: NKNW.tomAttemptsMurder
+    mVar:
+      values: 00
+  - mFullQualifiedName: RQUE.advertise_Stage
+    mVar:
+      values: 00
+  - mFullQualifiedName: RFLG.murderAttempt
+    mVar:
+      values: 00
+  - mFullQualifiedName: RFLG.talkedToRu
+    mVar:
+      values: 00
+  - mFullQualifiedName: PS.skill_Test2
+    mVar:
+      values: 00
+  - mFullQualifiedName: PS.skill_Test3
+    mVar:
+      values: 00
+  - mFullQualifiedName: PS.skill_Test4
+    mVar:
+      values: 00
+  mIntVariableCache:
+  - mFullQualifiedName: NKNW.libSusCounter
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RQUE.advertise_State
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RQUE.advertise_Obj_A
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RQUE.advertise_TalkedCount
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RQUE.advertise_Obj_B
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RQUE.advertise_Obj_C
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RQUE.advertise_Result
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: ITM.item_kotsukiNote_delta
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: ITM.item_kotsukiNote_count
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: ITM.item_InventoryArtefact_count
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: ITM.item_InventoryArtefact_delta
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: ITM.item_Gun_count
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: ITM.item_Gun_delta
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RCNT.askLibAbtPeople
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: EVT.event_murderAttempt
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: PS.loopCounter
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: PS.skill_Persuasion
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: PS.skill_Perseption
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: PS.skill_Test1
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NQUE.getGun_Result
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NQUE.getGun_Stage
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NQUE.getGun_State
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NQUE.getArtefact_Stage
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NQUE.getArtefact_State
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NQUE.getArtefact_Result
+    mVar:
+      values: 00000000
+  mStringVariableCache: []
+  mLiveBoolVariableCache: []
+  mLiveIntVariableCache: []
+  mLiveStringVariableCache: []
+  mIsInitialized: 1
+  mNKNW:
+    _VariableStorage: {fileID: 8866587936906798342}
+  mRQUE:
+    _VariableStorage: {fileID: 8866587936906798342}
+  mRFLG:
+    _VariableStorage: {fileID: 8866587936906798342}
+  mITM:
+    _VariableStorage: {fileID: 8866587936906798342}
+  mRCNT:
+    _VariableStorage: {fileID: 8866587936906798342}
+  mEVT:
+    _VariableStorage: {fileID: 8866587936906798342}
+  mPS:
+    _VariableStorage: {fileID: 8866587936906798342}
+  mNQUE:
+    _VariableStorage: {fileID: 8866587936906798342}

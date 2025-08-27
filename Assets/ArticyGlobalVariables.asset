@@ -43,6 +43,15 @@ MonoBehaviour:
   - mFullQualifiedName: RFLG.talkedToRu
     mVar:
       values: 00
+  - mFullQualifiedName: PS.skill_Test2
+    mVar:
+      values: 00
+  - mFullQualifiedName: PS.skill_Test3
+    mVar:
+      values: 00
+  - mFullQualifiedName: PS.skill_Test4
+    mVar:
+      values: 00
   mIntVariableCache:
   - mFullQualifiedName: NKNW.libSusCounter
     mVar:
@@ -98,6 +107,9 @@ MonoBehaviour:
   - mFullQualifiedName: PS.skill_Perseption
     mVar:
       values: 00000000
+  - mFullQualifiedName: PS.skill_Test1
+    mVar:
+      values: 00000000
   - mFullQualifiedName: NQUE.getGun_Result
     mVar:
       values: 00000000
@@ -105,6 +117,15 @@ MonoBehaviour:
     mVar:
       values: 00000000
   - mFullQualifiedName: NQUE.getGun_State
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NQUE.getArtefact_Stage
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NQUE.getArtefact_State
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NQUE.getArtefact_Result
     mVar:
       values: 00000000
   mStringVariableCache: []
@@ -137,6 +158,15 @@ MonoBehaviour:
     mVar:
       values: 00
   - mFullQualifiedName: RFLG.talkedToRu
+    mVar:
+      values: 00
+  - mFullQualifiedName: PS.skill_Test2
+    mVar:
+      values: 00
+  - mFullQualifiedName: PS.skill_Test3
+    mVar:
+      values: 00
+  - mFullQualifiedName: PS.skill_Test4
     mVar:
       values: 00
   mLiveIntVariableCache:
@@ -194,6 +224,9 @@ MonoBehaviour:
   - mFullQualifiedName: PS.skill_Perseption
     mVar:
       values: 00000000
+  - mFullQualifiedName: PS.skill_Test1
+    mVar:
+      values: 00000000
   - mFullQualifiedName: NQUE.getGun_Result
     mVar:
       values: 00000000
@@ -201,6 +234,15 @@ MonoBehaviour:
     mVar:
       values: 00000000
   - mFullQualifiedName: NQUE.getGun_State
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NQUE.getArtefact_Stage
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NQUE.getArtefact_State
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NQUE.getArtefact_Result
     mVar:
       values: 00000000
   mLiveStringVariableCache: []
