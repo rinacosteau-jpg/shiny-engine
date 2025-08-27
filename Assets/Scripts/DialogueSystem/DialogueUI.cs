@@ -25,6 +25,30 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
 
     public IObjectWithFeatureDuration kek;
     private bool suppressOnFlowPause = false;
+    private bool? originalRecalcSetting;
+
+    private void SetContinuousRecalculation(bool enable) {
+        if (flowPlayer == null) return;
+        var flags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
+        var type = flowPlayer.GetType();
+
+        var field = type.GetField("continuouslyRecalculateBranches", flags);
+        if (field != null) {
+            if (originalRecalcSetting == null)
+                originalRecalcSetting = (bool)field.GetValue(flowPlayer);
+            field.SetValue(flowPlayer, enable);
+            return;
+        }
+
+        var prop = type.GetProperty("continuouslyRecalculateBranches", flags) ??
+                   type.GetProperty("ContinuouslyRecalculateBranches", flags);
+        if (prop != null) {
+            if (originalRecalcSetting == null && prop.CanRead)
+                originalRecalcSetting = (bool)prop.GetValue(flowPlayer);
+            if (prop.CanWrite)
+                prop.SetValue(flowPlayer, enable);
+        }
+    }
 
     private MethodInfo recalcMethod;
     private FieldInfo variableCacheField;
@@ -97,7 +121,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         }
 
         // сброс состояния UI
-        responseHandler?.ClearResponses();
+        r responseHandler?.ClearResponses();
         lastDisplayedText = string.Empty;
         if (textLabel != null) textLabel.text = string.Empty;
         dialogueFinished = false;
@@ -126,6 +150,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         responseHandler?.ClearResponses();
         IsDialogueOpen = false;
         if (flowPlayer != null) {
+            SetContinuousRecalculation(originalRecalcSetting ?? false);
             suppressOnFlowPause = true;
             var stopMethod = flowPlayer.GetType().GetMethod("Stop", BindingFlags.Public | BindingFlags.Instance);
             stopMethod?.Invoke(flowPlayer, null);
