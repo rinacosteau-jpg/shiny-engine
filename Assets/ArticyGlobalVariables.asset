@@ -40,7 +40,7 @@ MonoBehaviour:
   - mFullQualifiedName: RFLG.murderAttempt
     mVar:
       values: 00
-  - mFullQualifiedName: RFLG.talkedToRu
+  - mFullQualifiedName: RFLG.neutralizedByGuard
     mVar:
       values: 00
   - mFullQualifiedName: PS.skill_Test2
@@ -54,6 +54,36 @@ MonoBehaviour:
       values: 00
   mIntVariableCache:
   - mFullQualifiedName: NKNW.libSusCounter
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NKNW.kill_tasha
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NKNW.kill_rat
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NKNW.kill_self
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NKNW.kill_vaza
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NKNW.kill_ru
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NKNW.kill_kot
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NKNW.kill_lib
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NKNW.kill_guard
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NKNW.kill_ao
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NKNW.kill_tom
     mVar:
       values: 00000000
   - mFullQualifiedName: RQUE.advertise_State
@@ -72,6 +102,15 @@ MonoBehaviour:
     mVar:
       values: 00000000
   - mFullQualifiedName: RQUE.advertise_Result
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RQUE.getArtefact_State
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RQUE.getArtefact_Stage
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RQUE.getArtefact_Result
     mVar:
       values: 00000000
   - mFullQualifiedName: ITM.item_kotsukiNote_delta
@@ -110,6 +149,12 @@ MonoBehaviour:
   - mFullQualifiedName: PS.skill_Test1
     mVar:
       values: 00000000
+  - mFullQualifiedName: PS.standing_purple
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: PS.standing_akaimoon
+    mVar:
+      values: 00000000
   - mFullQualifiedName: NQUE.getGun_Result
     mVar:
       values: 00000000
@@ -117,15 +162,6 @@ MonoBehaviour:
     mVar:
       values: 00000000
   - mFullQualifiedName: NQUE.getGun_State
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: NQUE.getArtefact_Stage
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: NQUE.getArtefact_State
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: NQUE.getArtefact_Result
     mVar:
       values: 00000000
   mStringVariableCache: []
@@ -157,7 +193,7 @@ MonoBehaviour:
   - mFullQualifiedName: RFLG.murderAttempt
     mVar:
       values: 00
-  - mFullQualifiedName: RFLG.talkedToRu
+  - mFullQualifiedName: RFLG.neutralizedByGuard
     mVar:
       values: 00
   - mFullQualifiedName: PS.skill_Test2
@@ -171,6 +207,36 @@ MonoBehaviour:
       values: 00
   mLiveIntVariableCache:
   - mFullQualifiedName: NKNW.libSusCounter
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NKNW.kill_tasha
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NKNW.kill_rat
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NKNW.kill_self
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NKNW.kill_vaza
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NKNW.kill_ru
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NKNW.kill_kot
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NKNW.kill_lib
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NKNW.kill_guard
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NKNW.kill_ao
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NKNW.kill_tom
     mVar:
       values: 00000000
   - mFullQualifiedName: RQUE.advertise_State
@@ -189,6 +255,15 @@ MonoBehaviour:
     mVar:
       values: 00000000
   - mFullQualifiedName: RQUE.advertise_Result
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RQUE.getArtefact_State
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RQUE.getArtefact_Stage
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RQUE.getArtefact_Result
     mVar:
       values: 00000000
   - mFullQualifiedName: ITM.item_kotsukiNote_delta
@@ -227,6 +302,12 @@ MonoBehaviour:
   - mFullQualifiedName: PS.skill_Test1
     mVar:
       values: 00000000
+  - mFullQualifiedName: PS.standing_purple
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: PS.standing_akaimoon
+    mVar:
+      values: 00000000
   - mFullQualifiedName: NQUE.getGun_Result
     mVar:
       values: 00000000
@@ -234,15 +315,6 @@ MonoBehaviour:
     mVar:
       values: 00000000
   - mFullQualifiedName: NQUE.getGun_State
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: NQUE.getArtefact_Stage
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: NQUE.getArtefact_State
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: NQUE.getArtefact_Result
     mVar:
       values: 00000000
   mLiveStringVariableCache: []

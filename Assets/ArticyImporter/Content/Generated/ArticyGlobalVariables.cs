@@ -67,6 +67,16 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             variableNames.Add("NKNW.libSusCounter");
             variableNames.Add("NKNW.code_shadyPeople");
             variableNames.Add("NKNW.tomAttemptsMurder");
+            variableNames.Add("NKNW.kill_tasha");
+            variableNames.Add("NKNW.kill_rat");
+            variableNames.Add("NKNW.kill_self");
+            variableNames.Add("NKNW.kill_vaza");
+            variableNames.Add("NKNW.kill_ru");
+            variableNames.Add("NKNW.kill_kot");
+            variableNames.Add("NKNW.kill_lib");
+            variableNames.Add("NKNW.kill_guard");
+            variableNames.Add("NKNW.kill_ao");
+            variableNames.Add("NKNW.kill_tom");
             variableNames.Add("RQUE.advertise_State");
             variableNames.Add("RQUE.advertise_Obj_A");
             variableNames.Add("RQUE.advertise_TalkedCount");
@@ -74,8 +84,11 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             variableNames.Add("RQUE.advertise_Obj_C");
             variableNames.Add("RQUE.advertise_Result");
             variableNames.Add("RQUE.advertise_Stage");
+            variableNames.Add("RQUE.getArtefact_State");
+            variableNames.Add("RQUE.getArtefact_Stage");
+            variableNames.Add("RQUE.getArtefact_Result");
             variableNames.Add("RFLG.murderAttempt");
-            variableNames.Add("RFLG.talkedToRu");
+            variableNames.Add("RFLG.neutralizedByGuard");
             variableNames.Add("ITM.item_kotsukiNote_delta");
             variableNames.Add("ITM.item_kotsukiNote_count");
             variableNames.Add("ITM.item_InventoryArtefact_count");
@@ -91,12 +104,11 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             variableNames.Add("PS.skill_Test2");
             variableNames.Add("PS.skill_Test3");
             variableNames.Add("PS.skill_Test4");
+            variableNames.Add("PS.standing_purple");
+            variableNames.Add("PS.standing_akaimoon");
             variableNames.Add("NQUE.getGun_Result");
             variableNames.Add("NQUE.getGun_Stage");
             variableNames.Add("NQUE.getGun_State");
-            variableNames.Add("NQUE.getArtefact_Stage");
-            variableNames.Add("NQUE.getArtefact_State");
-            variableNames.Add("NQUE.getArtefact_Result");
         }
         #endregion
         

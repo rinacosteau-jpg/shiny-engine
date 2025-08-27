@@ -5911,7 +5911,7 @@ MonoBehaviour:
   okButton: {fileID: 720928258}
   slotContainer: {fileID: 581915746}
   slotTemplate: {fileID: 1648990410}
-  startPoints: 20
+  startPoints: 8
   forceTopCanvas: 1
   topSortingOrder: 5000
   activateParentsIfInactive: 1
@@ -7792,7 +7792,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 319.62024, y: -373.71008}
+  m_AnchoredPosition: {x: 319.62024, y: -373.71002}
   m_SizeDelta: {x: -158.4893, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &3220404268942988063
@@ -8704,7 +8704,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7298263326104629039}
   m_HandleRect: {fileID: 2560981688146095341}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:

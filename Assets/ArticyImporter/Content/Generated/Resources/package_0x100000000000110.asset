@@ -17,319 +17,324 @@ MonoBehaviour:
   mPackagePath: Assets/ArticyImporter/Content/Generated/Resources/package_0x100000000000110.asset
   mResourceKey: package_0x100000000000110
   mObjects:
-  - rid: 796646247615168881
-  - rid: 796646247615168882
-  - rid: 796646247615168883
-  - rid: 796646247615168884
-  - rid: 796646247615168885
-  - rid: 796646247615168886
-  - rid: 796646247615168887
-  - rid: 796646247615168888
-  - rid: 796646247615168889
-  - rid: 796646247615168890
-  - rid: 796646247615168891
-  - rid: 796646247615168892
-  - rid: 796646247615168893
-  - rid: 796646247615168894
-  - rid: 796646247615168895
-  - rid: 796646247615168896
-  - rid: 796646247615168897
-  - rid: 796646247615168898
-  - rid: 796646247615168899
-  - rid: 796646247615168900
-  - rid: 796646247615168901
-  - rid: 796646247615168902
-  - rid: 796646247615168903
-  - rid: 796646247615168904
-  - rid: 796646247615168905
-  - rid: 796646247615168906
-  - rid: 796646247615168907
-  - rid: 796646247615168908
-  - rid: 796646247615168909
-  - rid: 796646247615168910
-  - rid: 796646247615168911
-  - rid: 796646247615168912
-  - rid: 796646247615168913
-  - rid: 796646247615168914
-  - rid: 796646247615168915
-  - rid: 796646247615168916
-  - rid: 796646247615168917
-  - rid: 796646247615168918
-  - rid: 796646247615168919
-  - rid: 796646247615168920
-  - rid: 796646247615168921
-  - rid: 796646247615168922
-  - rid: 796646247615168923
-  - rid: 796646247615168924
-  - rid: 796646247615168925
-  - rid: 796646247615168926
-  - rid: 796646247615168927
-  - rid: 796646247615168928
-  - rid: 796646247615168929
-  - rid: 796646247615168930
-  - rid: 796646247615168931
-  - rid: 796646247615168932
-  - rid: 796646247615168933
-  - rid: 796646247615168934
-  - rid: 796646247615168935
-  - rid: 796646247615168936
-  - rid: 796646247615168937
-  - rid: 796646247615168938
-  - rid: 796646247615168939
-  - rid: 796646247615168940
-  - rid: 796646247615168941
-  - rid: 796646247615168942
-  - rid: 796646247615168943
-  - rid: 796646247615168944
-  - rid: 796646247615168945
-  - rid: 796646247615168946
-  - rid: 796646247615168947
-  - rid: 796646247615168948
-  - rid: 796646247615168949
-  - rid: 796646247615168950
-  - rid: 796646247615168951
-  - rid: 796646247615168952
-  - rid: 796646247615168953
-  - rid: 796646247615168954
-  - rid: 796646247615168955
-  - rid: 796646247615168956
-  - rid: 796646247615168957
-  - rid: 796646247615168958
-  - rid: 796646247615168959
-  - rid: 796646247615168960
-  - rid: 796646247615168961
-  - rid: 796646247615168962
-  - rid: 796646247615168963
-  - rid: 796646247615168964
-  - rid: 796646247615168965
-  - rid: 796646247615168966
-  - rid: 796646247615168967
-  - rid: 796646247615168968
-  - rid: 796646247615168969
-  - rid: 796646247615168970
-  - rid: 796646247615168971
-  - rid: 796646247615168972
-  - rid: 796646247615168973
-  - rid: 796646247615168974
-  - rid: 796646247615168975
-  - rid: 796646247615168976
-  - rid: 796646247615168977
-  - rid: 796646247615168978
-  - rid: 796646247615168979
-  - rid: 796646247615168980
-  - rid: 796646247615168981
-  - rid: 796646247615168982
-  - rid: 796646247615168983
-  - rid: 796646247615168984
-  - rid: 796646247615168985
-  - rid: 796646247615168986
-  - rid: 796646247615168987
-  - rid: 796646247615168988
-  - rid: 796646247615168989
-  - rid: 796646247615168990
-  - rid: 796646247615168991
-  - rid: 796646247615168992
-  - rid: 796646247615168993
-  - rid: 796646247615168994
-  - rid: 796646247615168995
-  - rid: 796646247615168996
-  - rid: 796646247615168997
-  - rid: 796646247615168998
-  - rid: 796646247615168999
-  - rid: 796646247615169000
-  - rid: 796646247615169001
-  - rid: 796646247615169002
-  - rid: 796646247615169003
-  - rid: 796646247615169004
-  - rid: 796646247615169005
-  - rid: 796646247615169006
-  - rid: 796646247615169007
-  - rid: 796646247615169008
-  - rid: 796646247615169009
-  - rid: 796646247615169010
-  - rid: 796646247615169011
-  - rid: 796646247615169012
-  - rid: 796646247615169013
-  - rid: 796646247615169014
-  - rid: 796646247615169015
-  - rid: 796646247615169016
-  - rid: 796646247615169017
-  - rid: 796646247615169018
-  - rid: 796646247615169019
-  - rid: 796646247615169020
-  - rid: 796646247615169021
-  - rid: 796646247615169022
-  - rid: 796646247615169023
-  - rid: 796646247615169024
-  - rid: 796646247615169025
-  - rid: 796646247615169026
-  - rid: 796646247615169027
-  - rid: 796646247615169028
-  - rid: 796646247615169029
-  - rid: 796646247615169030
-  - rid: 796646247615169031
-  - rid: 796646247615169032
-  - rid: 796646247615169033
-  - rid: 796646247615169034
-  - rid: 796646247615169035
-  - rid: 796646247615169036
-  - rid: 796646247615169037
-  - rid: 796646247615169038
-  - rid: 796646247615169039
-  - rid: 796646247615169040
-  - rid: 796646247615169041
-  - rid: 796646247615169042
-  - rid: 796646247615169043
-  - rid: 796646247615169044
-  - rid: 796646247615169045
-  - rid: 796646247615169046
-  - rid: 796646247615169047
-  - rid: 796646247615169048
-  - rid: 796646247615169049
-  - rid: 796646247615169050
-  - rid: 796646247615169051
-  - rid: 796646247615169052
-  - rid: 796646247615169053
-  - rid: 796646247615169054
-  - rid: 796646247615169055
-  - rid: 796646247615169056
-  - rid: 796646247615169057
-  - rid: 796646247615169058
-  - rid: 796646247615169059
-  - rid: 796646247615169060
-  - rid: 796646247615169061
-  - rid: 796646247615169062
-  - rid: 796646247615169063
-  - rid: 796646247615169064
-  - rid: 796646247615169065
-  - rid: 796646247615169066
-  - rid: 796646247615169067
-  - rid: 796646247615169068
-  - rid: 796646247615169069
-  - rid: 796646247615169070
-  - rid: 796646247615169071
-  - rid: 796646247615169072
-  - rid: 796646247615169073
-  - rid: 796646247615169074
-  - rid: 796646247615169075
-  - rid: 796646247615169076
-  - rid: 796646247615169077
-  - rid: 796646247615169078
-  - rid: 796646247615169079
-  - rid: 796646247615169080
-  - rid: 796646247615169081
-  - rid: 796646247615169082
-  - rid: 796646247615169083
-  - rid: 796646247615169084
-  - rid: 796646247615169085
-  - rid: 796646247615169086
-  - rid: 796646247615169087
-  - rid: 796646247615169088
-  - rid: 796646247615169089
-  - rid: 796646247615169090
-  - rid: 796646247615169091
-  - rid: 796646247615169092
-  - rid: 796646247615169093
-  - rid: 796646247615169094
-  - rid: 796646247615169095
-  - rid: 796646247615169096
-  - rid: 796646247615169097
-  - rid: 796646247615169098
-  - rid: 796646247615169099
-  - rid: 796646247615169100
-  - rid: 796646247615169101
-  - rid: 796646247615169102
-  - rid: 796646247615169103
-  - rid: 796646247615169104
-  - rid: 796646247615169105
-  - rid: 796646247615169106
-  - rid: 796646247615169107
-  - rid: 796646247615169108
-  - rid: 796646247615169109
-  - rid: 796646247615169110
-  - rid: 796646247615169111
-  - rid: 796646247615169112
-  - rid: 796646247615169113
-  - rid: 796646247615169114
-  - rid: 796646247615169115
-  - rid: 796646247615169116
-  - rid: 796646247615169117
-  - rid: 796646247615169118
-  - rid: 796646247615169119
-  - rid: 796646247615169120
-  - rid: 796646247615169121
-  - rid: 796646247615169122
-  - rid: 796646247615169123
-  - rid: 796646247615169124
-  - rid: 796646247615169125
-  - rid: 796646247615169126
-  - rid: 796646247615169127
-  - rid: 796646247615169128
-  - rid: 796646247615169129
-  - rid: 796646247615169130
-  - rid: 796646247615169131
-  - rid: 796646247615169132
-  - rid: 796646247615169133
-  - rid: 796646247615169134
-  - rid: 796646247615169135
-  - rid: 796646247615169136
-  - rid: 796646247615169137
-  - rid: 796646247615169138
-  - rid: 796646247615169139
-  - rid: 796646247615169140
-  - rid: 796646247615169141
-  - rid: 796646247615169142
-  - rid: 796646247615169143
-  - rid: 796646247615169144
-  - rid: 796646247615169145
-  - rid: 796646247615169146
-  - rid: 796646247615169147
-  - rid: 796646247615169148
-  - rid: 796646247615169149
-  - rid: 796646247615169150
-  - rid: 796646247615169151
-  - rid: 796646247615169152
-  - rid: 796646247615169153
-  - rid: 796646247615169154
-  - rid: 796646247615169155
-  - rid: 796646247615169156
-  - rid: 796646247615169157
-  - rid: 796646247615169158
-  - rid: 796646247615169159
-  - rid: 796646247615169160
-  - rid: 796646247615169161
-  - rid: 796646247615169162
-  - rid: 796646247615169163
-  - rid: 796646247615169164
-  - rid: 796646247615169165
-  - rid: 796646247615169166
-  - rid: 796646247615169167
-  - rid: 796646247615169168
-  - rid: 796646247615169169
-  - rid: 796646247615169170
-  - rid: 796646247615169171
-  - rid: 796646247615169172
-  - rid: 796646247615169173
-  - rid: 796646247615169174
-  - rid: 796646247615169175
-  - rid: 796646247615169176
-  - rid: 796646247615169177
-  - rid: 796646247615169178
-  - rid: 796646247615169179
-  - rid: 796646247615169180
-  - rid: 796646247615169181
-  - rid: 796646247615169182
-  - rid: 796646247615169183
-  - rid: 796646247615169184
-  - rid: 796646247615169185
-  - rid: 796646247615169186
-  - rid: 796646247615169187
-  - rid: 796646247615169188
-  - rid: 796646247615169189
+  - rid: 796646269615604086
+  - rid: 796646269615604087
+  - rid: 796646269615604088
+  - rid: 796646269615604089
+  - rid: 796646269615604090
+  - rid: 796646269615604091
+  - rid: 796646269615604092
+  - rid: 796646269615604093
+  - rid: 796646269615604094
+  - rid: 796646269615604095
+  - rid: 796646269615604096
+  - rid: 796646269615604097
+  - rid: 796646269615604098
+  - rid: 796646269615604099
+  - rid: 796646269615604100
+  - rid: 796646269615604101
+  - rid: 796646269615604102
+  - rid: 796646269615604103
+  - rid: 796646269615604104
+  - rid: 796646269615604105
+  - rid: 796646269615604106
+  - rid: 796646269615604107
+  - rid: 796646269615604108
+  - rid: 796646269615604109
+  - rid: 796646269615604110
+  - rid: 796646269615604111
+  - rid: 796646269615604112
+  - rid: 796646269615604113
+  - rid: 796646269615604114
+  - rid: 796646269615604115
+  - rid: 796646269615604116
+  - rid: 796646269615604117
+  - rid: 796646269615604118
+  - rid: 796646269615604119
+  - rid: 796646269615604120
+  - rid: 796646269615604121
+  - rid: 796646269615604122
+  - rid: 796646269615604123
+  - rid: 796646269615604124
+  - rid: 796646269615604125
+  - rid: 796646269615604126
+  - rid: 796646269615604127
+  - rid: 796646269615604128
+  - rid: 796646269615604129
+  - rid: 796646269615604130
+  - rid: 796646269615604131
+  - rid: 796646269615604132
+  - rid: 796646269615604133
+  - rid: 796646269615604134
+  - rid: 796646269615604135
+  - rid: 796646269615604136
+  - rid: 796646269615604137
+  - rid: 796646269615604138
+  - rid: 796646269615604139
+  - rid: 796646269615604140
+  - rid: 796646269615604141
+  - rid: 796646269615604142
+  - rid: 796646269615604143
+  - rid: 796646269615604144
+  - rid: 796646269615604145
+  - rid: 796646269615604146
+  - rid: 796646269615604147
+  - rid: 796646269615604148
+  - rid: 796646269615604149
+  - rid: 796646269615604150
+  - rid: 796646269615604151
+  - rid: 796646269615604152
+  - rid: 796646269615604153
+  - rid: 796646269615604154
+  - rid: 796646269615604155
+  - rid: 796646269615604156
+  - rid: 796646269615604157
+  - rid: 796646269615604158
+  - rid: 796646269615604159
+  - rid: 796646269615604160
+  - rid: 796646269615604161
+  - rid: 796646269615604162
+  - rid: 796646269615604163
+  - rid: 796646269615604164
+  - rid: 796646269615604165
+  - rid: 796646269615604166
+  - rid: 796646269615604167
+  - rid: 796646269615604168
+  - rid: 796646269615604169
+  - rid: 796646269615604170
+  - rid: 796646269615604171
+  - rid: 796646269615604172
+  - rid: 796646269615604173
+  - rid: 796646269615604174
+  - rid: 796646269615604175
+  - rid: 796646269615604176
+  - rid: 796646269615604177
+  - rid: 796646269615604178
+  - rid: 796646269615604179
+  - rid: 796646269615604180
+  - rid: 796646269615604181
+  - rid: 796646269615604182
+  - rid: 796646269615604183
+  - rid: 796646269615604184
+  - rid: 796646269615604185
+  - rid: 796646269615604186
+  - rid: 796646269615604187
+  - rid: 796646269615604188
+  - rid: 796646269615604189
+  - rid: 796646269615604190
+  - rid: 796646269615604191
+  - rid: 796646269615604192
+  - rid: 796646269615604193
+  - rid: 796646269615604194
+  - rid: 796646269615604195
+  - rid: 796646269615604196
+  - rid: 796646269615604197
+  - rid: 796646269615604198
+  - rid: 796646269615604199
+  - rid: 796646269615604200
+  - rid: 796646269615604201
+  - rid: 796646269615604202
+  - rid: 796646269615604203
+  - rid: 796646269615604204
+  - rid: 796646269615604205
+  - rid: 796646269615604206
+  - rid: 796646269615604207
+  - rid: 796646269615604208
+  - rid: 796646269615604209
+  - rid: 796646269615604210
+  - rid: 796646269615604211
+  - rid: 796646269615604212
+  - rid: 796646269615604213
+  - rid: 796646269615604214
+  - rid: 796646269615604215
+  - rid: 796646269615604216
+  - rid: 796646269615604217
+  - rid: 796646269615604218
+  - rid: 796646269615604219
+  - rid: 796646269615604220
+  - rid: 796646269615604221
+  - rid: 796646269615604222
+  - rid: 796646269615604223
+  - rid: 796646269615604224
+  - rid: 796646269615604225
+  - rid: 796646269615604226
+  - rid: 796646269615604227
+  - rid: 796646269615604228
+  - rid: 796646269615604229
+  - rid: 796646269615604230
+  - rid: 796646269615604231
+  - rid: 796646269615604232
+  - rid: 796646269615604233
+  - rid: 796646269615604234
+  - rid: 796646269615604235
+  - rid: 796646269615604236
+  - rid: 796646269615604237
+  - rid: 796646269615604238
+  - rid: 796646269615604239
+  - rid: 796646269615604240
+  - rid: 796646269615604241
+  - rid: 796646269615604242
+  - rid: 796646269615604243
+  - rid: 796646269615604244
+  - rid: 796646269615604245
+  - rid: 796646269615604246
+  - rid: 796646269615604247
+  - rid: 796646269615604248
+  - rid: 796646269615604249
+  - rid: 796646269615604250
+  - rid: 796646269615604251
+  - rid: 796646269615604252
+  - rid: 796646269615604253
+  - rid: 796646269615604254
+  - rid: 796646269615604255
+  - rid: 796646269615604256
+  - rid: 796646269615604257
+  - rid: 796646269615604258
+  - rid: 796646269615604259
+  - rid: 796646269615604260
+  - rid: 796646269615604261
+  - rid: 796646269615604262
+  - rid: 796646269615604263
+  - rid: 796646269615604264
+  - rid: 796646269615604265
+  - rid: 796646269615604266
+  - rid: 796646269615604267
+  - rid: 796646269615604268
+  - rid: 796646269615604269
+  - rid: 796646269615604270
+  - rid: 796646269615604271
+  - rid: 796646269615604272
+  - rid: 796646269615604273
+  - rid: 796646269615604274
+  - rid: 796646269615604275
+  - rid: 796646269615604276
+  - rid: 796646269615604277
+  - rid: 796646269615604278
+  - rid: 796646269615604279
+  - rid: 796646269615604280
+  - rid: 796646269615604281
+  - rid: 796646269615604282
+  - rid: 796646269615604283
+  - rid: 796646269615604284
+  - rid: 796646269615604285
+  - rid: 796646269615604286
+  - rid: 796646269615604287
+  - rid: 796646269615604288
+  - rid: 796646269615604289
+  - rid: 796646269615604290
+  - rid: 796646269615604291
+  - rid: 796646269615604292
+  - rid: 796646269615604293
+  - rid: 796646269615604294
+  - rid: 796646269615604295
+  - rid: 796646269615604296
+  - rid: 796646269615604297
+  - rid: 796646269615604298
+  - rid: 796646269615604299
+  - rid: 796646269615604300
+  - rid: 796646269615604301
+  - rid: 796646269615604302
+  - rid: 796646269615604303
+  - rid: 796646269615604304
+  - rid: 796646269615604305
+  - rid: 796646269615604306
+  - rid: 796646269615604307
+  - rid: 796646269615604308
+  - rid: 796646269615604309
+  - rid: 796646269615604310
+  - rid: 796646269615604311
+  - rid: 796646269615604312
+  - rid: 796646269615604313
+  - rid: 796646269615604314
+  - rid: 796646269615604315
+  - rid: 796646269615604316
+  - rid: 796646269615604317
+  - rid: 796646269615604318
+  - rid: 796646269615604319
+  - rid: 796646269615604320
+  - rid: 796646269615604321
+  - rid: 796646269615604322
+  - rid: 796646269615604323
+  - rid: 796646269615604324
+  - rid: 796646269615604325
+  - rid: 796646269615604326
+  - rid: 796646269615604327
+  - rid: 796646269615604328
+  - rid: 796646269615604329
+  - rid: 796646269615604330
+  - rid: 796646269615604331
+  - rid: 796646269615604332
+  - rid: 796646269615604333
+  - rid: 796646269615604334
+  - rid: 796646269615604335
+  - rid: 796646269615604336
+  - rid: 796646269615604337
+  - rid: 796646269615604338
+  - rid: 796646269615604339
+  - rid: 796646269615604340
+  - rid: 796646269615604341
+  - rid: 796646269615604342
+  - rid: 796646269615604343
+  - rid: 796646269615604344
+  - rid: 796646269615604345
+  - rid: 796646269615604346
+  - rid: 796646269615604347
+  - rid: 796646269615604348
+  - rid: 796646269615604349
+  - rid: 796646269615604350
+  - rid: 796646269615604351
+  - rid: 796646269615604352
+  - rid: 796646269615604353
+  - rid: 796646269615604354
+  - rid: 796646269615604355
+  - rid: 796646269615604356
+  - rid: 796646269615604357
+  - rid: 796646269615604358
+  - rid: 796646269615604359
+  - rid: 796646269615604360
+  - rid: 796646269615604361
+  - rid: 796646269615604362
+  - rid: 796646269615604363
+  - rid: 796646269615604364
+  - rid: 796646269615604365
+  - rid: 796646269615604366
+  - rid: 796646269615604367
+  - rid: 796646269615604368
+  - rid: 796646269615604369
+  - rid: 796646269615604370
+  - rid: 796646269615604371
+  - rid: 796646269615604372
+  - rid: 796646269615604373
+  - rid: 796646269615604374
+  - rid: 796646269615604375
+  - rid: 796646269615604376
+  - rid: 796646269615604377
+  - rid: 796646269615604378
+  - rid: 796646269615604379
+  - rid: 796646269615604380
+  - rid: 796646269615604381
+  - rid: 796646269615604382
+  - rid: 796646269615604383
+  - rid: 796646269615604384
+  - rid: 796646269615604385
+  - rid: 796646269615604386
+  - rid: 796646269615604387
+  - rid: 796646269615604388
+  - rid: 796646269615604389
+  - rid: 796646269615604390
+  - rid: 796646269615604391
+  - rid: 796646269615604392
+  - rid: 796646269615604393
+  - rid: 796646269615604394
+  - rid: 796646269615604395
+  - rid: 796646269615604396
+  - rid: 796646269615604397
+  - rid: 796646269615604398
+  - rid: 796646269615604399
   references:
     version: 2
     RefIds:
-    - rid: 796646247615168881
+    - rid: 796646269615604086
       type: {class: Dialogue, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928229
@@ -399,7 +404,7 @@ MonoBehaviour:
               instanceId: 0
             mConnections:
               value: []
-    - rid: 796646247615168882
+    - rid: 796646269615604087
       type: {class: Dialogue, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928818
@@ -469,7 +474,7 @@ MonoBehaviour:
               instanceId: 0
             mConnections:
               value: []
-    - rid: 796646247615168883
+    - rid: 796646269615604088
       type: {class: Dialogue, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929334
@@ -539,7 +544,7 @@ MonoBehaviour:
               instanceId: 0
             mConnections:
               value: []
-    - rid: 796646247615168884
+    - rid: 796646269615604089
       type: {class: Dialogue, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929574
@@ -609,7 +614,7 @@ MonoBehaviour:
               instanceId: 0
             mConnections:
               value: []
-    - rid: 796646247615168885
+    - rid: 796646269615604090
       type: {class: Dialogue, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930163
@@ -679,13 +684,13 @@ MonoBehaviour:
               instanceId: 0
             mConnections:
               value: []
-    - rid: 796646247615168886
+    - rid: 796646269615604091
       type: {class: Dialogue, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930348
         technicalName: Dlg_1FB33FDD
         parentId: 216172783251375095
-        childrenIds: 720900000000000178090000000000017e0900000000000187090000000000018f090000000000019709000000000001be0a000000000001c50a000000000001cb0a000000000001d10a000000000001e20a000000000001e90a000000000001fe0a000000000001140b0000000000011b0b000000000001280b0000000000012e0b000000000001380b0000000000018c0e000000000001920e000000000001a10e000000000001c70e000000000001d00e000000000001d70e000000000001e20e000000000001a90f000000000001b10f000000000001db0a000000000001f90a000000000001060b0000000000010d0b000000000001a90e000000000001ba0e000000000001a20f000000000001f40a000000000001230b0000000000019c0e000000000001b80f000000000001bd0f000000000001
+        childrenIds: 720900000000000178090000000000017e0900000000000187090000000000018f090000000000019709000000000001be0a000000000001c50a000000000001cb0a000000000001d10a000000000001e20a000000000001e90a000000000001fe0a000000000001140b0000000000011b0b000000000001280b0000000000012e0b000000000001380b0000000000018c0e000000000001920e000000000001a10e000000000001c70e000000000001d00e000000000001d70e000000000001e20e000000000001a90f000000000001b10f0000000000019410000000000001ab10000000000001db0a000000000001f90a000000000001060b0000000000010d0b000000000001a90e000000000001ba0e000000000001a20f000000000001f40a000000000001230b000000000001b80f000000000001bd0f000000000001
         mAttachments:
           listIds: 1d01000000000001d804000000000001
         mDisplayName:
@@ -749,7 +754,7 @@ MonoBehaviour:
               instanceId: 0
             mConnections:
               value: []
-    - rid: 796646247615168887
+    - rid: 796646269615604092
       type: {class: Dialogue, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930439
@@ -819,7 +824,7 @@ MonoBehaviour:
               instanceId: 0
             mConnections:
               value: []
-    - rid: 796646247615168888
+    - rid: 796646269615604093
       type: {class: Dialogue, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930445
@@ -889,7 +894,7 @@ MonoBehaviour:
               instanceId: 0
             mConnections:
               value: []
-    - rid: 796646247615168889
+    - rid: 796646269615604094
       type: {class: Dialogue, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930451
@@ -959,7 +964,7 @@ MonoBehaviour:
               instanceId: 0
             mConnections:
               value: []
-    - rid: 796646247615168890
+    - rid: 796646269615604095
       type: {class: Dialogue, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930457
@@ -1029,13 +1034,13 @@ MonoBehaviour:
               instanceId: 0
             mConnections:
               value: []
-    - rid: 796646247615168891
+    - rid: 796646269615604096
       type: {class: Dialogue, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930479
         technicalName: Dlg_181923DD
         parentId: 216172783251375095
-        childrenIds: 0a0c000000000001220c000000000001290c000000000001070f000000000001f80e0000000000011c0c000000000001000f000000000001f10e000000000001
+        childrenIds: 0a0c000000000001220c000000000001290c000000000001070f00000000000167100000000000017f10000000000001f80e0000000000016e100000000000011c0c000000000001000f00000000000161100000000000017710000000000001
         mAttachments:
           listIds: 1d01000000000001ce04000000000001
         mDisplayName:
@@ -1099,7 +1104,7 @@ MonoBehaviour:
               instanceId: 0
             mConnections:
               value: []
-    - rid: 796646247615168892
+    - rid: 796646269615604097
       type: {class: Dialogue, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930485
@@ -1169,7 +1174,7 @@ MonoBehaviour:
               instanceId: 0
             mConnections:
               value: []
-    - rid: 796646247615168893
+    - rid: 796646269615604098
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928252
@@ -1264,7 +1269,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037928252
             mOwnerInstanceId: 0
-    - rid: 796646247615168894
+    - rid: 796646269615604099
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928272
@@ -1360,7 +1365,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037928272
             mOwnerInstanceId: 0
-    - rid: 796646247615168895
+    - rid: 796646269615604100
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928278
@@ -1456,7 +1461,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037928278
             mOwnerInstanceId: 0
-    - rid: 796646247615168896
+    - rid: 796646269615604101
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928284
@@ -1552,7 +1557,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037928284
             mOwnerInstanceId: 0
-    - rid: 796646247615168897
+    - rid: 796646269615604102
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928296
@@ -1661,7 +1666,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037928296
             mOwnerInstanceId: 0
-    - rid: 796646247615168898
+    - rid: 796646269615604103
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928305
@@ -1756,7 +1761,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037928305
             mOwnerInstanceId: 0
-    - rid: 796646247615168899
+    - rid: 796646269615604104
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928312
@@ -1851,7 +1856,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037928312
             mOwnerInstanceId: 0
-    - rid: 796646247615168900
+    - rid: 796646269615604105
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928319
@@ -1948,7 +1953,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037928319
             mOwnerInstanceId: 0
-    - rid: 796646247615168901
+    - rid: 796646269615604106
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928336
@@ -2057,7 +2062,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037928336
             mOwnerInstanceId: 0
-    - rid: 796646247615168902
+    - rid: 796646269615604107
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928374
@@ -2138,7 +2143,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037928374
             mOwnerInstanceId: 0
-    - rid: 796646247615168903
+    - rid: 796646269615604108
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928380
@@ -2219,7 +2224,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037928380
             mOwnerInstanceId: 0
-    - rid: 796646247615168904
+    - rid: 796646269615604109
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928860
@@ -2314,7 +2319,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037928860
             mOwnerInstanceId: 0
-    - rid: 796646247615168905
+    - rid: 796646269615604110
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928872
@@ -2409,7 +2414,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037928872
             mOwnerInstanceId: 0
-    - rid: 796646247615168906
+    - rid: 796646269615604111
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928884
@@ -2504,7 +2509,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037928884
             mOwnerInstanceId: 0
-    - rid: 796646247615168907
+    - rid: 796646269615604112
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928896
@@ -2599,7 +2604,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037928896
             mOwnerInstanceId: 0
-    - rid: 796646247615168908
+    - rid: 796646269615604113
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928903
@@ -2708,7 +2713,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037928903
             mOwnerInstanceId: 0
-    - rid: 796646247615168909
+    - rid: 796646269615604114
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928922
@@ -2804,7 +2809,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037928922
             mOwnerInstanceId: 0
-    - rid: 796646247615168910
+    - rid: 796646269615604115
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928928
@@ -2900,7 +2905,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037928928
             mOwnerInstanceId: 0
-    - rid: 796646247615168911
+    - rid: 796646269615604116
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928936
@@ -2995,7 +3000,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037928936
             mOwnerInstanceId: 0
-    - rid: 796646247615168912
+    - rid: 796646269615604117
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928955
@@ -3090,7 +3095,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037928955
             mOwnerInstanceId: 0
-    - rid: 796646247615168913
+    - rid: 796646269615604118
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928961
@@ -3185,7 +3190,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037928961
             mOwnerInstanceId: 0
-    - rid: 796646247615168914
+    - rid: 796646269615604119
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928969
@@ -3281,7 +3286,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037928969
             mOwnerInstanceId: 0
-    - rid: 796646247615168915
+    - rid: 796646269615604120
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928977
@@ -3376,7 +3381,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037928977
             mOwnerInstanceId: 0
-    - rid: 796646247615168916
+    - rid: 796646269615604121
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929286
@@ -3458,7 +3463,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929286
             mOwnerInstanceId: 0
-    - rid: 796646247615168917
+    - rid: 796646269615604122
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929299
@@ -3553,7 +3558,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929299
             mOwnerInstanceId: 0
-    - rid: 796646247615168918
+    - rid: 796646269615604123
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929306
@@ -3648,7 +3653,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929306
             mOwnerInstanceId: 0
-    - rid: 796646247615168919
+    - rid: 796646269615604124
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929313
@@ -3743,7 +3748,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929313
             mOwnerInstanceId: 0
-    - rid: 796646247615168920
+    - rid: 796646269615604125
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929320
@@ -3838,7 +3843,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929320
             mOwnerInstanceId: 0
-    - rid: 796646247615168921
+    - rid: 796646269615604126
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929327
@@ -3919,7 +3924,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929327
             mOwnerInstanceId: 0
-    - rid: 796646247615168922
+    - rid: 796646269615604127
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928984
@@ -4014,7 +4019,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037928984
             mOwnerInstanceId: 0
-    - rid: 796646247615168923
+    - rid: 796646269615604128
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928990
@@ -4109,7 +4114,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037928990
             mOwnerInstanceId: 0
-    - rid: 796646247615168924
+    - rid: 796646269615604129
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929002
@@ -4190,7 +4195,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929002
             mOwnerInstanceId: 0
-    - rid: 796646247615168925
+    - rid: 796646269615604130
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929276
@@ -4299,7 +4304,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929276
             mOwnerInstanceId: 0
-    - rid: 796646247615168926
+    - rid: 796646269615604131
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931159
@@ -4380,7 +4385,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931159
             mOwnerInstanceId: 0
-    - rid: 796646247615168927
+    - rid: 796646269615604132
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931165
@@ -4475,7 +4480,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931165
             mOwnerInstanceId: 0
-    - rid: 796646247615168928
+    - rid: 796646269615604133
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931175
@@ -4584,7 +4589,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931175
             mOwnerInstanceId: 0
-    - rid: 796646247615168929
+    - rid: 796646269615604134
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931191
@@ -4679,7 +4684,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931191
             mOwnerInstanceId: 0
-    - rid: 796646247615168930
+    - rid: 796646269615604135
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931197
@@ -4774,7 +4779,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931197
             mOwnerInstanceId: 0
-    - rid: 796646247615168931
+    - rid: 796646269615604136
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931203
@@ -4869,7 +4874,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931203
             mOwnerInstanceId: 0
-    - rid: 796646247615168932
+    - rid: 796646269615604137
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931209
@@ -4964,7 +4969,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931209
             mOwnerInstanceId: 0
-    - rid: 796646247615168933
+    - rid: 796646269615604138
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931229
@@ -5115,7 +5120,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931229
             mOwnerInstanceId: 0
-    - rid: 796646247615168934
+    - rid: 796646269615604139
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931237
@@ -5210,7 +5215,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931237
             mOwnerInstanceId: 0
-    - rid: 796646247615168935
+    - rid: 796646269615604140
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931243
@@ -5305,7 +5310,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931243
             mOwnerInstanceId: 0
-    - rid: 796646247615168936
+    - rid: 796646269615604141
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931249
@@ -5400,7 +5405,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931249
             mOwnerInstanceId: 0
-    - rid: 796646247615168937
+    - rid: 796646269615604142
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931255
@@ -5495,7 +5500,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931255
             mOwnerInstanceId: 0
-    - rid: 796646247615168938
+    - rid: 796646269615604143
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931269
@@ -5590,7 +5595,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931269
             mOwnerInstanceId: 0
-    - rid: 796646247615168939
+    - rid: 796646269615604144
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931277
@@ -5671,7 +5676,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931277
             mOwnerInstanceId: 0
-    - rid: 796646247615168940
+    - rid: 796646269615604145
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931307
@@ -5766,7 +5771,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931307
             mOwnerInstanceId: 0
-    - rid: 796646247615168941
+    - rid: 796646269615604146
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931314
@@ -5861,7 +5866,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931314
             mOwnerInstanceId: 0
-    - rid: 796646247615168942
+    - rid: 796646269615604147
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931321
@@ -5956,7 +5961,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931321
             mOwnerInstanceId: 0
-    - rid: 796646247615168943
+    - rid: 796646269615604148
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931328
@@ -6065,7 +6070,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931328
             mOwnerInstanceId: 0
-    - rid: 796646247615168944
+    - rid: 796646269615604149
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931341
@@ -6160,7 +6165,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931341
             mOwnerInstanceId: 0
-    - rid: 796646247615168945
+    - rid: 796646269615604150
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931348
@@ -6255,7 +6260,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931348
             mOwnerInstanceId: 0
-    - rid: 796646247615168946
+    - rid: 796646269615604151
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931355
@@ -6350,7 +6355,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931355
             mOwnerInstanceId: 0
-    - rid: 796646247615168947
+    - rid: 796646269615604152
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931362
@@ -6445,7 +6450,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931362
             mOwnerInstanceId: 0
-    - rid: 796646247615168948
+    - rid: 796646269615604153
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931369
@@ -6540,7 +6545,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931369
             mOwnerInstanceId: 0
-    - rid: 796646247615168949
+    - rid: 796646269615604154
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931398
@@ -6635,7 +6640,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931398
             mOwnerInstanceId: 0
-    - rid: 796646247615168950
+    - rid: 796646269615604155
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931406
@@ -6716,7 +6721,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931406
             mOwnerInstanceId: 0
-    - rid: 796646247615168951
+    - rid: 796646269615604156
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931413
@@ -6797,7 +6802,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931413
             mOwnerInstanceId: 0
-    - rid: 796646247615168952
+    - rid: 796646269615604157
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931806
@@ -6892,7 +6897,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931806
             mOwnerInstanceId: 0
-    - rid: 796646247615168953
+    - rid: 796646269615604158
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931828
@@ -6988,7 +6993,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931828
             mOwnerInstanceId: 0
-    - rid: 796646247615168954
+    - rid: 796646269615604159
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931836
@@ -7083,7 +7088,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931836
             mOwnerInstanceId: 0
-    - rid: 796646247615168955
+    - rid: 796646269615604160
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931844
@@ -7178,7 +7183,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931844
             mOwnerInstanceId: 0
-    - rid: 796646247615168956
+    - rid: 796646269615604161
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931851
@@ -7273,7 +7278,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931851
             mOwnerInstanceId: 0
-    - rid: 796646247615168957
+    - rid: 796646269615604162
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931880
@@ -7368,7 +7373,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931880
             mOwnerInstanceId: 0
-    - rid: 796646247615168958
+    - rid: 796646269615604163
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931905
@@ -7465,7 +7470,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931905
             mOwnerInstanceId: 0
-    - rid: 796646247615168959
+    - rid: 796646269615604164
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037932056
@@ -7574,7 +7579,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037932056
             mOwnerInstanceId: 0
-    - rid: 796646247615168960
+    - rid: 796646269615604165
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037932077
@@ -7655,7 +7660,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037932077
             mOwnerInstanceId: 0
-    - rid: 796646247615168961
+    - rid: 796646269615604166
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929393
@@ -7751,7 +7756,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929393
             mOwnerInstanceId: 0
-    - rid: 796646247615168962
+    - rid: 796646269615604167
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929399
@@ -7846,7 +7851,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929399
             mOwnerInstanceId: 0
-    - rid: 796646247615168963
+    - rid: 796646269615604168
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929406
@@ -7941,7 +7946,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929406
             mOwnerInstanceId: 0
-    - rid: 796646247615168964
+    - rid: 796646269615604169
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929413
@@ -8036,7 +8041,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929413
             mOwnerInstanceId: 0
-    - rid: 796646247615168965
+    - rid: 796646269615604170
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929420
@@ -8131,7 +8136,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929420
             mOwnerInstanceId: 0
-    - rid: 796646247615168966
+    - rid: 796646269615604171
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929427
@@ -8226,7 +8231,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929427
             mOwnerInstanceId: 0
-    - rid: 796646247615168967
+    - rid: 796646269615604172
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929434
@@ -8321,7 +8326,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929434
             mOwnerInstanceId: 0
-    - rid: 796646247615168968
+    - rid: 796646269615604173
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929447
@@ -8416,7 +8421,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929447
             mOwnerInstanceId: 0
-    - rid: 796646247615168969
+    - rid: 796646269615604174
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929566
@@ -8497,7 +8502,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929566
             mOwnerInstanceId: 0
-    - rid: 796646247615168970
+    - rid: 796646269615604175
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929932
@@ -8578,7 +8583,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929932
             mOwnerInstanceId: 0
-    - rid: 796646247615168971
+    - rid: 796646269615604176
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929581
@@ -8673,7 +8678,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929581
             mOwnerInstanceId: 0
-    - rid: 796646247615168972
+    - rid: 796646269615604177
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929587
@@ -8784,7 +8789,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929587
             mOwnerInstanceId: 0
-    - rid: 796646247615168973
+    - rid: 796646269615604178
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929593
@@ -8879,7 +8884,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929593
             mOwnerInstanceId: 0
-    - rid: 796646247615168974
+    - rid: 796646269615604179
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929599
@@ -8960,7 +8965,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929599
             mOwnerInstanceId: 0
-    - rid: 796646247615168975
+    - rid: 796646269615604180
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929609
@@ -9041,7 +9046,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929609
             mOwnerInstanceId: 0
-    - rid: 796646247615168976
+    - rid: 796646269615604181
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929615
@@ -9138,7 +9143,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929615
             mOwnerInstanceId: 0
-    - rid: 796646247615168977
+    - rid: 796646269615604182
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929638
@@ -9219,7 +9224,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929638
             mOwnerInstanceId: 0
-    - rid: 796646247615168978
+    - rid: 796646269615604183
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929651
@@ -9328,7 +9333,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929651
             mOwnerInstanceId: 0
-    - rid: 796646247615168979
+    - rid: 796646269615604184
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929784
@@ -9437,7 +9442,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929784
             mOwnerInstanceId: 0
-    - rid: 796646247615168980
+    - rid: 796646269615604185
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929790
@@ -9518,7 +9523,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929790
             mOwnerInstanceId: 0
-    - rid: 796646247615168981
+    - rid: 796646269615604186
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929798
@@ -9627,7 +9632,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929798
             mOwnerInstanceId: 0
-    - rid: 796646247615168982
+    - rid: 796646269615604187
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929804
@@ -9708,7 +9713,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929804
             mOwnerInstanceId: 0
-    - rid: 796646247615168983
+    - rid: 796646269615604188
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929818
@@ -9805,7 +9810,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929818
             mOwnerInstanceId: 0
-    - rid: 796646247615168984
+    - rid: 796646269615604189
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929824
@@ -9886,7 +9891,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929824
             mOwnerInstanceId: 0
-    - rid: 796646247615168985
+    - rid: 796646269615604190
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929831
@@ -9995,7 +10000,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929831
             mOwnerInstanceId: 0
-    - rid: 796646247615168986
+    - rid: 796646269615604191
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929838
@@ -10076,7 +10081,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929838
             mOwnerInstanceId: 0
-    - rid: 796646247615168987
+    - rid: 796646269615604192
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929844
@@ -10171,7 +10176,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929844
             mOwnerInstanceId: 0
-    - rid: 796646247615168988
+    - rid: 796646269615604193
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929854
@@ -10254,7 +10259,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929854
             mOwnerInstanceId: 0
-    - rid: 796646247615168989
+    - rid: 796646269615604194
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931620
@@ -10363,7 +10368,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931620
             mOwnerInstanceId: 0
-    - rid: 796646247615168990
+    - rid: 796646269615604195
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931627
@@ -10458,7 +10463,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931627
             mOwnerInstanceId: 0
-    - rid: 796646247615168991
+    - rid: 796646269615604196
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931633
@@ -10539,7 +10544,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931633
             mOwnerInstanceId: 0
-    - rid: 796646247615168992
+    - rid: 796646269615604197
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931648
@@ -10620,7 +10625,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931648
             mOwnerInstanceId: 0
-    - rid: 796646247615168993
+    - rid: 796646269615604198
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930312
@@ -10715,7 +10720,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930312
             mOwnerInstanceId: 0
-    - rid: 796646247615168994
+    - rid: 796646269615604199
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930322
@@ -10810,7 +10815,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930322
             mOwnerInstanceId: 0
-    - rid: 796646247615168995
+    - rid: 796646269615604200
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930329
@@ -10905,7 +10910,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930329
             mOwnerInstanceId: 0
-    - rid: 796646247615168996
+    - rid: 796646269615604201
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930336
@@ -11000,7 +11005,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930336
             mOwnerInstanceId: 0
-    - rid: 796646247615168997
+    - rid: 796646269615604202
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930404
@@ -11081,7 +11086,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930404
             mOwnerInstanceId: 0
-    - rid: 796646247615168998
+    - rid: 796646269615604203
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930354
@@ -11204,7 +11209,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930354
             mOwnerInstanceId: 0
-    - rid: 796646247615168999
+    - rid: 796646269615604204
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930360
@@ -11299,7 +11304,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930360
             mOwnerInstanceId: 0
-    - rid: 796646247615169000
+    - rid: 796646269615604205
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930366
@@ -11394,7 +11399,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930366
             mOwnerInstanceId: 0
-    - rid: 796646247615169001
+    - rid: 796646269615604206
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930375
@@ -11489,7 +11494,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930375
             mOwnerInstanceId: 0
-    - rid: 796646247615169002
+    - rid: 796646269615604207
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930383
@@ -11570,7 +11575,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930383
             mOwnerInstanceId: 0
-    - rid: 796646247615169003
+    - rid: 796646269615604208
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930391
@@ -11665,7 +11670,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930391
             mOwnerInstanceId: 0
-    - rid: 796646247615169004
+    - rid: 796646269615604209
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930686
@@ -11788,7 +11793,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930686
             mOwnerInstanceId: 0
-    - rid: 796646247615169005
+    - rid: 796646269615604210
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930693
@@ -11883,7 +11888,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930693
             mOwnerInstanceId: 0
-    - rid: 796646247615169006
+    - rid: 796646269615604211
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930699
@@ -11964,7 +11969,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930699
             mOwnerInstanceId: 0
-    - rid: 796646247615169007
+    - rid: 796646269615604212
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930705
@@ -12059,7 +12064,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930705
             mOwnerInstanceId: 0
-    - rid: 796646247615169008
+    - rid: 796646269615604213
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930722
@@ -12154,7 +12159,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930722
             mOwnerInstanceId: 0
-    - rid: 796646247615169009
+    - rid: 796646269615604214
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930729
@@ -12249,7 +12254,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930729
             mOwnerInstanceId: 0
-    - rid: 796646247615169010
+    - rid: 796646269615604215
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930750
@@ -12330,7 +12335,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930750
             mOwnerInstanceId: 0
-    - rid: 796646247615169011
+    - rid: 796646269615604216
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930772
@@ -12370,7 +12375,7 @@ MonoBehaviour:
               highId: 16777216
             mPropertyPath: Text
         mExternalId: 
-        mPosition: {x: 1071, y: 1757}
+        mPosition: {x: -398, y: 1035}
         mZIndex: 35
         mSize: {x: 225, y: 200}
         mShortId: 2045592233
@@ -12439,7 +12444,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930772
             mOwnerInstanceId: 0
-    - rid: 796646247615169012
+    - rid: 796646269615604217
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930779
@@ -12534,7 +12539,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930779
             mOwnerInstanceId: 0
-    - rid: 796646247615169013
+    - rid: 796646269615604218
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930792
@@ -12616,7 +12621,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930792
             mOwnerInstanceId: 0
-    - rid: 796646247615169014
+    - rid: 796646269615604219
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930798
@@ -12698,7 +12703,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930798
             mOwnerInstanceId: 0
-    - rid: 796646247615169015
+    - rid: 796646269615604220
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930808
@@ -12784,6 +12789,20 @@ MonoBehaviour:
                 mTarget:
                   id: 72057594037930765
                   instanceId: 0
+              - mLabel:
+                  value:
+                    mValue: 
+                    mOwner:
+                      instanceId: 0
+                      referencingMode: 0
+                      lowId: 2872
+                      highId: 16777216
+                    mPropertyPath: Label
+                mColor: {r: 0.78431374, g: 0.8862745, b: 0.90588236, a: 1}
+                mTargetPin: 72057594037932183
+                mTarget:
+                  id: 72057594037932180
+                  instanceId: 0
         mTemplate:
           value:
             mDuration:
@@ -12793,7 +12812,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930808
             mOwnerInstanceId: 0
-    - rid: 796646247615169016
+    - rid: 796646269615604221
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931660
@@ -12834,7 +12853,7 @@ MonoBehaviour:
               highId: 16777216
             mPropertyPath: Text
         mExternalId: 
-        mPosition: {x: 1521, y: 1457}
+        mPosition: {x: -42, y: 1037}
         mZIndex: 47
         mSize: {x: 225, y: 200}
         mShortId: 1869863377
@@ -12857,10 +12876,10 @@ MonoBehaviour:
           - id: 72057594037931664
             mText:
               value:
-                handlerId: 0
-                ownerId: 0
+                handlerId: 406052822
+                ownerId: 72057594037931660
                 ownerInstanceId: 0
-                mRawScript: 
+                mRawScript: RQUE.advertise_State = 3
             mOwner:
               id: 72057594037931660
               instanceId: 0
@@ -12876,9 +12895,9 @@ MonoBehaviour:
                       highId: 16777216
                     mPropertyPath: Label
                 mColor: {r: 0.78431374, g: 0.8862745, b: 0.90588236, a: 1}
-                mTargetPin: 72057594037931678
+                mTargetPin: 72057594037931684
                 mTarget:
-                  id: 72057594037931676
+                  id: 72057594037931681
                   instanceId: 0
         mTemplate:
           value:
@@ -12889,7 +12908,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931660
             mOwnerInstanceId: 0
-    - rid: 796646247615169017
+    - rid: 796646269615604222
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931666
@@ -12929,7 +12948,7 @@ MonoBehaviour:
               highId: 16777216
             mPropertyPath: Text
         mExternalId: 
-        mPosition: {x: 1521, y: 1657}
+        mPosition: {x: -42, y: 1237}
         mZIndex: 49
         mSize: {x: 225, y: 200}
         mShortId: 2945035872
@@ -12970,7 +12989,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931666
             mOwnerInstanceId: 0
-    - rid: 796646247615169018
+    - rid: 796646269615604223
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931681
@@ -13010,7 +13029,7 @@ MonoBehaviour:
               highId: 16777216
             mPropertyPath: Text
         mExternalId: 
-        mPosition: {x: 2096, y: 1357}
+        mPosition: {x: 266, y: 1039}
         mZIndex: 53
         mSize: {x: 225, y: 200}
         mShortId: 4098735566
@@ -13051,7 +13070,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931681
             mOwnerInstanceId: 0
-    - rid: 796646247615169019
+    - rid: 796646269615604224
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931719
@@ -13146,7 +13165,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931719
             mOwnerInstanceId: 0
-    - rid: 796646247615169020
+    - rid: 796646269615604225
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931728
@@ -13241,7 +13260,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931728
             mOwnerInstanceId: 0
-    - rid: 796646247615169021
+    - rid: 796646269615604226
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931735
@@ -13336,7 +13355,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931735
             mOwnerInstanceId: 0
-    - rid: 796646247615169022
+    - rid: 796646269615604227
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931746
@@ -13431,7 +13450,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931746
             mOwnerInstanceId: 0
-    - rid: 796646247615169023
+    - rid: 796646269615604228
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931945
@@ -13528,7 +13547,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931945
             mOwnerInstanceId: 0
-    - rid: 796646247615169024
+    - rid: 796646269615604229
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931953
@@ -13623,7 +13642,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931953
             mOwnerInstanceId: 0
-    - rid: 796646247615169025
+    - rid: 796646269615604230
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930815
@@ -13718,7 +13737,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930815
             mOwnerInstanceId: 0
-    - rid: 796646247615169026
+    - rid: 796646269615604231
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930827
@@ -13799,7 +13818,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930827
             mOwnerInstanceId: 0
-    - rid: 796646247615169027
+    - rid: 796646269615604232
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930835
@@ -13896,7 +13915,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930835
             mOwnerInstanceId: 0
-    - rid: 796646247615169028
+    - rid: 796646269615604233
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930856
@@ -13991,7 +14010,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930856
             mOwnerInstanceId: 0
-    - rid: 796646247615169029
+    - rid: 796646269615604234
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930868
@@ -14072,7 +14091,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930868
             mOwnerInstanceId: 0
-    - rid: 796646247615169030
+    - rid: 796646269615604235
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931056
@@ -14167,7 +14186,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931056
             mOwnerInstanceId: 0
-    - rid: 796646247615169031
+    - rid: 796646269615604236
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931074
@@ -14262,7 +14281,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931074
             mOwnerInstanceId: 0
-    - rid: 796646247615169032
+    - rid: 796646269615604237
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931081
@@ -14357,7 +14376,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931081
             mOwnerInstanceId: 0
-    - rid: 796646247615169033
+    - rid: 796646269615604238
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931100
@@ -14453,7 +14472,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931100
             mOwnerInstanceId: 0
-    - rid: 796646247615169034
+    - rid: 796646269615604239
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931108
@@ -14548,7 +14567,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931108
             mOwnerInstanceId: 0
-    - rid: 796646247615169035
+    - rid: 796646269615604240
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931116
@@ -14629,7 +14648,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931116
             mOwnerInstanceId: 0
-    - rid: 796646247615169036
+    - rid: 796646269615604241
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931129
@@ -14724,7 +14743,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931129
             mOwnerInstanceId: 0
-    - rid: 796646247615169037
+    - rid: 796646269615604242
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931137
@@ -14805,7 +14824,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931137
             mOwnerInstanceId: 0
-    - rid: 796646247615169038
+    - rid: 796646269615604243
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931144
@@ -14886,7 +14905,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931144
             mOwnerInstanceId: 0
-    - rid: 796646247615169039
+    - rid: 796646269615604244
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931914
@@ -14967,7 +14986,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931914
             mOwnerInstanceId: 0
-    - rid: 796646247615169040
+    - rid: 796646269615604245
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931976
@@ -15065,7 +15084,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931976
             mOwnerInstanceId: 0
-    - rid: 796646247615169041
+    - rid: 796646269615604246
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931984
@@ -15160,7 +15179,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931984
             mOwnerInstanceId: 0
-    - rid: 796646247615169042
+    - rid: 796646269615604247
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931992
@@ -15241,7 +15260,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931992
             mOwnerInstanceId: 0
-    - rid: 796646247615169043
+    - rid: 796646269615604248
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037932002
@@ -15336,7 +15355,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037932002
             mOwnerInstanceId: 0
-    - rid: 796646247615169044
+    - rid: 796646269615604249
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037932015
@@ -15417,7 +15436,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037932015
             mOwnerInstanceId: 0
-    - rid: 796646247615169045
+    - rid: 796646269615604250
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037932022
@@ -15514,7 +15533,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037932022
             mOwnerInstanceId: 0
-    - rid: 796646247615169046
+    - rid: 796646269615604251
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037932030
@@ -15609,7 +15628,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037932030
             mOwnerInstanceId: 0
-    - rid: 796646247615169047
+    - rid: 796646269615604252
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930963
@@ -15704,7 +15723,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930963
             mOwnerInstanceId: 0
-    - rid: 796646247615169048
+    - rid: 796646269615604253
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930990
@@ -15799,7 +15818,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930990
             mOwnerInstanceId: 0
-    - rid: 796646247615169049
+    - rid: 796646269615604254
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930997
@@ -15894,7 +15913,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930997
             mOwnerInstanceId: 0
-    - rid: 796646247615169050
+    - rid: 796646269615604255
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931010
@@ -15975,7 +15994,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931010
             mOwnerInstanceId: 0
-    - rid: 796646247615169051
+    - rid: 796646269615604256
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930878
@@ -16070,7 +16089,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930878
             mOwnerInstanceId: 0
-    - rid: 796646247615169052
+    - rid: 796646269615604257
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930895
@@ -16165,7 +16184,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930895
             mOwnerInstanceId: 0
-    - rid: 796646247615169053
+    - rid: 796646269615604258
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930902
@@ -16260,7 +16279,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930902
             mOwnerInstanceId: 0
-    - rid: 796646247615169054
+    - rid: 796646269615604259
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930925
@@ -16355,7 +16374,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930925
             mOwnerInstanceId: 0
-    - rid: 796646247615169055
+    - rid: 796646269615604260
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930945
@@ -16450,7 +16469,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930945
             mOwnerInstanceId: 0
-    - rid: 796646247615169056
+    - rid: 796646269615604261
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931581
@@ -16531,7 +16550,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931581
             mOwnerInstanceId: 0
-    - rid: 796646247615169057
+    - rid: 796646269615604262
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931588
@@ -16628,7 +16647,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931588
             mOwnerInstanceId: 0
-    - rid: 796646247615169058
+    - rid: 796646269615604263
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931594
@@ -16709,7 +16728,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931594
             mOwnerInstanceId: 0
-    - rid: 796646247615169059
+    - rid: 796646269615604264
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931018
@@ -16749,7 +16768,7 @@ MonoBehaviour:
               highId: 16777216
             mPropertyPath: Text
         mExternalId: 
-        mPosition: {x: 450, y: 425}
+        mPosition: {x: 132, y: 453}
         mZIndex: 0
         mSize: {x: 225, y: 200}
         mShortId: 160155123
@@ -16791,9 +16810,9 @@ MonoBehaviour:
                       highId: 16777216
                     mPropertyPath: Label
                 mColor: {r: 0.78431374, g: 0.8862745, b: 0.90588236, a: 1}
-                mTargetPin: 72057594037931038
+                mTargetPin: 72057594037932153
                 mTarget:
-                  id: 72057594037931036
+                  id: 72057594037932151
                   instanceId: 0
         mTemplate:
           value:
@@ -16804,7 +16823,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931018
             mOwnerInstanceId: 0
-    - rid: 796646247615169060
+    - rid: 796646269615604265
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931042
@@ -16899,7 +16918,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931042
             mOwnerInstanceId: 0
-    - rid: 796646247615169061
+    - rid: 796646269615604266
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931049
@@ -16939,7 +16958,7 @@ MonoBehaviour:
               highId: 16777216
             mPropertyPath: Text
         mExternalId: 
-        mPosition: {x: 1025, y: 350}
+        mPosition: {x: 1066, y: 308}
         mZIndex: 5
         mSize: {x: 225, y: 200}
         mShortId: 1720307039
@@ -16980,7 +16999,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931049
             mOwnerInstanceId: 0
-    - rid: 796646247615169062
+    - rid: 796646269615604267
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931783
@@ -17061,7 +17080,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037931783
             mOwnerInstanceId: 0
-    - rid: 796646247615169063
+    - rid: 796646269615604268
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930511
@@ -17156,7 +17175,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930511
             mOwnerInstanceId: 0
-    - rid: 796646247615169064
+    - rid: 796646269615604269
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930517
@@ -17251,7 +17270,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930517
             mOwnerInstanceId: 0
-    - rid: 796646247615169065
+    - rid: 796646269615604270
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930524
@@ -17346,7 +17365,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930524
             mOwnerInstanceId: 0
-    - rid: 796646247615169066
+    - rid: 796646269615604271
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930531
@@ -17469,7 +17488,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930531
             mOwnerInstanceId: 0
-    - rid: 796646247615169067
+    - rid: 796646269615604272
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930538
@@ -17564,7 +17583,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930538
             mOwnerInstanceId: 0
-    - rid: 796646247615169068
+    - rid: 796646269615604273
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930544
@@ -17660,7 +17679,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930544
             mOwnerInstanceId: 0
-    - rid: 796646247615169069
+    - rid: 796646269615604274
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930565
@@ -17755,7 +17774,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930565
             mOwnerInstanceId: 0
-    - rid: 796646247615169070
+    - rid: 796646269615604275
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930583
@@ -17850,7 +17869,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930583
             mOwnerInstanceId: 0
-    - rid: 796646247615169071
+    - rid: 796646269615604276
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930590
@@ -17945,7 +17964,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930590
             mOwnerInstanceId: 0
-    - rid: 796646247615169072
+    - rid: 796646269615604277
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930597
@@ -18040,7 +18059,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930597
             mOwnerInstanceId: 0
-    - rid: 796646247615169073
+    - rid: 796646269615604278
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930604
@@ -18135,7 +18154,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930604
             mOwnerInstanceId: 0
-    - rid: 796646247615169074
+    - rid: 796646269615604279
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930616
@@ -18230,7 +18249,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930616
             mOwnerInstanceId: 0
-    - rid: 796646247615169075
+    - rid: 796646269615604280
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930623
@@ -18339,7 +18358,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930623
             mOwnerInstanceId: 0
-    - rid: 796646247615169076
+    - rid: 796646269615604281
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930630
@@ -18420,7 +18439,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930630
             mOwnerInstanceId: 0
-    - rid: 796646247615169077
+    - rid: 796646269615604282
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930636
@@ -18518,7 +18537,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930636
             mOwnerInstanceId: 0
-    - rid: 796646247615169078
+    - rid: 796646269615604283
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930646
@@ -18613,7 +18632,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930646
             mOwnerInstanceId: 0
-    - rid: 796646247615169079
+    - rid: 796646269615604284
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930653
@@ -18708,7 +18727,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930653
             mOwnerInstanceId: 0
-    - rid: 796646247615169080
+    - rid: 796646269615604285
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930660
@@ -18803,7 +18822,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930660
             mOwnerInstanceId: 0
-    - rid: 796646247615169081
+    - rid: 796646269615604286
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930667
@@ -18898,7 +18917,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930667
             mOwnerInstanceId: 0
-    - rid: 796646247615169082
+    - rid: 796646269615604287
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930679
@@ -18993,7 +19012,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930679
             mOwnerInstanceId: 0
-    - rid: 796646247615169083
+    - rid: 796646269615604288
       type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037932043
@@ -19074,7 +19093,297 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037932043
             mOwnerInstanceId: 0
-    - rid: 796646247615169084
+    - rid: 796646269615604289
+      type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
+      data:
+        id: 72057594037932135
+        technicalName: DFr_B4084809
+        parentId: 72057594037930479
+        childrenIds: 
+        mMenuText:
+          value:
+            mValue: 
+            mOwner:
+              instanceId: 0
+              referencingMode: 0
+              lowId: 4199
+              highId: 16777216
+            mPropertyPath: MenuText
+        mStageDirections:
+          value:
+            mValue: 
+            mOwner:
+              instanceId: 0
+              referencingMode: 0
+              lowId: 4199
+              highId: 16777216
+            mPropertyPath: StageDirections
+        mSpeaker:
+          id: 72057594037929166
+          instanceId: 0
+        mSplitHeight: 64
+        mColor: {r: 0.78431374, g: 0.8862745, b: 0.90588236, a: 1}
+        mText:
+          value:
+            mValue: DFr_B4084809.Text
+            mOwner:
+              instanceId: 0
+              referencingMode: 0
+              lowId: 4199
+              highId: 16777216
+            mPropertyPath: Text
+        mExternalId: 
+        mPosition: {x: 1865.3239, y: 495.58347}
+        mZIndex: 16
+        mSize: {x: 225, y: 200}
+        mShortId: 3020441609
+        mInputPins:
+          value:
+          - id: 72057594037932138
+            mText:
+              value:
+                handlerId: 0
+                ownerId: 0
+                ownerInstanceId: 0
+                mRawScript: 
+            mOwner:
+              id: 72057594037932135
+              instanceId: 0
+            mConnections:
+              value: []
+        mOutputPins:
+          value:
+          - id: 72057594037932139
+            mText:
+              value:
+                handlerId: 0
+                ownerId: 0
+                ownerInstanceId: 0
+                mRawScript: 
+            mOwner:
+              id: 72057594037932135
+              instanceId: 0
+            mConnections:
+              value:
+              - mLabel:
+                  value:
+                    mValue: 
+                    mOwner:
+                      instanceId: 0
+                      referencingMode: 0
+                      lowId: 4199
+                      highId: 16777216
+                    mPropertyPath: Label
+                mColor: {r: 0.78431374, g: 0.8862745, b: 0.90588236, a: 1}
+                mTargetPin: 72057594037932145
+                mTarget:
+                  id: 72057594037932142
+                  instanceId: 0
+        mTemplate:
+          value:
+            mDuration:
+              value:
+                mMinutes: 1
+                mOwnerId: 72057594037932135
+                mOwnerInstanceId: 0
+            mOwnerId: 72057594037932135
+            mOwnerInstanceId: 0
+    - rid: 796646269615604290
+      type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
+      data:
+        id: 72057594037932159
+        technicalName: DFr_15C7BA0B
+        parentId: 72057594037930479
+        childrenIds: 
+        mMenuText:
+          value:
+            mValue: 
+            mOwner:
+              instanceId: 0
+              referencingMode: 0
+              lowId: 4223
+              highId: 16777216
+            mPropertyPath: MenuText
+        mStageDirections:
+          value:
+            mValue: 
+            mOwner:
+              instanceId: 0
+              referencingMode: 0
+              lowId: 4223
+              highId: 16777216
+            mPropertyPath: StageDirections
+        mSpeaker:
+          id: 72057594037929166
+          instanceId: 0
+        mSplitHeight: 64
+        mColor: {r: 0.78431374, g: 0.8862745, b: 0.90588236, a: 1}
+        mText:
+          value:
+            mValue: DFr_15C7BA0B.Text
+            mOwner:
+              instanceId: 0
+              referencingMode: 0
+              lowId: 4223
+              highId: 16777216
+            mPropertyPath: Text
+        mExternalId: 
+        mPosition: {x: 438.97955, y: 204.39268}
+        mZIndex: 24
+        mSize: {x: 225, y: 200}
+        mShortId: 365410827
+        mInputPins:
+          value:
+          - id: 72057594037932162
+            mText:
+              value:
+                handlerId: 0
+                ownerId: 0
+                ownerInstanceId: 0
+                mRawScript: 
+            mOwner:
+              id: 72057594037932159
+              instanceId: 0
+            mConnections:
+              value: []
+        mOutputPins:
+          value:
+          - id: 72057594037932163
+            mText:
+              value:
+                handlerId: 1371414435
+                ownerId: 72057594037932159
+                ownerInstanceId: 0
+                mRawScript: 'ITM.item_InventoryArtefact_delta++;
+
+                  RQUE.getArtefact_State
+                  = 2
+
+'
+            mOwner:
+              id: 72057594037932159
+              instanceId: 0
+            mConnections:
+              value:
+              - mLabel:
+                  value:
+                    mValue: 
+                    mOwner:
+                      instanceId: 0
+                      referencingMode: 0
+                      lowId: 4223
+                      highId: 16777216
+                    mPropertyPath: Label
+                mColor: {r: 0.78431374, g: 0.8862745, b: 0.90588236, a: 1}
+                mTargetPin: 72057594037931771
+                mTarget:
+                  id: 72057594037931768
+                  instanceId: 0
+        mTemplate:
+          value:
+            mDuration:
+              value:
+                mMinutes: 1
+                mOwnerId: 72057594037932159
+                mOwnerInstanceId: 0
+            mOwnerId: 72057594037932159
+            mOwnerInstanceId: 0
+    - rid: 796646269615604291
+      type: {class: DialogueFragment_Extended, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
+      data:
+        id: 72057594037932180
+        technicalName: DFr_2DD444E4
+        parentId: 72057594037930348
+        childrenIds: 
+        mMenuText:
+          value:
+            mValue: "\u0443\u0431\u0438\u0442\u044C"
+            mOwner:
+              instanceId: 0
+              referencingMode: 0
+              lowId: 4244
+              highId: 16777216
+            mPropertyPath: MenuText
+        mStageDirections:
+          value:
+            mValue: 
+            mOwner:
+              instanceId: 0
+              referencingMode: 0
+              lowId: 4244
+              highId: 16777216
+            mPropertyPath: StageDirections
+        mSpeaker:
+          id: 72057594037928221
+          instanceId: 0
+        mSplitHeight: 64
+        mColor: {r: 0.78431374, g: 0.8862745, b: 0.90588236, a: 1}
+        mText:
+          value:
+            mValue: DFr_2DD444E4.Text
+            mOwner:
+              instanceId: 0
+              referencingMode: 0
+              lowId: 4244
+              highId: 16777216
+            mPropertyPath: Text
+        mExternalId: 
+        mPosition: {x: -54.858467, y: 176.45724}
+        mZIndex: 76
+        mSize: {x: 225, y: 200}
+        mShortId: 768885988
+        mInputPins:
+          value:
+          - id: 72057594037932183
+            mText:
+              value:
+                handlerId: 4285050060
+                ownerId: 72057594037932180
+                ownerInstanceId: 0
+                mRawScript: ITM.item_Gun_count>0
+            mOwner:
+              id: 72057594037932180
+              instanceId: 0
+            mConnections:
+              value: []
+        mOutputPins:
+          value:
+          - id: 72057594037932184
+            mText:
+              value:
+                handlerId: 1648604767
+                ownerId: 72057594037932180
+                ownerInstanceId: 0
+                mRawScript: NKNW.kill_rat = 1
+            mOwner:
+              id: 72057594037932180
+              instanceId: 0
+            mConnections:
+              value:
+              - mLabel:
+                  value:
+                    mValue: 
+                    mOwner:
+                      instanceId: 0
+                      referencingMode: 0
+                      lowId: 4244
+                      highId: 16777216
+                    mPropertyPath: Label
+                mColor: {r: 0.78431374, g: 0.8862745, b: 0.90588236, a: 1}
+                mTargetPin: 72057594037932206
+                mTarget:
+                  id: 72057594037932203
+                  instanceId: 0
+        mTemplate:
+          value:
+            mDuration:
+              value:
+                mMinutes: 1
+                mOwnerId: 72057594037932180
+                mOwnerInstanceId: 0
+            mOwnerId: 72057594037932180
+            mOwnerInstanceId: 0
+    - rid: 796646269615604292
       type: {class: DialogueFragment, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037932097
@@ -19146,7 +19455,7 @@ MonoBehaviour:
               instanceId: 0
             mConnections:
               value: []
-    - rid: 796646247615169085
+    - rid: 796646269615604293
       type: {class: DialogueFragment, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931768
@@ -19186,7 +19495,7 @@ MonoBehaviour:
               highId: 16777216
             mPropertyPath: Text
         mExternalId: 
-        mPosition: {x: 1925, y: 550}
+        mPosition: {x: 729, y: 200}
         mZIndex: 9
         mSize: {x: 225, y: 200}
         mShortId: 2478550711
@@ -19218,7 +19527,151 @@ MonoBehaviour:
               instanceId: 0
             mConnections:
               value: []
-    - rid: 796646247615169086
+    - rid: 796646269615604294
+      type: {class: DialogueFragment, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
+      data:
+        id: 72057594037932142
+        technicalName: DFr_76B93C03
+        parentId: 72057594037930479
+        childrenIds: 
+        mMenuText:
+          value:
+            mValue: "\u0423\u0439\u0442\u0438"
+            mOwner:
+              instanceId: 0
+              referencingMode: 0
+              lowId: 4206
+              highId: 16777216
+            mPropertyPath: MenuText
+        mStageDirections:
+          value:
+            mValue: 
+            mOwner:
+              instanceId: 0
+              referencingMode: 0
+              lowId: 4206
+              highId: 16777216
+            mPropertyPath: StageDirections
+        mSpeaker:
+          id: 72057594037928221
+          instanceId: 0
+        mSplitHeight: 64
+        mColor: {r: 0.78431374, g: 0.8862745, b: 0.90588236, a: 1}
+        mText:
+          value:
+            mValue: DFr_76B93C03.Text
+            mOwner:
+              instanceId: 0
+              referencingMode: 0
+              lowId: 4206
+              highId: 16777216
+            mPropertyPath: Text
+        mExternalId: 
+        mPosition: {x: 1867.7239, y: 709.98346}
+        mZIndex: 18
+        mSize: {x: 225, y: 200}
+        mShortId: 1991851011
+        mInputPins:
+          value:
+          - id: 72057594037932145
+            mText:
+              value:
+                handlerId: 0
+                ownerId: 0
+                ownerInstanceId: 0
+                mRawScript: 
+            mOwner:
+              id: 72057594037932142
+              instanceId: 0
+            mConnections:
+              value: []
+        mOutputPins:
+          value:
+          - id: 72057594037932146
+            mText:
+              value:
+                handlerId: 0
+                ownerId: 0
+                ownerInstanceId: 0
+                mRawScript: 
+            mOwner:
+              id: 72057594037932142
+              instanceId: 0
+            mConnections:
+              value: []
+    - rid: 796646269615604295
+      type: {class: DialogueFragment, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
+      data:
+        id: 72057594037932203
+        technicalName: DFr_42355259
+        parentId: 72057594037930348
+        childrenIds: 
+        mMenuText:
+          value:
+            mValue: 
+            mOwner:
+              instanceId: 0
+              referencingMode: 0
+              lowId: 4267
+              highId: 16777216
+            mPropertyPath: MenuText
+        mStageDirections:
+          value:
+            mValue: 
+            mOwner:
+              instanceId: 0
+              referencingMode: 0
+              lowId: 4267
+              highId: 16777216
+            mPropertyPath: StageDirections
+        mSpeaker:
+          id: 72057594037929154
+          instanceId: 0
+        mSplitHeight: 64
+        mColor: {r: 0.78431374, g: 0.8862745, b: 0.90588236, a: 1}
+        mText:
+          value:
+            mValue: DFr_42355259.Text
+            mOwner:
+              instanceId: 0
+              referencingMode: 0
+              lowId: 4267
+              highId: 16777216
+            mPropertyPath: Text
+        mExternalId: 
+        mPosition: {x: 232.14154, y: 176.45724}
+        mZIndex: 78
+        mSize: {x: 225, y: 200}
+        mShortId: 1110790745
+        mInputPins:
+          value:
+          - id: 72057594037932206
+            mText:
+              value:
+                handlerId: 0
+                ownerId: 0
+                ownerInstanceId: 0
+                mRawScript: 
+            mOwner:
+              id: 72057594037932203
+              instanceId: 0
+            mConnections:
+              value: []
+        mOutputPins:
+          value:
+          - id: 72057594037932207
+            mText:
+              value:
+                handlerId: 2611131124
+                ownerId: 72057594037932203
+                ownerInstanceId: 0
+                mRawScript: RFLG.neutralizedByGuard = true
+            mOwner:
+              id: 72057594037932203
+              instanceId: 0
+            mConnections:
+              value: []
+    - rid: 796646269615604296
       type: {class: Hub, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928266
@@ -19333,7 +19786,7 @@ MonoBehaviour:
                 mTarget:
                   id: 72057594037929286
                   instanceId: 0
-    - rid: 796646247615169087
+    - rid: 796646269615604297
       type: {class: Hub, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931284
@@ -19476,7 +19929,7 @@ MonoBehaviour:
                 mTarget:
                   id: 72057594037931398
                   instanceId: 0
-    - rid: 796646247615169088
+    - rid: 796646269615604298
       type: {class: Hub, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931819
@@ -19578,7 +20031,7 @@ MonoBehaviour:
                 mTarget:
                   id: 72057594037929002
                   instanceId: 0
-    - rid: 796646247615169089
+    - rid: 796646269615604299
       type: {class: Hub, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929704
@@ -19679,7 +20132,7 @@ MonoBehaviour:
                 mTarget:
                   id: 72057594037929599
                   instanceId: 0
-    - rid: 796646247615169090
+    - rid: 796646269615604300
       type: {class: Hub, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037932089
@@ -19766,7 +20219,7 @@ MonoBehaviour:
                 mTarget:
                   id: 72057594037932097
                   instanceId: 0
-    - rid: 796646247615169091
+    - rid: 796646269615604301
       type: {class: Jump, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928326
@@ -19808,7 +20261,7 @@ MonoBehaviour:
               value: []
         mOutputPins:
           value: []
-    - rid: 796646247615169092
+    - rid: 796646269615604302
       type: {class: Jump, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928331
@@ -19850,7 +20303,7 @@ MonoBehaviour:
               value: []
         mOutputPins:
           value: []
-    - rid: 796646247615169093
+    - rid: 796646269615604303
       type: {class: Jump, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928391
@@ -19892,7 +20345,7 @@ MonoBehaviour:
               value: []
         mOutputPins:
           value: []
-    - rid: 796646247615169094
+    - rid: 796646269615604304
       type: {class: Jump, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931295
@@ -19934,7 +20387,7 @@ MonoBehaviour:
               value: []
         mOutputPins:
           value: []
-    - rid: 796646247615169095
+    - rid: 796646269615604305
       type: {class: Jump, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931393
@@ -19976,7 +20429,7 @@ MonoBehaviour:
               value: []
         mOutputPins:
           value: []
-    - rid: 796646247615169096
+    - rid: 796646269615604306
       type: {class: Jump, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930715
@@ -20018,7 +20471,7 @@ MonoBehaviour:
               value: []
         mOutputPins:
           value: []
-    - rid: 796646247615169097
+    - rid: 796646269615604307
       type: {class: Jump, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930745
@@ -20060,7 +20513,7 @@ MonoBehaviour:
               value: []
         mOutputPins:
           value: []
-    - rid: 796646247615169098
+    - rid: 796646269615604308
       type: {class: Jump, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930952
@@ -20102,7 +20555,7 @@ MonoBehaviour:
               value: []
         mOutputPins:
           value: []
-    - rid: 796646247615169099
+    - rid: 796646269615604309
       type: {class: Jump, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930611
@@ -20144,7 +20597,7 @@ MonoBehaviour:
               value: []
         mOutputPins:
           value: []
-    - rid: 796646247615169100
+    - rid: 796646269615604310
       type: {class: Jump, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930674
@@ -20186,7 +20639,112 @@ MonoBehaviour:
               value: []
         mOutputPins:
           value: []
-    - rid: 796646247615169101
+    - rid: 796646269615604311
+      type: {class: Condition, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
+      data:
+        id: 72057594037932121
+        technicalName: Cnd_8E10DB75
+        parentId: 72057594037928818
+        childrenIds: 
+        mDisplayName:
+          value:
+            mValue: PS.loopCounter>0 && NKNW.libSusCount ...
+            mOwner:
+              instanceId: 0
+              referencingMode: 0
+              lowId: 4185
+              highId: 16777216
+            mPropertyPath: DisplayName
+        mText:
+          value:
+            mValue: 
+            mOwner:
+              instanceId: 0
+              referencingMode: 0
+              lowId: 4185
+              highId: 16777216
+            mPropertyPath: Text
+        mExternalId: 
+        mPosition: {x: -548.82654, y: 312.2142}
+        mZIndex: 94
+        mSize: {x: 225, y: 100}
+        mShortId: 2383469429
+        mExpression:
+          value:
+            handlerId: 4146717631
+            ownerId: 72057594037932121
+            ownerInstanceId: 0
+            mRawScript: PS.loopCounter>0 && NKNW.libSusCounter==1
+        mColor: {r: 0.78431374, g: 0.8862745, b: 0.90588236, a: 1}
+        mInputPins:
+          value:
+          - id: 72057594037932123
+            mText:
+              value:
+                handlerId: 0
+                ownerId: 0
+                ownerInstanceId: 0
+                mRawScript: 
+            mOwner:
+              id: 72057594037932121
+              instanceId: 0
+            mConnections:
+              value: []
+        mOutputPins:
+          value:
+          - id: 72057594037932124
+            mText:
+              value:
+                handlerId: 0
+                ownerId: 0
+                ownerInstanceId: 0
+                mRawScript: 
+            mOwner:
+              id: 72057594037932121
+              instanceId: 0
+            mConnections:
+              value:
+              - mLabel:
+                  value:
+                    mValue: 
+                    mOwner:
+                      instanceId: 0
+                      referencingMode: 0
+                      lowId: 4185
+                      highId: 16777216
+                    mPropertyPath: Label
+                mColor: {r: 0.78431374, g: 0.8862745, b: 0.90588236, a: 1}
+                mTargetPin: 72057594037931807
+                mTarget:
+                  id: 72057594037931806
+                  instanceId: 0
+          - id: 72057594037932125
+            mText:
+              value:
+                handlerId: 0
+                ownerId: 0
+                ownerInstanceId: 0
+                mRawScript: 
+            mOwner:
+              id: 72057594037932121
+              instanceId: 0
+            mConnections:
+              value:
+              - mLabel:
+                  value:
+                    mValue: 
+                    mOwner:
+                      instanceId: 0
+                      referencingMode: 0
+                      lowId: 4185
+                      highId: 16777216
+                    mPropertyPath: Label
+                mColor: {r: 0.78431374, g: 0.8862745, b: 0.90588236, a: 1}
+                mTargetPin: 72057594037928987
+                mTarget:
+                  id: 72057594037928984
+                  instanceId: 0
+    - rid: 796646269615604312
       type: {class: Condition, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931613
@@ -20294,7 +20852,7 @@ MonoBehaviour:
                 mTarget:
                   id: 72057594037929704
                   instanceId: 0
-    - rid: 796646247615169102
+    - rid: 796646269615604313
       type: {class: Condition, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930758
@@ -20399,7 +20957,7 @@ MonoBehaviour:
                 mTarget:
                   id: 72057594037930772
                   instanceId: 0
-    - rid: 796646247615169103
+    - rid: 796646269615604314
       type: {class: Condition, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930765
@@ -20504,7 +21062,7 @@ MonoBehaviour:
                 mTarget:
                   id: 72057594037930758
                   instanceId: 0
-    - rid: 796646247615169104
+    - rid: 796646269615604315
       type: {class: Condition, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931689
@@ -20612,7 +21170,7 @@ MonoBehaviour:
                 mTarget:
                   id: 72057594037931706
                   instanceId: 0
-    - rid: 796646247615169105
+    - rid: 796646269615604316
       type: {class: Condition, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931706
@@ -20720,7 +21278,7 @@ MonoBehaviour:
                 mTarget:
                   id: 72057594037931735
                   instanceId: 0
-    - rid: 796646247615169106
+    - rid: 796646269615604317
       type: {class: Condition, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931938
@@ -20825,7 +21383,7 @@ MonoBehaviour:
                 mTarget:
                   id: 72057594037930705
                   instanceId: 0
-    - rid: 796646247615169107
+    - rid: 796646269615604318
       type: {class: Condition, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930821
@@ -20947,7 +21505,7 @@ MonoBehaviour:
                 mTarget:
                   id: 72057594037930827
                   instanceId: 0
-    - rid: 796646247615169108
+    - rid: 796646269615604319
       type: {class: Condition, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931062
@@ -21052,7 +21610,7 @@ MonoBehaviour:
                 mTarget:
                   id: 72057594037931968
                   instanceId: 0
-    - rid: 796646247615169109
+    - rid: 796646269615604320
       type: {class: Condition, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931123
@@ -21171,7 +21729,7 @@ MonoBehaviour:
                 mTarget:
                   id: 72057594037931914
                   instanceId: 0
-    - rid: 796646247615169110
+    - rid: 796646269615604321
       type: {class: Condition, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931968
@@ -21304,7 +21862,7 @@ MonoBehaviour:
                 mTarget:
                   id: 72057594037931992
                   instanceId: 0
-    - rid: 796646247615169111
+    - rid: 796646269615604322
       type: {class: Condition, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037932009
@@ -21409,7 +21967,112 @@ MonoBehaviour:
                 mTarget:
                   id: 72057594037932015
                   instanceId: 0
-    - rid: 796646247615169112
+    - rid: 796646269615604323
+      type: {class: Condition, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
+      data:
+        id: 72057594037932106
+        technicalName: Cnd_A06FCEDC
+        parentId: 72057594037930451
+        childrenIds: 
+        mDisplayName:
+          value:
+            mValue: PS.skill_Perseption>2 && !NKNW.tomasSus
+            mOwner:
+              instanceId: 0
+              referencingMode: 0
+              lowId: 4170
+              highId: 16777216
+            mPropertyPath: DisplayName
+        mText:
+          value:
+            mValue: 
+            mOwner:
+              instanceId: 0
+              referencingMode: 0
+              lowId: 4170
+              highId: 16777216
+            mPropertyPath: Text
+        mExternalId: 
+        mPosition: {x: 734, y: 545}
+        mZIndex: 10
+        mSize: {x: 225, y: 100}
+        mShortId: 2691682012
+        mExpression:
+          value:
+            handlerId: 2973223437
+            ownerId: 72057594037932106
+            ownerInstanceId: 0
+            mRawScript: PS.skill_Perseption>2 && !NKNW.tomasSus
+        mColor: {r: 0.78431374, g: 0.8862745, b: 0.90588236, a: 1}
+        mInputPins:
+          value:
+          - id: 72057594037932108
+            mText:
+              value:
+                handlerId: 0
+                ownerId: 0
+                ownerInstanceId: 0
+                mRawScript: 
+            mOwner:
+              id: 72057594037932106
+              instanceId: 0
+            mConnections:
+              value: []
+        mOutputPins:
+          value:
+          - id: 72057594037932109
+            mText:
+              value:
+                handlerId: 0
+                ownerId: 0
+                ownerInstanceId: 0
+                mRawScript: 
+            mOwner:
+              id: 72057594037932106
+              instanceId: 0
+            mConnections:
+              value:
+              - mLabel:
+                  value:
+                    mValue: 
+                    mOwner:
+                      instanceId: 0
+                      referencingMode: 0
+                      lowId: 4170
+                      highId: 16777216
+                    mPropertyPath: Label
+                mColor: {r: 0.78431374, g: 0.8862745, b: 0.90588236, a: 1}
+                mTargetPin: 72057594037931000
+                mTarget:
+                  id: 72057594037930997
+                  instanceId: 0
+          - id: 72057594037932110
+            mText:
+              value:
+                handlerId: 0
+                ownerId: 0
+                ownerInstanceId: 0
+                mRawScript: 
+            mOwner:
+              id: 72057594037932106
+              instanceId: 0
+            mConnections:
+              value:
+              - mLabel:
+                  value:
+                    mValue: 
+                    mOwner:
+                      instanceId: 0
+                      referencingMode: 0
+                      lowId: 4170
+                      highId: 16777216
+                    mPropertyPath: Label
+                mColor: {r: 0.78431374, g: 0.8862745, b: 0.90588236, a: 1}
+                mTargetPin: 72057594037930993
+                mTarget:
+                  id: 72057594037930990
+                  instanceId: 0
+    - rid: 796646269615604324
       type: {class: Condition, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930889
@@ -21502,7 +22165,7 @@ MonoBehaviour:
               instanceId: 0
             mConnections:
               value: []
-    - rid: 796646247615169113
+    - rid: 796646269615604325
       type: {class: Condition, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930939
@@ -21607,7 +22270,7 @@ MonoBehaviour:
                 mTarget:
                   id: 72057594037930878
                   instanceId: 0
-    - rid: 796646247615169114
+    - rid: 796646269615604326
       type: {class: Condition, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931575
@@ -21729,7 +22392,7 @@ MonoBehaviour:
                 mTarget:
                   id: 72057594037931594
                   instanceId: 0
-    - rid: 796646247615169115
+    - rid: 796646269615604327
       type: {class: Condition, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931036
@@ -21834,7 +22497,7 @@ MonoBehaviour:
                 mTarget:
                   id: 72057594037931042
                   instanceId: 0
-    - rid: 796646247615169116
+    - rid: 796646269615604328
       type: {class: Condition, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931776
@@ -21935,24 +22598,24 @@ MonoBehaviour:
                       highId: 16777216
                     mPropertyPath: Label
                 mColor: {r: 0.78431374, g: 0.8862745, b: 0.90588236, a: 1}
-                mTargetPin: 72057594037931763
+                mTargetPin: 72057594037932131
                 mTarget:
-                  id: 72057594037931761
+                  id: 72057594037932129
                   instanceId: 0
-    - rid: 796646247615169117
+    - rid: 796646269615604329
       type: {class: Condition, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
-        id: 72057594037932106
-        technicalName: Cnd_A06FCEDC
-        parentId: 72057594037930451
+        id: 72057594037932129
+        technicalName: Cnd_BA48141B
+        parentId: 72057594037930479
         childrenIds: 
         mDisplayName:
           value:
-            mValue: PS.skill_Perseption>2 && !NKNW.tomasSus
+            mValue: PS.loopCounter>1 && RQUE.getArtefact ...
             mOwner:
               instanceId: 0
               referencingMode: 0
-              lowId: 4170
+              lowId: 4193
               highId: 16777216
             mPropertyPath: DisplayName
         mText:
@@ -21961,24 +22624,24 @@ MonoBehaviour:
             mOwner:
               instanceId: 0
               referencingMode: 0
-              lowId: 4170
+              lowId: 4193
               highId: 16777216
             mPropertyPath: Text
         mExternalId: 
-        mPosition: {x: 734, y: 545}
-        mZIndex: 10
+        mPosition: {x: 1587, y: 615}
+        mZIndex: 14
         mSize: {x: 225, y: 100}
-        mShortId: 2691682012
+        mShortId: 3125285915
         mExpression:
           value:
-            handlerId: 2973223437
-            ownerId: 72057594037932106
+            handlerId: 209770258
+            ownerId: 72057594037932129
             ownerInstanceId: 0
-            mRawScript: PS.skill_Perseption>2 && !NKNW.tomasSus
+            mRawScript: PS.loopCounter>1 && RQUE.getArtefact_State == 0
         mColor: {r: 0.78431374, g: 0.8862745, b: 0.90588236, a: 1}
         mInputPins:
           value:
-          - id: 72057594037932108
+          - id: 72057594037932131
             mText:
               value:
                 handlerId: 0
@@ -21986,21 +22649,21 @@ MonoBehaviour:
                 ownerInstanceId: 0
                 mRawScript: 
             mOwner:
-              id: 72057594037932106
+              id: 72057594037932129
               instanceId: 0
             mConnections:
               value: []
         mOutputPins:
           value:
-          - id: 72057594037932109
+          - id: 72057594037932132
             mText:
               value:
-                handlerId: 0
-                ownerId: 0
+                handlerId: 1238929870
+                ownerId: 72057594037932129
                 ownerInstanceId: 0
-                mRawScript: 
+                mRawScript: RQUE.getArtefact_State = 1
             mOwner:
-              id: 72057594037932106
+              id: 72057594037932129
               instanceId: 0
             mConnections:
               value:
@@ -22010,15 +22673,15 @@ MonoBehaviour:
                     mOwner:
                       instanceId: 0
                       referencingMode: 0
-                      lowId: 4170
+                      lowId: 4193
                       highId: 16777216
                     mPropertyPath: Label
                 mColor: {r: 0.78431374, g: 0.8862745, b: 0.90588236, a: 1}
-                mTargetPin: 72057594037931000
+                mTargetPin: 72057594037932138
                 mTarget:
-                  id: 72057594037930997
+                  id: 72057594037932135
                   instanceId: 0
-          - id: 72057594037932110
+          - id: 72057594037932133
             mText:
               value:
                 handlerId: 0
@@ -22026,7 +22689,7 @@ MonoBehaviour:
                 ownerInstanceId: 0
                 mRawScript: 
             mOwner:
-              id: 72057594037932106
+              id: 72057594037932129
               instanceId: 0
             mConnections:
               value:
@@ -22036,28 +22699,28 @@ MonoBehaviour:
                     mOwner:
                       instanceId: 0
                       referencingMode: 0
-                      lowId: 4170
+                      lowId: 4193
                       highId: 16777216
                     mPropertyPath: Label
                 mColor: {r: 0.78431374, g: 0.8862745, b: 0.90588236, a: 1}
-                mTargetPin: 72057594037930993
+                mTargetPin: 72057594037932145
                 mTarget:
-                  id: 72057594037930990
+                  id: 72057594037932142
                   instanceId: 0
-    - rid: 796646247615169118
+    - rid: 796646269615604330
       type: {class: Condition, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
-        id: 72057594037932121
-        technicalName: Cnd_8E10DB75
-        parentId: 72057594037928818
+        id: 72057594037932151
+        technicalName: Cnd_E53367FC
+        parentId: 72057594037930479
         childrenIds: 
         mDisplayName:
           value:
-            mValue: PS.loopCounter>0 && NKNW.libSusCount ...
+            mValue: RQUE.getArtefact_State == 1
             mOwner:
               instanceId: 0
               referencingMode: 0
-              lowId: 4185
+              lowId: 4215
               highId: 16777216
             mPropertyPath: DisplayName
         mText:
@@ -22066,24 +22729,24 @@ MonoBehaviour:
             mOwner:
               instanceId: 0
               referencingMode: 0
-              lowId: 4185
+              lowId: 4215
               highId: 16777216
             mPropertyPath: Text
         mExternalId: 
-        mPosition: {x: -548.82654, y: 312.2142}
-        mZIndex: 94
+        mPosition: {x: 419, y: 503}
+        mZIndex: 20
         mSize: {x: 225, y: 100}
-        mShortId: 2383469429
+        mShortId: 3845351420
         mExpression:
           value:
-            handlerId: 4146717631
-            ownerId: 72057594037932121
+            handlerId: 3995952371
+            ownerId: 72057594037932151
             ownerInstanceId: 0
-            mRawScript: PS.loopCounter>0 && NKNW.libSusCounter==1
+            mRawScript: RQUE.getArtefact_State == 1
         mColor: {r: 0.78431374, g: 0.8862745, b: 0.90588236, a: 1}
         mInputPins:
           value:
-          - id: 72057594037932123
+          - id: 72057594037932153
             mText:
               value:
                 handlerId: 0
@@ -22091,13 +22754,13 @@ MonoBehaviour:
                 ownerInstanceId: 0
                 mRawScript: 
             mOwner:
-              id: 72057594037932121
+              id: 72057594037932151
               instanceId: 0
             mConnections:
               value: []
         mOutputPins:
           value:
-          - id: 72057594037932124
+          - id: 72057594037932154
             mText:
               value:
                 handlerId: 0
@@ -22105,7 +22768,7 @@ MonoBehaviour:
                 ownerInstanceId: 0
                 mRawScript: 
             mOwner:
-              id: 72057594037932121
+              id: 72057594037932151
               instanceId: 0
             mConnections:
               value:
@@ -22115,15 +22778,15 @@ MonoBehaviour:
                     mOwner:
                       instanceId: 0
                       referencingMode: 0
-                      lowId: 4185
+                      lowId: 4215
                       highId: 16777216
                     mPropertyPath: Label
                 mColor: {r: 0.78431374, g: 0.8862745, b: 0.90588236, a: 1}
-                mTargetPin: 72057594037931807
+                mTargetPin: 72057594037932162
                 mTarget:
-                  id: 72057594037931806
+                  id: 72057594037932159
                   instanceId: 0
-          - id: 72057594037932125
+          - id: 72057594037932155
             mText:
               value:
                 handlerId: 0
@@ -22131,7 +22794,7 @@ MonoBehaviour:
                 ownerInstanceId: 0
                 mRawScript: 
             mOwner:
-              id: 72057594037932121
+              id: 72057594037932151
               instanceId: 0
             mConnections:
               value:
@@ -22141,15 +22804,15 @@ MonoBehaviour:
                     mOwner:
                       instanceId: 0
                       referencingMode: 0
-                      lowId: 4185
+                      lowId: 4215
                       highId: 16777216
                     mPropertyPath: Label
                 mColor: {r: 0.78431374, g: 0.8862745, b: 0.90588236, a: 1}
-                mTargetPin: 72057594037928987
+                mTargetPin: 72057594037931038
                 mTarget:
-                  id: 72057594037928984
+                  id: 72057594037931036
                   instanceId: 0
-    - rid: 796646247615169119
+    - rid: 796646269615604331
       type: {class: Instruction, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931376
@@ -22228,7 +22891,7 @@ MonoBehaviour:
                 mTarget:
                   id: 72057594037931393
                   instanceId: 0
-    - rid: 796646247615169120
+    - rid: 796646269615604332
       type: {class: Instruction, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930740
@@ -22307,7 +22970,7 @@ MonoBehaviour:
                 mTarget:
                   id: 72057594037930750
                   instanceId: 0
-    - rid: 796646247615169121
+    - rid: 796646269615604333
       type: {class: Instruction, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930787
@@ -22400,86 +23063,7 @@ MonoBehaviour:
                 mTarget:
                   id: 72057594037930792
                   instanceId: 0
-    - rid: 796646247615169122
-      type: {class: Instruction, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
-      data:
-        id: 72057594037931676
-        technicalName: Ins_AB2FABEC
-        parentId: 72057594037930348
-        childrenIds: 
-        mDisplayName:
-          value:
-            mValue: RQUE.advertise_State = 3
-            mOwner:
-              instanceId: 0
-              referencingMode: 0
-              lowId: 3740
-              highId: 16777216
-            mPropertyPath: DisplayName
-        mText:
-          value:
-            mValue: 
-            mOwner:
-              instanceId: 0
-              referencingMode: 0
-              lowId: 3740
-              highId: 16777216
-            mPropertyPath: Text
-        mExternalId: 
-        mPosition: {x: 1821, y: 1507}
-        mZIndex: 51
-        mSize: {x: 225, y: 100}
-        mShortId: 2872028140
-        mExpression:
-          value:
-            handlerId: 1565428924
-            ownerId: 72057594037931676
-            ownerInstanceId: 0
-            mRawScript: RQUE.advertise_State = 3
-        mColor: {r: 0.78431374, g: 0.8862745, b: 0.90588236, a: 1}
-        mInputPins:
-          value:
-          - id: 72057594037931678
-            mText:
-              value:
-                handlerId: 0
-                ownerId: 0
-                ownerInstanceId: 0
-                mRawScript: 
-            mOwner:
-              id: 72057594037931676
-              instanceId: 0
-            mConnections:
-              value: []
-        mOutputPins:
-          value:
-          - id: 72057594037931679
-            mText:
-              value:
-                handlerId: 0
-                ownerId: 0
-                ownerInstanceId: 0
-                mRawScript: 
-            mOwner:
-              id: 72057594037931676
-              instanceId: 0
-            mConnections:
-              value:
-              - mLabel:
-                  value:
-                    mValue: 
-                    mOwner:
-                      instanceId: 0
-                      referencingMode: 0
-                      lowId: 3740
-                      highId: 16777216
-                    mPropertyPath: Label
-                mColor: {r: 0.78431374, g: 0.8862745, b: 0.90588236, a: 1}
-                mTargetPin: 72057594037931684
-                mTarget:
-                  id: 72057594037931681
-                  instanceId: 0
-    - rid: 796646247615169123
+    - rid: 796646269615604334
       type: {class: Instruction, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931960
@@ -22544,7 +23128,7 @@ MonoBehaviour:
               instanceId: 0
             mConnections:
               value: []
-    - rid: 796646247615169124
+    - rid: 796646269615604335
       type: {class: Instruction, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930863
@@ -22625,7 +23209,7 @@ MonoBehaviour:
                 mTarget:
                   id: 72057594037930868
                   instanceId: 0
-    - rid: 796646247615169125
+    - rid: 796646269615604336
       type: {class: Instruction, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931088
@@ -22704,7 +23288,7 @@ MonoBehaviour:
                 mTarget:
                   id: 72057594037931108
                   instanceId: 0
-    - rid: 796646247615169126
+    - rid: 796646269615604337
       type: {class: Instruction, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931095
@@ -22797,7 +23381,7 @@ MonoBehaviour:
                 mTarget:
                   id: 72057594037931123
                   instanceId: 0
-    - rid: 796646247615169127
+    - rid: 796646269615604338
       type: {class: Instruction, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930910
@@ -22878,7 +23462,7 @@ MonoBehaviour:
                 mTarget:
                   id: 72057594037930925
                   instanceId: 0
-    - rid: 796646247615169128
+    - rid: 796646269615604339
       type: {class: Instruction, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931606
@@ -22959,86 +23543,7 @@ MonoBehaviour:
                 mTarget:
                   id: 72057594037931581
                   instanceId: 0
-    - rid: 796646247615169129
-      type: {class: Instruction, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
-      data:
-        id: 72057594037931761
-        technicalName: Ins_FCD76333
-        parentId: 72057594037930479
-        childrenIds: 
-        mDisplayName:
-          value:
-            mValue: ITM.item_InventoryArtefact_delta++
-            mOwner:
-              instanceId: 0
-              referencingMode: 0
-              lowId: 3825
-              highId: 16777216
-            mPropertyPath: DisplayName
-        mText:
-          value:
-            mValue: 
-            mOwner:
-              instanceId: 0
-              referencingMode: 0
-              lowId: 3825
-              highId: 16777216
-            mPropertyPath: Text
-        mExternalId: 
-        mPosition: {x: 1625, y: 600}
-        mZIndex: 7
-        mSize: {x: 225, y: 100}
-        mShortId: 4241974067
-        mExpression:
-          value:
-            handlerId: 3879025811
-            ownerId: 72057594037931761
-            ownerInstanceId: 0
-            mRawScript: ITM.item_InventoryArtefact_delta++
-        mColor: {r: 0.78431374, g: 0.8862745, b: 0.90588236, a: 1}
-        mInputPins:
-          value:
-          - id: 72057594037931763
-            mText:
-              value:
-                handlerId: 0
-                ownerId: 0
-                ownerInstanceId: 0
-                mRawScript: 
-            mOwner:
-              id: 72057594037931761
-              instanceId: 0
-            mConnections:
-              value: []
-        mOutputPins:
-          value:
-          - id: 72057594037931764
-            mText:
-              value:
-                handlerId: 0
-                ownerId: 0
-                ownerInstanceId: 0
-                mRawScript: 
-            mOwner:
-              id: 72057594037931761
-              instanceId: 0
-            mConnections:
-              value:
-              - mLabel:
-                  value:
-                    mValue: 
-                    mOwner:
-                      instanceId: 0
-                      referencingMode: 0
-                      lowId: 3825
-                      highId: 16777216
-                    mPropertyPath: Label
-                mColor: {r: 0.78431374, g: 0.8862745, b: 0.90588236, a: 1}
-                mTargetPin: 72057594037931771
-                mTarget:
-                  id: 72057594037931768
-                  instanceId: 0
-    - rid: 796646247615169130
+    - rid: 796646269615604340
       type: {class: Instruction, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930557
@@ -23119,7 +23624,7 @@ MonoBehaviour:
                 mTarget:
                   id: 72057594037930611
                   instanceId: 0
-    - rid: 796646247615169131
+    - rid: 796646269615604341
       type: {class: Comment, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037931965
@@ -23159,7 +23664,7 @@ MonoBehaviour:
         mZIndex: 77
         mSize: {x: 225, y: 100}
         mShortId: 300887154
-    - rid: 796646247615169132
+    - rid: 796646269615604342
       type: {class: Document, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929558
@@ -23191,7 +23696,7 @@ MonoBehaviour:
         mZIndex: 0
         mSize: {x: 256, y: 196}
         mShortId: 1848213445
-    - rid: 796646247615169133
+    - rid: 796646269615604343
       type: {class: TextObject, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929561
@@ -23243,7 +23748,7 @@ MonoBehaviour:
         mZIndex: 0
         mSize: {x: 256, y: 196}
         mShortId: 1401004888
-    - rid: 796646247615169134
+    - rid: 796646269615604344
       type: {class: DefaultMainCharacterTemplate, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928221
@@ -23407,7 +23912,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037928221
             mOwnerInstanceId: 0
-    - rid: 796646247615169135
+    - rid: 796646269615604345
       type: {class: DefaultMainCharacterTemplate, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930426
@@ -23571,7 +24076,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930426
             mOwnerInstanceId: 0
-    - rid: 796646247615169136
+    - rid: 796646269615604346
       type: {class: DefaultSupportingCharacterTemplate, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928225
@@ -23677,7 +24182,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037928225
             mOwnerInstanceId: 0
-    - rid: 796646247615169137
+    - rid: 796646269615604347
       type: {class: DefaultSupportingCharacterTemplate, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928832
@@ -23783,7 +24288,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037928832
             mOwnerInstanceId: 0
-    - rid: 796646247615169138
+    - rid: 796646269615604348
       type: {class: DefaultSupportingCharacterTemplate, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928836
@@ -23889,7 +24394,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037928836
             mOwnerInstanceId: 0
-    - rid: 796646247615169139
+    - rid: 796646269615604349
       type: {class: DefaultSupportingCharacterTemplate, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929121
@@ -23995,7 +24500,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929121
             mOwnerInstanceId: 0
-    - rid: 796646247615169140
+    - rid: 796646269615604350
       type: {class: DefaultSupportingCharacterTemplate, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929194
@@ -24101,7 +24606,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929194
             mOwnerInstanceId: 0
-    - rid: 796646247615169141
+    - rid: 796646269615604351
       type: {class: DefaultSupportingCharacterTemplate, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929142
@@ -24207,7 +24712,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929142
             mOwnerInstanceId: 0
-    - rid: 796646247615169142
+    - rid: 796646269615604352
       type: {class: DefaultSupportingCharacterTemplate, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929146
@@ -24313,7 +24818,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929146
             mOwnerInstanceId: 0
-    - rid: 796646247615169143
+    - rid: 796646269615604353
       type: {class: DefaultSupportingCharacterTemplate, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929150
@@ -24419,7 +24924,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929150
             mOwnerInstanceId: 0
-    - rid: 796646247615169144
+    - rid: 796646269615604354
       type: {class: DefaultSupportingCharacterTemplate, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930317
@@ -24525,7 +25030,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037930317
             mOwnerInstanceId: 0
-    - rid: 796646247615169145
+    - rid: 796646269615604355
       type: {class: DefaultSupportingCharacterTemplate, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929172
@@ -24631,7 +25136,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929172
             mOwnerInstanceId: 0
-    - rid: 796646247615169146
+    - rid: 796646269615604356
       type: {class: DefaultSupportingCharacterTemplate, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929176
@@ -24737,7 +25242,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929176
             mOwnerInstanceId: 0
-    - rid: 796646247615169147
+    - rid: 796646269615604357
       type: {class: DefaultSupportingCharacterTemplate, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929162
@@ -24843,7 +25348,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929162
             mOwnerInstanceId: 0
-    - rid: 796646247615169148
+    - rid: 796646269615604358
       type: {class: DefaultSupportingCharacterTemplate, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929154
@@ -24949,7 +25454,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929154
             mOwnerInstanceId: 0
-    - rid: 796646247615169149
+    - rid: 796646269615604359
       type: {class: DefaultSupportingCharacterTemplate, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929158
@@ -25055,7 +25560,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929158
             mOwnerInstanceId: 0
-    - rid: 796646247615169150
+    - rid: 796646269615604360
       type: {class: DefaultSupportingCharacterTemplate, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929166
@@ -25161,7 +25666,7 @@ MonoBehaviour:
                 mOwnerInstanceId: 0
             mOwnerId: 72057594037929166
             mOwnerInstanceId: 0
-    - rid: 796646247615169151
+    - rid: 796646269615604361
       type: {class: Location, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929343
@@ -25203,7 +25708,7 @@ MonoBehaviour:
         mZIndex: 0
         mSize: {x: 256, y: 196}
         mShortId: 702566336
-    - rid: 796646247615169152
+    - rid: 796646269615604362
       type: {class: Zone, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929351
@@ -25272,7 +25777,7 @@ MonoBehaviour:
         mDisplayNameSize: 11
         mDropShadow: 1
         mSelectability: 1
-    - rid: 796646247615169153
+    - rid: 796646269615604363
       type: {class: Link, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929355
@@ -25303,7 +25808,7 @@ MonoBehaviour:
         mDisplayNameSize: 11
         mSelectability: 1
         mDropShadow: 1
-    - rid: 796646247615169154
+    - rid: 796646269615604364
       type: {class: Link, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929358
@@ -25334,7 +25839,7 @@ MonoBehaviour:
         mDisplayNameSize: 11
         mSelectability: 1
         mDropShadow: 1
-    - rid: 796646247615169155
+    - rid: 796646269615604365
       type: {class: Link, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929361
@@ -25365,7 +25870,7 @@ MonoBehaviour:
         mDisplayNameSize: 11
         mSelectability: 1
         mDropShadow: 1
-    - rid: 796646247615169156
+    - rid: 796646269615604366
       type: {class: Link, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929364
@@ -25396,7 +25901,7 @@ MonoBehaviour:
         mDisplayNameSize: 11
         mSelectability: 1
         mDropShadow: 1
-    - rid: 796646247615169157
+    - rid: 796646269615604367
       type: {class: Link, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929367
@@ -25427,7 +25932,7 @@ MonoBehaviour:
         mDisplayNameSize: 11
         mSelectability: 1
         mDropShadow: 1
-    - rid: 796646247615169158
+    - rid: 796646269615604368
       type: {class: Link, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929370
@@ -25458,7 +25963,7 @@ MonoBehaviour:
         mDisplayNameSize: 11
         mSelectability: 1
         mDropShadow: 1
-    - rid: 796646247615169159
+    - rid: 796646269615604369
       type: {class: Link, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929373
@@ -25489,7 +25994,7 @@ MonoBehaviour:
         mDisplayNameSize: 11
         mSelectability: 1
         mDropShadow: 1
-    - rid: 796646247615169160
+    - rid: 796646269615604370
       type: {class: Link, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929376
@@ -25520,7 +26025,7 @@ MonoBehaviour:
         mDisplayNameSize: 11
         mSelectability: 1
         mDropShadow: 1
-    - rid: 796646247615169161
+    - rid: 796646269615604371
       type: {class: Link, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929379
@@ -25551,7 +26056,7 @@ MonoBehaviour:
         mDisplayNameSize: 11
         mSelectability: 1
         mDropShadow: 1
-    - rid: 796646247615169162
+    - rid: 796646269615604372
       type: {class: Link, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929382
@@ -25582,7 +26087,7 @@ MonoBehaviour:
         mDisplayNameSize: 11
         mSelectability: 1
         mDropShadow: 1
-    - rid: 796646247615169163
+    - rid: 796646269615604373
       type: {class: Link, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929385
@@ -25613,7 +26118,7 @@ MonoBehaviour:
         mDisplayNameSize: 11
         mSelectability: 1
         mDropShadow: 1
-    - rid: 796646247615169164
+    - rid: 796646269615604374
       type: {class: Link, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929388
@@ -25644,7 +26149,7 @@ MonoBehaviour:
         mDisplayNameSize: 11
         mSelectability: 1
         mDropShadow: 1
-    - rid: 796646247615169165
+    - rid: 796646269615604375
       type: {class: Asset, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928829
@@ -25704,7 +26209,7 @@ MonoBehaviour:
         mShortId: 3445013510
         mAssetRefPath: "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/\u0410\u0410\u0420\u0410\u0414\u0425\u0418\u042F.png"
         mCategory: 1
-    - rid: 796646247615169166
+    - rid: 796646269615604376
       type: {class: Asset, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929126
@@ -25764,7 +26269,7 @@ MonoBehaviour:
         mShortId: 300874063
         mAssetRefPath: "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/photomode_20092024_155726.png"
         mCategory: 1
-    - rid: 796646247615169167
+    - rid: 796646269615604377
       type: {class: Asset, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929132
@@ -25825,7 +26330,7 @@ MonoBehaviour:
         mShortId: 2495727054
         mAssetRefPath: "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/photomode_20092024_154652_\u2014_\u043A\u043E\u043F\u0438\u044F.png"
         mCategory: 1
-    - rid: 796646247615169168
+    - rid: 796646269615604378
       type: {class: Asset, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929135
@@ -25887,7 +26392,7 @@ MonoBehaviour:
         mShortId: 2104040170
         mAssetRefPath: "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/photomode_26092024_151241_\u2014_\u043A\u043E\u043F\u0438\u044F_\u2014_\u043A\u043E\u043F\u0438\u044F.png"
         mCategory: 1
-    - rid: 796646247615169169
+    - rid: 796646269615604379
       type: {class: Asset, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930252
@@ -25949,7 +26454,7 @@ MonoBehaviour:
         mShortId: 310561995
         mAssetRefPath: "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/\u0410\u0410\u0420\u0410\u0414\u0425\u0418\u042F2.0..png"
         mCategory: 1
-    - rid: 796646247615169170
+    - rid: 796646269615604380
       type: {class: Asset, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930294
@@ -26012,7 +26517,7 @@ MonoBehaviour:
         mShortId: 1716957582
         mAssetRefPath: "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1015_Cyan_Background_Portrait_remix_01k38a0pg6fttr4tn9tc0r1bqe_(1).png"
         mCategory: 1
-    - rid: 796646247615169171
+    - rid: 796646269615604381
       type: {class: Asset, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930297
@@ -26074,7 +26579,7 @@ MonoBehaviour:
         mShortId: 72881144
         mAssetRefPath: "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1125_Mysterious_Female_Character_Portrait_remix_01k38e1w23ftxamgccafj7f0nn.png"
         mCategory: 1
-    - rid: 796646247615169172
+    - rid: 796646269615604382
       type: {class: Asset, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930300
@@ -26136,7 +26641,7 @@ MonoBehaviour:
         mShortId: 2131000503
         mAssetRefPath: "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1244_Mystical_Veiled_Portrait_remix_01k38jhbeaf30vhm4r09gj4jh5.png"
         mCategory: 1
-    - rid: 796646247615169173
+    - rid: 796646269615604383
       type: {class: Asset, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930303
@@ -26198,7 +26703,7 @@ MonoBehaviour:
         mShortId: 933077830
         mAssetRefPath: "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1313_Mysterious_Male_Character_remix_01k38m6espe0kb4p415rce5qc1.png"
         mCategory: 1
-    - rid: 796646247615169174
+    - rid: 796646269615604384
       type: {class: Asset, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930306
@@ -26260,7 +26765,7 @@ MonoBehaviour:
         mShortId: 3725928906
         mAssetRefPath: "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1335_Mysterious_Asian_Sorceress_remix_01k38ne504fjrvvt1nyxy7edg3.png"
         mCategory: 1
-    - rid: 796646247615169175
+    - rid: 796646269615604385
       type: {class: Asset, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930309
@@ -26322,7 +26827,7 @@ MonoBehaviour:
         mShortId: 620190994
         mAssetRefPath: "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1437_Gothic_Attire_Portrait_remix_01k38s10qbeynaayc0vq0cbvbv.png"
         mCategory: 1
-    - rid: 796646247615169176
+    - rid: 796646269615604386
       type: {class: Asset, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930411
@@ -26384,7 +26889,7 @@ MonoBehaviour:
         mShortId: 1635769234
         mAssetRefPath: "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1624_Intense_Character_Portrait_remix_01k38z4q34ey38xgcxv992mfhp.png"
         mCategory: 1
-    - rid: 796646247615169177
+    - rid: 796646269615604387
       type: {class: Asset, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930414
@@ -26446,7 +26951,7 @@ MonoBehaviour:
         mShortId: 1710731784
         mAssetRefPath: "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1645_Detailed_Portrait_Study_remix_01k390ad3deg29zwses6y7bpsc.png"
         mCategory: 1
-    - rid: 796646247615169178
+    - rid: 796646269615604388
       type: {class: Asset, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930417
@@ -26508,7 +27013,7 @@ MonoBehaviour:
         mShortId: 1969578444
         mAssetRefPath: "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1703_Curious_Expression_Portrait_remix_01k391av94fhn83zctbv23nwcc.png"
         mCategory: 1
-    - rid: 796646247615169179
+    - rid: 796646269615604389
       type: {class: Asset, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930420
@@ -26570,7 +27075,7 @@ MonoBehaviour:
         mShortId: 297247109
         mAssetRefPath: "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1705_Shady_Game_Character_remix_01k391g1nee32ra8q8yft1rnvm.png"
         mCategory: 1
-    - rid: 796646247615169180
+    - rid: 796646269615604390
       type: {class: Asset, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930423
@@ -26632,7 +27137,7 @@ MonoBehaviour:
         mShortId: 3603545791
         mAssetRefPath: "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1756_Revenge-Driven_Game_Character_remix_01k394d5bwf22t9g3jbb3626zd.png"
         mCategory: 1
-    - rid: 796646247615169181
+    - rid: 796646269615604391
       type: {class: Asset, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037930430
@@ -26694,7 +27199,7 @@ MonoBehaviour:
         mShortId: 49918090
         mAssetRefPath: "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1754_Game_Character_Portrait_remix_01k3948yxreacsvh79vk46m5xa.png"
         mCategory: 1
-    - rid: 796646247615169182
+    - rid: 796646269615604392
       type: {class: UserFolder, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928211
@@ -26713,7 +27218,7 @@ MonoBehaviour:
         mExternalId: 
         mShortId: 1202422820
         mZIndex: 0
-    - rid: 796646247615169183
+    - rid: 796646269615604393
       type: {class: UserFolder, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928213
@@ -26732,7 +27237,7 @@ MonoBehaviour:
         mExternalId: 
         mShortId: 3045472795
         mZIndex: 0
-    - rid: 796646247615169184
+    - rid: 796646269615604394
       type: {class: UserFolder, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928215
@@ -26751,7 +27256,7 @@ MonoBehaviour:
         mExternalId: 
         mShortId: 3760129445
         mZIndex: 0
-    - rid: 796646247615169185
+    - rid: 796646269615604395
       type: {class: UserFolder, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928217
@@ -26770,7 +27275,7 @@ MonoBehaviour:
         mExternalId: 
         mShortId: 388960014
         mZIndex: 0
-    - rid: 796646247615169186
+    - rid: 796646269615604396
       type: {class: UserFolder, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928219
@@ -26789,7 +27294,7 @@ MonoBehaviour:
         mExternalId: 
         mShortId: 3455256675
         mZIndex: 0
-    - rid: 796646247615169187
+    - rid: 796646269615604397
       type: {class: UserFolder, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037928824
@@ -26808,7 +27313,7 @@ MonoBehaviour:
         mExternalId: 
         mShortId: 3400668999
         mZIndex: 0
-    - rid: 796646247615169188
+    - rid: 796646269615604398
       type: {class: UserFolder, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929138
@@ -26827,7 +27332,7 @@ MonoBehaviour:
         mExternalId: 
         mShortId: 508019305
         mZIndex: 0
-    - rid: 796646247615169189
+    - rid: 796646269615604399
       type: {class: UserFolder, ns: Articy.World_Of_Red_Moon, asm: Assembly-CSharp}
       data:
         id: 72057594037929170
