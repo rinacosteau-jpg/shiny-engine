@@ -50,16 +50,26 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         }
     }
 
-    private FieldInfo variableCacheField;
+    private string globalVariablesSnapshot;
     private IFlowObject currentFlowObject;
 
     private void TryInitReflection()
     {
-        if (variableCacheField == null)
+        if (globalVariablesSnapshot == null)
         {
-            var gvType = typeof(ArticyGlobalVariables);
-            variableCacheField = gvType.GetField("variableCacheModified", BindingFlags.NonPublic | BindingFlags.Static);
+            globalVariablesSnapshot = JsonUtility.ToJson(ArticyGlobalVariables.Default);
         }
+    }
+
+    private bool HaveGlobalVariablesChanged()
+    {
+        var current = JsonUtility.ToJson(ArticyGlobalVariables.Default);
+        if (current != globalVariablesSnapshot)
+        {
+            globalVariablesSnapshot = current;
+            return true;
+        }
+        return false;
     }
 
     private void Update()
@@ -69,10 +79,9 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
 
         TryInitReflection();
 
-        if (variableCacheField != null && (bool)variableCacheField.GetValue(null))
+        if (HaveGlobalVariablesChanged())
         {
-            variableCacheField.SetValue(null, false);
-            Debug.Log("cache is real");
+            Debug.Log("Global variables changed");
 
             if (currentFlowObject is DialogueFragment fragment)
             {
