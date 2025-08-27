@@ -71,6 +71,15 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         }
     }
 
+    public void ForceRecalculateBranches()
+    {
+        TryInitReflection();
+        if (recalcMethod != null)
+            recalcMethod.Invoke(flowPlayer, null);
+        if (variableCacheField != null)
+            variableCacheField.SetValue(null, false);
+    }
+
     private void Update()
     {
         if (!IsDialogueOpen)
