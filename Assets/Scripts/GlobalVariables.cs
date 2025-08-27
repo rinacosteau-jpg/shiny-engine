@@ -151,7 +151,6 @@ public class GlobalVariables : MonoBehaviour {
         if (sch == null)
             return;
 
-        bool changed = false;
         foreach (var prop in sch.GetType().GetProperties()) {
             if (prop.PropertyType != typeof(int))
                 continue;
@@ -165,11 +164,8 @@ public class GlobalVariables : MonoBehaviour {
                 Debug.Log(ArticyGlobalVariables.Default.SCH.Accuracy);
                 prop.SetValue(sch, total);
                 Debug.Log(ArticyGlobalVariables.Default.SCH.Accuracy);
-                changed = true;
             }
         }
-        if (changed)
-            dialogueUI?.ForceRecalculateBranches();
     }
 
     private int GetSkillValue(string name) {
