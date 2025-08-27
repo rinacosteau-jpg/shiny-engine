@@ -25,6 +25,30 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
 
     public IObjectWithFeatureDuration kek;
     private bool suppressOnFlowPause = false;
+    private bool? originalRecalcSetting;
+
+    private void SetContinuousRecalculation(bool enable) {
+        if (flowPlayer == null) return;
+        var flags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
+        var type = flowPlayer.GetType();
+
+        var field = type.GetField("continuouslyRecalculateBranches", flags);
+        if (field != null) {
+            if (originalRecalcSetting == null)
+                originalRecalcSetting = (bool)field.GetValue(flowPlayer);
+            field.SetValue(flowPlayer, enable);
+            return;
+        }
+
+        var prop = type.GetProperty("continuouslyRecalculateBranches", flags) ??
+                   type.GetProperty("ContinuouslyRecalculateBranches", flags);
+        if (prop != null) {
+            if (originalRecalcSetting == null && prop.CanRead)
+                originalRecalcSetting = (bool)prop.GetValue(flowPlayer);
+            if (prop.CanWrite)
+                prop.SetValue(flowPlayer, enable);
+        }
+    }
 
     private void Awake() {
         if (dialogueBox != null)
@@ -63,7 +87,10 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         if (textLabel != null) textLabel.text = string.Empty;
         dialogueFinished = false;
         if (dialogueBox != null) dialogueBox.SetActive(true);
-        if (flowPlayer != null) flowPlayer.enabled = true;
+        if (flowPlayer != null) {
+            flowPlayer.enabled = true;
+            SetContinuousRecalculation(true);
+        }
 
 
         // Убедимся, что стартуем именно с нужного DialogueFragment
@@ -86,6 +113,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         responseHandler?.ClearResponses();
         IsDialogueOpen = false;
         if (flowPlayer != null) {
+            SetContinuousRecalculation(originalRecalcSetting ?? false);
             suppressOnFlowPause = true;
             var stopMethod = flowPlayer.GetType().GetMethod("Stop", BindingFlags.Public | BindingFlags.Instance);
             stopMethod?.Invoke(flowPlayer, null);
