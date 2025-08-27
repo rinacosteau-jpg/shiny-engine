@@ -74,8 +74,10 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
 
     private void Update()
     {
-        if (!IsDialogueOpen)
-            return;
+      /*  if (!IsDialogueOpen) //something sus going on here
+            return;*/
+
+        
 
         TryInitReflection();
 

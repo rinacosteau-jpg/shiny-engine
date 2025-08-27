@@ -178,7 +178,7 @@ aGlobalVariablesState.PS.moralVal>=2;
         /// </summary>
         public void Script_720575940379282080x1000000000010D4Text(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
         {
-            aGlobalVariablesState.PS.moralVal--;
+            //PS.moralVal--;
         }
         
         /// <summary>
@@ -420,7 +420,7 @@ aGlobalVariablesState.RQUE.advertise_Obj_B == 0;
         /// </summary>
         public bool Script_720575940379282080x1000000000010CAExpression(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
         {
-            return aGlobalVariablesState.SCH.Accuracy>5;
+            return aGlobalVariablesState.SCH.Accuracy>50;
         }
         
         /// <summary>
