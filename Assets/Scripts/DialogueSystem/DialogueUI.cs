@@ -121,7 +121,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         }
 
         // сброс состояния UI
-        r responseHandler?.ClearResponses();
+        responseHandler?.ClearResponses();
         lastDisplayedText = string.Empty;
         if (textLabel != null) textLabel.text = string.Empty;
         dialogueFinished = false;

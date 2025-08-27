@@ -854,7 +854,7 @@ MonoBehaviour:
     parent: 216172783251375095
     technicalName: Dlg_1FB33FDD
     articyType: Dialogue
-    childCount: 45
+    childCount: 46
   - id: 72057594037932180
     parent: 72057594037930348
     technicalName: DFr_2DD444E4
@@ -894,6 +894,11 @@ MonoBehaviour:
     parent: 72057594037930348
     technicalName: Cnd_943C005B
     articyType: Condition
+    childCount: 0
+  - id: 72057594037932277
+    parent: 72057594037930348
+    technicalName: Jmp_3D696E47
+    articyType: Jump
     childCount: 0
   - id: 72057594037932234
     parent: 72057594037930348
