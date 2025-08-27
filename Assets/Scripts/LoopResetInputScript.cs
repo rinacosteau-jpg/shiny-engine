@@ -57,8 +57,9 @@ public class LoopResetInputScript : MonoBehaviour {
         GameTime.Instance.Hours = 12;
         GameTime.Instance.Minutes = 12;
 
-        ArticyReset.ResetRQUE();
-        ArticyReset.ResetEVT();
+        ArticyReset.ResetArticySet("RQUE");
+        ArticyReset.ResetArticySet("EVT");
+        ArticyReset.ResetArticySet("RFLG");
 
         bool hasArtefactNow =
             (GlobalVariables.Instance != null && GlobalVariables.Instance.player.hasArtifact)

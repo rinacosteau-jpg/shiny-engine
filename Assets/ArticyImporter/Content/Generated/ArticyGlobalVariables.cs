@@ -87,8 +87,8 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             variableNames.Add("RQUE.getArtefact_State");
             variableNames.Add("RQUE.getArtefact_Stage");
             variableNames.Add("RQUE.getArtefact_Result");
-            variableNames.Add("RFLG.murderAttempt");
             variableNames.Add("RFLG.neutralizedByGuard");
+            variableNames.Add("RFLG.murderAttempt");
             variableNames.Add("ITM.item_kotsukiNote_delta");
             variableNames.Add("ITM.item_kotsukiNote_count");
             variableNames.Add("ITM.item_InventoryArtefact_count");
@@ -100,12 +100,14 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             variableNames.Add("PS.loopCounter");
             variableNames.Add("PS.skill_Persuasion");
             variableNames.Add("PS.skill_Perseption");
-            variableNames.Add("PS.skill_Test1");
+            variableNames.Add("PS.skill_Accuracy");
             variableNames.Add("PS.skill_Test2");
             variableNames.Add("PS.skill_Test3");
             variableNames.Add("PS.skill_Test4");
             variableNames.Add("PS.standing_purple");
             variableNames.Add("PS.standing_akaimoon");
+            variableNames.Add("PS.moralCap");
+            variableNames.Add("PS.moralVal");
             variableNames.Add("NQUE.getGun_Result");
             variableNames.Add("NQUE.getGun_Stage");
             variableNames.Add("NQUE.getGun_State");

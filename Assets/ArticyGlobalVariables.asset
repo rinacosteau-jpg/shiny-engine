@@ -37,19 +37,10 @@ MonoBehaviour:
   - mFullQualifiedName: RQUE.advertise_Stage
     mVar:
       values: 00
-  - mFullQualifiedName: RFLG.murderAttempt
-    mVar:
-      values: 00
   - mFullQualifiedName: RFLG.neutralizedByGuard
     mVar:
       values: 00
-  - mFullQualifiedName: PS.skill_Test2
-    mVar:
-      values: 00
-  - mFullQualifiedName: PS.skill_Test3
-    mVar:
-      values: 00
-  - mFullQualifiedName: PS.skill_Test4
+  - mFullQualifiedName: RFLG.murderAttempt
     mVar:
       values: 00
   mIntVariableCache:
@@ -146,13 +137,28 @@ MonoBehaviour:
   - mFullQualifiedName: PS.skill_Perseption
     mVar:
       values: 00000000
-  - mFullQualifiedName: PS.skill_Test1
+  - mFullQualifiedName: PS.skill_Accuracy
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: PS.skill_Test2
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: PS.skill_Test3
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: PS.skill_Test4
     mVar:
       values: 00000000
   - mFullQualifiedName: PS.standing_purple
     mVar:
       values: 00000000
   - mFullQualifiedName: PS.standing_akaimoon
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: PS.moralCap
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: PS.moralVal
     mVar:
       values: 00000000
   - mFullQualifiedName: NQUE.getGun_Result
@@ -190,19 +196,10 @@ MonoBehaviour:
   - mFullQualifiedName: RQUE.advertise_Stage
     mVar:
       values: 00
-  - mFullQualifiedName: RFLG.murderAttempt
-    mVar:
-      values: 00
   - mFullQualifiedName: RFLG.neutralizedByGuard
     mVar:
       values: 00
-  - mFullQualifiedName: PS.skill_Test2
-    mVar:
-      values: 00
-  - mFullQualifiedName: PS.skill_Test3
-    mVar:
-      values: 00
-  - mFullQualifiedName: PS.skill_Test4
+  - mFullQualifiedName: RFLG.murderAttempt
     mVar:
       values: 00
   mLiveIntVariableCache:
@@ -299,13 +296,28 @@ MonoBehaviour:
   - mFullQualifiedName: PS.skill_Perseption
     mVar:
       values: 00000000
-  - mFullQualifiedName: PS.skill_Test1
+  - mFullQualifiedName: PS.skill_Accuracy
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: PS.skill_Test2
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: PS.skill_Test3
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: PS.skill_Test4
     mVar:
       values: 00000000
   - mFullQualifiedName: PS.standing_purple
     mVar:
       values: 00000000
   - mFullQualifiedName: PS.standing_akaimoon
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: PS.moralCap
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: PS.moralVal
     mVar:
       values: 00000000
   - mFullQualifiedName: NQUE.getGun_Result
