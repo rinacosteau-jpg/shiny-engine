@@ -60,6 +60,10 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         [HideInInspector()]
         private SCH mSCH = new SCH();
         
+        [SerializeField()]
+        [HideInInspector()]
+        private TEST mTEST = new TEST();
+        
         #region Initialize static VariableName set
         static ArticyGlobalVariables()
         {
@@ -81,6 +85,8 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             variableNames.Add("NKNW.kill_guard");
             variableNames.Add("NKNW.kill_ao");
             variableNames.Add("NKNW.kill_tom");
+            variableNames.Add("NKNW.legalLoophole");
+            variableNames.Add("NKNW.canPreventMurder");
             variableNames.Add("RQUE.advertise_State");
             variableNames.Add("RQUE.advertise_Obj_A");
             variableNames.Add("RQUE.advertise_TalkedCount");
@@ -91,14 +97,20 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             variableNames.Add("RQUE.getArtefact_State");
             variableNames.Add("RQUE.getArtefact_Stage");
             variableNames.Add("RQUE.getArtefact_Result");
+            variableNames.Add("RQUE.preventMurderAttempt_Result");
+            variableNames.Add("RQUE.preventMurderAttempt_State");
+            variableNames.Add("RQUE.preventMurderAttempt_Stage");
             variableNames.Add("RFLG.neutralizedByGuard");
             variableNames.Add("RFLG.murderAttempt");
+            variableNames.Add("RFLG.helpedAo");
             variableNames.Add("ITM.item_kotsukiNote_delta");
             variableNames.Add("ITM.item_kotsukiNote_count");
             variableNames.Add("ITM.item_InventoryArtefact_count");
             variableNames.Add("ITM.item_InventoryArtefact_delta");
             variableNames.Add("ITM.item_Gun_count");
             variableNames.Add("ITM.item_Gun_delta");
+            variableNames.Add("ITM.item_RuleBook_count");
+            variableNames.Add("ITM.item_RuleBook_delta");
             variableNames.Add("RCNT.askLibAbtPeople");
             variableNames.Add("EVT.event_murderAttempt");
             variableNames.Add("PS.loopCounter");
@@ -115,9 +127,11 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             variableNames.Add("NQUE.getGun_Result");
             variableNames.Add("NQUE.getGun_Stage");
             variableNames.Add("NQUE.getGun_State");
+            variableNames.Add("NQUE.getGun_Obj_getRuleBook");
             variableNames.Add("SCH.Perseption");
             variableNames.Add("SCH.Persuasion");
             variableNames.Add("SCH.Accuracy");
+            variableNames.Add("TEST.test");
         }
         #endregion
         
@@ -193,6 +207,14 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             }
         }
         
+        public TEST TEST
+        {
+            get
+            {
+                return mTEST;
+            }
+        }
+        
         public static ArticyGlobalVariables Default
         {
             get
@@ -212,6 +234,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             PS.RegisterVariables(this);
             NQUE.RegisterVariables(this);
             SCH.RegisterVariables(this);
+            TEST.RegisterVariables(this);
         }
         
         public static ArticyGlobalVariables CreateGlobalVariablesClone()

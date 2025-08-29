@@ -34,6 +34,12 @@ MonoBehaviour:
   - mFullQualifiedName: NKNW.tomAttemptsMurder
     mVar:
       values: 00
+  - mFullQualifiedName: NKNW.legalLoophole
+    mVar:
+      values: 00
+  - mFullQualifiedName: NKNW.canPreventMurder
+    mVar:
+      values: 00
   - mFullQualifiedName: RQUE.advertise_Stage
     mVar:
       values: 00
@@ -41,6 +47,12 @@ MonoBehaviour:
     mVar:
       values: 00
   - mFullQualifiedName: RFLG.murderAttempt
+    mVar:
+      values: 00
+  - mFullQualifiedName: RFLG.helpedAo
+    mVar:
+      values: 00
+  - mFullQualifiedName: TEST.test
     mVar:
       values: 00
   mIntVariableCache:
@@ -104,6 +116,15 @@ MonoBehaviour:
   - mFullQualifiedName: RQUE.getArtefact_Result
     mVar:
       values: 00000000
+  - mFullQualifiedName: RQUE.preventMurderAttempt_Result
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RQUE.preventMurderAttempt_State
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RQUE.preventMurderAttempt_Stage
+    mVar:
+      values: 00000000
   - mFullQualifiedName: ITM.item_kotsukiNote_delta
     mVar:
       values: 00000000
@@ -120,6 +141,12 @@ MonoBehaviour:
     mVar:
       values: 00000000
   - mFullQualifiedName: ITM.item_Gun_delta
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: ITM.item_RuleBook_count
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: ITM.item_RuleBook_delta
     mVar:
       values: 00000000
   - mFullQualifiedName: RCNT.askLibAbtPeople
@@ -170,6 +197,9 @@ MonoBehaviour:
   - mFullQualifiedName: NQUE.getGun_State
     mVar:
       values: 00000000
+  - mFullQualifiedName: NQUE.getGun_Obj_getRuleBook
+    mVar:
+      values: 00000000
   - mFullQualifiedName: SCH.Perseption
     mVar:
       values: 00000000
@@ -202,6 +232,12 @@ MonoBehaviour:
   - mFullQualifiedName: NKNW.tomAttemptsMurder
     mVar:
       values: 00
+  - mFullQualifiedName: NKNW.legalLoophole
+    mVar:
+      values: 00
+  - mFullQualifiedName: NKNW.canPreventMurder
+    mVar:
+      values: 00
   - mFullQualifiedName: RQUE.advertise_Stage
     mVar:
       values: 00
@@ -209,6 +245,12 @@ MonoBehaviour:
     mVar:
       values: 00
   - mFullQualifiedName: RFLG.murderAttempt
+    mVar:
+      values: 00
+  - mFullQualifiedName: RFLG.helpedAo
+    mVar:
+      values: 00
+  - mFullQualifiedName: TEST.test
     mVar:
       values: 00
   mLiveIntVariableCache:
@@ -272,6 +314,15 @@ MonoBehaviour:
   - mFullQualifiedName: RQUE.getArtefact_Result
     mVar:
       values: 00000000
+  - mFullQualifiedName: RQUE.preventMurderAttempt_Result
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RQUE.preventMurderAttempt_State
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RQUE.preventMurderAttempt_Stage
+    mVar:
+      values: 00000000
   - mFullQualifiedName: ITM.item_kotsukiNote_delta
     mVar:
       values: 00000000
@@ -288,6 +339,12 @@ MonoBehaviour:
     mVar:
       values: 00000000
   - mFullQualifiedName: ITM.item_Gun_delta
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: ITM.item_RuleBook_count
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: ITM.item_RuleBook_delta
     mVar:
       values: 00000000
   - mFullQualifiedName: RCNT.askLibAbtPeople
@@ -338,6 +395,9 @@ MonoBehaviour:
   - mFullQualifiedName: NQUE.getGun_State
     mVar:
       values: 00000000
+  - mFullQualifiedName: NQUE.getGun_Obj_getRuleBook
+    mVar:
+      values: 00000000
   - mFullQualifiedName: SCH.Perseption
     mVar:
       values: 00000000
@@ -366,4 +426,6 @@ MonoBehaviour:
   mNQUE:
     _VariableStorage: {fileID: 11400000}
   mSCH:
+    _VariableStorage: {fileID: 11400000}
+  mTEST:
     _VariableStorage: {fileID: 11400000}

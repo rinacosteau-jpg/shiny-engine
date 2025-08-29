@@ -45,11 +45,14 @@ public class MurderAttemptEvent : MonoBehaviour, ILoopResettable {
     void OnTimeChanged(int hours, int minutes) {
         if (!triggered && hours == 12 && minutes == 42) {
             triggered = true;
-            StartCoroutine(EventSequence());
+            if (ArticyGlobalVariables.Default.EVT.event_murderAttempt != 3) {
+                StartCoroutine(EventSequence());
+            }
         }
     }
 
     IEnumerator EventSequence() {
+        ArticyGlobalVariables.Default.EVT.event_murderAttempt = 1;
 
         GlobalVariables.Instance?.ForceCloseDialogue();
         foreach (var dialogue in FindObjectsOfType<DialogueUI>(true))
@@ -75,7 +78,7 @@ public class MurderAttemptEvent : MonoBehaviour, ILoopResettable {
         if (secondNpcD != null) secondNpcD.position = spawnGuardM.position; // TODO: specify target position
         if (secondNpcE != null) secondNpcE.position = spawnGuardD.position; // TODO: specify target position
 
-        ArticyGlobalVariables.Default.EVT.event_murderAttempt = 1;
+        ArticyGlobalVariables.Default.EVT.event_murderAttempt = 2;
 
         if (virtualCamera != null)
             yield return StartCoroutine(ZoomCamera(defaultCameraSize));

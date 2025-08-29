@@ -39,8 +39,8 @@ public class GlobalVariables : MonoBehaviour {
         }
         Instance = this;
         player = new PlayerState(null, false, false);
-        player.moralCap = 10;
-        player.moralVal = 10;
+        player.moralCap = 2;
+        player.moralVal = 2;
         Debug.Log("op");
         var selector = FindFirstObjectByType<SkillSelectionUI>(FindObjectsInactive.Include);
         if (selector) {

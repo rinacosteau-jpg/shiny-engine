@@ -1766,7 +1766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 681595886}
-  movementSpeed: 10
+  movementSpeed: 25
 --- !u!54 &681595886
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3306,7 +3306,7 @@ MonoBehaviour:
   dialogueStart:
     instanceId: 0
     referencingMode: 0
-    lowId: 2743
+    lowId: 4390
     highId: 16777216
 --- !u!114 &1267550330
 MonoBehaviour:
@@ -5643,7 +5643,7 @@ MonoBehaviour:
   dialogueStart:
     instanceId: 0
     referencingMode: 0
-    lowId: 2743
+    lowId: 4390
     highId: 16777216
 --- !u!33 &1773274260
 MeshFilter:
@@ -7942,7 +7942,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 319.62024, y: -373.71008}
+  m_AnchoredPosition: {x: 319.62024, y: -373.71002}
   m_SizeDelta: {x: -158.4893, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &3220404268942988063
@@ -8855,8 +8855,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7298263326104629039}
   m_HandleRect: {fileID: 2560981688146095341}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.49999997
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
