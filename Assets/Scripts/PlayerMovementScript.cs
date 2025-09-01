@@ -5,15 +5,13 @@ public class PlayerMovementScript : MonoBehaviour {
     InputAction moveAction;
     public Rigidbody rb;
     public float movementSpeed = 5;
-    private DialogueUI dialogueUI;
 
     void Start() {
         moveAction = InputSystem.actions.FindAction("Move");
-        dialogueUI = FindObjectOfType<DialogueUI>();
     }
 
     void Update() {
-        if (dialogueUI != null && dialogueUI.IsDialogueOpen) {
+        if (PlayerInputBlocker.IsBlocked) {
             rb.linearVelocity = Vector3.zero;
             return;
         }

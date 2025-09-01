@@ -43,7 +43,11 @@ public class SkillSelectionUI : MonoBehaviour {
     }
 
     private void OnEnable() { Debug.Log("[SkillSelectionUI] OnEnable"); }
-    private void OnDisable() { Debug.Log("[SkillSelectionUI] OnDisable"); }
+    private void OnDisable()
+    {
+        Debug.Log("[SkillSelectionUI] OnDisable");
+        PlayerInputBlocker.Unblock();
+    }
 
     private void EnsureSetup() {
         if (_setupDone) return;
@@ -135,6 +139,7 @@ public class SkillSelectionUI : MonoBehaviour {
         ShowImmediate();                    // ← только CanvasGroup
         transform.SetAsLastSibling();       // поверх соседей
         Canvas.ForceUpdateCanvases();
+        PlayerInputBlocker.Block();
 
         Debug.Log($"[SkillSelectionUI] Open: slots={_slots.Count}, pointsLeft={pointsLeft}, activeSelf={gameObject.activeSelf}, inHierarchy={gameObject.activeInHierarchy}");
     }
@@ -223,6 +228,7 @@ public class SkillSelectionUI : MonoBehaviour {
                 s.skill.Value = s.value; // или += s.value
         }
         HideImmediate(); // только прячем, не выключаем GO
+        PlayerInputBlocker.Unblock();
         Debug.Log("[SkillSelectionUI] Confirm → apply & hide (CG)");
     }
 
