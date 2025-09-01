@@ -43,10 +43,10 @@ public class MurderAttemptEvent : MonoBehaviour, ILoopResettable {
     }
 
     void OnTimeChanged(int hours, int minutes) {
-        if (!triggered && hours == 12 && minutes == 42) {
+        if (!triggered && hours == 12 && minutes == 12) {
             triggered = true;
             if (ArticyGlobalVariables.Default.EVT.event_murderAttempt != 3) {
-                StartCoroutine(EventSequence());
+               // StartCoroutine(EventSequence());
             }
         }
     }

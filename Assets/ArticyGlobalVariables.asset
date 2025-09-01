@@ -40,7 +40,10 @@ MonoBehaviour:
   - mFullQualifiedName: NKNW.canPreventMurder
     mVar:
       values: 00
-  - mFullQualifiedName: RQUE.advertise_Stage
+  - mFullQualifiedName: NKNW.gunLooks
+    mVar:
+      values: 00
+  - mFullQualifiedName: NKNW.secretPathToConfiscated
     mVar:
       values: 00
   - mFullQualifiedName: RFLG.neutralizedByGuard
@@ -50,6 +53,9 @@ MonoBehaviour:
     mVar:
       values: 00
   - mFullQualifiedName: RFLG.helpedAo
+    mVar:
+      values: 00
+  - mFullQualifiedName: RFLG.prepareForRatPath
     mVar:
       values: 00
   - mFullQualifiedName: TEST.test
@@ -107,6 +113,9 @@ MonoBehaviour:
   - mFullQualifiedName: RQUE.advertise_Result
     mVar:
       values: 00000000
+  - mFullQualifiedName: RQUE.advertise_Stage
+    mVar:
+      values: 00000000
   - mFullQualifiedName: RQUE.getArtefact_State
     mVar:
       values: 00000000
@@ -123,6 +132,27 @@ MonoBehaviour:
     mVar:
       values: 00000000
   - mFullQualifiedName: RQUE.preventMurderAttempt_Stage
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RQUE.stealFromRu_State
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RQUE.stealFromRu_Stage
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RQUE.stealFromRu_Result
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RQUE.getGun_Result
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RQUE.getGun_Stage
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RQUE.getGun_State
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RQUE.getGun_Obj_getRuleBook
     mVar:
       values: 00000000
   - mFullQualifiedName: ITM.item_kotsukiNote_delta
@@ -149,7 +179,22 @@ MonoBehaviour:
   - mFullQualifiedName: ITM.item_RuleBook_delta
     mVar:
       values: 00000000
+  - mFullQualifiedName: ITM.item_JapaneseSweets_delta
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: ITM.item_JapaneseSweets_count
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: ITM.item_RatStaff_count
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: ITM.item_RatStaff_delta
+    mVar:
+      values: 00000000
   - mFullQualifiedName: RCNT.askLibAbtPeople
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RCNT.ratTrust
     mVar:
       values: 00000000
   - mFullQualifiedName: EVT.event_murderAttempt
@@ -167,7 +212,7 @@ MonoBehaviour:
   - mFullQualifiedName: PS.skill_Accuracy
     mVar:
       values: 00000000
-  - mFullQualifiedName: PS.skill_Test2
+  - mFullQualifiedName: PS.skill_Willpower
     mVar:
       values: 00000000
   - mFullQualifiedName: PS.skill_Test3
@@ -188,16 +233,16 @@ MonoBehaviour:
   - mFullQualifiedName: PS.moralVal
     mVar:
       values: 00000000
-  - mFullQualifiedName: NQUE.getGun_Result
+  - mFullQualifiedName: PS.skill_Logic
     mVar:
       values: 00000000
-  - mFullQualifiedName: NQUE.getGun_Stage
+  - mFullQualifiedName: NQUE.FindMemories_State
     mVar:
       values: 00000000
-  - mFullQualifiedName: NQUE.getGun_State
+  - mFullQualifiedName: NQUE.FindMemories_Stage
     mVar:
       values: 00000000
-  - mFullQualifiedName: NQUE.getGun_Obj_getRuleBook
+  - mFullQualifiedName: NQUE.FindMemories_Result
     mVar:
       values: 00000000
   - mFullQualifiedName: SCH.Perseption
@@ -207,6 +252,12 @@ MonoBehaviour:
     mVar:
       values: 00000000
   - mFullQualifiedName: SCH.Accuracy
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: SCH.Willpower
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: SCH.boost
     mVar:
       values: 00000000
   mStringVariableCache: []
@@ -238,7 +289,10 @@ MonoBehaviour:
   - mFullQualifiedName: NKNW.canPreventMurder
     mVar:
       values: 00
-  - mFullQualifiedName: RQUE.advertise_Stage
+  - mFullQualifiedName: NKNW.gunLooks
+    mVar:
+      values: 00
+  - mFullQualifiedName: NKNW.secretPathToConfiscated
     mVar:
       values: 00
   - mFullQualifiedName: RFLG.neutralizedByGuard
@@ -248,6 +302,9 @@ MonoBehaviour:
     mVar:
       values: 00
   - mFullQualifiedName: RFLG.helpedAo
+    mVar:
+      values: 00
+  - mFullQualifiedName: RFLG.prepareForRatPath
     mVar:
       values: 00
   - mFullQualifiedName: TEST.test
@@ -305,6 +362,9 @@ MonoBehaviour:
   - mFullQualifiedName: RQUE.advertise_Result
     mVar:
       values: 00000000
+  - mFullQualifiedName: RQUE.advertise_Stage
+    mVar:
+      values: 00000000
   - mFullQualifiedName: RQUE.getArtefact_State
     mVar:
       values: 00000000
@@ -321,6 +381,27 @@ MonoBehaviour:
     mVar:
       values: 00000000
   - mFullQualifiedName: RQUE.preventMurderAttempt_Stage
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RQUE.stealFromRu_State
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RQUE.stealFromRu_Stage
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RQUE.stealFromRu_Result
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RQUE.getGun_Result
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RQUE.getGun_Stage
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RQUE.getGun_State
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RQUE.getGun_Obj_getRuleBook
     mVar:
       values: 00000000
   - mFullQualifiedName: ITM.item_kotsukiNote_delta
@@ -347,7 +428,22 @@ MonoBehaviour:
   - mFullQualifiedName: ITM.item_RuleBook_delta
     mVar:
       values: 00000000
+  - mFullQualifiedName: ITM.item_JapaneseSweets_delta
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: ITM.item_JapaneseSweets_count
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: ITM.item_RatStaff_count
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: ITM.item_RatStaff_delta
+    mVar:
+      values: 00000000
   - mFullQualifiedName: RCNT.askLibAbtPeople
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RCNT.ratTrust
     mVar:
       values: 00000000
   - mFullQualifiedName: EVT.event_murderAttempt
@@ -365,7 +461,7 @@ MonoBehaviour:
   - mFullQualifiedName: PS.skill_Accuracy
     mVar:
       values: 00000000
-  - mFullQualifiedName: PS.skill_Test2
+  - mFullQualifiedName: PS.skill_Willpower
     mVar:
       values: 00000000
   - mFullQualifiedName: PS.skill_Test3
@@ -386,16 +482,16 @@ MonoBehaviour:
   - mFullQualifiedName: PS.moralVal
     mVar:
       values: 00000000
-  - mFullQualifiedName: NQUE.getGun_Result
+  - mFullQualifiedName: PS.skill_Logic
     mVar:
       values: 00000000
-  - mFullQualifiedName: NQUE.getGun_Stage
+  - mFullQualifiedName: NQUE.FindMemories_State
     mVar:
       values: 00000000
-  - mFullQualifiedName: NQUE.getGun_State
+  - mFullQualifiedName: NQUE.FindMemories_Stage
     mVar:
       values: 00000000
-  - mFullQualifiedName: NQUE.getGun_Obj_getRuleBook
+  - mFullQualifiedName: NQUE.FindMemories_Result
     mVar:
       values: 00000000
   - mFullQualifiedName: SCH.Perseption
@@ -405,6 +501,12 @@ MonoBehaviour:
     mVar:
       values: 00000000
   - mFullQualifiedName: SCH.Accuracy
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: SCH.Willpower
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: SCH.boost
     mVar:
       values: 00000000
   mLiveStringVariableCache: []

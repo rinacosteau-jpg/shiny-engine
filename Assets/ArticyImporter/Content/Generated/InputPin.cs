@@ -23,7 +23,7 @@ namespace Articy.World_Of_Red_Moon
     
     
     [Serializable()]
-    [Articy.Unity.ArticyCodeGenerationHashAttribute(638919002047716604)]
+    [Articy.Unity.ArticyCodeGenerationHashAttribute(638923559118271022)]
     public class InputPin : ArticyPrimitive, IInputPin
     {
         
