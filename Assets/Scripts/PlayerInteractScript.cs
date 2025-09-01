@@ -3,13 +3,15 @@ using UnityEngine.InputSystem;
 
 public class PlayerInteractScript : MonoBehaviour {
     InputAction interactAction;
+    private DialogueUI dialogueUI;
 
     void Start() {
         interactAction = InputSystem.actions.FindAction("Interact");
+        dialogueUI = FindObjectOfType<DialogueUI>();
     }
 
     void Update() {
-        if (PlayerInputBlocker.IsBlocked)
+        if (dialogueUI != null && dialogueUI.IsDialogueOpen)
             return;
 
         if (interactAction != null && interactAction.triggered) {
