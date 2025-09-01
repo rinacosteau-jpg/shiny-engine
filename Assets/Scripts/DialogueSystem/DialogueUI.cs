@@ -145,7 +145,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         // Задаём стартовую точку и не проигрываем первый узел автоматически
         flowPlayer.StartOn = startFragment;
         IsDialogueOpen = true;
-
+        PlayerInputBlocker.Block();
     }
 
     /// <summary>Принудительно закрыть текущий диалог (например, кнопкой "Esc").</summary>
@@ -154,6 +154,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         dialogueFinished = false;
         responseHandler?.ClearResponses();
         IsDialogueOpen = false;
+        PlayerInputBlocker.Unblock();
         if (flowPlayer != null) {
             SetContinuousRecalculation(originalRecalcSetting ?? false);
             suppressOnFlowPause = true;
