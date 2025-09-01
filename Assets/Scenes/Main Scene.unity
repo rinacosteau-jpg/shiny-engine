@@ -1423,16 +1423,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c7aeea70a54409da0780f2cee696d8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNpc: {fileID: 0}
-  ratkoNpc: {fileID: 0}
-  positionA: {fileID: 0}
-  positionB: {fileID: 0}
-  pathA: {fileID: 0}
-  pathB: {fileID: 0}
-  result: {fileID: 0}
-  playerMovement: {fileID: 0}
-  playerInteract: {fileID: 0}
-  dialogueUI: {fileID: 0}
+  playerNpc: {fileID: 681595883}
+  ratkoNpc: {fileID: 1219576295}
+  positionA: {fileID: 2077910043}
+  positionB: {fileID: 1524858636}
+  pathAStart:
+    instanceId: 0
+    referencingMode: 0
+    lowId: 5146
+    highId: 16777216
+  pathBStart:
+    instanceId: 0
+    referencingMode: 0
+    lowId: 6509
+    highId: 16777216
+  resultStart:
+    instanceId: 0
+    referencingMode: 0
+    lowId: 7144
+    highId: 16777216
+  playerMovement: {fileID: 681595884}
+  playerInteract: {fileID: 681595887}
+  dialogueUI: {fileID: 2139869256}
 --- !u!1 &558561536
 GameObject:
   m_ObjectHideFlags: 0
