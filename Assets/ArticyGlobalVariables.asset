@@ -155,6 +155,12 @@ MonoBehaviour:
   - mFullQualifiedName: RQUE.getGun_Obj_getRuleBook
     mVar:
       values: 00000000
+  - mFullQualifiedName: RQUE.getGun_Obj_ratA
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RQUE.getGun_Obj_ratB
+    mVar:
+      values: 00000000
   - mFullQualifiedName: ITM.item_kotsukiNote_delta
     mVar:
       values: 00000000
@@ -198,6 +204,9 @@ MonoBehaviour:
     mVar:
       values: 00000000
   - mFullQualifiedName: EVT.event_murderAttempt
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: EVT.event_gunStealing
     mVar:
       values: 00000000
   - mFullQualifiedName: PS.loopCounter
@@ -404,6 +413,12 @@ MonoBehaviour:
   - mFullQualifiedName: RQUE.getGun_Obj_getRuleBook
     mVar:
       values: 00000000
+  - mFullQualifiedName: RQUE.getGun_Obj_ratA
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RQUE.getGun_Obj_ratB
+    mVar:
+      values: 00000000
   - mFullQualifiedName: ITM.item_kotsukiNote_delta
     mVar:
       values: 00000000
@@ -447,6 +462,9 @@ MonoBehaviour:
     mVar:
       values: 00000000
   - mFullQualifiedName: EVT.event_murderAttempt
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: EVT.event_gunStealing
     mVar:
       values: 00000000
   - mFullQualifiedName: PS.loopCounter

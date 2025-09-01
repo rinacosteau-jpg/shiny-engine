@@ -109,6 +109,8 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             variableNames.Add("RQUE.getGun_Stage");
             variableNames.Add("RQUE.getGun_State");
             variableNames.Add("RQUE.getGun_Obj_getRuleBook");
+            variableNames.Add("RQUE.getGun_Obj_ratA");
+            variableNames.Add("RQUE.getGun_Obj_ratB");
             variableNames.Add("RFLG.neutralizedByGuard");
             variableNames.Add("RFLG.murderAttempt");
             variableNames.Add("RFLG.helpedAo");
@@ -128,6 +130,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             variableNames.Add("RCNT.askLibAbtPeople");
             variableNames.Add("RCNT.ratTrust");
             variableNames.Add("EVT.event_murderAttempt");
+            variableNames.Add("EVT.event_gunStealing");
             variableNames.Add("PS.loopCounter");
             variableNames.Add("PS.skill_Persuasion");
             variableNames.Add("PS.skill_Perseption");
