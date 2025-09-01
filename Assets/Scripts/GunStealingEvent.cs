@@ -8,9 +8,9 @@ public class GunStealingEvent : MonoBehaviour, ILoopResettable {
     [SerializeField] private Transform ratkoNpc;
     [SerializeField] private Transform positionA;
     [SerializeField] private Transform positionB;
-    [SerializeField] private ArticyFlowPlayer pathA;
-    [SerializeField] private ArticyFlowPlayer pathB;
-    [SerializeField] private ArticyFlowPlayer result;
+    [SerializeField] private ArticyRef pathAStart;
+    [SerializeField] private ArticyRef pathBStart;
+    [SerializeField] private ArticyRef resultStart;
     [SerializeField] private PlayerMovementScript playerMovement;
     [SerializeField] private PlayerInteractScript playerInteract;
     [SerializeField] private DialogueUI dialogueUI;
@@ -40,12 +40,12 @@ public class GunStealingEvent : MonoBehaviour, ILoopResettable {
         bool isPathB = ArticyGlobalVariables.Default.RQUE.getGun_Obj_ratB == 1;
         Transform targetPlayerPos = positionA;
         Transform targetRatkoPos = positionB;
-        ArticyFlowPlayer pathPlayer = pathA;
+        ArticyRef pathStart = pathAStart;
 
         if (isPathB) {
             targetPlayerPos = positionB;
             targetRatkoPos = positionA;
-            pathPlayer = pathB;
+            pathStart = pathBStart;
         }
 
         if (playerNpc != null && targetPlayerPos != null)
@@ -55,8 +55,8 @@ public class GunStealingEvent : MonoBehaviour, ILoopResettable {
 
         yield return new WaitForSeconds(3f);
 
-        if (pathPlayer != null)
-            pathPlayer.Play();
+        if (dialogueUI != null)
+            dialogueUI.StartDialogue(pathStart);
 
         if (dialogueUI != null)
             yield return new WaitUntil(() => !dialogueUI.IsDialogueOpen);
@@ -68,8 +68,8 @@ public class GunStealingEvent : MonoBehaviour, ILoopResettable {
 
         yield return new WaitForSeconds(3f);
 
-        if (result != null)
-            result.Play();
+        if (dialogueUI != null)
+            dialogueUI.StartDialogue(resultStart);
 
         Debug.Log("GunStealingEventFinished");
 
