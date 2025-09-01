@@ -26,9 +26,9 @@ public class GunStealingEvent : MonoBehaviour, ILoopResettable {
     }
 
     private void Update() {
-        if (!triggered && ArticyGlobalVariables.Default.EVT.gunStealing == 1) {
+        if (!triggered && ArticyGlobalVariables.Default.EVT.event_gunStealing == 1) {
             triggered = true;
-            ArticyGlobalVariables.Default.EVT.gunStealing = 2;
+            ArticyGlobalVariables.Default.EVT.event_gunStealing = 2;
             StartCoroutine(EventSequence());
         }
     }

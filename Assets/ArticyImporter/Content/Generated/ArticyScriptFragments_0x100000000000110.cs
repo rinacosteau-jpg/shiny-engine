@@ -288,7 +288,7 @@ aGlobalVariablesState.RQUE.getGun_Obj_ratA = 1;
         /// </summary>
         public void Script_720575940379282080x1000000000017C3Text(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
         {
-            //старт ивента кражи;
+            aGlobalVariablesState.EVT.event_gunStealing = 1;
         }
         
         /// <summary>

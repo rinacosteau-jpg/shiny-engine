@@ -1299,6 +1299,7 @@ GameObject:
   - component: {fileID: 540866314}
   - component: {fileID: 540866317}
   - component: {fileID: 540866319}
+  - component: {fileID: 540866320}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1410,6 +1411,28 @@ MonoBehaviour:
   virtualCamera: {fileID: 252997172}
   zoomedOutSize: 150
   zoomDuration: 1
+--- !u!114 &540866320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540866313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c7aeea70a54409da0780f2cee696d8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerNpc: {fileID: 0}
+  ratkoNpc: {fileID: 0}
+  positionA: {fileID: 0}
+  positionB: {fileID: 0}
+  pathA: {fileID: 0}
+  pathB: {fileID: 0}
+  result: {fileID: 0}
+  playerMovement: {fileID: 0}
+  playerInteract: {fileID: 0}
+  dialogueUI: {fileID: 0}
 --- !u!1 &558561536
 GameObject:
   m_ObjectHideFlags: 0
@@ -8052,7 +8075,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 173.83557, y: -373.71008}
+  m_AnchoredPosition: {x: 173.83557, y: -373.71002}
   m_SizeDelta: {x: -450.0587, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &3220404268942988063
@@ -8965,7 +8988,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7298263326104629039}
   m_HandleRect: {fileID: 2560981688146095341}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
