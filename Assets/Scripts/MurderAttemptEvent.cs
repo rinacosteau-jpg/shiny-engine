@@ -49,44 +49,44 @@ public class MurderAttemptEvent : MonoBehaviour, ILoopResettable {
                 StartCoroutine(EventSequence());
             }
         }
-    }
 
-    IEnumerator EventSequence() {
-        ArticyGlobalVariables.Default.EVT.event_murderAttempt = 1;
+        IEnumerator EventSequence() {
+            ArticyGlobalVariables.Default.EVT.event_murderAttempt = 1;
 
-        GlobalVariables.Instance?.ForceCloseDialogue();
-        foreach (var dialogue in FindObjectsOfType<DialogueUI>(true))
-            dialogue.CloseDialogue();
+            GlobalVariables.Instance?.ForceCloseDialogue();
+            foreach (var dialogue in FindObjectsOfType<DialogueUI>(true))
+                dialogue.CloseDialogue();
 
 
-        if (playerMovement != null) playerMovement.enabled = false;
-        if (playerInteract != null) playerInteract.enabled = false;
+            if (playerMovement != null) playerMovement.enabled = false;
+            if (playerInteract != null) playerInteract.enabled = false;
 
-        if (virtualCamera != null)
-            yield return StartCoroutine(ZoomCamera(zoomedOutSize));
+            if (virtualCamera != null)
+                yield return StartCoroutine(ZoomCamera(zoomedOutSize));
 
-        yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(3f);
 
-        if (firstNpcA != null) firstNpcA.position = spawnAo1.position; // TODO: specify target position
-        if (firstNpcB != null) firstNpcB.position = spawnTomas1.position; // TODO: specify target position
+            if (firstNpcA != null) firstNpcA.position = spawnAo1.position; // TODO: specify target position
+            if (firstNpcB != null) firstNpcB.position = spawnTomas1.position; // TODO: specify target position
 
-        yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(3f);
 
-        if (secondNpcA != null) secondNpcA.position =spawnAo2.position;
-        if (secondNpcB != null) secondNpcB.position = spawnTomas2.position;// TODO: specify target position
-        if (secondNpcC != null) secondNpcC.position = spawnTasha.position; // TODO: specify target position
-        if (secondNpcD != null) secondNpcD.position = spawnGuardM.position; // TODO: specify target position
-        if (secondNpcE != null) secondNpcE.position = spawnGuardD.position; // TODO: specify target position
+            if (secondNpcA != null) secondNpcA.position = spawnAo2.position;
+            if (secondNpcB != null) secondNpcB.position = spawnTomas2.position;// TODO: specify target position
+            if (secondNpcC != null) secondNpcC.position = spawnTasha.position; // TODO: specify target position
+            if (secondNpcD != null) secondNpcD.position = spawnGuardM.position; // TODO: specify target position
+            if (secondNpcE != null) secondNpcE.position = spawnGuardD.position; // TODO: specify target position
 
-        ArticyGlobalVariables.Default.EVT.event_murderAttempt = 2;
+            ArticyGlobalVariables.Default.EVT.event_murderAttempt = 2;
 
-        if (virtualCamera != null)
-            yield return StartCoroutine(ZoomCamera(defaultCameraSize));
+            if (virtualCamera != null)
+                yield return StartCoroutine(ZoomCamera(defaultCameraSize));
 
-        if (playerMovement != null) playerMovement.enabled = true;
-        if (playerInteract != null) playerInteract.enabled = true;
+            if (playerMovement != null) playerMovement.enabled = true;
+            if (playerInteract != null) playerInteract.enabled = true;
 
-        yield break;
+            yield break;
+        }
     }
 
     public void OnLoopReset() {
