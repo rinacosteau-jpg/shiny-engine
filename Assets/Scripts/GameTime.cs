@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using Articy.World_Of_Red_Moon.GlobalVariables;
 
 /// <summary>
 /// Simple in-game clock that tracks hours and minutes, updates the UI, and notifies listeners on changes.
@@ -27,6 +28,7 @@ public class GameTime : MonoBehaviour {
         Minutes += delta;
         while (Minutes >= 60) { Hours++; Minutes -= 60; }
         if (Hours >= 24) Hours = 0;
+        SyncWaitForAoRead(delta);
         Update();
         OnTimeChanged?.Invoke(Hours, Minutes);
     }
@@ -35,5 +37,21 @@ public class GameTime : MonoBehaviour {
 
     public void Update() {
         clockText.text = GameTime.Instance.ToString();
+    }
+
+    // Increment RCNT.waitForAoRead alongside time when active; normalize -1 -> 1; stop after reaching threshold.
+    private static void SyncWaitForAoRead(int deltaMinutes)
+    {
+        var rcnt = ArticyGlobalVariables.Default?.RCNT;
+        if (rcnt == null) return;
+
+        if (rcnt.waitForAoRead == -1)
+            rcnt.waitForAoRead = 1;
+
+        if (rcnt.waitForAoRead != 0 && rcnt.waitForAoRead < 21)
+        {
+            rcnt.waitForAoRead += deltaMinutes;
+            if (rcnt.waitForAoRead < 0) rcnt.waitForAoRead = 0; // guard
+        }
     }
 }

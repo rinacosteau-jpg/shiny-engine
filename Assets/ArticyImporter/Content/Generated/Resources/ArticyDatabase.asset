@@ -64,7 +64,7 @@ MonoBehaviour:
   - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1705_Shady_Game_Character_remix_01k391g1nee32ra8q8yft1rnvm.png"
   - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1756_Revenge-Driven_Game_Character_remix_01k394d5bwf22t9g3jbb3626zd.png"
   - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1754_Game_Character_Portrait_remix_01k3948yxreacsvh79vk46m5xa.png"
-  mDefaultGlobalVariables: {fileID: 6870434637949739143}
+  mDefaultGlobalVariables: {fileID: 6464365563634801560}
   mPackages:
   - PackageId: 72057594037928208
     PackageName: "\u0412\u0441\u0435 \u043E\u0431\u044A\u0435\u043A\u0442\u044B"
@@ -3453,7 +3453,7 @@ MonoBehaviour:
     technicalName: Ufo_CDF30863
     articyType: AssetsUserFolder
     childCount: 0
---- !u!114 &6870434637949739143
+--- !u!114 &6464365563634801560
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3770,24 +3770,24 @@ MonoBehaviour:
   mLiveStringVariableCache: []
   mIsInitialized: 1
   mNKNW:
-    _VariableStorage: {fileID: 6870434637949739143}
+    _VariableStorage: {fileID: 6464365563634801560}
   mRQUE:
-    _VariableStorage: {fileID: 6870434637949739143}
+    _VariableStorage: {fileID: 6464365563634801560}
   mRFLG:
-    _VariableStorage: {fileID: 6870434637949739143}
+    _VariableStorage: {fileID: 6464365563634801560}
   mITM:
-    _VariableStorage: {fileID: 6870434637949739143}
+    _VariableStorage: {fileID: 6464365563634801560}
   mRCNT:
-    _VariableStorage: {fileID: 6870434637949739143}
+    _VariableStorage: {fileID: 6464365563634801560}
   mEVT:
-    _VariableStorage: {fileID: 6870434637949739143}
+    _VariableStorage: {fileID: 6464365563634801560}
   mPS:
-    _VariableStorage: {fileID: 6870434637949739143}
+    _VariableStorage: {fileID: 6464365563634801560}
   mNQUE:
-    _VariableStorage: {fileID: 6870434637949739143}
+    _VariableStorage: {fileID: 6464365563634801560}
   mSCH:
-    _VariableStorage: {fileID: 6870434637949739143}
+    _VariableStorage: {fileID: 6464365563634801560}
   mTEST:
-    _VariableStorage: {fileID: 6870434637949739143}
+    _VariableStorage: {fileID: 6464365563634801560}
   mCLUE:
-    _VariableStorage: {fileID: 6870434637949739143}
+    _VariableStorage: {fileID: 6464365563634801560}
