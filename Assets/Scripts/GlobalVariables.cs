@@ -230,5 +230,14 @@ public class GlobalVariables : MonoBehaviour {
         }
 
         ResolveSkillChecks();
+
+        // Reflectively check for the Articy flag RFLG.kotIdentify. If it's set, reset it
+        // and mark all inventory items as identified.
+        var rflgObj = typeof(ArticyGlobalVariables).GetProperty("RFLG")?.GetValue(ArticyGlobalVariables.Default);
+        var kotIdentifyProp = rflgObj?.GetType().GetProperty("kotIdentify");
+        if (kotIdentifyProp != null && kotIdentifyProp.GetValue(rflgObj) is bool flag && flag) {
+            kotIdentifyProp.SetValue(rflgObj, false);
+            InventoryStorage.IdentifyAll();
+        }
     }
 }
