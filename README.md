@@ -1,24 +1,19 @@
 # Unity Git Setup
 
-Репозиторий настроен под Unity:
-- `.gitignore` исключает `Library/`, `Temp/`, кэши и IDE-файлы.
-- `.gitattributes` включает Git LFS для больших ассетов.
-- YAML-файлы Unity можно мерджить через UnityYAMLMerge.
+This repository is configured for Unity development.
 
-## Первые шаги
+- `.gitignore` excludes Unity-generated folders (`Library/`, `Temp/`, `Logs/`, `obj/`) and IDE files.
+- `.gitattributes` normalizes text files to LF and uses Git LFS for large binaries.
+- Unity YAML assets (`.unity`, `.prefab`, `.asset`, etc.) use UnityYAMLMerge to reduce merge conflicts.
+
+## Quick Start
 ```bash
 git lfs install
 git add -A
 git commit -m "Initialize Unity repo"
-# Unity Git Setup
+```
 
-Репозиторий настроен под Unity:
-- `.gitignore` исключает `Library/`, `Temp/`, кэши и IDE-файлы.
-- `.gitattributes` включает Git LFS для больших ассетов.
-- YAML-файлы Unity можно мерджить через UnityYAMLMerge.
+## Open & Run
+- Open the project in Unity 6000.0.31f1 via Unity Hub.
+- Open `Assets/Scenes/Main Scene.unity` and press Play.
 
-## Первые шаги
-```bash
-git lfs install
-git add -A
-git commit -m "Initialize Unity repo"
