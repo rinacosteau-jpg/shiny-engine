@@ -64,7 +64,7 @@ MonoBehaviour:
   - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1705_Shady_Game_Character_remix_01k391g1nee32ra8q8yft1rnvm.png"
   - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1756_Revenge-Driven_Game_Character_remix_01k394d5bwf22t9g3jbb3626zd.png"
   - "\u0420\u0435\u0441\u0443\u0440\u0441\u044B/\u0418\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F/20250822_1754_Game_Character_Portrait_remix_01k3948yxreacsvh79vk46m5xa.png"
-  mDefaultGlobalVariables: {fileID: 5586133439260989153}
+  mDefaultGlobalVariables: {fileID: 6870434637949739143}
   mPackages:
   - PackageId: 72057594037928208
     PackageName: "\u0412\u0441\u0435 \u043E\u0431\u044A\u0435\u043A\u0442\u044B"
@@ -682,7 +682,7 @@ MonoBehaviour:
     parent: 216172783251375095
     technicalName: Dlg_C0AE23D7
     articyType: Dialogue
-    childCount: 21
+    childCount: 22
   - id: 72057594037930945
     parent: 72057594037930457
     technicalName: DFr_796FADC0
@@ -742,6 +742,11 @@ MonoBehaviour:
     parent: 72057594037930457
     technicalName: Cnd_D7798C26
     articyType: Condition
+    childCount: 0
+  - id: 72057594037935726
+    parent: 72057594037930457
+    technicalName: DFr_B5A11A27
+    articyType: DialogueFragment
     childCount: 0
   - id: 72057594037930895
     parent: 72057594037930457
@@ -1587,20 +1592,10 @@ MonoBehaviour:
     parent: 216172783251375095
     technicalName: Dlg_8005AF27
     articyType: Dialogue
-    childCount: 39
+    childCount: 40
   - id: 72057594037932326
     parent: 72057594037930485
     technicalName: DFr_3A5BDC06
-    articyType: DialogueFragment
-    childCount: 0
-  - id: 72057594037932354
-    parent: 72057594037930485
-    technicalName: DFr_06738120
-    articyType: DialogueFragment
-    childCount: 0
-  - id: 72057594037932361
-    parent: 72057594037930485
-    technicalName: DFr_3DBDCDD3
     articyType: DialogueFragment
     childCount: 0
   - id: 72057594037932348
@@ -1608,15 +1603,30 @@ MonoBehaviour:
     technicalName: DFr_81F084F5
     articyType: DialogueFragment
     childCount: 0
-  - id: 72057594037932373
+  - id: 72057594037932354
     parent: 72057594037930485
-    technicalName: Jmp_9E6C06BF
-    articyType: Jump
+    technicalName: DFr_06738120
+    articyType: DialogueFragment
+    childCount: 0
+  - id: 72057594037935734
+    parent: 72057594037930485
+    technicalName: DFr_13DF6EE7
+    articyType: DialogueFragment
+    childCount: 0
+  - id: 72057594037932361
+    parent: 72057594037930485
+    technicalName: DFr_3DBDCDD3
+    articyType: DialogueFragment
     childCount: 0
   - id: 72057594037930679
     parent: 72057594037930485
     technicalName: DFr_777A79A0
     articyType: DialogueFragment
+    childCount: 0
+  - id: 72057594037932373
+    parent: 72057594037930485
+    technicalName: Jmp_9E6C06BF
+    articyType: Jump
     childCount: 0
   - id: 72057594037930511
     parent: 72057594037930485
@@ -3443,7 +3453,7 @@ MonoBehaviour:
     technicalName: Ufo_CDF30863
     articyType: AssetsUserFolder
     childCount: 0
---- !u!114 &5586133439260989153
+--- !u!114 &6870434637949739143
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3507,6 +3517,9 @@ MonoBehaviour:
   - mFullQualifiedName: RFLG.prepareForRatPath
     mVar:
       values: 00
+  - mFullQualifiedName: RFLG.kotIdentify
+    mVar:
+      values: 00
   - mFullQualifiedName: TEST.test
     mVar:
       values: 00
@@ -3521,13 +3534,13 @@ MonoBehaviour:
       values: 00
   - mFullQualifiedName: CLUE.ReceiptWhisperer
     mVar:
-      values: 00
+      values: 01
   - mFullQualifiedName: CLUE.WaxStoppers
     mVar:
       values: 00
   - mFullQualifiedName: CLUE.MaintScrollHum
     mVar:
-      values: 00
+      values: 01
   - mFullQualifiedName: CLUE.FloorMark
     mVar:
       values: 00
@@ -3724,7 +3737,7 @@ MonoBehaviour:
   - mFullQualifiedName: PS.skill_Logic
     mVar:
       values: 00000000
-  - mFullQualifiedName: PS.clueScore
+  - mFullQualifiedName: PS.clueTotalScore
     mVar:
       values: 00000000
   - mFullQualifiedName: NQUE.FindMemories_State
@@ -3757,24 +3770,24 @@ MonoBehaviour:
   mLiveStringVariableCache: []
   mIsInitialized: 1
   mNKNW:
-    _VariableStorage: {fileID: 5586133439260989153}
+    _VariableStorage: {fileID: 6870434637949739143}
   mRQUE:
-    _VariableStorage: {fileID: 5586133439260989153}
+    _VariableStorage: {fileID: 6870434637949739143}
   mRFLG:
-    _VariableStorage: {fileID: 5586133439260989153}
+    _VariableStorage: {fileID: 6870434637949739143}
   mITM:
-    _VariableStorage: {fileID: 5586133439260989153}
+    _VariableStorage: {fileID: 6870434637949739143}
   mRCNT:
-    _VariableStorage: {fileID: 5586133439260989153}
+    _VariableStorage: {fileID: 6870434637949739143}
   mEVT:
-    _VariableStorage: {fileID: 5586133439260989153}
+    _VariableStorage: {fileID: 6870434637949739143}
   mPS:
-    _VariableStorage: {fileID: 5586133439260989153}
+    _VariableStorage: {fileID: 6870434637949739143}
   mNQUE:
-    _VariableStorage: {fileID: 5586133439260989153}
+    _VariableStorage: {fileID: 6870434637949739143}
   mSCH:
-    _VariableStorage: {fileID: 5586133439260989153}
+    _VariableStorage: {fileID: 6870434637949739143}
   mTEST:
-    _VariableStorage: {fileID: 5586133439260989153}
+    _VariableStorage: {fileID: 6870434637949739143}
   mCLUE:
-    _VariableStorage: {fileID: 5586133439260989153}
+    _VariableStorage: {fileID: 6870434637949739143}

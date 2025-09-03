@@ -121,6 +121,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             variableNames.Add("RFLG.murderAttempt");
             variableNames.Add("RFLG.helpedAo");
             variableNames.Add("RFLG.prepareForRatPath");
+            variableNames.Add("RFLG.kotIdentify");
             variableNames.Add("ITM.item_kotsukiNote_delta");
             variableNames.Add("ITM.item_kotsukiNote_count");
             variableNames.Add("ITM.item_InventoryArtefact_count");
@@ -150,7 +151,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             variableNames.Add("PS.moralCap");
             variableNames.Add("PS.moralVal");
             variableNames.Add("PS.skill_Logic");
-            variableNames.Add("PS.clueScore");
+            variableNames.Add("PS.clueTotalScore");
             variableNames.Add("NQUE.FindMemories_State");
             variableNames.Add("NQUE.FindMemories_Stage");
             variableNames.Add("NQUE.FindMemories_Result");

@@ -667,7 +667,7 @@ aGlobalVariablesState.RQUE.advertise_Obj_A == 0;
         /// </summary>
         public void Script_720575940379282080x100000000001D59Text(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
         {
-            //запрос на идентификацию;
+            aGlobalVariablesState.RFLG.kotIdentify = true;
         }
         
         /// <summary>
@@ -762,6 +762,24 @@ aGlobalVariablesState.RQUE.getArtefact_State = 2
         {
             aGlobalVariablesState.EVT.event_murderAttempt = 3;
 aGlobalVariablesState.RQUE.preventMurderAttempt_State = 2;
+        }
+        
+        /// <summary>
+        /// ObjectID: 0x100000000001E79
+        /// Articy Object ref: articy://localhost/view/6b45a52e-5605-4c95-a051-48da04bae055/72057594037935737?pane=selected&amp;tab=current
+        /// </summary>
+        public bool Script_720575940379282080x100000000001E79Text(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
+        {
+            return aGlobalVariablesState.PS.clueTotalScore>=5 && aGlobalVariablesState.EVT.event_murderAttempt==0;
+        }
+        
+        /// <summary>
+        /// ObjectID: 0x100000000001E7A
+        /// Articy Object ref: articy://localhost/view/6b45a52e-5605-4c95-a051-48da04bae055/72057594037935738?pane=selected&amp;tab=current
+        /// </summary>
+        public void Script_720575940379282080x100000000001E7AText(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
+        {
+            aGlobalVariablesState.EVT.event_murderAttempt=3;
         }
         
         /// <summary>
@@ -1677,6 +1695,8 @@ aGlobalVariablesState.RQUE.getGun_State = 1;
             Conditions.Add(1289530056u, this.Script_720575940379282080x100000000001221Text);
             Conditions.Add(2852746263u, this.Script_720575940379282080x1000000000012A0Text);
             Instructions.Add(2099882011u, this.Script_720575940379282080x1000000000012A9Text);
+            Conditions.Add(2682481647u, this.Script_720575940379282080x100000000001E79Text);
+            Instructions.Add(2453071765u, this.Script_720575940379282080x100000000001E7AText);
             Instructions.Add(2611131124u, this.Script_720575940379282080x1000000000010AFText);
             Instructions.Add(654511513u, this.Script_720575940379282080x100000000001045Text);
             Instructions.Add(928952407u, this.Script_720575940379282080x1000000000012B9Text);
