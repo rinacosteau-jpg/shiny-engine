@@ -60,6 +60,8 @@ public class GlobalVariables : MonoBehaviour {
         // Initial flag calculation on start in case items are already present
         RecalculateFlagsFromInventory();
 
+        ArticyClueSync.SyncFromArticy();
+
         // Sync moral values from Unity to Articy at start
         SyncMoralToArticy();
 
@@ -108,6 +110,7 @@ public class GlobalVariables : MonoBehaviour {
     // Useful to call after dialogue nodes that give or remove items
     public void GetItems() {
         ArticyInventorySync.ApplyItemDeltasFromArticy();
+        ArticyClueSync.SyncFromArticy();
         RecalculateFlagsFromInventory(); // update flags immediately
     }
 

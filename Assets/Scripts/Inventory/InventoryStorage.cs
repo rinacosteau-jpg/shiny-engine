@@ -12,7 +12,15 @@ public static class InventoryStorage {
     private static readonly HashSet<string> UniqueItemIds =
         new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
-            ItemIds.InventoryArtefact
+            ItemIds.InventoryArtefact,
+            ItemIds.HarmonicRow,
+            ItemIds.SonoceramicShard,
+            ItemIds.SonusGuideTube,
+            ItemIds.ReceiptWhisperer,
+            ItemIds.WaxStoppers,
+            ItemIds.MaintScrollHum,
+            ItemIds.VentFiddle,
+            ItemIds.EarPressureReports
         };
 
     static InventoryStorage() {
@@ -39,6 +47,8 @@ public static class InventoryStorage {
 
         ArticyInventorySync.PushAllCountsToArticy();
         Notify(technicalName);
+        if (ArticyClueSync.TryGetClueValue(technicalName, out _))
+            ArticyClueSync.PushToArticy(technicalName, true);
     }
 
     public static void Remove(string technicalName, int count = 1, string instanceId = null) {
@@ -58,16 +68,24 @@ public static class InventoryStorage {
 
         ArticyInventorySync.PushAllCountsToArticy();
         Notify(technicalName);
+        if (ArticyClueSync.TryGetClueValue(technicalName, out _))
+            ArticyClueSync.PushToArticy(technicalName, Contains(technicalName));
     }
 
     public static void Clear() {
         _items.Clear();
         ArticyInventorySync.PushAllCountsToArticy();
+        foreach (var clue in ArticyClueSync.ClueValues.Keys)
+            ArticyClueSync.PushToArticy(clue, false);
         OnInventoryCleared?.Invoke();
     }
 
     public static IReadOnlyList<Item> Items =>
-        _items.Select(kvp => new Item(kvp.Key, kvp.Value.Count)).ToList();
+        _items.Select(kvp => {
+            int value;
+            bool isClue = ArticyClueSync.TryGetClueValue(kvp.Key, out value);
+            return new Item(kvp.Key, kvp.Value.Count, isClue: isClue, clueScore: value);
+        }).ToList();
 
     public static int GetCount(string technicalName) =>
         _items.TryGetValue(technicalName, out var set) ? set.Count : 0;
