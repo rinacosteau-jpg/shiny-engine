@@ -6,6 +6,10 @@ public static class InventoryStorage {
     private static readonly Dictionary<string, HashSet<string>> _items =
         new Dictionary<string, HashSet<string>>(StringComparer.OrdinalIgnoreCase);
 
+    // Tracks which item types have been identified by the player.
+    private static readonly HashSet<string> _identifiedItems =
+        new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
     public static event Action<string, int> OnItemCountChanged;
     public static event Action OnInventoryCleared;
 
@@ -63,8 +67,10 @@ public static class InventoryStorage {
             }
         }
 
-        if (set.Count == 0)
+        if (set.Count == 0) {
             _items.Remove(technicalName);
+            _identifiedItems.Remove(technicalName);
+        }
 
         ArticyInventorySync.PushAllCountsToArticy();
         Notify(technicalName);
@@ -74,17 +80,25 @@ public static class InventoryStorage {
 
     public static void Clear() {
         _items.Clear();
+        _identifiedItems.Clear();
         ArticyInventorySync.PushAllCountsToArticy();
         foreach (var clue in ArticyClueSync.ClueValues.Keys)
             ArticyClueSync.PushToArticy(clue, false);
         OnInventoryCleared?.Invoke();
     }
 
+    /// <summary>Marks all currently stored item types as identified.</summary>
+    public static void IdentifyAll() {
+        foreach (var id in _items.Keys)
+            _identifiedItems.Add(id);
+    }
+
     public static IReadOnlyList<Item> Items =>
         _items.Select(kvp => {
             int value;
             bool isClue = ArticyClueSync.TryGetClueValue(kvp.Key, out value);
-            return new Item(kvp.Key, kvp.Value.Count, isClue: isClue, clueScore: value);
+            bool isIdentified = _identifiedItems.Contains(kvp.Key);
+            return new Item(kvp.Key, kvp.Value.Count, isClue: isClue, isIdentified: isIdentified, clueScore: value);
         }).ToList();
 
     public static int GetCount(string technicalName) =>
