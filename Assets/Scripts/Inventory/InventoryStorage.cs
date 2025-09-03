@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Articy.World_Of_Red_Moon.GlobalVariables;
 
 public static class InventoryStorage {
     private static readonly Dictionary<string, HashSet<string>> _items =
@@ -30,7 +29,6 @@ public static class InventoryStorage {
 
     static InventoryStorage() {
         ArticyInventorySync.PushAllCountsToArticy();
-        SyncClueTotalScoreToArticy();
     }
 
     public static void Add(string technicalName, int count = 1, string instanceId = null) {
@@ -55,7 +53,6 @@ public static class InventoryStorage {
         Notify(technicalName);
         if (ArticyClueSync.TryGetClueValue(technicalName, out _))
             ArticyClueSync.PushToArticy(technicalName, true);
-        SyncClueTotalScoreToArticy();
     }
 
     public static void Remove(string technicalName, int count = 1, string instanceId = null) {
@@ -79,33 +76,21 @@ public static class InventoryStorage {
         Notify(technicalName);
         if (ArticyClueSync.TryGetClueValue(technicalName, out _))
             ArticyClueSync.PushToArticy(technicalName, Contains(technicalName));
-        SyncClueTotalScoreToArticy();
     }
 
-    public static void Clear(bool removeClues = true) {
-        if (removeClues) {
-            _items.Clear();
-            _identifiedItems.Clear();
-            ArticyInventorySync.PushAllCountsToArticy();
-            foreach (var clue in ArticyClueSync.ClueValues.Keys)
-                ArticyClueSync.PushToArticy(clue, false);
-        } else {
-            var keys = _items.Keys.Where(id => !ArticyClueSync.ClueValues.ContainsKey(id)).ToList();
-            foreach (var id in keys) {
-                _items.Remove(id);
-                _identifiedItems.Remove(id);
-            }
-            ArticyInventorySync.PushAllCountsToArticy();
-        }
+    public static void Clear() {
+        _items.Clear();
+        _identifiedItems.Clear();
+        ArticyInventorySync.PushAllCountsToArticy();
+        foreach (var clue in ArticyClueSync.ClueValues.Keys)
+            ArticyClueSync.PushToArticy(clue, false);
         OnInventoryCleared?.Invoke();
-        SyncClueTotalScoreToArticy();
     }
 
     /// <summary>Marks all currently stored item types as identified.</summary>
     public static void IdentifyAll() {
         foreach (var id in _items.Keys)
             _identifiedItems.Add(id);
-        SyncClueTotalScoreToArticy();
     }
 
     public static IReadOnlyList<Item> Items =>
@@ -130,14 +115,6 @@ public static class InventoryStorage {
                 }
             }
             return total;
-        }
-    }
-
-    private static void SyncClueTotalScoreToArticy() {
-        try {
-            ArticyGlobalVariables.Default.PS.clueTotalScore = (int)Math.Round(ClueTotalScore);
-        } catch {
-            // ignored
         }
     }
 
