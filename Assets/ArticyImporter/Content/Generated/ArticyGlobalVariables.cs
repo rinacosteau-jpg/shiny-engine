@@ -64,6 +64,10 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         [HideInInspector()]
         private TEST mTEST = new TEST();
         
+        [SerializeField()]
+        [HideInInspector()]
+        private CLUE mCLUE = new CLUE();
+        
         #region Initialize static VariableName set
         static ArticyGlobalVariables()
         {
@@ -89,6 +93,8 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             variableNames.Add("NKNW.canPreventMurder");
             variableNames.Add("NKNW.gunLooks");
             variableNames.Add("NKNW.secretPathToConfiscated");
+            variableNames.Add("NKNW.guardsNeedEvidence");
+            variableNames.Add("NKNW.kotIdentify");
             variableNames.Add("RQUE.advertise_State");
             variableNames.Add("RQUE.advertise_Obj_A");
             variableNames.Add("RQUE.advertise_TalkedCount");
@@ -129,6 +135,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             variableNames.Add("ITM.item_RatStaff_delta");
             variableNames.Add("RCNT.askLibAbtPeople");
             variableNames.Add("RCNT.ratTrust");
+            variableNames.Add("RCNT.waitForAoRead");
             variableNames.Add("EVT.event_murderAttempt");
             variableNames.Add("EVT.event_gunStealing");
             variableNames.Add("PS.loopCounter");
@@ -143,6 +150,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             variableNames.Add("PS.moralCap");
             variableNames.Add("PS.moralVal");
             variableNames.Add("PS.skill_Logic");
+            variableNames.Add("PS.clueScore");
             variableNames.Add("NQUE.FindMemories_State");
             variableNames.Add("NQUE.FindMemories_Stage");
             variableNames.Add("NQUE.FindMemories_Result");
@@ -152,6 +160,15 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             variableNames.Add("SCH.Willpower");
             variableNames.Add("SCH.boost");
             variableNames.Add("TEST.test");
+            variableNames.Add("CLUE.HarmonicRow");
+            variableNames.Add("CLUE.SonoceramicShard");
+            variableNames.Add("CLUE.SonusGuideTube");
+            variableNames.Add("CLUE.ReceiptWhisperer");
+            variableNames.Add("CLUE.WaxStoppers");
+            variableNames.Add("CLUE.MaintScrollHum");
+            variableNames.Add("CLUE.FloorMark");
+            variableNames.Add("CLUE.VentFiddle");
+            variableNames.Add("CLUE.EarPressureReports");
         }
         #endregion
         
@@ -235,6 +252,14 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             }
         }
         
+        public CLUE CLUE
+        {
+            get
+            {
+                return mCLUE;
+            }
+        }
+        
         public static ArticyGlobalVariables Default
         {
             get
@@ -255,6 +280,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             NQUE.RegisterVariables(this);
             SCH.RegisterVariables(this);
             TEST.RegisterVariables(this);
+            CLUE.RegisterVariables(this);
         }
         
         public static ArticyGlobalVariables CreateGlobalVariablesClone()

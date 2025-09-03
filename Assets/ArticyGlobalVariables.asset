@@ -46,6 +46,12 @@ MonoBehaviour:
   - mFullQualifiedName: NKNW.secretPathToConfiscated
     mVar:
       values: 00
+  - mFullQualifiedName: NKNW.guardsNeedEvidence
+    mVar:
+      values: 00
+  - mFullQualifiedName: NKNW.kotIdentify
+    mVar:
+      values: 00
   - mFullQualifiedName: RFLG.neutralizedByGuard
     mVar:
       values: 00
@@ -59,6 +65,33 @@ MonoBehaviour:
     mVar:
       values: 00
   - mFullQualifiedName: TEST.test
+    mVar:
+      values: 00
+  - mFullQualifiedName: CLUE.HarmonicRow
+    mVar:
+      values: 00
+  - mFullQualifiedName: CLUE.SonoceramicShard
+    mVar:
+      values: 00
+  - mFullQualifiedName: CLUE.SonusGuideTube
+    mVar:
+      values: 00
+  - mFullQualifiedName: CLUE.ReceiptWhisperer
+    mVar:
+      values: 00
+  - mFullQualifiedName: CLUE.WaxStoppers
+    mVar:
+      values: 00
+  - mFullQualifiedName: CLUE.MaintScrollHum
+    mVar:
+      values: 00
+  - mFullQualifiedName: CLUE.FloorMark
+    mVar:
+      values: 00
+  - mFullQualifiedName: CLUE.VentFiddle
+    mVar:
+      values: 00
+  - mFullQualifiedName: CLUE.EarPressureReports
     mVar:
       values: 00
   mIntVariableCache:
@@ -203,6 +236,9 @@ MonoBehaviour:
   - mFullQualifiedName: RCNT.ratTrust
     mVar:
       values: 00000000
+  - mFullQualifiedName: RCNT.waitForAoRead
+    mVar:
+      values: 00000000
   - mFullQualifiedName: EVT.event_murderAttempt
     mVar:
       values: 00000000
@@ -243,6 +279,9 @@ MonoBehaviour:
     mVar:
       values: 00000000
   - mFullQualifiedName: PS.skill_Logic
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: PS.clueScore
     mVar:
       values: 00000000
   - mFullQualifiedName: NQUE.FindMemories_State
@@ -304,6 +343,12 @@ MonoBehaviour:
   - mFullQualifiedName: NKNW.secretPathToConfiscated
     mVar:
       values: 00
+  - mFullQualifiedName: NKNW.guardsNeedEvidence
+    mVar:
+      values: 00
+  - mFullQualifiedName: NKNW.kotIdentify
+    mVar:
+      values: 00
   - mFullQualifiedName: RFLG.neutralizedByGuard
     mVar:
       values: 00
@@ -317,6 +362,33 @@ MonoBehaviour:
     mVar:
       values: 00
   - mFullQualifiedName: TEST.test
+    mVar:
+      values: 00
+  - mFullQualifiedName: CLUE.HarmonicRow
+    mVar:
+      values: 00
+  - mFullQualifiedName: CLUE.SonoceramicShard
+    mVar:
+      values: 00
+  - mFullQualifiedName: CLUE.SonusGuideTube
+    mVar:
+      values: 00
+  - mFullQualifiedName: CLUE.ReceiptWhisperer
+    mVar:
+      values: 00
+  - mFullQualifiedName: CLUE.WaxStoppers
+    mVar:
+      values: 00
+  - mFullQualifiedName: CLUE.MaintScrollHum
+    mVar:
+      values: 00
+  - mFullQualifiedName: CLUE.FloorMark
+    mVar:
+      values: 00
+  - mFullQualifiedName: CLUE.VentFiddle
+    mVar:
+      values: 00
+  - mFullQualifiedName: CLUE.EarPressureReports
     mVar:
       values: 00
   mLiveIntVariableCache:
@@ -461,6 +533,9 @@ MonoBehaviour:
   - mFullQualifiedName: RCNT.ratTrust
     mVar:
       values: 00000000
+  - mFullQualifiedName: RCNT.waitForAoRead
+    mVar:
+      values: 00000000
   - mFullQualifiedName: EVT.event_murderAttempt
     mVar:
       values: 00000000
@@ -501,6 +576,9 @@ MonoBehaviour:
     mVar:
       values: 00000000
   - mFullQualifiedName: PS.skill_Logic
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: PS.clueScore
     mVar:
       values: 00000000
   - mFullQualifiedName: NQUE.FindMemories_State
@@ -548,4 +626,6 @@ MonoBehaviour:
   mSCH:
     _VariableStorage: {fileID: 11400000}
   mTEST:
+    _VariableStorage: {fileID: 11400000}
+  mCLUE:
     _VariableStorage: {fileID: 11400000}
