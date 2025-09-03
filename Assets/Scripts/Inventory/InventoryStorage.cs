@@ -101,6 +101,23 @@ public static class InventoryStorage {
             return new Item(kvp.Key, kvp.Value.Count, isClue: isClue, isIdentified: isIdentified, clueScore: value);
         }).ToList();
 
+    /// <summary>
+    /// Calculates the total clue score based on items currently in the inventory.
+    /// Unidentified clues are counted as 0.5 points.
+    /// </summary>
+    public static float ClueTotalScore {
+        get {
+            float total = 0f;
+            foreach (var kvp in _items) {
+                if (ArticyClueSync.TryGetClueValue(kvp.Key, out var value)) {
+                    bool identified = _identifiedItems.Contains(kvp.Key);
+                    total += identified ? value : 0.5f;
+                }
+            }
+            return total;
+        }
+    }
+
     public static int GetCount(string technicalName) =>
         _items.TryGetValue(technicalName, out var set) ? set.Count : 0;
 
