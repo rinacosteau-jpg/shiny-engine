@@ -50,10 +50,11 @@ public class InventoryUI : MonoBehaviour, ILoopResettable
 
     /// <summary>Rebuilds the list of UI items based on <see cref="InventoryStorage.Items"/>.</summary>
     public void Refresh() {
-        // 1) подтянуть награды/штрафы из диалога
+        // 1) РїРѕРґС‚СЏРЅСѓС‚СЊ РЅР°РіСЂР°РґС‹/С€С‚СЂР°С„С‹ РёР· РґРёР°Р»РѕРіР°
         ArticyInventorySync.ApplyItemDeltasFromArticy();
+        ArticyClueSync.SyncFromArticy();
 
-        // 2) дальше как было
+        // 2) РґР°Р»СЊС€Рµ РєР°Рє Р±С‹Р»Рѕ
         foreach (var go in _spawnedItems)
             if (go != null) Destroy(go);
         _spawnedItems.Clear();
