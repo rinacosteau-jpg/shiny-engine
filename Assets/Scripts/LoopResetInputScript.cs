@@ -3,16 +3,16 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class LoopResetInputScript : MonoBehaviour {
-    [SerializeField] private InputActionReference resetActionReference; // Г¬Г®Г¦Г­Г® Г®Г±ГІГ ГўГЁГІГј ГЇГіГ±ГІГ»Г¬ вЂ” ГўГ®Г§ГјГ¬ВёГ¬ ГЁГ§ InputSystem.actions
+    [SerializeField] private InputActionReference resetActionReference; // можно оставить пустым — возьмём из InputSystem.actions
     private InputAction resetAction;
 
-    // --- Г Г­ГІГЁГ¤ГіГЎГ«Гј ---
+    // --- антидубль ---
     private static int s_lastResetFrame = -1;
     private static float s_lastResetTime = -1f;
-    private const float kResetDebounceSeconds = 0.05f; // 50 Г¬Г±, Г·ГІГ®ГЎГ» ГЇГҐГ°ГҐГ¦ГЁГІГј Г¤ГўГ®Г©Г­Г»ГҐ Г¤ГҐГ°ГЈГ Г­ГЁГї Г°Г Г§Г­Г»Г¬ГЁ ГЁГ­Г±ГІГ Г­Г±Г Г¬ГЁ
+    private const float kResetDebounceSeconds = 0.05f; // 50 мс, чтобы пережить двойные дергания разными инстансами
 
     private void Awake() {
-        // ГЏГ®Г¤Г±ГЄГ Г§ГЄГ , ГҐГ±Г«ГЁ Гў Г±Г¶ГҐГ­ГҐ Г­ГҐГ±ГЄГ®Г«ГјГЄГ® ГІГ ГЄГЁГµ ГЄГ®Г¬ГЇГ®Г­ГҐГ­ГІГ®Гў
+        // Подсказка, если в сцене несколько таких компонентов
         var all = FindObjectsOfType<LoopResetInputScript>(true);
         if (all.Length > 1) {
             Debug.LogWarning($"[LoopReset] In scene there are {all.Length} LoopResetInputScript instances. Debounce will prevent double reset.");
@@ -29,17 +29,17 @@ public class LoopResetInputScript : MonoBehaviour {
     }
 
     private void Update() {
-        // ГђГҐГ ГЈГЁГ°ГіГҐГ¬ Г°Г®ГўГ­Г® Г®Г¤ГЁГ­ Г°Г Г§ Г­Г  Г­Г Г¦Г ГІГЁГҐ
+        // Реагируем ровно один раз на нажатие
         if (resetAction != null && resetAction.WasPressedThisFrame()/*&& GlobalVariables.Instance.player.hasGun*/) {
             TryLoopReset();
         }
     }
 
-    // Г‚Г»Г§Г»ГўГ Г© ГќГ’ГЋ ГўГ¬ГҐГ±ГІГ® ГЇГ°ГїГ¬Г®ГЈГ® LoopReset() ГЁ ГЁГ§ ГІГ Г©Г¬ГҐГ°Г  ГІГ®Г¦ГҐ, Г·ГІГ®ГЎГ» ГўГ±Вё ГёГ«Г® Г·ГҐГ°ГҐГ§ Г®Г¤ГЁГ­ ГЇГ°ГҐГ¤Г®ГµГ°Г Г­ГЁГІГҐГ«Гј
+    // Вызывай ЭТО вместо прямого LoopReset() и из таймера тоже, чтобы всё шло через один предохранитель
     public static void TryLoopReset() {
-        // Г­ГҐ Г·Г Г№ГҐ Г®Г¤Г­Г®ГЈГ® Г°Г Г§Г  Г§Г  ГЄГ Г¤Г°
+        // не чаще одного раза за кадр
         if (Time.frameCount == s_lastResetFrame) return;
-        // ГЁ Г± ГЄГ®Г°Г®ГІГЄГЁГ¬ ГЄГіГ«Г¤Г ГіГ­Г®Г¬ (Г­Г  Г±Г«ГіГ·Г Г© Г¤ГўГіГµ Г°Г Г§Г­Г»Гµ ГЄГ®Г¬ГЇГ®Г­ГҐГ­ГІГ®Гў/Г±ГЁГ±ГІГҐГ¬)
+        // и с коротким кулдауном (на случай двух разных компонентов/систем)
         if (s_lastResetTime >= 0f && (Time.unscaledTime - s_lastResetTime) < kResetDebounceSeconds) return;
 
         s_lastResetFrame = Time.frameCount;
@@ -48,7 +48,7 @@ public class LoopResetInputScript : MonoBehaviour {
         DoLoopReset();
     }
 
-            InventoryStorage.Clear(removeClues: false);
+    // Вынес тело ресета в статический метод — так любой источник (кнопка, время, триггеры) идёт по одной дороге
     private static void DoLoopReset() {
         Debug.Log("[LoopReset] start");
 
@@ -89,6 +89,6 @@ public class LoopResetInputScript : MonoBehaviour {
         Debug.Log("Articy loopcount: " + ArticyGlobalVariables.Default.PS.loopCounter);
     }
 
-    public void LoopReset() => TryLoopReset(); // Г¤ГҐГ°ГЈГ ГҐГІ ГІГ®ГІ Г¦ГҐ Г¤ГҐГЎГ ГіГ­Г±
+    public void LoopReset() => TryLoopReset(); // дергает тот же дебаунс
 
 }
