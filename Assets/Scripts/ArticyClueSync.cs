@@ -42,6 +42,7 @@ public static class ArticyClueSync {
                 else if (!flag && present)
                     InventoryStorage.Remove(kvp.Key, InventoryStorage.GetCount(kvp.Key));
             }
+            PushTotalScoreToArticy();
         } catch (Exception e) {
             Debug.LogWarning($"[ArticyClueSync] SyncFromArticy error: {e.Message}");
         }
@@ -66,5 +67,17 @@ public static class ArticyClueSync {
     /// </summary>
     public static bool TryGetClueValue(string id, out int value) =>
         ClueValues.TryGetValue(id, out value);
+
+    /// <summary>
+    /// Updates PS.clueTotalScore to match the total score calculated in Unity.
+    /// </summary>
+    public static void PushTotalScoreToArticy() {
+        try {
+            ArticyGlobalVariables.Default.PS.clueTotalScore =
+                Mathf.RoundToInt(InventoryStorage.ClueTotalScore);
+        } catch (Exception e) {
+            Debug.LogWarning($"[ArticyClueSync] PushTotalScoreToArticy error: {e.Message}");
+        }
+    }
 }
 

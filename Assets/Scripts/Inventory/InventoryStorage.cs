@@ -53,6 +53,7 @@ public static class InventoryStorage {
         Notify(technicalName);
         if (ArticyClueSync.TryGetClueValue(technicalName, out _))
             ArticyClueSync.PushToArticy(technicalName, true);
+        ArticyClueSync.PushTotalScoreToArticy();
     }
 
     public static void Remove(string technicalName, int count = 1, string instanceId = null) {
@@ -76,14 +77,27 @@ public static class InventoryStorage {
         Notify(technicalName);
         if (ArticyClueSync.TryGetClueValue(technicalName, out _))
             ArticyClueSync.PushToArticy(technicalName, Contains(technicalName));
+        ArticyClueSync.PushTotalScoreToArticy();
     }
 
-    public static void Clear() {
-        _items.Clear();
-        _identifiedItems.Clear();
-        ArticyInventorySync.PushAllCountsToArticy();
-        foreach (var clue in ArticyClueSync.ClueValues.Keys)
-            ArticyClueSync.PushToArticy(clue, false);
+    public static void Clear(bool removeClues = true) {
+        if (removeClues) {
+            _items.Clear();
+            _identifiedItems.Clear();
+            ArticyInventorySync.PushAllCountsToArticy();
+            foreach (var clue in ArticyClueSync.ClueValues.Keys)
+                ArticyClueSync.PushToArticy(clue, false);
+        } else {
+            var keysToRemove = _items.Keys.Where(k => !ArticyClueSync.TryGetClueValue(k, out _)).ToList();
+            foreach (var key in keysToRemove) {
+                _items.Remove(key);
+                _identifiedItems.Remove(key);
+            }
+            ArticyInventorySync.PushAllCountsToArticy();
+            foreach (var clue in ArticyClueSync.ClueValues.Keys)
+                ArticyClueSync.PushToArticy(clue, Contains(clue));
+        }
+        ArticyClueSync.PushTotalScoreToArticy();
         OnInventoryCleared?.Invoke();
     }
 
@@ -91,6 +105,7 @@ public static class InventoryStorage {
     public static void IdentifyAll() {
         foreach (var id in _items.Keys)
             _identifiedItems.Add(id);
+        ArticyClueSync.PushTotalScoreToArticy();
     }
 
     public static IReadOnlyList<Item> Items =>
