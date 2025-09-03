@@ -3,16 +3,16 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class LoopResetInputScript : MonoBehaviour {
-    [SerializeField] private InputActionReference resetActionReference; // можно оставить пустым — возьмём из InputSystem.actions
+    [SerializeField] private InputActionReference resetActionReference; // РјРѕР¶РЅРѕ РѕСЃС‚Р°РІРёС‚СЊ РїСѓСЃС‚С‹Рј вЂ” РІРѕР·СЊРјС‘Рј РёР· InputSystem.actions
     private InputAction resetAction;
 
-    // --- антидубль ---
+    // --- Р°РЅС‚РёРґСѓР±Р»СЊ ---
     private static int s_lastResetFrame = -1;
     private static float s_lastResetTime = -1f;
-    private const float kResetDebounceSeconds = 0.05f; // 50 мс, чтобы пережить двойные дергания разными инстансами
+    private const float kResetDebounceSeconds = 0.05f; // 50 РјСЃ, С‡С‚РѕР±С‹ РїРµСЂРµР¶РёС‚СЊ РґРІРѕР№РЅС‹Рµ РґРµСЂРіР°РЅРёСЏ СЂР°Р·РЅС‹РјРё РёРЅСЃС‚Р°РЅСЃР°РјРё
 
     private void Awake() {
-        // Подсказка, если в сцене несколько таких компонентов
+        // РџРѕРґСЃРєР°Р·РєР°, РµСЃР»Рё РІ СЃС†РµРЅРµ РЅРµСЃРєРѕР»СЊРєРѕ С‚Р°РєРёС… РєРѕРјРїРѕРЅРµРЅС‚РѕРІ
         var all = FindObjectsOfType<LoopResetInputScript>(true);
         if (all.Length > 1) {
             Debug.LogWarning($"[LoopReset] In scene there are {all.Length} LoopResetInputScript instances. Debounce will prevent double reset.");
@@ -29,17 +29,17 @@ public class LoopResetInputScript : MonoBehaviour {
     }
 
     private void Update() {
-        // Реагируем ровно один раз на нажатие
+        // Р РµР°РіРёСЂСѓРµРј СЂРѕРІРЅРѕ РѕРґРёРЅ СЂР°Р· РЅР° РЅР°Р¶Р°С‚РёРµ
         if (resetAction != null && resetAction.WasPressedThisFrame()/*&& GlobalVariables.Instance.player.hasGun*/) {
             TryLoopReset();
         }
     }
 
-    // Вызывай ЭТО вместо прямого LoopReset() и из таймера тоже, чтобы всё шло через один предохранитель
+    // Р’С‹Р·С‹РІР°Р№ Р­РўРћ РІРјРµСЃС‚Рѕ РїСЂСЏРјРѕРіРѕ LoopReset() Рё РёР· С‚Р°Р№РјРµСЂР° С‚РѕР¶Рµ, С‡С‚РѕР±С‹ РІСЃС‘ С€Р»Рѕ С‡РµСЂРµР· РѕРґРёРЅ РїСЂРµРґРѕС…СЂР°РЅРёС‚РµР»СЊ
     public static void TryLoopReset() {
-        // не чаще одного раза за кадр
+        // РЅРµ С‡Р°С‰Рµ РѕРґРЅРѕРіРѕ СЂР°Р·Р° Р·Р° РєР°РґСЂ
         if (Time.frameCount == s_lastResetFrame) return;
-        // и с коротким кулдауном (на случай двух разных компонентов/систем)
+        // Рё СЃ РєРѕСЂРѕС‚РєРёРј РєСѓР»РґР°СѓРЅРѕРј (РЅР° СЃР»СѓС‡Р°Р№ РґРІСѓС… СЂР°Р·РЅС‹С… РєРѕРјРїРѕРЅРµРЅС‚РѕРІ/СЃРёСЃС‚РµРј)
         if (s_lastResetTime >= 0f && (Time.unscaledTime - s_lastResetTime) < kResetDebounceSeconds) return;
 
         s_lastResetFrame = Time.frameCount;
@@ -48,7 +48,7 @@ public class LoopResetInputScript : MonoBehaviour {
         DoLoopReset();
     }
 
-    // Вынес тело ресета в статический метод — так любой источник (кнопка, время, триггеры) идёт по одной дороге
+    // Р’С‹РЅРµСЃ С‚РµР»Рѕ СЂРµСЃРµС‚Р° РІ СЃС‚Р°С‚РёС‡РµСЃРєРёР№ РјРµС‚РѕРґ вЂ” С‚Р°Рє Р»СЋР±РѕР№ РёСЃС‚РѕС‡РЅРёРє (РєРЅРѕРїРєР°, РІСЂРµРјСЏ, С‚СЂРёРіРіРµСЂС‹) РёРґС‘С‚ РїРѕ РѕРґРЅРѕР№ РґРѕСЂРѕРіРµ
     private static void DoLoopReset() {
         Debug.Log("[LoopReset] start");
 
@@ -68,8 +68,8 @@ public class LoopResetInputScript : MonoBehaviour {
         Debug.Log($"[LoopReset] GV.Instance={(GlobalVariables.Instance != null)} hasArtifact={GlobalVariables.Instance?.player.hasArtifact} fallbackContains={InventoryStorage.Contains("InventoryArtefact")} -> hasArtefactNow={hasArtefactNow}");
 
         if (!hasArtefactNow) {
-            Debug.Log("[LoopReset] clearing inventory (no artefact)");
-            InventoryStorage.Clear();
+            Debug.Log("[LoopReset] clearing inventory of non-clues (no artefact)");
+            InventoryStorage.Clear(removeClues: false);
         } else {
             Debug.Log("[LoopReset] preserving inventory (artefact present)");
         }
@@ -89,6 +89,6 @@ public class LoopResetInputScript : MonoBehaviour {
         Debug.Log("Articy loopcount: " + ArticyGlobalVariables.Default.PS.loopCounter);
     }
 
-    public void LoopReset() => TryLoopReset(); // дергает тот же дебаунс
+    public void LoopReset() => TryLoopReset(); // РґРµСЂРіР°РµС‚ С‚РѕС‚ Р¶Рµ РґРµР±Р°СѓРЅСЃ
 
 }
