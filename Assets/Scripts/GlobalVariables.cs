@@ -171,6 +171,14 @@ public class GlobalVariables : MonoBehaviour {
         }
     }
 
+    public void SyncGlobalsToArticy()
+    {
+        RecalculateFlagsFromInventory();
+        SyncMoralToArticy();
+        ArticyClueSync.PushTotalScoreToArticy();
+        ArticyInventorySync.PushAllCountsToArticy();
+    }
+
     private int GetSkillValue(string name) {
         var field = typeof(PlayerState).GetField($"skill{name}", BindingFlags.Instance | BindingFlags.Public);
         if (field?.GetValue(player) is Skill skill)
