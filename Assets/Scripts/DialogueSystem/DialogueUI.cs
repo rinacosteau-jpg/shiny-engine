@@ -39,7 +39,8 @@ public class DialogueUI : MonoBehaviour, ILoopResettable
     public void StartDialogue(IFlowObject startObject)
     {
         if (startObject == null) return;
-        var refId = new ArticyRef(startObject);
+        var refId = new ArticyRef();
+        refId.SetObject(startObject as IArticyObject);
         controller?.OpenDialogue(refId, new DialogueContext());
     }
 
