@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using Articy.Unity;
 using Articy.Unity.Interfaces;
+using Articy.World_Of_Red_Moon;
 
 public class DialogueUI : MonoBehaviour, ILoopResettable
 {
