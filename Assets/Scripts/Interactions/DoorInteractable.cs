@@ -1,15 +1,20 @@
 using UnityEngine;
 
-public class DoorInteractable : MonoBehaviour, IInteractable
+public class DoorInteractable : MonoBehaviour, IInteractable, ILoopResettable
 {
     [SerializeField] private bool isLocked;
     [SerializeField] private bool isOpen;
     [SerializeField] private GameObject doorObject;
 
+    private bool startIsOpen;
+
     private void Awake()
     {
-        if (doorObject == null)
-            doorObject = gameObject;
+        if (doorObject == null && transform.childCount > 0)
+            doorObject = transform.GetChild(0).gameObject;
+
+        startIsOpen = isOpen;
+        ApplyState(isOpen);
     }
 
     public void Interact()
@@ -17,15 +22,19 @@ public class DoorInteractable : MonoBehaviour, IInteractable
         if (isLocked)
             return;
 
-        if (!isOpen)
-        {
-            doorObject.SetActive(false);
-            isOpen = true;
-        }
-        else
-        {
-            doorObject.SetActive(true);
-            isOpen = false;
-        }
+        ApplyState(!isOpen);
+    }
+
+    public void OnLoopReset()
+    {
+        ApplyState(startIsOpen);
+    }
+
+    private void ApplyState(bool open)
+    {
+        isOpen = open;
+
+        if (doorObject != null)
+            doorObject.SetActive(!open);
     }
 }
