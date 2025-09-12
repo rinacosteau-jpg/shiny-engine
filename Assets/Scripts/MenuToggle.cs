@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 public class MenuToggle : MonoBehaviour {
     [SerializeField] private GameObject menuPanel;
     private InputAction escapeAction;
+    private CanvasGroup menuCanvasGroup;
+    private bool isMenuVisible;
 
     private void Start() {
         escapeAction = InputSystem.actions.FindAction("Escape");
@@ -12,6 +14,17 @@ public class MenuToggle : MonoBehaviour {
             if (found != null) {
                 menuPanel = found;
             }
+        }
+
+        if (menuPanel != null) {
+            menuCanvasGroup = menuPanel.GetComponent<CanvasGroup>();
+            if (menuCanvasGroup == null) {
+                menuCanvasGroup = menuPanel.AddComponent<CanvasGroup>();
+            }
+
+            isMenuVisible = menuPanel.activeSelf;
+            menuPanel.SetActive(true);
+            UpdateMenuVisibility();
         }
     }
 
@@ -28,10 +41,19 @@ public class MenuToggle : MonoBehaviour {
         if (menuPanel == null)
             return;
 
-        bool newState = !menuPanel.activeSelf;
-        menuPanel.SetActive(newState);
-        if (newState) {
+        isMenuVisible = !isMenuVisible;
+        UpdateMenuVisibility();
+        if (isMenuVisible) {
             menuPanel.transform.SetAsLastSibling();
         }
+    }
+
+    private void UpdateMenuVisibility() {
+        if (menuCanvasGroup == null)
+            return;
+
+        menuCanvasGroup.alpha = isMenuVisible ? 1f : 0f;
+        menuCanvasGroup.interactable = isMenuVisible;
+        menuCanvasGroup.blocksRaycasts = isMenuVisible;
     }
 }
