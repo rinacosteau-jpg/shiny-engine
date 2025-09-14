@@ -8,11 +8,13 @@ using TMPro;
 public class InventoryItemUI : MonoBehaviour
 {
     private Item _item;
+    private InventoryUI _inventoryUI;
 
     /// <summary>Initializes the item UI with a specific inventory item.</summary>
-    public void Initialize(Item item)
+    public void Initialize(Item item, InventoryUI inventoryUI)
     {
         _item = item;
+        _inventoryUI = inventoryUI;
         var text = GetComponentInChildren<TMP_Text>();
         if (text != null)
             text.text = $"{item.TechnicalName} ({item.ItemCount})";
@@ -28,6 +30,9 @@ public class InventoryItemUI : MonoBehaviour
     private void OnClick()
     {
         if (_item != null)
+        {
             Debug.Log($"Clicked inventory item {_item.TechnicalName}");
+            _inventoryUI?.DisplayItem(_item);
+        }
     }
 }
