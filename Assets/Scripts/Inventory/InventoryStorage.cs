@@ -17,6 +17,7 @@ public static class InventoryStorage {
         new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
             ItemIds.InventoryArtefact,
+            ItemIds.Gun,
             ItemIds.HarmonicRow,
             ItemIds.SonoceramicShard,
             ItemIds.SonusGuideTube,

@@ -14764,7 +14764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0649b847c27f1846b0de8f4def5f979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: testCube
+  itemID: TestCube
   instanceID: 
   isPicked: 0
 --- !u!65 &924842490
@@ -24376,7 +24376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0649b847c27f1846b0de8f4def5f979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: testCube
+  itemID: TestCube
   instanceID: 
   isPicked: 0
 --- !u!114 &1480258081
@@ -29727,7 +29727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0649b847c27f1846b0de8f4def5f979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: testCube
+  itemID: TestCube
   instanceID: 
   isPicked: 0
 --- !u!65 &1778291525
