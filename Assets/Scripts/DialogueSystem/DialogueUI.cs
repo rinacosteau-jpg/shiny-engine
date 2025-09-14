@@ -25,6 +25,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
 
     private bool dialogueFinished = false;
     private string lastDisplayedText = null;
+    private string lastSpeakerName = null;
     public bool IsDialogueOpen { get; private set; }
 
     public IObjectWithFeatureDuration kek;
@@ -132,6 +133,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         // сброс состояния UI
         responseHandler?.ClearResponses();
         lastDisplayedText = string.Empty;
+        lastSpeakerName = null;
         if (textLabel != null) textLabel.text = string.Empty;
         if (portraitImage != null) portraitImage.sprite = null;
         dialogueFinished = false;
@@ -175,6 +177,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         responseHandler?.ClearResponses();
         if (portraitImage != null) portraitImage.sprite = null;
         IsDialogueOpen = false;
+        lastSpeakerName = null;
         if (flowPlayer != null) {
             SetContinuousRecalculation(originalRecalcSetting ?? false);
             suppressOnFlowPause = true;
@@ -236,9 +239,20 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         if (!string.IsNullOrEmpty(currentText)) {
             // У нас есть текст — добавляем его к уже отображённому
             if (textLabel != null) {
-                textLabel.text = string.IsNullOrEmpty(textLabel.text)
-                    ? currentText
-                    : textLabel.text + "\n" + currentText;
+                string speakerName = GetSpeakerDisplayName(aObject);
+                if (string.IsNullOrEmpty(textLabel.text)) {
+                    textLabel.text = string.IsNullOrEmpty(speakerName)
+                        ? currentText
+                        : speakerName + " - " + currentText;
+                } else if (speakerName == lastSpeakerName) {
+                    textLabel.text += "\n" + currentText;
+                } else {
+                    string prefix = string.IsNullOrEmpty(speakerName)
+                        ? string.Empty
+                        : speakerName + " - ";
+                    textLabel.text += "\n\n" + prefix + currentText;
+                }
+                lastSpeakerName = speakerName;
                 lastDisplayedText = textLabel.text;
             }
 
