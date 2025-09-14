@@ -89,13 +89,11 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         {
             Debug.Log("Global variables changed");
 
-            if (currentFlowObject is DialogueFragment)
+            if (currentFlowObject is DialogueFragment fragment)
             {
-                SetContinuousRecalculation(true);
-                var reevaluate = flowPlayer?.GetType().GetMethod(
-                    "ReevaluateBranches",
-                    BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
-                reevaluate?.Invoke(flowPlayer, null);
+                CloseDialogue();
+                StartDialogue(fragment);
+                flowPlayer?.Play();
             }
         }
     }
@@ -140,7 +138,6 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         if (dialogueBox != null) dialogueBox.SetActive(true);
         if (flowPlayer != null)
             flowPlayer.enabled = true;
-        SetContinuousRecalculation(true);
 
 
         // Убедимся, что стартуем именно с нужного DialogueFragment
