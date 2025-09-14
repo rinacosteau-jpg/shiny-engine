@@ -18,6 +18,8 @@ public class Item
 
     public string Description { get; set; }
 
+    public string ImagePath { get; set; }
+
 
     /// <summary>Creates a new item with the given identifier and count.</summary>
     public Item(string technicalName, int itemCount = 1, bool isClue=false, bool isIdentified=false, float clueScore = 0)

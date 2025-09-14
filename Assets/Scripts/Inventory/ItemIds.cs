@@ -29,4 +29,20 @@ public static class ItemIds {
         { VentFiddle, "perplexing fiddle for vents" },
         { EarPressureReports, "reports full of earwig gibberish" }
     };
+
+    public static readonly Dictionary<string, string> ImagePaths = new Dictionary<string, string>
+    {
+        { InventoryArtefact, "Images/InventoryArtefact" },
+        { TestCube, "Images/TestCube" },
+        { JapaneseSweets, "Images/JapaneseSweets" },
+        { Gun, "Images/Gun" },
+        { HarmonicRow, "Images/HarmonicRow" },
+        { SonoceramicShard, "Images/SonoceramicShard" },
+        { SonusGuideTube, "Images/SonusGuideTube" },
+        { ReceiptWhisperer, "Images/ReceiptWhisperer" },
+        { WaxStoppers, "Images/WaxStoppers" },
+        { MaintScrollHum, "Images/MaintScrollHum" },
+        { VentFiddle, "Images/VentFiddle" },
+        { EarPressureReports, "Images/EarPressureReports" }
+    };
 }
