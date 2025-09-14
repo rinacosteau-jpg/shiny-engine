@@ -12,6 +12,8 @@ public class InventoryUI : MonoBehaviour, ILoopResettable
     [SerializeField] private GameObject inventoryPanel;
     [SerializeField] private GameObject itemButtonPrefab;
     [SerializeField] private GameObject itemContainer;
+    [SerializeField] private TMP_Text itemDescription;
+    [SerializeField] private TMP_Text itemName;
     [SerializeField] private Transform itemsParent;
 
     private readonly List<GameObject> _spawnedItems = new List<GameObject>();
