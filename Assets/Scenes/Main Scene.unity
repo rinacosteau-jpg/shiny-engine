@@ -36559,6 +36559,7 @@ MonoBehaviour:
   itemDescription: {fileID: 1560515706}
   itemName: {fileID: 959561724}
   itemPicture: {fileID: 1611441758}
+  itemPictureSmall: {fileID: 332489664}
   itemsParent: {fileID: 4820402793324225602}
 --- !u!114 &2139869258
 MonoBehaviour:
