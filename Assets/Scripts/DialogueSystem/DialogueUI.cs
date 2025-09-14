@@ -91,9 +91,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
 
             if (currentFlowObject is DialogueFragment fragment)
             {
-                CloseDialogue();
-                StartDialogue(fragment);
-                flowPlayer?.Play();
+                ReloadCurrentFragment(fragment);
             }
         }
     }
@@ -151,6 +149,20 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         flowPlayer.StartOn = startFragment;
         IsDialogueOpen = true;
 
+    }
+
+    public void ReloadCurrentFragment(DialogueFragment fragment)
+    {
+        if (fragment == null || flowPlayer == null)
+        {
+            Debug.LogWarning("[DialogueUI] ReloadCurrentFragment — null fragment or flowPlayer.");
+            return;
+        }
+
+        flowPlayer.Stop();
+        flowPlayer.ResetState();
+        flowPlayer.JumpTo(fragment);
+        flowPlayer.Play();
     }
 
     //public void UpdateDialogue(bool skipPostClose = false) {
