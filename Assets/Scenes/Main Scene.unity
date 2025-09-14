@@ -33741,6 +33741,8 @@ MonoBehaviour:
   dialogueBox: {fileID: 2926863251188181302}
   textLabel: {fileID: 4468343322277626793}
   dialogueSpeaker: {fileID: 5217243494058623892}
+  fraction: {fileID: 1785032955}
+  title: {fileID: 1615877959}
   portraitImage: {fileID: 340127584}
   responseHandler: {fileID: 1380361250}
 --- !u!114 &2139869257

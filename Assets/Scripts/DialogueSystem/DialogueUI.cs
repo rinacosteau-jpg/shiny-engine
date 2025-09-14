@@ -18,6 +18,8 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] private TMP_Text textLabel;
     [SerializeField] private TMP_Text dialogueSpeaker;
+    [SerializeField] private TMP_Text fraction;
+    [SerializeField] private TMP_Text title;
     [SerializeField] private Image portraitImage;
     [SerializeField] private ResponseHandler responseHandler;
 
