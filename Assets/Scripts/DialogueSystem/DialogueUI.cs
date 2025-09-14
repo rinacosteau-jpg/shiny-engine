@@ -54,25 +54,48 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         }
     }
 
-    private void OnEnable()
+    private string globalVariablesSnapshot;
+    private IFlowObject currentFlowObject;
+
+    private void TryInitReflection()
     {
-        if (GlobalVariables.Instance != null)
-            GlobalVariables.Instance.VariablesChanged += OnGlobalVariablesChanged;
+        if (globalVariablesSnapshot == null)
+        {
+            globalVariablesSnapshot = JsonUtility.ToJson(ArticyGlobalVariables.Default);
+        }
     }
 
-    private void OnDisable()
+    private bool HaveGlobalVariablesChanged()
     {
-        if (GlobalVariables.Instance != null)
-            GlobalVariables.Instance.VariablesChanged -= OnGlobalVariablesChanged;
+        var current = JsonUtility.ToJson(ArticyGlobalVariables.Default);
+        if (current != globalVariablesSnapshot)
+        {
+            globalVariablesSnapshot = current;
+            return true;
+        }
+        return false;
     }
 
-    private void OnGlobalVariablesChanged()
+    private void Update()
     {
-        if (!IsDialogueOpen || flowPlayer == null)
-            return;
+      /*  if (!IsDialogueOpen) //something sus going on here
+            return;*/
 
-        var method = flowPlayer.GetType().GetMethod("RecalculateBranches", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
-        method?.Invoke(flowPlayer, null);
+        
+
+        TryInitReflection();
+
+        if (HaveGlobalVariablesChanged())
+        {
+            Debug.Log("Global variables changed");
+
+            if (currentFlowObject is DialogueFragment fragment)
+            {
+                CloseDialogue();
+                StartDialogue(fragment);
+                flowPlayer?.Play();
+            }
+        }
     }
 
     private void Awake() {
@@ -181,6 +204,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
 
     // ======== IArticyFlowPlayerCallbacks ========
     public void OnFlowPlayerPaused(IFlowObject aObject) {
+        currentFlowObject = aObject;
         /*if (suppressOnFlowPause) {
             suppressOnFlowPause = false;
             return;
