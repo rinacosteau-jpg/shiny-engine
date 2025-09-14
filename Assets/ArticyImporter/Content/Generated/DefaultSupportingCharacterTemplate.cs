@@ -22,7 +22,7 @@ namespace Articy.World_Of_Red_Moon
 {
     
     
-    public class DefaultSupportingCharacterTemplate : Entity, IEntity, IPropertyProvider, IObjectWithFeatureDefaultBasicCharacterFeature
+    public class DefaultSupportingCharacterTemplate : Entity, IEntity, IPropertyProvider, IObjectWithFeatureCharacterCard
     {
         
         [SerializeField()]
@@ -50,9 +50,9 @@ namespace Articy.World_Of_Red_Moon
             }
         }
         
-        public DefaultBasicCharacterFeatureFeature GetFeatureDefaultBasicCharacterFeature()
+        public CharacterCardFeature GetFeatureCharacterCard()
         {
-            return Template.DefaultBasicCharacterFeature;
+            return Template.CharacterCard;
         }
         
         protected override void CloneProperties(object aClone, Articy.Unity.ArticyObject aFirstClassParent)

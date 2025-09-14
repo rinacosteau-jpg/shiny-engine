@@ -219,34 +219,16 @@ namespace Articy.World_Of_Red_Moon
     
     
     [Serializable()]
-    public class ArticyValueDefaultSupportingCharacterTemplateTemplate : ArticyValue<Articy.World_Of_Red_Moon.Templates.DefaultSupportingCharacterTemplateTemplate>
-    {
-    }
-}
-namespace Articy.World_Of_Red_Moon
-{
-    
-    
-    [Serializable()]
-    public class ArticyValueDefaultBasicCharacterFeatureFeature : ArticyValue<Articy.World_Of_Red_Moon.Features.DefaultBasicCharacterFeatureFeature>
-    {
-    }
-}
-namespace Articy.World_Of_Red_Moon
-{
-    
-    
-    [Serializable()]
-    public class ArticyValueDefaultSupportingCharacterTemplate : ArticyValue<DefaultSupportingCharacterTemplate>
-    {
-    }
-}
-namespace Articy.World_Of_Red_Moon
-{
-    
-    
-    [Serializable()]
     public class ArticyValueDefaultMainCharacterTemplateTemplate : ArticyValue<Articy.World_Of_Red_Moon.Templates.DefaultMainCharacterTemplateTemplate>
+    {
+    }
+}
+namespace Articy.World_Of_Red_Moon
+{
+    
+    
+    [Serializable()]
+    public class ArticyValueCharacterCardFeature : ArticyValue<Articy.World_Of_Red_Moon.Features.CharacterCardFeature>
     {
     }
 }
@@ -264,7 +246,52 @@ namespace Articy.World_Of_Red_Moon
     
     
     [Serializable()]
+    public class ArticyValueDefaultBasicCharacterFeatureFeature : ArticyValue<Articy.World_Of_Red_Moon.Features.DefaultBasicCharacterFeatureFeature>
+    {
+    }
+}
+namespace Articy.World_Of_Red_Moon
+{
+    
+    
+    [Serializable()]
     public class ArticyValueDefaultMainCharacterTemplate : ArticyValue<DefaultMainCharacterTemplate>
+    {
+    }
+}
+namespace Articy.World_Of_Red_Moon
+{
+    
+    
+    [Serializable()]
+    public class ArticyValueItemTemplate : ArticyValue<Articy.World_Of_Red_Moon.Templates.ItemTemplate>
+    {
+    }
+}
+namespace Articy.World_Of_Red_Moon
+{
+    
+    
+    [Serializable()]
+    public class ArticyValueItem : ArticyValue<Item>
+    {
+    }
+}
+namespace Articy.World_Of_Red_Moon
+{
+    
+    
+    [Serializable()]
+    public class ArticyValueDefaultSupportingCharacterTemplateTemplate : ArticyValue<Articy.World_Of_Red_Moon.Templates.DefaultSupportingCharacterTemplateTemplate>
+    {
+    }
+}
+namespace Articy.World_Of_Red_Moon
+{
+    
+    
+    [Serializable()]
+    public class ArticyValueDefaultSupportingCharacterTemplate : ArticyValue<DefaultSupportingCharacterTemplate>
     {
     }
 }

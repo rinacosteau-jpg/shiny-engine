@@ -13,6 +13,7 @@ public class ResponseHandler : MonoBehaviour {
     [SerializeField] private RectTransform responseButtonTemplate;
     [SerializeField] private RectTransform responseContainer;
     [SerializeField] private Scrollbar scrollbar;
+    [SerializeField] private ScrollRect scrollrect;
 
     private List<GameObject> tempResponseButtons = new List<GameObject>();
 
@@ -61,8 +62,14 @@ public class ResponseHandler : MonoBehaviour {
                 else
                     flowPlayer.Play();
 
-                if (scrollbar != null)
+                if (scrollbar != null) {
+                    Canvas.ForceUpdateCanvases();
+                    scrollrect.verticalNormalizedPosition = 0f;
                     scrollbar.value = 0f;
+                    Debug.Log("scrollbar val changed");
+                    Canvas.ForceUpdateCanvases();
+                }
+                    
             });
         }
 
@@ -119,8 +126,14 @@ public class ResponseHandler : MonoBehaviour {
         if (flowPlayer != null && branch != null)
             flowPlayer.Play(branch);
 
-        if (scrollbar != null)
+        if (scrollbar != null) {
+            Canvas.ForceUpdateCanvases();
+            scrollrect.verticalNormalizedPosition = 0f;
             scrollbar.value = 0f;
+            Debug.Log("scrollbar val changed");
+            Canvas.ForceUpdateCanvases();
+        }
+            
 
         Debug.Log("picked");
     }

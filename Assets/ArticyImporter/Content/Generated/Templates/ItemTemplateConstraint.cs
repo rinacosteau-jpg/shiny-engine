@@ -11,7 +11,6 @@
 using Articy.Unity;
 using Articy.Unity.Interfaces;
 using Articy.World_Of_Red_Moon;
-using Articy.World_Of_Red_Moon.Features;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,17 +21,7 @@ namespace Articy.World_Of_Red_Moon.Templates
 {
     
     
-    public class DefaultSupportingCharacterTemplateTemplateConstraint
+    public class ItemTemplateConstraint
     {
-        
-        private CharacterCardFeatureConstraint mCharacterCard = new CharacterCardFeatureConstraint();
-        
-        public CharacterCardFeatureConstraint CharacterCard
-        {
-            get
-            {
-                return mCharacterCard;
-            }
-        }
     }
 }

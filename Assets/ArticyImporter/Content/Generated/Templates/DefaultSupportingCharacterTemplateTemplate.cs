@@ -27,7 +27,7 @@ namespace Articy.World_Of_Red_Moon.Templates
     {
         
         [SerializeField()]
-        private ArticyValueDefaultBasicCharacterFeatureFeature mDefaultBasicCharacterFeature = new ArticyValueDefaultBasicCharacterFeatureFeature();
+        private ArticyValueCharacterCardFeature mCharacterCard = new ArticyValueCharacterCardFeature();
         
         [SerializeField()]
         private UInt64 mOwnerId;
@@ -35,15 +35,15 @@ namespace Articy.World_Of_Red_Moon.Templates
         [SerializeField()]
         private UInt32 mOwnerInstanceId;
         
-        public Articy.World_Of_Red_Moon.Features.DefaultBasicCharacterFeatureFeature DefaultBasicCharacterFeature
+        public Articy.World_Of_Red_Moon.Features.CharacterCardFeature CharacterCard
         {
             get
             {
-                return mDefaultBasicCharacterFeature.GetValue();
+                return mCharacterCard.GetValue();
             }
             set
             {
-                mDefaultBasicCharacterFeature.SetValue(value);
+                mCharacterCard.SetValue(value);
             }
         }
         
@@ -56,7 +56,7 @@ namespace Articy.World_Of_Red_Moon.Templates
             set
             {
                 mOwnerId = value;
-                DefaultBasicCharacterFeature.OwnerId = value;
+                CharacterCard.OwnerId = value;
             }
         }
         
@@ -69,16 +69,16 @@ namespace Articy.World_Of_Red_Moon.Templates
             set
             {
                 mOwnerInstanceId = value;
-                DefaultBasicCharacterFeature.OwnerInstanceId = value;
+                CharacterCard.OwnerInstanceId = value;
             }
         }
         
         private void CloneProperties(object aClone, Articy.Unity.ArticyObject aFirstClassParent)
         {
             Articy.World_Of_Red_Moon.Templates.DefaultSupportingCharacterTemplateTemplate newClone = ((Articy.World_Of_Red_Moon.Templates.DefaultSupportingCharacterTemplateTemplate)(aClone));
-            if ((DefaultBasicCharacterFeature != null))
+            if ((CharacterCard != null))
             {
-                newClone.DefaultBasicCharacterFeature = ((Articy.World_Of_Red_Moon.Features.DefaultBasicCharacterFeatureFeature)(DefaultBasicCharacterFeature.CloneObject(newClone, aFirstClassParent)));
+                newClone.CharacterCard = ((Articy.World_Of_Red_Moon.Features.CharacterCardFeature)(CharacterCard.CloneObject(newClone, aFirstClassParent)));
             }
             newClone.OwnerId = OwnerId;
         }
@@ -98,9 +98,9 @@ namespace Articy.World_Of_Red_Moon.Templates
             {
                 string featurePath = aProperty.Substring(0, featureIndex);
                 string featureProperty = aProperty.Substring((featureIndex + 1));
-                if ((featurePath == "DefaultBasicCharacterFeature"))
+                if ((featurePath == "CharacterCard"))
                 {
-                    DefaultBasicCharacterFeature.setProp(featureProperty, aValue);
+                    CharacterCard.setProp(featureProperty, aValue);
                 }
             }
         }
@@ -112,9 +112,9 @@ namespace Articy.World_Of_Red_Moon.Templates
             {
                 string featurePath = aProperty.Substring(0, featureIndex);
                 string featureProperty = aProperty.Substring((featureIndex + 1));
-                if ((featurePath == "DefaultBasicCharacterFeature"))
+                if ((featurePath == "CharacterCard"))
                 {
-                    return DefaultBasicCharacterFeature.getProp(featureProperty);
+                    return CharacterCard.getProp(featureProperty);
                 }
             }
             return null;

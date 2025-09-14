@@ -9,30 +9,19 @@
 //------------------------------------------------------------------------------
 
 using Articy.Unity;
-using Articy.Unity.Interfaces;
-using Articy.World_Of_Red_Moon;
 using Articy.World_Of_Red_Moon.Features;
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace Articy.World_Of_Red_Moon.Templates
+namespace Articy.World_Of_Red_Moon
 {
     
     
-    public class DefaultSupportingCharacterTemplateTemplateConstraint
+    public interface IObjectWithFeatureCharacterCard
     {
         
-        private CharacterCardFeatureConstraint mCharacterCard = new CharacterCardFeatureConstraint();
-        
-        public CharacterCardFeatureConstraint CharacterCard
-        {
-            get
-            {
-                return mCharacterCard;
-            }
-        }
+        CharacterCardFeature GetFeatureCharacterCard();
     }
 }

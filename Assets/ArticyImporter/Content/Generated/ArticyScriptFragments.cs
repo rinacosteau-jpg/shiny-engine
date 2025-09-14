@@ -20,7 +20,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
 {
     
     
-    [Articy.Unity.ArticyCodeGenerationHashAttribute(638933937441618760)]
+    [Articy.Unity.ArticyCodeGenerationHashAttribute(638934639726694641)]
     public partial class ArticyScriptFragments : BaseScriptFragments, ISerializationCallbackReceiver
     {
         

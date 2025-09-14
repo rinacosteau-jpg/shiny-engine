@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1080164415, guid: df2ec02f61e861546b9427c26ccacb8d, type: 3}
+  m_Name: loc_0x100000000000110_128
+  m_EditorClassIdentifier: 
+  mLocalizedStringsKeys:
+  - Ntt_6418934C.CharacterCard.Name
+  - Ntt_6418934C.CharacterCard.Fraction
+  - Ntt_6418934C.CharacterCard.Title
+  mLocalizedStringsValues:
+  - AARADCHIA
+  - MAUGFELL
+  - DOES NOT SPECIFIED
+  mLocalizedAudioAssetsKeys: []
+  mLocalizedAudioAssetsValues: 

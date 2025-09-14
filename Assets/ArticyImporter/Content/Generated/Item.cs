@@ -10,7 +10,6 @@
 
 using Articy.Unity;
 using Articy.Unity.Interfaces;
-using Articy.World_Of_Red_Moon.Features;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,15 +21,15 @@ namespace Articy.World_Of_Red_Moon
 {
     
     
-    public class DefaultMainCharacterTemplate : Entity, IEntity, IPropertyProvider, IObjectWithFeatureCharacterCard, IObjectWithFeatureDefaultExtendedCharacterFeature, IObjectWithFeatureDefaultBasicCharacterFeature
+    public class Item : Entity, IEntity, IPropertyProvider
     {
         
         [SerializeField()]
-        private ArticyValueDefaultMainCharacterTemplateTemplate mTemplate = new ArticyValueDefaultMainCharacterTemplateTemplate();
+        private ArticyValueItemTemplate mTemplate = new ArticyValueItemTemplate();
         
-        private static Articy.World_Of_Red_Moon.Templates.DefaultMainCharacterTemplateTemplateConstraint mConstraints = new Articy.World_Of_Red_Moon.Templates.DefaultMainCharacterTemplateTemplateConstraint();
+        private static Articy.World_Of_Red_Moon.Templates.ItemTemplateConstraint mConstraints = new Articy.World_Of_Red_Moon.Templates.ItemTemplateConstraint();
         
-        public Articy.World_Of_Red_Moon.Templates.DefaultMainCharacterTemplateTemplate Template
+        public Articy.World_Of_Red_Moon.Templates.ItemTemplate Template
         {
             get
             {
@@ -42,7 +41,7 @@ namespace Articy.World_Of_Red_Moon
             }
         }
         
-        public static Articy.World_Of_Red_Moon.Templates.DefaultMainCharacterTemplateTemplateConstraint Constraints
+        public static Articy.World_Of_Red_Moon.Templates.ItemTemplateConstraint Constraints
         {
             get
             {
@@ -50,27 +49,12 @@ namespace Articy.World_Of_Red_Moon
             }
         }
         
-        public CharacterCardFeature GetFeatureCharacterCard()
-        {
-            return Template.CharacterCard;
-        }
-        
-        public DefaultExtendedCharacterFeatureFeature GetFeatureDefaultExtendedCharacterFeature()
-        {
-            return Template.DefaultExtendedCharacterFeature;
-        }
-        
-        public DefaultBasicCharacterFeatureFeature GetFeatureDefaultBasicCharacterFeature()
-        {
-            return Template.DefaultBasicCharacterFeature;
-        }
-        
         protected override void CloneProperties(object aClone, Articy.Unity.ArticyObject aFirstClassParent)
         {
-            DefaultMainCharacterTemplate newClone = ((DefaultMainCharacterTemplate)(aClone));
+            Item newClone = ((Item)(aClone));
             if ((Template != null))
             {
-                newClone.Template = ((Articy.World_Of_Red_Moon.Templates.DefaultMainCharacterTemplateTemplate)(Template.CloneObject(newClone, aFirstClassParent)));
+                newClone.Template = ((Articy.World_Of_Red_Moon.Templates.ItemTemplate)(Template.CloneObject(newClone, aFirstClassParent)));
             }
             base.CloneProperties(newClone, aFirstClassParent);
         }

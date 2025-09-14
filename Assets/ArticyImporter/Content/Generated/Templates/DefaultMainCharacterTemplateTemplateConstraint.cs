@@ -25,9 +25,19 @@ namespace Articy.World_Of_Red_Moon.Templates
     public class DefaultMainCharacterTemplateTemplateConstraint
     {
         
+        private CharacterCardFeatureConstraint mCharacterCard = new CharacterCardFeatureConstraint();
+        
         private DefaultExtendedCharacterFeatureFeatureConstraint mDefaultExtendedCharacterFeature = new DefaultExtendedCharacterFeatureFeatureConstraint();
         
         private DefaultBasicCharacterFeatureFeatureConstraint mDefaultBasicCharacterFeature = new DefaultBasicCharacterFeatureFeatureConstraint();
+        
+        public CharacterCardFeatureConstraint CharacterCard
+        {
+            get
+            {
+                return mCharacterCard;
+            }
+        }
         
         public DefaultExtendedCharacterFeatureFeatureConstraint DefaultExtendedCharacterFeature
         {

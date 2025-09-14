@@ -1134,321 +1134,6 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       mConstraintNames: 
       mConstraintValues: []
-  - mTechnicalName: DefaultSupportingCharacterTemplate
-    mDisplayName: "\u0428\u0430\u0431\u043B\u043E\u043D \u0432\u0442\u043E\u0440\u043E\u0441\u0442\u0435\u043F\u0435\u043D\u043D\u043E\u0433\u043E
-      \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430"
-    mCSharpType: Articy.World_Of_Red_Moon.DefaultSupportingCharacterTemplate, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-    mIsEnum: 0
-    mHasTemplate: 1
-    mFeatures:
-    - DefaultBasicCharacterFeature
-    mProperties:
-    - mTechnicalName: DefaultBasicCharacterFeature.Age
-      mDisplayName: "\u0412\u043E\u0437\u0440\u0430\u0441\u0442"
-      mIsTemplateProperty: 1
-      mPropertyType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-      mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
-      mConstraintValues:
-      - 
-      - 
-      - 
-      - False
-      - 
-      - False
-      - False
-      - 0
-      - 0
-      - 0
-      - 3,40282346638529E+38
-      - 0
-      - -3,40282346638529E+38
-      - 
-      - 0
-      - 
-      - 
-      - 
-    - mTechnicalName: DefaultBasicCharacterFeature.Species
-      mDisplayName: "\u0412\u0438\u0434"
-      mIsTemplateProperty: 1
-      mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
-        Culture=neutral, PublicKeyToken=null
-      mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
-      mConstraintValues:
-      - 
-      - 
-      - 
-      - False
-      - 
-      - False
-      - True
-      - 2048
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 
-      - 0
-      - 
-      - 
-      - 
-    - mTechnicalName: DefaultBasicCharacterFeature.BornIn
-      mDisplayName: "\u0420\u043E\u0434\u0438\u043B\u0441\u044F \u0432"
-      mIsTemplateProperty: 1
-      mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
-        Culture=neutral, PublicKeyToken=null
-      mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
-      mConstraintValues:
-      - 
-      - 
-      - 
-      - False
-      - 
-      - False
-      - True
-      - 2048
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 
-      - 0
-      - 
-      - 
-      - 
-    - mTechnicalName: DefaultBasicCharacterFeature.Sex
-      mDisplayName: "\u041F\u043E\u043B"
-      mIsTemplateProperty: 1
-      mPropertyType: Articy.World_Of_Red_Moon.Sex, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
-      mConstraintValues:
-      - 
-      - 
-      - 
-      - False
-      - 
-      - False
-      - True
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 
-      - 0
-      - 
-      - BySortIndex
-      - 
-    - mTechnicalName: DefaultBasicCharacterFeature.Occupation
-      mDisplayName: "\u041F\u0440\u043E\u0444\u0435\u0441\u0441\u0438\u044F"
-      mIsTemplateProperty: 1
-      mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
-        Culture=neutral, PublicKeyToken=null
-      mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
-      mConstraintValues:
-      - 
-      - 
-      - 
-      - False
-      - 
-      - False
-      - True
-      - 2048
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 
-      - 0
-      - 
-      - 
-      - 
-    - mTechnicalName: DefaultBasicCharacterFeature.Accent
-      mDisplayName: "\u0413\u043E\u043B\u043E\u0441"
-      mIsTemplateProperty: 1
-      mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
-        Culture=neutral, PublicKeyToken=null
-      mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
-      mConstraintValues:
-      - 
-      - 
-      - 
-      - False
-      - 
-      - False
-      - True
-      - 2048
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 
-      - 0
-      - 
-      - 
-      - 
-    - mTechnicalName: DefaultBasicCharacterFeature.Personality
-      mDisplayName: "\u041B\u0438\u0447\u043D\u043E\u0441\u0442\u044C"
-      mIsTemplateProperty: 1
-      mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
-        Culture=neutral, PublicKeyToken=null
-      mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
-      mConstraintValues:
-      - 
-      - 
-      - 
-      - True
-      - 
-      - False
-      - True
-      - 2048
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 
-      - 0
-      - 
-      - 
-      - 
-    - mTechnicalName: DefaultBasicCharacterFeature.Appearance
-      mDisplayName: "\u0412\u043D\u0435\u0448\u043D\u0438\u0439 \u0432\u0438\u0434"
-      mIsTemplateProperty: 1
-      mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
-        Culture=neutral, PublicKeyToken=null
-      mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
-      mConstraintValues:
-      - 
-      - 
-      - 
-      - True
-      - 
-      - False
-      - True
-      - 2048
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 
-      - 0
-      - 
-      - 
-      - 
-    - mTechnicalName: Attachments
-      mDisplayName: 
-      mIsTemplateProperty: 0
-      mPropertyType: System.Collections.Generic.List`1[[Articy.Unity.ArticyObject,
-        ArticyRuntime, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib,
-        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-      mConstraintNames: 
-      mConstraintValues: []
-    - mTechnicalName: DisplayName
-      mDisplayName: 
-      mIsTemplateProperty: 0
-      mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
-        Culture=neutral, PublicKeyToken=null
-      mConstraintNames: 
-      mConstraintValues: []
-    - mTechnicalName: Color
-      mDisplayName: 
-      mIsTemplateProperty: 0
-      mPropertyType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      mConstraintNames: 
-      mConstraintValues: []
-    - mTechnicalName: Text
-      mDisplayName: 
-      mIsTemplateProperty: 0
-      mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
-        Culture=neutral, PublicKeyToken=null
-      mConstraintNames: 
-      mConstraintValues: []
-    - mTechnicalName: ExternalId
-      mDisplayName: 
-      mIsTemplateProperty: 0
-      mPropertyType: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-      mConstraintNames: 
-      mConstraintValues: []
-    - mTechnicalName: Position
-      mDisplayName: 
-      mIsTemplateProperty: 0
-      mPropertyType: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      mConstraintNames: 
-      mConstraintValues: []
-    - mTechnicalName: ZIndex
-      mDisplayName: 
-      mIsTemplateProperty: 0
-      mPropertyType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-      mConstraintNames: 
-      mConstraintValues: []
-    - mTechnicalName: Size
-      mDisplayName: 
-      mIsTemplateProperty: 0
-      mPropertyType: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      mConstraintNames: 
-      mConstraintValues: []
-    - mTechnicalName: PreviewImage
-      mDisplayName: 
-      mIsTemplateProperty: 0
-      mPropertyType: Articy.Unity.PreviewImage, ArticyRuntime, Version=1.3.0.0, Culture=neutral,
-        PublicKeyToken=null
-      mConstraintNames: 
-      mConstraintValues: []
-    - mTechnicalName: ShortId
-      mDisplayName: 
-      mIsTemplateProperty: 0
-      mPropertyType: System.UInt32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-      mConstraintNames: 
-      mConstraintValues: []
-    - mTechnicalName: Id
-      mDisplayName: 
-      mIsTemplateProperty: 0
-      mPropertyType: System.UInt64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-      mConstraintNames: 
-      mConstraintValues: []
-    - mTechnicalName: TechnicalName
-      mDisplayName: 
-      mIsTemplateProperty: 0
-      mPropertyType: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-      mConstraintNames: 
-      mConstraintValues: []
-    - mTechnicalName: Parent
-      mDisplayName: 
-      mIsTemplateProperty: 0
-      mPropertyType: Articy.Unity.ArticyObject, ArticyRuntime, Version=1.3.0.0, Culture=neutral,
-        PublicKeyToken=null
-      mConstraintNames: 
-      mConstraintValues: []
-    - mTechnicalName: ParentId
-      mDisplayName: 
-      mIsTemplateProperty: 0
-      mPropertyType: System.UInt64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-      mConstraintNames: 
-      mConstraintValues: []
-    - mTechnicalName: InstanceId
-      mDisplayName: 
-      mIsTemplateProperty: 0
-      mPropertyType: System.UInt64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-      mConstraintNames: 
-      mConstraintValues: []
-    - mTechnicalName: Children
-      mDisplayName: 
-      mIsTemplateProperty: 0
-      mPropertyType: System.Collections.ArrayList, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      mConstraintNames: 
-      mConstraintValues: []
   - mTechnicalName: DefaultMainCharacterTemplate
     mDisplayName: "\u0428\u0430\u0431\u043B\u043E\u043D \u0433\u043B\u0430\u0432\u043D\u043E\u0433\u043E
       \u0433\u0435\u0440\u043E\u044F"
@@ -1457,9 +1142,85 @@ MonoBehaviour:
     mIsEnum: 0
     mHasTemplate: 1
     mFeatures:
+    - CharacterCard
     - DefaultExtendedCharacterFeature
     - DefaultBasicCharacterFeature
     mProperties:
+    - mTechnicalName: CharacterCard.Name
+      mDisplayName: Name
+      mIsTemplateProperty: 1
+      mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
+        Culture=neutral, PublicKeyToken=null
+      mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
+      mConstraintValues:
+      - 
+      - 
+      - 
+      - False
+      - 
+      - False
+      - True
+      - 2048
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - UNKNOWN
+      - 0
+      - 
+      - 
+      - 
+    - mTechnicalName: CharacterCard.Fraction
+      mDisplayName: Fraction
+      mIsTemplateProperty: 1
+      mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
+        Culture=neutral, PublicKeyToken=null
+      mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
+      mConstraintValues:
+      - 
+      - 
+      - 
+      - False
+      - 
+      - False
+      - True
+      - 2048
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - UNKNOWN
+      - 0
+      - 
+      - 
+      - 
+    - mTechnicalName: CharacterCard.Title
+      mDisplayName: Title
+      mIsTemplateProperty: 1
+      mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
+        Culture=neutral, PublicKeyToken=null
+      mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
+      mConstraintValues:
+      - 
+      - 
+      - 
+      - False
+      - 
+      - False
+      - True
+      - 2048
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - UNKNOWN
+      - 0
+      - 
+      - 
+      - 
     - mTechnicalName: DefaultExtendedCharacterFeature.Motivation
       mDisplayName: "\u0426\u0435\u043B\u0438"
       mIsTemplateProperty: 1
@@ -1807,6 +1568,311 @@ MonoBehaviour:
       - 0
       - 0
       - 
+      - 0
+      - 
+      - 
+      - 
+    - mTechnicalName: Attachments
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: System.Collections.Generic.List`1[[Articy.Unity.ArticyObject,
+        ArticyRuntime, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: DisplayName
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
+        Culture=neutral, PublicKeyToken=null
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: Color
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: Text
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
+        Culture=neutral, PublicKeyToken=null
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: ExternalId
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: Position
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: ZIndex
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: Size
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: PreviewImage
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: Articy.Unity.PreviewImage, ArticyRuntime, Version=1.3.0.0, Culture=neutral,
+        PublicKeyToken=null
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: ShortId
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: System.UInt32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: Id
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: System.UInt64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: TechnicalName
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: Parent
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: Articy.Unity.ArticyObject, ArticyRuntime, Version=1.3.0.0, Culture=neutral,
+        PublicKeyToken=null
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: ParentId
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: System.UInt64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: InstanceId
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: System.UInt64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: Children
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: System.Collections.ArrayList, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      mConstraintNames: 
+      mConstraintValues: []
+  - mTechnicalName: Item
+    mDisplayName: Item Template
+    mCSharpType: Articy.World_Of_Red_Moon.Item, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    mIsEnum: 0
+    mHasTemplate: 1
+    mFeatures: []
+    mProperties:
+    - mTechnicalName: Attachments
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: System.Collections.Generic.List`1[[Articy.Unity.ArticyObject,
+        ArticyRuntime, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: DisplayName
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
+        Culture=neutral, PublicKeyToken=null
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: Color
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: Text
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
+        Culture=neutral, PublicKeyToken=null
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: ExternalId
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: Position
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: ZIndex
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: Size
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: PreviewImage
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: Articy.Unity.PreviewImage, ArticyRuntime, Version=1.3.0.0, Culture=neutral,
+        PublicKeyToken=null
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: ShortId
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: System.UInt32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: Id
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: System.UInt64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: TechnicalName
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: Parent
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: Articy.Unity.ArticyObject, ArticyRuntime, Version=1.3.0.0, Culture=neutral,
+        PublicKeyToken=null
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: ParentId
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: System.UInt64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: InstanceId
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: System.UInt64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: Children
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: System.Collections.ArrayList, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      mConstraintNames: 
+      mConstraintValues: []
+  - mTechnicalName: DefaultSupportingCharacterTemplate
+    mDisplayName: "\u0428\u0430\u0431\u043B\u043E\u043D \u0432\u0442\u043E\u0440\u043E\u0441\u0442\u0435\u043F\u0435\u043D\u043D\u043E\u0433\u043E
+      \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430"
+    mCSharpType: Articy.World_Of_Red_Moon.DefaultSupportingCharacterTemplate, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    mIsEnum: 0
+    mHasTemplate: 1
+    mFeatures:
+    - CharacterCard
+    mProperties:
+    - mTechnicalName: CharacterCard.Name
+      mDisplayName: Name
+      mIsTemplateProperty: 1
+      mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
+        Culture=neutral, PublicKeyToken=null
+      mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
+      mConstraintValues:
+      - 
+      - 
+      - 
+      - False
+      - 
+      - False
+      - True
+      - 2048
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - UNKNOWN
+      - 0
+      - 
+      - 
+      - 
+    - mTechnicalName: CharacterCard.Fraction
+      mDisplayName: Fraction
+      mIsTemplateProperty: 1
+      mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
+        Culture=neutral, PublicKeyToken=null
+      mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
+      mConstraintValues:
+      - 
+      - 
+      - 
+      - False
+      - 
+      - False
+      - True
+      - 2048
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - UNKNOWN
+      - 0
+      - 
+      - 
+      - 
+    - mTechnicalName: CharacterCard.Title
+      mDisplayName: Title
+      mIsTemplateProperty: 1
+      mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
+        Culture=neutral, PublicKeyToken=null
+      mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
+      mConstraintValues:
+      - 
+      - 
+      - 
+      - False
+      - 
+      - False
+      - True
+      - 2048
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - UNKNOWN
       - 0
       - 
       - 
@@ -3967,6 +4033,232 @@ MonoBehaviour:
     mPropertyType: Articy.World_Of_Red_Moon.UInt64, Assembly-CSharp
     mConstraintNames: 
     mConstraintValues: []
+  - mTechnicalName: CharacterCard.Name
+    mDisplayName: Name
+    mIsTemplateProperty: 1
+    mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
+      Culture=neutral, PublicKeyToken=null
+    mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
+    mConstraintValues:
+    - 
+    - 
+    - 
+    - False
+    - 
+    - False
+    - True
+    - 2048
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - UNKNOWN
+    - 0
+    - 
+    - 
+    - 
+  - mTechnicalName: CharacterCard.Fraction
+    mDisplayName: Fraction
+    mIsTemplateProperty: 1
+    mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
+      Culture=neutral, PublicKeyToken=null
+    mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
+    mConstraintValues:
+    - 
+    - 
+    - 
+    - False
+    - 
+    - False
+    - True
+    - 2048
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - UNKNOWN
+    - 0
+    - 
+    - 
+    - 
+  - mTechnicalName: CharacterCard.Title
+    mDisplayName: Title
+    mIsTemplateProperty: 1
+    mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
+      Culture=neutral, PublicKeyToken=null
+    mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
+    mConstraintValues:
+    - 
+    - 
+    - 
+    - False
+    - 
+    - False
+    - True
+    - 2048
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - UNKNOWN
+    - 0
+    - 
+    - 
+    - 
+  - mTechnicalName: DefaultExtendedCharacterFeature.Motivation
+    mDisplayName: "\u0426\u0435\u043B\u0438"
+    mIsTemplateProperty: 1
+    mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
+      Culture=neutral, PublicKeyToken=null
+    mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
+    mConstraintValues:
+    - 
+    - 
+    - 
+    - True
+    - 
+    - False
+    - True
+    - 2048
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 
+    - 0
+    - 
+    - 
+    - 
+  - mTechnicalName: DefaultExtendedCharacterFeature.InnerConflict
+    mDisplayName: "\u0412\u043D\u0443\u0442\u0440\u0435\u043D\u043D\u0438\u0439 \u043A\u043E\u043D\u0444\u043B\u0438\u043A\u0442"
+    mIsTemplateProperty: 1
+    mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
+      Culture=neutral, PublicKeyToken=null
+    mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
+    mConstraintValues:
+    - 
+    - 
+    - 
+    - True
+    - 
+    - False
+    - True
+    - 2048
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 
+    - 0
+    - 
+    - 
+    - 
+  - mTechnicalName: DefaultExtendedCharacterFeature.Skills
+    mDisplayName: "\u041D\u0430\u0432\u044B\u043A\u0438"
+    mIsTemplateProperty: 1
+    mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
+      Culture=neutral, PublicKeyToken=null
+    mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
+    mConstraintValues:
+    - 
+    - 
+    - 
+    - True
+    - 
+    - False
+    - True
+    - 2048
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 
+    - 0
+    - 
+    - 
+    - 
+  - mTechnicalName: DefaultExtendedCharacterFeature.Fears
+    mDisplayName: "\u0421\u043B\u0430\u0431\u044B\u0435 \u0441\u0442\u043E\u0440\u043E\u043D\u044B"
+    mIsTemplateProperty: 1
+    mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
+      Culture=neutral, PublicKeyToken=null
+    mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
+    mConstraintValues:
+    - 
+    - 
+    - 
+    - True
+    - 
+    - False
+    - True
+    - 2048
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 
+    - 0
+    - 
+    - 
+    - 
+  - mTechnicalName: DefaultExtendedCharacterFeature.Habits
+    mDisplayName: "\u041F\u0440\u0438\u0447\u0443\u0434\u044B/\u041F\u0440\u0438\u0432\u044B\u0447\u043A\u0438"
+    mIsTemplateProperty: 1
+    mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
+      Culture=neutral, PublicKeyToken=null
+    mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
+    mConstraintValues:
+    - 
+    - 
+    - 
+    - True
+    - 
+    - False
+    - True
+    - 2048
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 
+    - 0
+    - 
+    - 
+    - 
+  - mTechnicalName: DefaultExtendedCharacterFeature.FurtherDetails
+    mDisplayName: "\u0414\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0435
+      \u0434\u0435\u0442\u0430\u043B\u0438"
+    mIsTemplateProperty: 1
+    mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
+      Culture=neutral, PublicKeyToken=null
+    mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
+    mConstraintValues:
+    - 
+    - 
+    - 
+    - True
+    - 
+    - False
+    - True
+    - 2048
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 
+    - 0
+    - 
+    - 
+    - 
   - mTechnicalName: DefaultBasicCharacterFeature.Age
     mDisplayName: "\u0412\u043E\u0437\u0440\u0430\u0441\u0442"
     mIsTemplateProperty: 1
@@ -4143,157 +4435,6 @@ MonoBehaviour:
     - 
   - mTechnicalName: DefaultBasicCharacterFeature.Appearance
     mDisplayName: "\u0412\u043D\u0435\u0448\u043D\u0438\u0439 \u0432\u0438\u0434"
-    mIsTemplateProperty: 1
-    mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
-      Culture=neutral, PublicKeyToken=null
-    mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
-    mConstraintValues:
-    - 
-    - 
-    - 
-    - True
-    - 
-    - False
-    - True
-    - 2048
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    - 
-    - 0
-    - 
-    - 
-    - 
-  - mTechnicalName: DefaultExtendedCharacterFeature.Motivation
-    mDisplayName: "\u0426\u0435\u043B\u0438"
-    mIsTemplateProperty: 1
-    mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
-      Culture=neutral, PublicKeyToken=null
-    mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
-    mConstraintValues:
-    - 
-    - 
-    - 
-    - True
-    - 
-    - False
-    - True
-    - 2048
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    - 
-    - 0
-    - 
-    - 
-    - 
-  - mTechnicalName: DefaultExtendedCharacterFeature.InnerConflict
-    mDisplayName: "\u0412\u043D\u0443\u0442\u0440\u0435\u043D\u043D\u0438\u0439 \u043A\u043E\u043D\u0444\u043B\u0438\u043A\u0442"
-    mIsTemplateProperty: 1
-    mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
-      Culture=neutral, PublicKeyToken=null
-    mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
-    mConstraintValues:
-    - 
-    - 
-    - 
-    - True
-    - 
-    - False
-    - True
-    - 2048
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    - 
-    - 0
-    - 
-    - 
-    - 
-  - mTechnicalName: DefaultExtendedCharacterFeature.Skills
-    mDisplayName: "\u041D\u0430\u0432\u044B\u043A\u0438"
-    mIsTemplateProperty: 1
-    mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
-      Culture=neutral, PublicKeyToken=null
-    mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
-    mConstraintValues:
-    - 
-    - 
-    - 
-    - True
-    - 
-    - False
-    - True
-    - 2048
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    - 
-    - 0
-    - 
-    - 
-    - 
-  - mTechnicalName: DefaultExtendedCharacterFeature.Fears
-    mDisplayName: "\u0421\u043B\u0430\u0431\u044B\u0435 \u0441\u0442\u043E\u0440\u043E\u043D\u044B"
-    mIsTemplateProperty: 1
-    mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
-      Culture=neutral, PublicKeyToken=null
-    mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
-    mConstraintValues:
-    - 
-    - 
-    - 
-    - True
-    - 
-    - False
-    - True
-    - 2048
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    - 
-    - 0
-    - 
-    - 
-    - 
-  - mTechnicalName: DefaultExtendedCharacterFeature.Habits
-    mDisplayName: "\u041F\u0440\u0438\u0447\u0443\u0434\u044B/\u041F\u0440\u0438\u0432\u044B\u0447\u043A\u0438"
-    mIsTemplateProperty: 1
-    mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
-      Culture=neutral, PublicKeyToken=null
-    mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
-    mConstraintValues:
-    - 
-    - 
-    - 
-    - True
-    - 
-    - False
-    - True
-    - 2048
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    - 
-    - 0
-    - 
-    - 
-    - 
-  - mTechnicalName: DefaultExtendedCharacterFeature.FurtherDetails
-    mDisplayName: "\u0414\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0435
-      \u0434\u0435\u0442\u0430\u043B\u0438"
     mIsTemplateProperty: 1
     mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -4509,8 +4650,9 @@ MonoBehaviour:
   - Comment
   - Jump
   - Entity
-  - DefaultSupportingCharacterTemplate
   - DefaultMainCharacterTemplate
+  - Item
+  - DefaultSupportingCharacterTemplate
   - Location
   - Spot
   - Zone
@@ -4558,10 +4700,12 @@ MonoBehaviour:
     PublicKeyToken=null
   - Articy.World_Of_Red_Moon.Entity, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
-  - Articy.World_Of_Red_Moon.DefaultSupportingCharacterTemplate, Assembly-CSharp,
-    Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   - Articy.World_Of_Red_Moon.DefaultMainCharacterTemplate, Assembly-CSharp, Version=0.0.0.0,
     Culture=neutral, PublicKeyToken=null
+  - Articy.World_Of_Red_Moon.Item, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  - Articy.World_Of_Red_Moon.DefaultSupportingCharacterTemplate, Assembly-CSharp,
+    Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   - Articy.World_Of_Red_Moon.Location, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   - Articy.World_Of_Red_Moon.Spot, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
@@ -4590,6 +4734,15 @@ MonoBehaviour:
     PublicKeyToken=null
   mFeatureProps:
   - Duration.Minutes
+  - CharacterCard.Name
+  - CharacterCard.Fraction
+  - CharacterCard.Title
+  - DefaultExtendedCharacterFeature.Motivation
+  - DefaultExtendedCharacterFeature.InnerConflict
+  - DefaultExtendedCharacterFeature.Skills
+  - DefaultExtendedCharacterFeature.Fears
+  - DefaultExtendedCharacterFeature.Habits
+  - DefaultExtendedCharacterFeature.FurtherDetails
   - DefaultBasicCharacterFeature.Age
   - DefaultBasicCharacterFeature.Species
   - DefaultBasicCharacterFeature.BornIn
@@ -4598,12 +4751,6 @@ MonoBehaviour:
   - DefaultBasicCharacterFeature.Accent
   - DefaultBasicCharacterFeature.Personality
   - DefaultBasicCharacterFeature.Appearance
-  - DefaultExtendedCharacterFeature.Motivation
-  - DefaultExtendedCharacterFeature.InnerConflict
-  - DefaultExtendedCharacterFeature.Skills
-  - DefaultExtendedCharacterFeature.Fears
-  - DefaultExtendedCharacterFeature.Habits
-  - DefaultExtendedCharacterFeature.FurtherDetails
   mFeaturePropInfos:
   - mTechnicalName: Duration.Minutes
     mDisplayName: Minutes
@@ -4624,6 +4771,232 @@ MonoBehaviour:
     - 3,40282346638529E+38
     - 0
     - -3,40282346638529E+38
+    - 
+    - 0
+    - 
+    - 
+    - 
+  - mTechnicalName: CharacterCard.Name
+    mDisplayName: Name
+    mIsTemplateProperty: 1
+    mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
+      Culture=neutral, PublicKeyToken=null
+    mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
+    mConstraintValues:
+    - 
+    - 
+    - 
+    - False
+    - 
+    - False
+    - True
+    - 2048
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - UNKNOWN
+    - 0
+    - 
+    - 
+    - 
+  - mTechnicalName: CharacterCard.Fraction
+    mDisplayName: Fraction
+    mIsTemplateProperty: 1
+    mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
+      Culture=neutral, PublicKeyToken=null
+    mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
+    mConstraintValues:
+    - 
+    - 
+    - 
+    - False
+    - 
+    - False
+    - True
+    - 2048
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - UNKNOWN
+    - 0
+    - 
+    - 
+    - 
+  - mTechnicalName: CharacterCard.Title
+    mDisplayName: Title
+    mIsTemplateProperty: 1
+    mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
+      Culture=neutral, PublicKeyToken=null
+    mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
+    mConstraintValues:
+    - 
+    - 
+    - 
+    - False
+    - 
+    - False
+    - True
+    - 2048
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - UNKNOWN
+    - 0
+    - 
+    - 
+    - 
+  - mTechnicalName: DefaultExtendedCharacterFeature.Motivation
+    mDisplayName: "\u0426\u0435\u043B\u0438"
+    mIsTemplateProperty: 1
+    mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
+      Culture=neutral, PublicKeyToken=null
+    mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
+    mConstraintValues:
+    - 
+    - 
+    - 
+    - True
+    - 
+    - False
+    - True
+    - 2048
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 
+    - 0
+    - 
+    - 
+    - 
+  - mTechnicalName: DefaultExtendedCharacterFeature.InnerConflict
+    mDisplayName: "\u0412\u043D\u0443\u0442\u0440\u0435\u043D\u043D\u0438\u0439 \u043A\u043E\u043D\u0444\u043B\u0438\u043A\u0442"
+    mIsTemplateProperty: 1
+    mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
+      Culture=neutral, PublicKeyToken=null
+    mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
+    mConstraintValues:
+    - 
+    - 
+    - 
+    - True
+    - 
+    - False
+    - True
+    - 2048
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 
+    - 0
+    - 
+    - 
+    - 
+  - mTechnicalName: DefaultExtendedCharacterFeature.Skills
+    mDisplayName: "\u041D\u0430\u0432\u044B\u043A\u0438"
+    mIsTemplateProperty: 1
+    mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
+      Culture=neutral, PublicKeyToken=null
+    mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
+    mConstraintValues:
+    - 
+    - 
+    - 
+    - True
+    - 
+    - False
+    - True
+    - 2048
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 
+    - 0
+    - 
+    - 
+    - 
+  - mTechnicalName: DefaultExtendedCharacterFeature.Fears
+    mDisplayName: "\u0421\u043B\u0430\u0431\u044B\u0435 \u0441\u0442\u043E\u0440\u043E\u043D\u044B"
+    mIsTemplateProperty: 1
+    mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
+      Culture=neutral, PublicKeyToken=null
+    mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
+    mConstraintValues:
+    - 
+    - 
+    - 
+    - True
+    - 
+    - False
+    - True
+    - 2048
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 
+    - 0
+    - 
+    - 
+    - 
+  - mTechnicalName: DefaultExtendedCharacterFeature.Habits
+    mDisplayName: "\u041F\u0440\u0438\u0447\u0443\u0434\u044B/\u041F\u0440\u0438\u0432\u044B\u0447\u043A\u0438"
+    mIsTemplateProperty: 1
+    mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
+      Culture=neutral, PublicKeyToken=null
+    mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
+    mConstraintValues:
+    - 
+    - 
+    - 
+    - True
+    - 
+    - False
+    - True
+    - 2048
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 
+    - 0
+    - 
+    - 
+    - 
+  - mTechnicalName: DefaultExtendedCharacterFeature.FurtherDetails
+    mDisplayName: "\u0414\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0435
+      \u0434\u0435\u0442\u0430\u043B\u0438"
+    mIsTemplateProperty: 1
+    mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
+      Culture=neutral, PublicKeyToken=null
+    mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
+    mConstraintValues:
+    - 
+    - 
+    - 
+    - True
+    - 
+    - False
+    - True
+    - 2048
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
     - 
     - 0
     - 
@@ -4828,164 +5201,15 @@ MonoBehaviour:
     - 
     - 
     - 
-  - mTechnicalName: DefaultExtendedCharacterFeature.Motivation
-    mDisplayName: "\u0426\u0435\u043B\u0438"
-    mIsTemplateProperty: 1
-    mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
-      Culture=neutral, PublicKeyToken=null
-    mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
-    mConstraintValues:
-    - 
-    - 
-    - 
-    - True
-    - 
-    - False
-    - True
-    - 2048
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    - 
-    - 0
-    - 
-    - 
-    - 
-  - mTechnicalName: DefaultExtendedCharacterFeature.InnerConflict
-    mDisplayName: "\u0412\u043D\u0443\u0442\u0440\u0435\u043D\u043D\u0438\u0439 \u043A\u043E\u043D\u0444\u043B\u0438\u043A\u0442"
-    mIsTemplateProperty: 1
-    mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
-      Culture=neutral, PublicKeyToken=null
-    mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
-    mConstraintValues:
-    - 
-    - 
-    - 
-    - True
-    - 
-    - False
-    - True
-    - 2048
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    - 
-    - 0
-    - 
-    - 
-    - 
-  - mTechnicalName: DefaultExtendedCharacterFeature.Skills
-    mDisplayName: "\u041D\u0430\u0432\u044B\u043A\u0438"
-    mIsTemplateProperty: 1
-    mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
-      Culture=neutral, PublicKeyToken=null
-    mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
-    mConstraintValues:
-    - 
-    - 
-    - 
-    - True
-    - 
-    - False
-    - True
-    - 2048
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    - 
-    - 0
-    - 
-    - 
-    - 
-  - mTechnicalName: DefaultExtendedCharacterFeature.Fears
-    mDisplayName: "\u0421\u043B\u0430\u0431\u044B\u0435 \u0441\u0442\u043E\u0440\u043E\u043D\u044B"
-    mIsTemplateProperty: 1
-    mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
-      Culture=neutral, PublicKeyToken=null
-    mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
-    mConstraintValues:
-    - 
-    - 
-    - 
-    - True
-    - 
-    - False
-    - True
-    - 2048
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    - 
-    - 0
-    - 
-    - 
-    - 
-  - mTechnicalName: DefaultExtendedCharacterFeature.Habits
-    mDisplayName: "\u041F\u0440\u0438\u0447\u0443\u0434\u044B/\u041F\u0440\u0438\u0432\u044B\u0447\u043A\u0438"
-    mIsTemplateProperty: 1
-    mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
-      Culture=neutral, PublicKeyToken=null
-    mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
-    mConstraintValues:
-    - 
-    - 
-    - 
-    - True
-    - 
-    - False
-    - True
-    - 2048
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    - 
-    - 0
-    - 
-    - 
-    - 
-  - mTechnicalName: DefaultExtendedCharacterFeature.FurtherDetails
-    mDisplayName: "\u0414\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0435
-      \u0434\u0435\u0442\u0430\u043B\u0438"
-    mIsTemplateProperty: 1
-    mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
-      Culture=neutral, PublicKeyToken=null
-    mConstraintNames: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000
-    mConstraintValues:
-    - 
-    - 
-    - 
-    - True
-    - 
-    - False
-    - True
-    - 2048
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    - 
-    - 0
-    - 
-    - 
-    - 
   mFeatureTechnicalNames:
   - Duration
-  - DefaultBasicCharacterFeature
+  - CharacterCard
   - DefaultExtendedCharacterFeature
+  - DefaultBasicCharacterFeature
   mFeatureDisplayNames:
   - Duration
-  - "\u041E\u0441\u043D\u043E\u0432\u043D\u044B\u0435 \u0441\u0432\u043E\u0439\u0441\u0442\u0432\u0430
-    \u0445\u0430\u0440\u0430\u043A\u0442\u0435\u0440\u0430"
+  - CharacterCard
   - "\u0420\u0430\u0441\u0448\u0438\u0440\u0435\u043D\u043D\u044B\u0435 \u0441\u0432\u043E\u0439\u0441\u0442\u0432\u0430
+    \u0445\u0430\u0440\u0430\u043A\u0442\u0435\u0440\u0430"
+  - "\u041E\u0441\u043D\u043E\u0432\u043D\u044B\u0435 \u0441\u0432\u043E\u0439\u0441\u0442\u0432\u0430
     \u0445\u0430\u0440\u0430\u043A\u0442\u0435\u0440\u0430"
