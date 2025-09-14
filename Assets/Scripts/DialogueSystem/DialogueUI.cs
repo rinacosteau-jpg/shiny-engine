@@ -272,7 +272,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
             if (otherBranches.Count == 1) {
                 // ЕДИНСТВЕННАЯ NPC-ветка: НЕ проигрываем автоматически.
                 // Показываем кнопку "Далее" и ждём подтверждения.
-                responseHandler?.CreateSingleResponse("Далее", otherBranches[0], flowPlayer);
+                responseHandler?.ShowContinueButton(otherBranches[0], flowPlayer);
                 dialogueFinished = false;
             } else if (otherBranches.Count > 1) {
                 // Несколько не-игровых веток — можно показать как варианты

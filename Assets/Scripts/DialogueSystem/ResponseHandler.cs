@@ -18,6 +18,11 @@ public class ResponseHandler : MonoBehaviour {
 
     private List<GameObject> tempResponseButtons = new List<GameObject>();
 
+    private void Awake() {
+        if (continueButton != null)
+            continueButton.gameObject.SetActive(false);
+    }
+
     public void ShowResponses(IList<Branch> branches, ArticyFlowPlayer flowPlayer, Entity playerEntity = null) {
         if (branches == null || flowPlayer == null) return;
 
@@ -89,6 +94,33 @@ public class ResponseHandler : MonoBehaviour {
 
         if (responseBox != null)
             responseBox.gameObject.SetActive(false);
+
+        if (continueButton != null)
+            continueButton.gameObject.SetActive(false);
+    }
+
+    public void ShowContinueButton(Branch branch, ArticyFlowPlayer flowPlayer) {
+        if (continueButton == null || flowPlayer == null) return;
+
+        ClearResponses();
+
+        continueButton.gameObject.SetActive(true);
+        continueButton.onClick.RemoveAllListeners();
+        continueButton.onClick.AddListener(() => {
+            continueButton.gameObject.SetActive(false);
+            if (branch != null)
+                flowPlayer.Play(branch);
+            else
+                flowPlayer.Play();
+
+            if (scrollbar != null) {
+                Canvas.ForceUpdateCanvases();
+                scrollrect.verticalNormalizedPosition = 0f;
+                scrollbar.value = 0f;
+                Debug.Log("scrollbar val changed");
+                Canvas.ForceUpdateCanvases();
+            }
+        });
     }
 
     // --- Âíóòðåííèå âñïîìîãàòåëüíûå ìåòîäû ---
