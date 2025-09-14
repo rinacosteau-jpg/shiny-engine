@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
 using System.Reflection;
@@ -17,6 +18,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] private TMP_Text textLabel;
     [SerializeField] private TMP_Text dialogueSpeaker;
+    [SerializeField] private Image portraitImage;
     [SerializeField] private ResponseHandler responseHandler;
 
     private bool dialogueFinished = false;
@@ -129,6 +131,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         responseHandler?.ClearResponses();
         lastDisplayedText = string.Empty;
         if (textLabel != null) textLabel.text = string.Empty;
+        if (portraitImage != null) portraitImage.sprite = null;
         dialogueFinished = false;
         if (dialogueBox != null) dialogueBox.SetActive(true);
         if (flowPlayer != null)
@@ -153,6 +156,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         dialogueBox?.SetActive(false);
         dialogueFinished = false;
         responseHandler?.ClearResponses();
+        if (portraitImage != null) portraitImage.sprite = null;
         IsDialogueOpen = false;
         if (flowPlayer != null) {
             SetContinuousRecalculation(originalRecalcSetting ?? false);
@@ -207,6 +211,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
 
       //dialogueBox?.SetActive(true);
         if (dialogueSpeaker != null) dialogueSpeaker.text = GetSpeakerDisplayName(aObject);
+        UpdatePortrait(aObject);
 
         // Попытаемся получить текст прямо с текущего объекта
         string currentText = GetTextFromFlowObject(aObject);
@@ -276,6 +281,17 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
     }
 
     // -------------------- Вспомогательные безопасные методы --------------------
+    private void UpdatePortrait(IFlowObject obj) {
+        if (portraitImage == null) return;
+        portraitImage.sprite = null;
+        var speaker = GetSpeakerEntity(obj);
+        if (speaker is IObjectWithPreviewImage withPreview) {
+            var asset = withPreview.PreviewImage.Asset;
+            if (asset != null)
+                portraitImage.sprite = asset.LoadAssetAsSprite();
+        }
+    }
+
     private string GetTextFromFlowObject(IFlowObject obj) {
         if (obj == null) return null;
 
