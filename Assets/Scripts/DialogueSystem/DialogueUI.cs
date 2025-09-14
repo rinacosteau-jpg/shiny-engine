@@ -212,7 +212,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         responseHandler?.ClearResponses();
 
       //dialogueBox?.SetActive(true);
-        if (dialogueSpeaker != null) dialogueSpeaker.text = GetSpeakerDisplayName(aObject);
+        UpdateSpeakerInfo(aObject);
         UpdatePortrait(aObject);
 
         // Попытаемся получить текст прямо с текущего объекта
@@ -283,6 +283,25 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
     }
 
     // -------------------- Вспомогательные безопасные методы --------------------
+    private void UpdateSpeakerInfo(IFlowObject obj) {
+        if (dialogueSpeaker == null) return;
+
+        var speaker = GetSpeakerEntity(obj);
+        if (speaker is IObjectWithFeatureCharacterCard withCard) {
+            var card = withCard.GetFeatureCharacterCard();
+            if (card != null) {
+                dialogueSpeaker.text = card.Name != null ? card.Name.ToString() : "";
+                if (title != null) title.text = card.Title != null ? card.Title.ToString() : "";
+                if (fraction != null) fraction.text = card.Fraction != null ? card.Fraction.ToString() : "";
+                return;
+            }
+        }
+
+        dialogueSpeaker.text = GetSpeakerDisplayName(obj);
+        if (title != null) title.text = "";
+        if (fraction != null) fraction.text = "";
+    }
+
     private void UpdatePortrait(IFlowObject obj) {
         if (portraitImage == null) return;
         portraitImage.sprite = null;
