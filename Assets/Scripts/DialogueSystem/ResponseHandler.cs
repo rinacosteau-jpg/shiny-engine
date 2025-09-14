@@ -55,10 +55,15 @@ public class ResponseHandler : MonoBehaviour {
         var btnComponent = buttonObj.GetComponent<Button>();
         if (btnComponent != null) {
             btnComponent.onClick.RemoveAllListeners();
-            if (branch != null)
-                btnComponent.onClick.AddListener(() => flowPlayer.Play(branch));
-            else
-                btnComponent.onClick.AddListener(() => flowPlayer.Play());
+            btnComponent.onClick.AddListener(() => {
+                if (branch != null)
+                    flowPlayer.Play(branch);
+                else
+                    flowPlayer.Play();
+
+                if (scrollbar != null)
+                    scrollbar.value = 0f;
+            });
         }
 
         tempResponseButtons.Add(buttonObj);
@@ -113,6 +118,10 @@ public class ResponseHandler : MonoBehaviour {
 
         if (flowPlayer != null && branch != null)
             flowPlayer.Play(branch);
+
+        if (scrollbar != null)
+            scrollbar.value = 0f;
+
         Debug.Log("picked");
     }
 
