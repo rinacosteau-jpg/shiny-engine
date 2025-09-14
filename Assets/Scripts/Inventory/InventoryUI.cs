@@ -66,7 +66,7 @@ public class InventoryUI : MonoBehaviour, ILoopResettable
             var obj = Instantiate(itemButtonPrefab, itemsParent);
             _spawnedItems.Add(obj);
             var itemUi = obj.GetComponent<InventoryItemUI>() ?? obj.AddComponent<InventoryItemUI>();
-            itemUi.Initialize(items[i]);
+            itemUi.Initialize(items[i], this);
         }
     }
 
@@ -75,5 +75,13 @@ public class InventoryUI : MonoBehaviour, ILoopResettable
     {
         Hide();
         Refresh();
+    }
+
+    public void DisplayItem(Item item)
+    {
+        if (itemName != null)
+            itemName.text = item?.TechnicalName ?? string.Empty;
+        if (itemDescription != null)
+            itemDescription.text = item?.Description ?? string.Empty;
     }
 }

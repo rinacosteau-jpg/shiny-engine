@@ -16,6 +16,8 @@ public class Item
     public bool IsClue { get; set; }
     public bool IsIdentified { get; set; }
 
+    public string Description { get; set; }
+
 
     /// <summary>Creates a new item with the given identifier and count.</summary>
     public Item(string technicalName, int itemCount = 1, bool isClue=false, bool isIdentified=false, float clueScore = 0)
