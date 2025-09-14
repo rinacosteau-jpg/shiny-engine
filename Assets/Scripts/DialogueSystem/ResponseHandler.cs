@@ -12,15 +12,10 @@ public class ResponseHandler : MonoBehaviour {
     [SerializeField] private RectTransform responseBox;
     [SerializeField] private RectTransform responseButtonTemplate;
     [SerializeField] private RectTransform responseContainer;
+    [SerializeField] private Scrollbar scrollbar;
 
     private List<GameObject> tempResponseButtons = new List<GameObject>();
 
-
-    /// <summary>
-    /// Ïîêàçûâàåò êíîïêè äëÿ âåòîê.
-    /// Åñëè playerEntity != null — ïîêàçûâàþòñÿ òîëüêî âåòêè, ÷åé target.speaker == playerEntity.
-    /// Åñëè playerEntity == null — ïîêàçûâàþòñÿ âñå âåòêè.
-    /// </summary>
     public void ShowResponses(IList<Branch> branches, ArticyFlowPlayer flowPlayer, Entity playerEntity = null) {
         if (branches == null || flowPlayer == null) return;
 
@@ -38,7 +33,7 @@ public class ResponseHandler : MonoBehaviour {
 
             CreateButtonForBranch(branch, flowPlayer);
         }
-
+        
         responseBox.gameObject.SetActive(tempResponseButtons.Count > 0);
     }
 
