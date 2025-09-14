@@ -14,6 +14,7 @@ public class InventoryUI : MonoBehaviour, ILoopResettable
     [SerializeField] private GameObject itemContainer;
     [SerializeField] private TMP_Text itemDescription;
     [SerializeField] private TMP_Text itemName;
+    [SerializeField] private Image itemPicture;
     [SerializeField] private Transform itemsParent;
 
     private readonly List<GameObject> _spawnedItems = new List<GameObject>();
