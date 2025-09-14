@@ -67,6 +67,7 @@ public class InventoryUI : MonoBehaviour, ILoopResettable
             _spawnedItems.Add(obj);
             var itemUi = obj.GetComponent<InventoryItemUI>() ?? obj.AddComponent<InventoryItemUI>();
             itemUi.Initialize(items[i], this);
+            obj.SetActive(true);
         }
     }
 
