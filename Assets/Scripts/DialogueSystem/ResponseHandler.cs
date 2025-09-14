@@ -12,6 +12,7 @@ public class ResponseHandler : MonoBehaviour {
     [SerializeField] private RectTransform responseBox;
     [SerializeField] private RectTransform responseButtonTemplate;
     [SerializeField] private RectTransform responseContainer;
+    [SerializeField] private Button continueButton;
     [SerializeField] private Scrollbar scrollbar;
     [SerializeField] private ScrollRect scrollrect;
 
