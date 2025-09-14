@@ -14,6 +14,8 @@ public class GlobalVariables : MonoBehaviour {
     // Singleton
     public static GlobalVariables Instance { get; private set; }
 
+    public event Action VariablesChanged;
+
     [SerializeField] private DialogueUI dialogueUI; // assign in inspector
 
     public void ForceCloseDialogue() => dialogueUI?.CloseDialogue();
@@ -112,6 +114,7 @@ public class GlobalVariables : MonoBehaviour {
         ArticyInventorySync.ApplyItemDeltasFromArticy();
         ArticyClueSync.SyncFromArticy();
         RecalculateFlagsFromInventory(); // update flags immediately
+        VariablesChanged?.Invoke();
     }
 
     // Internal logic for updating flags based on inventory
@@ -143,16 +146,18 @@ public class GlobalVariables : MonoBehaviour {
     private void SyncMoralToArticy() {
         ArticyGlobalVariables.Default.PS.moralVal = player.moralVal;
         ArticyGlobalVariables.Default.PS.moralCap = player.moralCap;
+        VariablesChanged?.Invoke();
     }
 
-    private void ResolveSkillChecks() {
+    private bool ResolveSkillChecks() {
+        bool changed = false;
         var schProperty = typeof(ArticyGlobalVariables).GetProperty("SCH");
         if (schProperty == null)
-            return;
+            return false;
 
         var sch = schProperty.GetValue(ArticyGlobalVariables.Default);
         if (sch == null)
-            return;
+            return false;
 
         foreach (var prop in sch.GetType().GetProperties()) {
             if (prop.PropertyType != typeof(int))
@@ -167,8 +172,11 @@ public class GlobalVariables : MonoBehaviour {
                 Debug.Log(ArticyGlobalVariables.Default.SCH.Accuracy);
                 prop.SetValue(sch, total);
                 Debug.Log(ArticyGlobalVariables.Default.SCH.Accuracy);
+                changed = true;
             }
         }
+
+        return changed;
     }
 
     private int GetSkillValue(string name) {
@@ -179,6 +187,8 @@ public class GlobalVariables : MonoBehaviour {
     }
 
     private void Update() {
+        bool changed = false;
+
         var articyMoralVal = ArticyGlobalVariables.Default.PS.moralVal;
         if (articyMoralVal != lastArticyMoralVal) {
             player.moralVal = articyMoralVal;
@@ -188,6 +198,7 @@ public class GlobalVariables : MonoBehaviour {
             }
             lastArticyMoralVal = player.moralVal;
             lastPlayerMoralVal = player.moralVal;
+            changed = true;
         }
 
         var articyMoralCap = ArticyGlobalVariables.Default.PS.moralCap;
@@ -204,6 +215,7 @@ public class GlobalVariables : MonoBehaviour {
             }
             lastArticyMoralCap = articyMoralCap;
             lastPlayerMoralCap = player.moralCap;
+            changed = true;
         }
 
         if (player.moralVal != lastPlayerMoralVal) {
@@ -212,6 +224,7 @@ public class GlobalVariables : MonoBehaviour {
             ArticyGlobalVariables.Default.PS.moralVal = player.moralVal;
             lastPlayerMoralVal = player.moralVal;
             lastArticyMoralVal = player.moralVal;
+            changed = true;
         }
 
         if (player.moralCap != lastPlayerMoralCap) {
@@ -227,9 +240,11 @@ public class GlobalVariables : MonoBehaviour {
             ArticyGlobalVariables.Default.PS.moralCap = player.moralCap;
             lastPlayerMoralCap = player.moralCap;
             lastArticyMoralCap = player.moralCap;
+            changed = true;
         }
 
-        ResolveSkillChecks();
+        if (ResolveSkillChecks())
+            changed = true;
 
         // Reflectively check for the Articy flag RFLG.kotIdentify. If it's set, reset it
         // and mark all inventory items as identified.
@@ -238,6 +253,10 @@ public class GlobalVariables : MonoBehaviour {
         if (kotIdentifyProp != null && kotIdentifyProp.GetValue(rflgObj) is bool flag && flag) {
             kotIdentifyProp.SetValue(rflgObj, false);
             InventoryStorage.IdentifyAll();
+            changed = true;
         }
+
+        if (changed)
+            VariablesChanged?.Invoke();
     }
 }
