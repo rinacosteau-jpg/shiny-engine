@@ -30,7 +30,6 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
     public IObjectWithFeatureDuration kek;
     private bool suppressOnFlowPause = false;
     private bool? originalRecalcSetting;
-    private List<uint> lastBranchIds = new List<uint>();
 
     private void SetContinuousRecalculation(bool enable) {
         if (flowPlayer == null) return;
@@ -77,11 +76,6 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         return false;
     }
 
-    public void RefreshChoices()
-    {
-        flowPlayer?.ReevaluateBranches();
-    }
-
     private void Update()
     {
       /*  if (!IsDialogueOpen) //something sus going on here
@@ -97,27 +91,9 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
 
             if (currentFlowObject is DialogueFragment fragment)
             {
-                var previous = new List<uint>(lastBranchIds);
-                RefreshChoices();
-                bool structureChanged = previous.Count != lastBranchIds.Count;
-                if (!structureChanged)
-                {
-                    for (int i = 0; i < previous.Count; i++)
-                    {
-                        if (previous[i] != lastBranchIds[i])
-                        {
-                            structureChanged = true;
-                            break;
-                        }
-                    }
-                }
-
-                if (structureChanged)
-                {
-                    CloseDialogue();
-                    StartDialogue(fragment);
-                    flowPlayer?.Play();
-                }
+                CloseDialogue();
+                StartDialogue(fragment);
+                flowPlayer?.Play();
             }
         }
     }
@@ -283,7 +259,6 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
     public void OnBranchesUpdated(IList<Branch> branches, IFlowObject flowObject) => HandleBranchesUpdate(branches);
 
     private void HandleBranchesUpdate(IList<Branch> branches) {
-        lastBranchIds = ExtractBranchIds(branches);
         if (branches == null || branches.Count == 0) {
             // Терминальная нода — оставляем последнюю фразу видимой, не закрываем автоматически
             dialogueFinished = true;
@@ -320,18 +295,6 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
                 dialogueFinished = false;
             }
         }
-    }
-
-    private List<uint> ExtractBranchIds(IList<Branch> branches)
-    {
-        var ids = new List<uint>();
-        if (branches == null) return ids;
-        foreach (var b in branches)
-        {
-            if (b?.Target is IArticyObject ao)
-                ids.Add(ao.Id);
-        }
-        return ids;
     }
 
     // -------------------- Вспомогательные безопасные методы --------------------
