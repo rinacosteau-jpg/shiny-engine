@@ -9,6 +9,7 @@ public class InventoryItemUI : MonoBehaviour
 {
     private Item _item;
     private InventoryUI _inventoryUI;
+    private const string DefaultImagePath = "Images/Black";
 
     /// <summary>Initializes the item UI with a specific inventory item.</summary>
     public void Initialize(Item item, InventoryUI inventoryUI)
@@ -18,6 +19,17 @@ public class InventoryItemUI : MonoBehaviour
         var text = GetComponentInChildren<TMP_Text>();
         if (text != null)
             text.text = item.ItemCount.ToString();
+
+        var image = GetComponent<Image>();
+        if (image != null)
+        {
+            Sprite sprite = null;
+            if (!string.IsNullOrEmpty(item.ImagePath))
+                sprite = Resources.Load<Sprite>(item.ImagePath);
+            if (sprite == null)
+                sprite = Resources.Load<Sprite>(DefaultImagePath);
+            image.sprite = sprite;
+        }
 
         var button = GetComponent<Button>();
         if (button != null)
