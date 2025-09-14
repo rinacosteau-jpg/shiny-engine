@@ -85,5 +85,12 @@ public class InventoryUI : MonoBehaviour, ILoopResettable
             itemName.text = item?.TechnicalName ?? string.Empty;
         if (itemDescription != null)
             itemDescription.text = item?.Description ?? string.Empty;
+        if (itemPicture != null)
+        {
+            if (item != null && !string.IsNullOrEmpty(item.ImagePath))
+                itemPicture.sprite = Resources.Load<Sprite>(item.ImagePath);
+            else
+                itemPicture.sprite = null;
+        }
     }
 }
