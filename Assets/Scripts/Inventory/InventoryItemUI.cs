@@ -17,7 +17,7 @@ public class InventoryItemUI : MonoBehaviour
         _inventoryUI = inventoryUI;
         var text = GetComponentInChildren<TMP_Text>();
         if (text != null)
-            text.text = $"{item.TechnicalName} ({item.ItemCount})";
+            text.text = item.ItemCount.ToString();
 
         var button = GetComponent<Button>();
         if (button != null)

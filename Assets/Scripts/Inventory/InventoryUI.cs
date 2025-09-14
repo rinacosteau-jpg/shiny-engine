@@ -19,6 +19,7 @@ public class InventoryUI : MonoBehaviour, ILoopResettable
     [SerializeField] private Transform itemsParent;
 
     private readonly List<GameObject> _spawnedItems = new List<GameObject>();
+    private const string DefaultImagePath = "Images/Black";
 
     private void Start()
     {
@@ -30,6 +31,7 @@ public class InventoryUI : MonoBehaviour, ILoopResettable
     public void Show()
     {
         Refresh();
+        DisplayItem(null);
         if (inventoryPanel != null)
             inventoryPanel.SetActive(true);
     }
@@ -86,12 +88,16 @@ public class InventoryUI : MonoBehaviour, ILoopResettable
             itemName.text = item?.TechnicalName ?? string.Empty;
         if (itemDescription != null)
             itemDescription.text = item?.Description ?? string.Empty;
+
+        Sprite sprite = null;
+        if (item != null && !string.IsNullOrEmpty(item.ImagePath))
+            sprite = Resources.Load<Sprite>(item.ImagePath);
+        if (sprite == null)
+            sprite = Resources.Load<Sprite>(DefaultImagePath);
+
         if (itemPicture != null)
-        {
-            if (item != null && !string.IsNullOrEmpty(item.ImagePath))
-                itemPicture.sprite = Resources.Load<Sprite>(item.ImagePath);
-            else
-                itemPicture.sprite = null;
-        }
+            itemPicture.sprite = sprite;
+        if (itemPictureSmall != null)
+            itemPictureSmall.sprite = sprite;
     }
 }
