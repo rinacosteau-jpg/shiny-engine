@@ -95,6 +95,8 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             variableNames.Add("NKNW.secretPathToConfiscated");
             variableNames.Add("NKNW.guardsNeedEvidence");
             variableNames.Add("NKNW.kotIdentify");
+            variableNames.Add("NKNW.purpleCode");
+            variableNames.Add("NKNW.stoleSweets");
             variableNames.Add("RQUE.advertise_State");
             variableNames.Add("RQUE.advertise_Obj_A");
             variableNames.Add("RQUE.advertise_TalkedCount");
@@ -134,9 +136,9 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             variableNames.Add("ITM.item_JapaneseSweets_count");
             variableNames.Add("ITM.item_RatStaff_count");
             variableNames.Add("ITM.item_RatStaff_delta");
-            variableNames.Add("RCNT.askLibAbtPeople");
             variableNames.Add("RCNT.ratTrust");
             variableNames.Add("RCNT.waitForAoRead");
+            variableNames.Add("RCNT.distractClerkMistakes");
             variableNames.Add("EVT.event_murderAttempt");
             variableNames.Add("EVT.event_gunStealing");
             variableNames.Add("PS.loopCounter");
@@ -155,6 +157,9 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             variableNames.Add("NQUE.FindMemories_State");
             variableNames.Add("NQUE.FindMemories_Stage");
             variableNames.Add("NQUE.FindMemories_Result");
+            variableNames.Add("NQUE.BackgroundCheck_State");
+            variableNames.Add("NQUE.BackgroundCheck_Stage");
+            variableNames.Add("NQUE.BackgroundCheck_Result");
             variableNames.Add("SCH.Perseption");
             variableNames.Add("SCH.Persuasion");
             variableNames.Add("SCH.Accuracy");

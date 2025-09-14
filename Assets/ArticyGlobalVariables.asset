@@ -52,6 +52,12 @@ MonoBehaviour:
   - mFullQualifiedName: NKNW.kotIdentify
     mVar:
       values: 00
+  - mFullQualifiedName: NKNW.purpleCode
+    mVar:
+      values: 00
+  - mFullQualifiedName: NKNW.stoleSweets
+    mVar:
+      values: 00
   - mFullQualifiedName: RFLG.neutralizedByGuard
     mVar:
       values: 00
@@ -233,13 +239,13 @@ MonoBehaviour:
   - mFullQualifiedName: ITM.item_RatStaff_delta
     mVar:
       values: 00000000
-  - mFullQualifiedName: RCNT.askLibAbtPeople
-    mVar:
-      values: 00000000
   - mFullQualifiedName: RCNT.ratTrust
     mVar:
       values: 00000000
   - mFullQualifiedName: RCNT.waitForAoRead
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RCNT.distractClerkMistakes
     mVar:
       values: 00000000
   - mFullQualifiedName: EVT.event_murderAttempt
@@ -296,6 +302,15 @@ MonoBehaviour:
   - mFullQualifiedName: NQUE.FindMemories_Result
     mVar:
       values: 00000000
+  - mFullQualifiedName: NQUE.BackgroundCheck_State
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NQUE.BackgroundCheck_Stage
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NQUE.BackgroundCheck_Result
+    mVar:
+      values: 00000000
   - mFullQualifiedName: SCH.Perseption
     mVar:
       values: 00000000
@@ -350,6 +365,12 @@ MonoBehaviour:
     mVar:
       values: 00
   - mFullQualifiedName: NKNW.kotIdentify
+    mVar:
+      values: 00
+  - mFullQualifiedName: NKNW.purpleCode
+    mVar:
+      values: 00
+  - mFullQualifiedName: NKNW.stoleSweets
     mVar:
       values: 00
   - mFullQualifiedName: RFLG.neutralizedByGuard
@@ -533,13 +554,13 @@ MonoBehaviour:
   - mFullQualifiedName: ITM.item_RatStaff_delta
     mVar:
       values: 00000000
-  - mFullQualifiedName: RCNT.askLibAbtPeople
-    mVar:
-      values: 00000000
   - mFullQualifiedName: RCNT.ratTrust
     mVar:
       values: 00000000
   - mFullQualifiedName: RCNT.waitForAoRead
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: RCNT.distractClerkMistakes
     mVar:
       values: 00000000
   - mFullQualifiedName: EVT.event_murderAttempt
@@ -594,6 +615,15 @@ MonoBehaviour:
     mVar:
       values: 00000000
   - mFullQualifiedName: NQUE.FindMemories_Result
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NQUE.BackgroundCheck_State
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NQUE.BackgroundCheck_Stage
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: NQUE.BackgroundCheck_Result
     mVar:
       values: 00000000
   - mFullQualifiedName: SCH.Perseption
