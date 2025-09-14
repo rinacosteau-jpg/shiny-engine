@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text.RegularExpressions;
@@ -77,14 +76,6 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         return false;
     }
 
-    private IEnumerator RestartDialogueNextFrame(DialogueFragment fragment)
-    {
-        CloseDialogue();
-        yield return null;
-        StartDialogue(fragment);
-        flowPlayer.Play();
-    }
-
     private void Update()
     {
       /*  if (!IsDialogueOpen) //something sus going on here
@@ -100,7 +91,9 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
 
             if (currentFlowObject is DialogueFragment fragment)
             {
-                StartCoroutine(RestartDialogueNextFrame(fragment));
+                CloseDialogue();
+                StartDialogue(fragment);
+                flowPlayer?.Play();
             }
         }
     }
