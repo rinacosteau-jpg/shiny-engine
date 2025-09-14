@@ -153,6 +153,21 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
 
     }
 
+    public void UpdateDialogue(bool skipPostClose = false) {
+        dialogueBox?.SetActive(false);
+        dialogueFinished = false;
+        responseHandler?.ClearResponses();
+        if (portraitImage != null) portraitImage.sprite = null;
+        IsDialogueOpen = false;
+        if (flowPlayer != null) {
+            SetContinuousRecalculation(originalRecalcSetting ?? false);
+            suppressOnFlowPause = true;
+            var stopMethod = flowPlayer.GetType().GetMethod("Stop", BindingFlags.Public | BindingFlags.Instance);
+            stopMethod?.Invoke(flowPlayer, null);
+            flowPlayer.enabled = false;
+        }
+    }
+
     /// <summary>Принудительно закрыть текущий диалог (например, кнопкой "Esc").</summary>
     public void CloseDialogue(bool skipPostClose = false) {
         dialogueBox?.SetActive(false);

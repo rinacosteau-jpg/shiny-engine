@@ -91,12 +91,6 @@ public class ResponseHandler : MonoBehaviour {
         foreach (var btn in tempResponseButtons)
             Destroy(btn);
         tempResponseButtons.Clear();
-
-        if (responseBox != null)
-            responseBox.gameObject.SetActive(false);
-
-        if (continueButton != null)
-            continueButton.gameObject.SetActive(false);
     }
 
     public void ShowContinueButton(Branch branch, ArticyFlowPlayer flowPlayer) {
