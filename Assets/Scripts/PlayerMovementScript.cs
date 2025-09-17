@@ -14,7 +14,6 @@ public class PlayerMovementScript : MonoBehaviour {
     [SerializeField] private float rotationSpeed = 12f;
     [SerializeField] private float acceleration = 40f;
     [SerializeField] private float castSkin = 0.05f;     // зазор при капсуль-касте
-    [SerializeField] private float groundSnapDistance = 2f; // сколько метров проверяем вниз при старте
     [SerializeField] private LayerMask collisionMask = ~0;
 
     private Rigidbody rb;
@@ -28,9 +27,6 @@ public class PlayerMovementScript : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
         capsule = GetComponent<CapsuleCollider>();
         if (cam == null) cam = Camera.main;
-
-        AlignColliderPivot();
-        SnapToGround();
 
         // Настройки физики для персонажа
         rb.interpolation = RigidbodyInterpolation.Interpolate;
@@ -114,67 +110,5 @@ public class PlayerMovementScript : MonoBehaviour {
         float half = (height * 0.5f) - r;
         p1 = center + up * half;
         p2 = center - up * half;
-    }
-
-    private void AlignColliderPivot() {
-        if (capsule == null) return;
-        // Корректируем стартовую позицию, чтобы нижняя точка капсулы совпадала с опорой.
-        float halfHeight = capsule.height * 0.5f;
-        float bottomOffset = capsule.center.y - halfHeight;
-        if (Mathf.Approximately(bottomOffset, 0f)) return;
-
-        Vector3 pos = rb != null ? rb.position : transform.position;
-        pos.y -= bottomOffset;
-
-        if (rb != null) {
-            rb.position = pos;
-        } else {
-            transform.position = pos;
-        }
-    }
-
-    private void SnapToGround() {
-        if (capsule == null) return;
-
-        Vector3 up = transform.up;
-        Vector3 worldCenter = transform.TransformPoint(capsule.center);
-        float radius = capsule.radius * Mathf.Max(transform.lossyScale.x, transform.lossyScale.z);
-        float height = Mathf.Max(capsule.height * transform.lossyScale.y, radius * 2f);
-        float halfHeight = height * 0.5f;
-
-        float extraProbe = Mathf.Max(0.1f, castSkin);
-        Vector3 rayOrigin = worldCenter + up * (halfHeight + extraProbe);
-        float rayLength = halfHeight + groundSnapDistance + extraProbe;
-
-        RaycastHit[] hits = Physics.RaycastAll(rayOrigin, -up, rayLength, collisionMask, QueryTriggerInteraction.Ignore);
-        if (hits.Length == 0) return;
-
-        bool foundGround = false;
-        float closestDistance = float.PositiveInfinity;
-        RaycastHit groundHit = default;
-
-        for (int i = 0; i < hits.Length; i++) {
-            RaycastHit hit = hits[i];
-            if (hit.collider == null || hit.collider == capsule) continue;
-            if (hit.distance < closestDistance) {
-                closestDistance = hit.distance;
-                groundHit = hit;
-                foundGround = true;
-            }
-        }
-
-        if (!foundGround) return;
-
-        Vector3 bottomPoint = worldCenter - up * (halfHeight - radius);
-        Vector3 targetPoint = groundHit.point + up * castSkin;
-        float delta = Vector3.Dot(targetPoint - bottomPoint, up);
-        if (Mathf.Approximately(delta, 0f)) return;
-
-        Vector3 shift = up * delta;
-        if (rb != null) {
-            rb.position += shift;
-        } else {
-            transform.position += shift;
-        }
     }
 }
