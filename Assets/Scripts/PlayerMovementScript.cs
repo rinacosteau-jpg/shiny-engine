@@ -28,6 +28,8 @@ public class PlayerMovementScript : MonoBehaviour {
         capsule = GetComponent<CapsuleCollider>();
         if (cam == null) cam = Camera.main;
 
+        AlignColliderPivot();
+
         // Настройки физики для персонажа
         rb.interpolation = RigidbodyInterpolation.Interpolate;
         rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
@@ -110,5 +112,22 @@ public class PlayerMovementScript : MonoBehaviour {
         float half = (height * 0.5f) - r;
         p1 = center + up * half;
         p2 = center - up * half;
+    }
+
+    private void AlignColliderPivot() {
+        if (capsule == null) return;
+        // Корректируем стартовую позицию, чтобы нижняя точка капсулы совпадала с опорой.
+        float halfHeight = capsule.height * 0.5f;
+        float bottomOffset = capsule.center.y - halfHeight;
+        if (Mathf.Approximately(bottomOffset, 0f)) return;
+
+        Vector3 pos = rb != null ? rb.position : transform.position;
+        pos.y -= bottomOffset;
+
+        if (rb != null) {
+            rb.position = pos;
+        } else {
+            transform.position = pos;
+        }
     }
 }
