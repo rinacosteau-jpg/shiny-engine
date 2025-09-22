@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
+using Articy.World_Of_Red_Moon.GlobalVariables;
 
 public class SkillSelectionUI : MonoBehaviour {
     [Header("UI refs")]
@@ -20,8 +21,8 @@ public class SkillSelectionUI : MonoBehaviour {
     [SerializeField] private bool activateParentsIfInactive = true; // включать родителей, если выключены
 
     private class RuntimeSlot {
-        public string fieldName;
-        public Skill skill;
+        public string displayName;
+        public PropertyInfo property;
         public int value;
         public TMP_Text nameText;
         public TMP_Text valueText;
@@ -95,10 +96,16 @@ public class SkillSelectionUI : MonoBehaviour {
     }
 
     /// Показать окно и сгенерировать слоты.
-    public void Open(PlayerState player, int? pointsOverride = null) {
+    public void Open(int? pointsOverride = null) {
         EnsureSetup();
         if (!_setupDone) {
             Debug.LogError("[SkillSelectionUI] slotContainer/slotTemplate не заданы.");
+            return;
+        }
+
+        var ps = ArticyGlobalVariables.Default?.PS;
+        if (ps == null) {
+            Debug.LogError("[SkillSelectionUI] Articy PS namespace недоступен.");
             return;
         }
 
@@ -112,24 +119,28 @@ public class SkillSelectionUI : MonoBehaviour {
         }
         _slots.Clear();
 
-        pointsLeft = pointsOverride ?? startPoints;
+        int totalAllocated = 0;
 
-        var fields = typeof(PlayerState)
-            .GetFields(BindingFlags.Public | BindingFlags.Instance)
-            .Where(f => f.FieldType == typeof(Skill))
-            .OrderBy(f => f.Name)
+        var properties = ps.GetType()
+            .GetProperties(BindingFlags.Public | BindingFlags.Instance)
+            .Where(p => p.PropertyType == typeof(int)
+                        && p.GetIndexParameters().Length == 0
+                        && p.Name.StartsWith("skill_", StringComparison.OrdinalIgnoreCase))
+            .OrderBy(p => p.Name)
             .ToList();
 
-        foreach (var f in fields) {
-            var skillObj = f.GetValue(player) as Skill;
-            if (skillObj == null) {
-                Debug.LogWarning($"[SkillSelectionUI] Поле {f.Name} = null");
-                continue;
-            }
-            var displayName = MakeDisplayName(f.Name);
-            var slot = CreateSlot(displayName, skillObj);
+        foreach (var property in properties) {
+            int currentValue = (int)property.GetValue(ps);
+            var displayName = MakeDisplayName(property.Name);
+            var slot = CreateSlot(displayName, property, currentValue);
             _slots.Add(slot);
+            totalAllocated += currentValue;
         }
+
+        pointsLeft = pointsOverride ?? startPoints;
+        pointsLeft = Mathf.Max(0, pointsLeft - totalAllocated);
+        if (_slots.Count == 0)
+            pointsLeft = 0;
 
         UpdateUI();
         ShowImmediate();                    // ← только CanvasGroup
@@ -158,7 +169,7 @@ public class SkillSelectionUI : MonoBehaviour {
         }
     }
 
-    private RuntimeSlot CreateSlot(string displayName, Skill skill) {
+    private RuntimeSlot CreateSlot(string displayName, PropertyInfo property, int initialValue) {
         var go = Instantiate(slotTemplate, slotContainer);
         go.gameObject.name = $"Slot_{displayName}";
         go.gameObject.SetActive(true);
@@ -169,12 +180,12 @@ public class SkillSelectionUI : MonoBehaviour {
         Button btnMinus = FindIn<Button>(go, "Minus");
 
         if (nameText) nameText.text = displayName;
-        if (valueText) valueText.text = "0";
+        if (valueText) valueText.text = initialValue.ToString();
 
         var slot = new RuntimeSlot {
-            fieldName = displayName,
-            skill = skill,
-            value = 0,
+            displayName = displayName,
+            property = property,
+            value = initialValue,
             nameText = nameText,
             valueText = valueText,
             plusButton = btnPlus,
@@ -218,22 +229,45 @@ public class SkillSelectionUI : MonoBehaviour {
 
     public void Confirm() {
         if (pointsLeft != 0) return;
+        var ps = ArticyGlobalVariables.Default?.PS;
+        if (ps == null) {
+            Debug.LogError("[SkillSelectionUI] Articy PS namespace недоступен при подтверждении.");
+            return;
+        }
+
         foreach (var s in _slots) {
-            if (s.skill != null)
-                s.skill.Value = s.value; // или += s.value
+            if (s.property != null)
+                s.property.SetValue(ps, s.value);
         }
         HideImmediate(); // только прячем, не выключаем GO
         Debug.Log("[SkillSelectionUI] Confirm → apply & hide (CG)");
     }
 
     private static string MakeDisplayName(string fieldName) {
-        const string prefix = "skill";
+        const string prefix = "skill_";
         if (fieldName.StartsWith(prefix, StringComparison.OrdinalIgnoreCase)) {
             var tail = fieldName.Substring(prefix.Length);
             if (tail.Length == 0) return fieldName;
-            return char.ToUpperInvariant(tail[0]) + tail.Substring(1);
+            return CapitalizeWords(tail.Replace('_', ' '));
         }
         return SplitCamel(fieldName);
+    }
+
+    private static string CapitalizeWords(string text) {
+        if (string.IsNullOrEmpty(text))
+            return text;
+
+        var parts = text.Split(' ');
+        for (int i = 0; i < parts.Length; i++) {
+            var part = parts[i];
+            if (part.Length == 0) continue;
+            if (part.Length == 1) {
+                parts[i] = char.ToUpperInvariant(part[0]).ToString();
+                continue;
+            }
+            parts[i] = char.ToUpperInvariant(part[0]) + part.Substring(1);
+        }
+        return string.Join(" ", parts);
     }
 
     private static string SplitCamel(string s) {
