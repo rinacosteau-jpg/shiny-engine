@@ -45,10 +45,10 @@ public class GlobalVariables : MonoBehaviour {
         var selector = FindFirstObjectByType<SkillSelectionUI>(FindObjectsInactive.Include);
         if (selector) {
             Debug.Log("selector");
-            selector.Open(player);
+            selector.Open();
         }
         StartCoroutine(DelayOpen());
-        IEnumerator DelayOpen() { yield return null; selector.Open(player); }
+        IEnumerator DelayOpen() { yield return null; selector?.Open(); }
 
 
         if (!setOfKnowledge) setOfKnowledge = GetComponent<TMP_Text>();
@@ -172,9 +172,13 @@ public class GlobalVariables : MonoBehaviour {
     }
 
     private int GetSkillValue(string name) {
-        var field = typeof(PlayerState).GetField($"skill{name}", BindingFlags.Instance | BindingFlags.Public);
-        if (field?.GetValue(player) is Skill skill)
-            return skill.Value;
+        var ps = ArticyGlobalVariables.Default?.PS;
+        if (ps == null)
+            return 0;
+
+        var property = ps.GetType().GetProperty($"skill_{name}", BindingFlags.Instance | BindingFlags.Public | BindingFlags.IgnoreCase);
+        if (property != null && property.PropertyType == typeof(int) && property.GetIndexParameters().Length == 0)
+            return (int)property.GetValue(ps);
         return 0;
     }
 
