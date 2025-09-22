@@ -95,8 +95,8 @@ QualitySettings:
     streamingMipmapsAddAllCameras: 1
     streamingMipmapsMemoryBudget: 512
     streamingMipmapsRenderersPerFrame: 512
-    streamingMipmapsMaxLevelReduction: 2
-    streamingMipmapsMaxFileIORequests: 1024
+    streamingMipmapsMaxLevelReduction: 1
+    streamingMipmapsMaxFileIORequests: 974
     particleRaycastBudget: 256
     asyncUploadTimeSlice: 2
     asyncUploadBufferSize: 16
@@ -110,7 +110,7 @@ QualitySettings:
     terrainDetailDistance: 80
     terrainTreeDistance: 5000
     terrainBillboardStart: 50
-    terrainFadeLength: 5
+    terrainFadeLength: 47.9
     terrainMaxTrees: 50
     excludedTargetPlatforms:
     - Android

@@ -14,7 +14,7 @@ public class PlayerMovementScript : MonoBehaviour {
     [SerializeField] private float rotationSpeed = 12f;
     [SerializeField] private float acceleration = 40f;
     [SerializeField] private float castSkin = 0.05f;     // зазор при капсуль-касте
-    [SerializeField] private float groundSnapDistance = 2f; // сколько метров проверяем вниз при старте
+    [SerializeField] private float groundSnapDistance = 20f; // сколько метров проверяем вниз при старте
     [SerializeField] private LayerMask collisionMask = ~0;
 
     private Rigidbody rb;

@@ -11,7 +11,7 @@ public class NpcLabel : MonoBehaviour {
 
     private TextMeshPro textMesh;
 
-    void Start() {
+    /*void Start() {
         GameObject go = new GameObject("NpcLabelText");
         go.transform.SetParent(transform);
         go.transform.localPosition = new Vector3(0, height, 0);
@@ -33,5 +33,5 @@ public class NpcLabel : MonoBehaviour {
                 textMesh.transform.position - Camera.main.transform.position
             );
         }
-    }
+    }*/
 }
