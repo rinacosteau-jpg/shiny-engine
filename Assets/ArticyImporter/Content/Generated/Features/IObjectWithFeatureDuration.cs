@@ -23,7 +23,5 @@ namespace Articy.World_Of_Red_Moon
     {
         
         DurationFeature GetFeatureDuration();
-
-        PauseOnFeature GetPauseOnFeature();
     }
 }
