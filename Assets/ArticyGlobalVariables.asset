@@ -269,12 +269,6 @@ MonoBehaviour:
   - mFullQualifiedName: PS.skill_Willpower
     mVar:
       values: 00000000
-  - mFullQualifiedName: PS.skill_Test3
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: PS.skill_Test4
-    mVar:
-      values: 00000000
   - mFullQualifiedName: PS.standing_purple
     mVar:
       values: 00000000
@@ -293,6 +287,24 @@ MonoBehaviour:
   - mFullQualifiedName: PS.clueTotalScore
     mVar:
       values: 00000000
+  - mFullQualifiedName: PS.skill_Lux
+    mVar:
+      values: 01000000
+  - mFullQualifiedName: PS.skill_Tempus
+    mVar:
+      values: 01000000
+  - mFullQualifiedName: PS.skill_Sonus
+    mVar:
+      values: 01000000
+  - mFullQualifiedName: PS.magicCap_Lux
+    mVar:
+      values: 01000000
+  - mFullQualifiedName: PS.magicCap_Tempus
+    mVar:
+      values: 01000000
+  - mFullQualifiedName: PS.magicCap_Sonus
+    mVar:
+      values: 01000000
   - mFullQualifiedName: NQUE.FindMemories_State
     mVar:
       values: 00000000
@@ -584,12 +596,6 @@ MonoBehaviour:
   - mFullQualifiedName: PS.skill_Willpower
     mVar:
       values: 00000000
-  - mFullQualifiedName: PS.skill_Test3
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: PS.skill_Test4
-    mVar:
-      values: 00000000
   - mFullQualifiedName: PS.standing_purple
     mVar:
       values: 00000000
@@ -608,6 +614,24 @@ MonoBehaviour:
   - mFullQualifiedName: PS.clueTotalScore
     mVar:
       values: 00000000
+  - mFullQualifiedName: PS.skill_Lux
+    mVar:
+      values: 01000000
+  - mFullQualifiedName: PS.skill_Tempus
+    mVar:
+      values: 01000000
+  - mFullQualifiedName: PS.skill_Sonus
+    mVar:
+      values: 01000000
+  - mFullQualifiedName: PS.magicCap_Lux
+    mVar:
+      values: 01000000
+  - mFullQualifiedName: PS.magicCap_Tempus
+    mVar:
+      values: 01000000
+  - mFullQualifiedName: PS.magicCap_Sonus
+    mVar:
+      values: 01000000
   - mFullQualifiedName: NQUE.FindMemories_State
     mVar:
       values: 00000000

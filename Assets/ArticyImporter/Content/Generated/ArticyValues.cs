@@ -165,6 +165,15 @@ namespace Articy.World_Of_Red_Moon
     
     
     [Serializable()]
+    public class ArticyValuePauseOnFeature : ArticyValue<Articy.World_Of_Red_Moon.Features.PauseOnFeature>
+    {
+    }
+}
+namespace Articy.World_Of_Red_Moon
+{
+    
+    
+    [Serializable()]
     public class ArticyValueDurationFeature : ArticyValue<Articy.World_Of_Red_Moon.Features.DurationFeature>
     {
     }
@@ -219,7 +228,7 @@ namespace Articy.World_Of_Red_Moon
     
     
     [Serializable()]
-    public class ArticyValueDefaultMainCharacterTemplateTemplate : ArticyValue<Articy.World_Of_Red_Moon.Templates.DefaultMainCharacterTemplateTemplate>
+    public class ArticyValueDefaultSupportingCharacterTemplateTemplate : ArticyValue<Articy.World_Of_Red_Moon.Templates.DefaultSupportingCharacterTemplateTemplate>
     {
     }
 }
@@ -229,6 +238,24 @@ namespace Articy.World_Of_Red_Moon
     
     [Serializable()]
     public class ArticyValueCharacterCardFeature : ArticyValue<Articy.World_Of_Red_Moon.Features.CharacterCardFeature>
+    {
+    }
+}
+namespace Articy.World_Of_Red_Moon
+{
+    
+    
+    [Serializable()]
+    public class ArticyValueDefaultSupportingCharacterTemplate : ArticyValue<DefaultSupportingCharacterTemplate>
+    {
+    }
+}
+namespace Articy.World_Of_Red_Moon
+{
+    
+    
+    [Serializable()]
+    public class ArticyValueDefaultMainCharacterTemplateTemplate : ArticyValue<Articy.World_Of_Red_Moon.Templates.DefaultMainCharacterTemplateTemplate>
     {
     }
 }
@@ -274,24 +301,6 @@ namespace Articy.World_Of_Red_Moon
     
     [Serializable()]
     public class ArticyValueItem : ArticyValue<Item>
-    {
-    }
-}
-namespace Articy.World_Of_Red_Moon
-{
-    
-    
-    [Serializable()]
-    public class ArticyValueDefaultSupportingCharacterTemplateTemplate : ArticyValue<Articy.World_Of_Red_Moon.Templates.DefaultSupportingCharacterTemplateTemplate>
-    {
-    }
-}
-namespace Articy.World_Of_Red_Moon
-{
-    
-    
-    [Serializable()]
-    public class ArticyValueDefaultSupportingCharacterTemplate : ArticyValue<DefaultSupportingCharacterTemplate>
     {
     }
 }

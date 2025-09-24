@@ -19,11 +19,9 @@ namespace Articy.World_Of_Red_Moon
 {
     
     
-    public interface IObjectWithFeatureDuration
+    public interface IObjectWithFeaturePauseOn
     {
         
-        DurationFeature GetFeatureDuration();
-
-        PauseOnFeature GetPauseOnFeature();
+        PauseOnFeature GetFeaturePauseOn();
     }
 }

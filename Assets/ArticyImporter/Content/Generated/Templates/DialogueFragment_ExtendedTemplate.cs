@@ -27,6 +27,9 @@ namespace Articy.World_Of_Red_Moon.Templates
     {
         
         [SerializeField()]
+        private ArticyValuePauseOnFeature mPauseOn = new ArticyValuePauseOnFeature();
+        
+        [SerializeField()]
         private ArticyValueDurationFeature mDuration = new ArticyValueDurationFeature();
         
         [SerializeField()]
@@ -34,6 +37,18 @@ namespace Articy.World_Of_Red_Moon.Templates
         
         [SerializeField()]
         private UInt32 mOwnerInstanceId;
+        
+        public Articy.World_Of_Red_Moon.Features.PauseOnFeature PauseOn
+        {
+            get
+            {
+                return mPauseOn.GetValue();
+            }
+            set
+            {
+                mPauseOn.SetValue(value);
+            }
+        }
         
         public Articy.World_Of_Red_Moon.Features.DurationFeature Duration
         {
@@ -56,6 +71,7 @@ namespace Articy.World_Of_Red_Moon.Templates
             set
             {
                 mOwnerId = value;
+                PauseOn.OwnerId = value;
                 Duration.OwnerId = value;
             }
         }
@@ -69,6 +85,7 @@ namespace Articy.World_Of_Red_Moon.Templates
             set
             {
                 mOwnerInstanceId = value;
+                PauseOn.OwnerInstanceId = value;
                 Duration.OwnerInstanceId = value;
             }
         }
@@ -76,6 +93,10 @@ namespace Articy.World_Of_Red_Moon.Templates
         private void CloneProperties(object aClone, Articy.Unity.ArticyObject aFirstClassParent)
         {
             Articy.World_Of_Red_Moon.Templates.DialogueFragment_ExtendedTemplate newClone = ((Articy.World_Of_Red_Moon.Templates.DialogueFragment_ExtendedTemplate)(aClone));
+            if ((PauseOn != null))
+            {
+                newClone.PauseOn = ((Articy.World_Of_Red_Moon.Features.PauseOnFeature)(PauseOn.CloneObject(newClone, aFirstClassParent)));
+            }
             if ((Duration != null))
             {
                 newClone.Duration = ((Articy.World_Of_Red_Moon.Features.DurationFeature)(Duration.CloneObject(newClone, aFirstClassParent)));
@@ -98,6 +119,10 @@ namespace Articy.World_Of_Red_Moon.Templates
             {
                 string featurePath = aProperty.Substring(0, featureIndex);
                 string featureProperty = aProperty.Substring((featureIndex + 1));
+                if ((featurePath == "PauseOn"))
+                {
+                    PauseOn.setProp(featureProperty, aValue);
+                }
                 if ((featurePath == "Duration"))
                 {
                     Duration.setProp(featureProperty, aValue);
@@ -112,6 +137,10 @@ namespace Articy.World_Of_Red_Moon.Templates
             {
                 string featurePath = aProperty.Substring(0, featureIndex);
                 string featureProperty = aProperty.Substring((featureIndex + 1));
+                if ((featurePath == "PauseOn"))
+                {
+                    return PauseOn.getProp(featureProperty);
+                }
                 if ((featurePath == "Duration"))
                 {
                     return Duration.getProp(featureProperty);

@@ -9,40 +9,43 @@
 //------------------------------------------------------------------------------
 
 using Articy.Unity;
+using Articy.Unity.Constraints;
 using Articy.Unity.Interfaces;
 using Articy.World_Of_Red_Moon;
-using Articy.World_Of_Red_Moon.Features;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace Articy.World_Of_Red_Moon.Templates
+namespace Articy.World_Of_Red_Moon.Features
 {
     
     
-    public class DialogueFragment_ExtendedTemplateConstraint
+    public class PauseOnFeatureConstraint
     {
         
-        private PauseOnFeatureConstraint mPauseOn = new PauseOnFeatureConstraint();
+        private Boolean mLoadedConstraints;
         
-        private DurationFeatureConstraint mDuration = new DurationFeatureConstraint();
+        private BooleanConstraint mPauseOn;
         
-        public PauseOnFeatureConstraint PauseOn
+        public BooleanConstraint PauseOn
         {
             get
             {
+                EnsureConstraints();
                 return mPauseOn;
             }
         }
         
-        public DurationFeatureConstraint Duration
+        public virtual void EnsureConstraints()
         {
-            get
+            if ((mLoadedConstraints == true))
             {
-                return mDuration;
+                return;
             }
+            mLoadedConstraints = true;
+            mPauseOn = new Articy.Unity.Constraints.BooleanConstraint(false);
         }
     }
 }

@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 1080164415, guid: df2ec02f61e861546b9427c26ccacb8d, type: 3}
   m_Name: loc_0x100000000000110_128
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: ArticyRuntime.dll::Articy.Unity.ArticyLocalizationPackage
   mLocalizedStringsKeys:
   - Ntt_6418934C.CharacterCard.Name
   - Ntt_6418934C.CharacterCard.Fraction

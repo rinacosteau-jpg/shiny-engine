@@ -22,7 +22,7 @@ namespace Articy.World_Of_Red_Moon
 {
     
     
-    public class DialogueFragment_Extended : DialogueFragment, IDialogueFragment, IPropertyProvider, IObjectWithFeatureDuration
+    public class DialogueFragment_Extended : DialogueFragment, IDialogueFragment, IPropertyProvider, IObjectWithFeaturePauseOn, IObjectWithFeatureDuration
     {
         
         [SerializeField()]
@@ -48,6 +48,11 @@ namespace Articy.World_Of_Red_Moon
             {
                 return mConstraints;
             }
+        }
+        
+        public PauseOnFeature GetFeaturePauseOn()
+        {
+            return Template.PauseOn;
         }
         
         public DurationFeature GetFeatureDuration()
