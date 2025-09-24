@@ -31,6 +31,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
     public IObjectWithFeatureDuration kek;
     private bool suppressOnFlowPause = false;
     private bool? originalRecalcSetting;
+    private bool shouldPauseCurrentObject = false;
 
     private void SetContinuousRecalculation(bool enable) {
         if (flowPlayer == null) return;
@@ -137,6 +138,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         if (textLabel != null) textLabel.text = string.Empty;
         if (portraitImage != null) portraitImage.sprite = null;
         dialogueFinished = false;
+        shouldPauseCurrentObject = false;
         if (dialogueBox != null) dialogueBox.SetActive(true);
         if (flowPlayer != null)
             flowPlayer.enabled = true;
@@ -178,6 +180,8 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         if (portraitImage != null) portraitImage.sprite = null;
         IsDialogueOpen = false;
         lastSpeakerName = null;
+        shouldPauseCurrentObject = false;
+        currentFlowObject = null;
         if (flowPlayer != null) {
             SetContinuousRecalculation(originalRecalcSetting ?? false);
             suppressOnFlowPause = true;
@@ -208,6 +212,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
     // ======== IArticyFlowPlayerCallbacks ========
     public void OnFlowPlayerPaused(IFlowObject aObject) {
         currentFlowObject = aObject;
+        shouldPauseCurrentObject = ShouldPauseFlowOn(aObject);
         /*if (suppressOnFlowPause) {
             suppressOnFlowPause = false;
             return;
@@ -293,6 +298,16 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
                 otherBranches.Add(b);
         }
 
+        if (!shouldPauseCurrentObject) {
+            if (playerBranches.Count > 0) {
+                Debug.LogWarning("[DialogueUI] Получены варианты игрока без PauseOn — откладываем автопродолжение.");
+            } else {
+                AutoAdvanceFlow(otherBranches, branches);
+                dialogueFinished = false;
+                return;
+            }
+        }
+
         if (playerBranches.Count > 0) {
             // Показываем варианты игрока — ждём подтверждения
             responseHandler?.ShowResponses(playerBranches, flowPlayer, playerEntity);
@@ -309,6 +324,50 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
                 dialogueFinished = false;
             }
         }
+    }
+
+    private void AutoAdvanceFlow(List<Branch> preferredBranches, IList<Branch> allBranches) {
+        if (flowPlayer == null) return;
+
+        Branch targetBranch = null;
+
+        if (preferredBranches != null) {
+            foreach (var branch in preferredBranches) {
+                if (branch == null || branch.Target == null || !branch.IsValid) continue;
+                targetBranch = branch;
+                break;
+            }
+        }
+
+        if (targetBranch == null && allBranches != null) {
+            foreach (var branch in allBranches) {
+                if (branch == null || branch.Target == null || !branch.IsValid) continue;
+                targetBranch = branch;
+                break;
+            }
+        }
+
+        if (targetBranch != null)
+            flowPlayer.Play(targetBranch);
+        else
+            flowPlayer.Play();
+    }
+
+    private bool ShouldPauseFlowOn(IFlowObject obj) {
+        if (obj is IObjectWithFeaturePauseOn withPauseOn) {
+            var feature = withPauseOn.GetPauseOnFeature();
+            if (feature != null) {
+                try {
+                    return (bool)feature.PauseOn;
+                } catch {
+                    try {
+                        return System.Convert.ToBoolean(feature.PauseOn);
+                    } catch { }
+                }
+            }
+        }
+
+        return false;
     }
 
     // -------------------- Вспомогательные безопасные методы --------------------
