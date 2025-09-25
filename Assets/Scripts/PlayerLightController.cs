@@ -8,13 +8,37 @@ public class PlayerLightController : MonoBehaviour {
     [SerializeField] private Vector3 lightOffset = Vector3.zero;
 
     private InputAction lightAction;
+    private Transform lightTransform;
     private Light[] lightComponents;
     private float[] initialIntensities;
     private float activeTimer;
+    private Transform cachedTransform;
+
+    void Awake() {
+        cachedTransform = transform;
+        if (lightObject != null) {
+            lightTransform = lightObject.transform;
+        }
+    }
+
+    void OnEnable() {
+        if (lightAction == null) {
+            lightAction = InputSystem.actions?.FindAction("Light");
+        }
+        lightAction?.Enable();
+        UpdateLightTransform();
+    }
+
+    void OnDisable() {
+        lightAction?.Disable();
+    }
 
     void Start() {
-        lightAction = InputSystem.actions?.FindAction("Light");
-        
+        if (lightAction == null) {
+            lightAction = InputSystem.actions?.FindAction("Light");
+            lightAction?.Enable();
+        }
+
         CacheLightComponents();
         SetLightActive(false);
     }
@@ -24,14 +48,14 @@ public class PlayerLightController : MonoBehaviour {
     }
 
     void Update() {
+        UpdateLightTransform();
+
         if (lightAction != null && lightAction.triggered) {
             Debug.Log("light on");
             ActivateLight();
         }
 
         if (activeTimer > 0f && lightObject != null) {
-            lightObject.transform.position = transform.position + lightOffset;
-
             activeTimer -= Time.deltaTime;
             float normalized = Mathf.Clamp01(activeTimer / Mathf.Max(fadeDuration, Mathf.Epsilon));
             ApplyIntensity(normalized);
@@ -51,7 +75,7 @@ public class PlayerLightController : MonoBehaviour {
             lightObject.SetActive(true);
         }
 
-        lightObject.transform.position = transform.position + lightOffset;
+        UpdateLightTransform();
         activeTimer = Mathf.Max(fadeDuration, Mathf.Epsilon);
         ApplyIntensity(1f);
     }
@@ -102,5 +126,14 @@ public class PlayerLightController : MonoBehaviour {
             lightObject.SetActive(false);
             activeTimer = 0f;
         }
+    }
+
+    private void UpdateLightTransform() {
+        if (lightTransform == null) {
+            return;
+        }
+
+        Vector3 targetPosition = cachedTransform != null ? cachedTransform.position : transform.position;
+        lightTransform.position = targetPosition + lightOffset;
     }
 }
