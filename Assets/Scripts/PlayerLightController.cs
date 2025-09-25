@@ -8,6 +8,8 @@ public class PlayerLightController : MonoBehaviour {
     [SerializeField] private Vector3 lightOffset = Vector3.zero;
 
     private InputAction lightAction;
+    [SerializeField] private Transform playerTransform;
+
     private Transform lightTransform;
     private Light[] lightComponents;
     private float[] initialIntensities;
@@ -16,6 +18,18 @@ public class PlayerLightController : MonoBehaviour {
 
     void Awake() {
         cachedTransform = transform;
+
+        if (playerTransform == null) {
+            var movement = FindObjectOfType<PlayerMovementScript>();
+            if (movement != null) {
+                playerTransform = movement.transform;
+            }
+        }
+
+        if (playerTransform == null) {
+            playerTransform = cachedTransform;
+        }
+
         if (lightObject != null) {
             lightTransform = lightObject.transform;
         }
@@ -133,7 +147,7 @@ public class PlayerLightController : MonoBehaviour {
             return;
         }
 
-        Vector3 targetPosition = cachedTransform != null ? cachedTransform.position : transform.position;
+        Vector3 targetPosition = playerTransform != null ? playerTransform.position : cachedTransform.position;
         lightTransform.position = targetPosition + lightOffset;
     }
 }
