@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+using System;
+using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
@@ -10,6 +11,9 @@ using Articy.World_Of_Red_Moon;
 using Articy.World_Of_Red_Moon.GlobalVariables;
 
 public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResettable {
+    public event Action<DialogueUI> DialogueStarted;
+    public event Action<DialogueUI> DialogueClosed;
+
     [Header("Articy")]
     [SerializeField] private ArticyFlowPlayer flowPlayer;
     [SerializeField] private Entity playerEntity; // перетащи сюда Entity главного героя из Articy
@@ -155,6 +159,8 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         flowPlayer.StartOn = startFragment;
         IsDialogueOpen = true;
 
+        DialogueStarted?.Invoke(this);
+
     }
 
     //public void UpdateDialogue(bool skipPostClose = false) {
@@ -202,6 +208,8 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
                 LoopResetInputScript.TryLoopReset();
             }
         }
+
+        DialogueClosed?.Invoke(this);
     }
 
     public void OnLoopReset() {
