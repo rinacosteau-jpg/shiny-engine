@@ -432,8 +432,8 @@ MonoBehaviour:
   - DFr_B71064C4.Text
   - DFr_B9459452.Text
   - DFr_0E3DA00B.Text
-  - DFr_6CDA3F7F.Text
   - DFr_74F14E50.Text
+  - DFr_6CDA3F7F.Text
   - DFr_00C7C4CA.Text
   - DFr_B6D7EA48.Text
   - DFr_AA504DC5.Text
@@ -2291,9 +2291,9 @@ MonoBehaviour:
     \u0438\u0437 \u0442\u0432\u043E\u0435\u0433\u043E \u043A\u0430\u0440\u043C\u0430\u043D\u0430
     \u0438\u0441\u0445\u043E\u0434\u0438\u0442 \u0441\u0442\u0440\u0430\u043D\u043D\u044B\u0439
     \u0441\u0432\u0435\u0442."
-  - '"..."'
   - "\"\u041F\u043E\u043C\u0430\u0445\u0430\u0442\u044C \u0440\u0443\u043A\u0430\u043C\u0438
     \u0432\u043E\u0437\u043B\u0435 \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0438.\""
+  - '"..."'
   - '"..."'
   - '"..."'
   - '"..."'

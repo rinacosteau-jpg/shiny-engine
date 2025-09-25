@@ -91,12 +91,12 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         {
             Debug.Log("Global variables changed");
 
-            if (currentFlowObject is DialogueFragment fragment)
+            /*if (currentFlowObject is DialogueFragment fragment)
             {
                 CloseDialogue();
                 StartDialogue(fragment);
                 flowPlayer?.Play();
-            }
+            }*/
         }
     }
 
@@ -355,7 +355,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
 
     private bool ShouldPauseFlowOn(IFlowObject obj) {
         if (obj is IObjectWithFeaturePauseOn withPauseOn) {
-            var feature = withPauseOn.GetPauseOnFeature();
+            var feature = withPauseOn.GetFeaturePauseOn();
             if (feature != null) {
                 try {
                     return (bool)feature.PauseOn;

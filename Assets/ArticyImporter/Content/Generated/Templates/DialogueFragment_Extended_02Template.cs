@@ -23,11 +23,8 @@ namespace Articy.World_Of_Red_Moon.Templates
     
     
     [Serializable()]
-    public class DialogueFragment_ExtendedTemplate : IArticyBaseObject, IPropertyProvider
+    public class DialogueFragment_Extended_02Template : IArticyBaseObject, IPropertyProvider
     {
-        
-        [SerializeField()]
-        private ArticyValueRiskCheckFeature mRiskCheck = new ArticyValueRiskCheckFeature();
         
         [SerializeField()]
         private ArticyValuePauseOnFeature mPauseOn = new ArticyValuePauseOnFeature();
@@ -40,18 +37,6 @@ namespace Articy.World_Of_Red_Moon.Templates
         
         [SerializeField()]
         private UInt32 mOwnerInstanceId;
-        
-        public Articy.World_Of_Red_Moon.Features.RiskCheckFeature RiskCheck
-        {
-            get
-            {
-                return mRiskCheck.GetValue();
-            }
-            set
-            {
-                mRiskCheck.SetValue(value);
-            }
-        }
         
         public Articy.World_Of_Red_Moon.Features.PauseOnFeature PauseOn
         {
@@ -86,7 +71,6 @@ namespace Articy.World_Of_Red_Moon.Templates
             set
             {
                 mOwnerId = value;
-                RiskCheck.OwnerId = value;
                 PauseOn.OwnerId = value;
                 Duration.OwnerId = value;
             }
@@ -101,7 +85,6 @@ namespace Articy.World_Of_Red_Moon.Templates
             set
             {
                 mOwnerInstanceId = value;
-                RiskCheck.OwnerInstanceId = value;
                 PauseOn.OwnerInstanceId = value;
                 Duration.OwnerInstanceId = value;
             }
@@ -109,11 +92,7 @@ namespace Articy.World_Of_Red_Moon.Templates
         
         private void CloneProperties(object aClone, Articy.Unity.ArticyObject aFirstClassParent)
         {
-            Articy.World_Of_Red_Moon.Templates.DialogueFragment_ExtendedTemplate newClone = ((Articy.World_Of_Red_Moon.Templates.DialogueFragment_ExtendedTemplate)(aClone));
-            if ((RiskCheck != null))
-            {
-                newClone.RiskCheck = ((Articy.World_Of_Red_Moon.Features.RiskCheckFeature)(RiskCheck.CloneObject(newClone, aFirstClassParent)));
-            }
+            Articy.World_Of_Red_Moon.Templates.DialogueFragment_Extended_02Template newClone = ((Articy.World_Of_Red_Moon.Templates.DialogueFragment_Extended_02Template)(aClone));
             if ((PauseOn != null))
             {
                 newClone.PauseOn = ((Articy.World_Of_Red_Moon.Features.PauseOnFeature)(PauseOn.CloneObject(newClone, aFirstClassParent)));
@@ -127,7 +106,7 @@ namespace Articy.World_Of_Red_Moon.Templates
         
         public object CloneObject(object aParent, Articy.Unity.ArticyObject aFirstClassParent)
         {
-            Articy.World_Of_Red_Moon.Templates.DialogueFragment_ExtendedTemplate clone = new Articy.World_Of_Red_Moon.Templates.DialogueFragment_ExtendedTemplate();
+            Articy.World_Of_Red_Moon.Templates.DialogueFragment_Extended_02Template clone = new Articy.World_Of_Red_Moon.Templates.DialogueFragment_Extended_02Template();
             CloneProperties(clone, aFirstClassParent);
             return clone;
         }
@@ -140,10 +119,6 @@ namespace Articy.World_Of_Red_Moon.Templates
             {
                 string featurePath = aProperty.Substring(0, featureIndex);
                 string featureProperty = aProperty.Substring((featureIndex + 1));
-                if ((featurePath == "RiskCheck"))
-                {
-                    RiskCheck.setProp(featureProperty, aValue);
-                }
                 if ((featurePath == "PauseOn"))
                 {
                     PauseOn.setProp(featureProperty, aValue);
@@ -162,10 +137,6 @@ namespace Articy.World_Of_Red_Moon.Templates
             {
                 string featurePath = aProperty.Substring(0, featureIndex);
                 string featureProperty = aProperty.Substring((featureIndex + 1));
-                if ((featurePath == "RiskCheck"))
-                {
-                    return RiskCheck.getProp(featureProperty);
-                }
                 if ((featurePath == "PauseOn"))
                 {
                     return PauseOn.getProp(featureProperty);

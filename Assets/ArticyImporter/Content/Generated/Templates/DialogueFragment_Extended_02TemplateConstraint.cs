@@ -22,22 +22,12 @@ namespace Articy.World_Of_Red_Moon.Templates
 {
     
     
-    public class DialogueFragment_ExtendedTemplateConstraint
+    public class DialogueFragment_Extended_02TemplateConstraint
     {
-        
-        private RiskCheckFeatureConstraint mRiskCheck = new RiskCheckFeatureConstraint();
         
         private PauseOnFeatureConstraint mPauseOn = new PauseOnFeatureConstraint();
         
         private DurationFeatureConstraint mDuration = new DurationFeatureConstraint();
-        
-        public RiskCheckFeatureConstraint RiskCheck
-        {
-            get
-            {
-                return mRiskCheck;
-            }
-        }
         
         public PauseOnFeatureConstraint PauseOn
         {

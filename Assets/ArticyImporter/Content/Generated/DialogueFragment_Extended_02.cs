@@ -22,15 +22,15 @@ namespace Articy.World_Of_Red_Moon
 {
     
     
-    public class DialogueFragment_Extended : DialogueFragment, IDialogueFragment, IPropertyProvider, IObjectWithFeatureRiskCheck, IObjectWithFeaturePauseOn, IObjectWithFeatureDuration
+    public class DialogueFragment_Extended_02 : DialogueFragment, IDialogueFragment, IPropertyProvider, IObjectWithFeaturePauseOn, IObjectWithFeatureDuration
     {
         
         [SerializeField()]
-        private ArticyValueDialogueFragment_ExtendedTemplate mTemplate = new ArticyValueDialogueFragment_ExtendedTemplate();
+        private ArticyValueDialogueFragment_Extended_02Template mTemplate = new ArticyValueDialogueFragment_Extended_02Template();
         
-        private static Articy.World_Of_Red_Moon.Templates.DialogueFragment_ExtendedTemplateConstraint mConstraints = new Articy.World_Of_Red_Moon.Templates.DialogueFragment_ExtendedTemplateConstraint();
+        private static Articy.World_Of_Red_Moon.Templates.DialogueFragment_Extended_02TemplateConstraint mConstraints = new Articy.World_Of_Red_Moon.Templates.DialogueFragment_Extended_02TemplateConstraint();
         
-        public Articy.World_Of_Red_Moon.Templates.DialogueFragment_ExtendedTemplate Template
+        public Articy.World_Of_Red_Moon.Templates.DialogueFragment_Extended_02Template Template
         {
             get
             {
@@ -42,17 +42,12 @@ namespace Articy.World_Of_Red_Moon
             }
         }
         
-        public static Articy.World_Of_Red_Moon.Templates.DialogueFragment_ExtendedTemplateConstraint Constraints
+        public static Articy.World_Of_Red_Moon.Templates.DialogueFragment_Extended_02TemplateConstraint Constraints
         {
             get
             {
                 return mConstraints;
             }
-        }
-        
-        public RiskCheckFeature GetFeatureRiskCheck()
-        {
-            return Template.RiskCheck;
         }
         
         public PauseOnFeature GetFeaturePauseOn()
@@ -67,10 +62,10 @@ namespace Articy.World_Of_Red_Moon
         
         protected override void CloneProperties(object aClone, Articy.Unity.ArticyObject aFirstClassParent)
         {
-            DialogueFragment_Extended newClone = ((DialogueFragment_Extended)(aClone));
+            DialogueFragment_Extended_02 newClone = ((DialogueFragment_Extended_02)(aClone));
             if ((Template != null))
             {
-                newClone.Template = ((Articy.World_Of_Red_Moon.Templates.DialogueFragment_ExtendedTemplate)(Template.CloneObject(newClone, aFirstClassParent)));
+                newClone.Template = ((Articy.World_Of_Red_Moon.Templates.DialogueFragment_Extended_02Template)(Template.CloneObject(newClone, aFirstClassParent)));
             }
             base.CloneProperties(newClone, aFirstClassParent);
         }
