@@ -156,7 +156,16 @@ namespace Articy.World_Of_Red_Moon
     
     
     [Serializable()]
-    public class ArticyValueDialogueFragment_Extended_02Template : ArticyValue<Articy.World_Of_Red_Moon.Templates.DialogueFragment_Extended_02Template>
+    public class ArticyValueDialogueFragment_ExtendedTemplate : ArticyValue<Articy.World_Of_Red_Moon.Templates.DialogueFragment_ExtendedTemplate>
+    {
+    }
+}
+namespace Articy.World_Of_Red_Moon
+{
+    
+    
+    [Serializable()]
+    public class ArticyValueRiskCheckFeature : ArticyValue<Articy.World_Of_Red_Moon.Features.RiskCheckFeature>
     {
     }
 }
@@ -183,34 +192,25 @@ namespace Articy.World_Of_Red_Moon
     
     
     [Serializable()]
-    public class ArticyValueDialogueFragment_Extended_02 : ArticyValue<DialogueFragment_Extended_02>
-    {
-    }
-}
-namespace Articy.World_Of_Red_Moon
-{
-    
-    
-    [Serializable()]
-    public class ArticyValueDialogueFragment_ExtendedTemplate : ArticyValue<Articy.World_Of_Red_Moon.Templates.DialogueFragment_ExtendedTemplate>
-    {
-    }
-}
-namespace Articy.World_Of_Red_Moon
-{
-    
-    
-    [Serializable()]
-    public class ArticyValueRiskCheckFeature : ArticyValue<Articy.World_Of_Red_Moon.Features.RiskCheckFeature>
-    {
-    }
-}
-namespace Articy.World_Of_Red_Moon
-{
-    
-    
-    [Serializable()]
     public class ArticyValueDialogueFragment_Extended : ArticyValue<DialogueFragment_Extended>
+    {
+    }
+}
+namespace Articy.World_Of_Red_Moon
+{
+    
+    
+    [Serializable()]
+    public class ArticyValueDialogueFragment_Extended_02Template : ArticyValue<Articy.World_Of_Red_Moon.Templates.DialogueFragment_Extended_02Template>
+    {
+    }
+}
+namespace Articy.World_Of_Red_Moon
+{
+    
+    
+    [Serializable()]
+    public class ArticyValueDialogueFragment_Extended_02 : ArticyValue<DialogueFragment_Extended_02>
     {
     }
 }
