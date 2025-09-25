@@ -3,7 +3,6 @@ using UnityEngine;
 using TMPro;
 using Articy.Unity;
 using Articy.World_Of_Red_Moon.GlobalVariables;
-using System.Collections;
 using System.Reflection;
 
 public class GlobalVariables : MonoBehaviour {
@@ -41,16 +40,6 @@ public class GlobalVariables : MonoBehaviour {
         player = new PlayerState(null, false, false);
         player.moralCap = 10;
         player.moralVal = 10;
-        Debug.Log("op");
-        var selector = FindFirstObjectByType<SkillSelectionUI>(FindObjectsInactive.Include);
-        if (selector) {
-            Debug.Log("selector");
-            selector.Open();
-        }
-        StartCoroutine(DelayOpen());
-        IEnumerator DelayOpen() { yield return null; selector?.Open(); }
-
-
         if (!setOfKnowledge) setOfKnowledge = GetComponent<TMP_Text>();
 
         // Subscribe to inventory events to update flags on any change

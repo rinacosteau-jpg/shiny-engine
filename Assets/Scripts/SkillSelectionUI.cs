@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
@@ -8,6 +8,8 @@ using System.Linq;
 using Articy.World_Of_Red_Moon.GlobalVariables;
 
 public class SkillSelectionUI : MonoBehaviour {
+    public event Action Confirmed;
+
     [Header("UI refs")]
     [SerializeField] private TMP_Text pointsLeftText;
     [SerializeField] private Button okButton;
@@ -36,6 +38,7 @@ public class SkillSelectionUI : MonoBehaviour {
     private bool _setupDone;
     private bool _okWired;
     private CanvasGroup _cg;
+    private bool _isOpen;
 
     private void Awake() {
         EnsureSetup();
@@ -144,6 +147,7 @@ public class SkillSelectionUI : MonoBehaviour {
 
         UpdateUI();
         ShowImmediate();                    // ← только CanvasGroup
+        _isOpen = true;
         transform.SetAsLastSibling();       // поверх соседей
         Canvas.ForceUpdateCanvases();
 
@@ -156,6 +160,7 @@ public class SkillSelectionUI : MonoBehaviour {
 
     private void HideImmediate() {
         _cg.alpha = 0f; _cg.interactable = false; _cg.blocksRaycasts = false;
+        _isOpen = false;
     }
 
     private void ActivateParentsChain() {
@@ -240,6 +245,7 @@ public class SkillSelectionUI : MonoBehaviour {
                 s.property.SetValue(ps, s.value);
         }
         HideImmediate(); // только прячем, не выключаем GO
+        Confirmed?.Invoke();
         Debug.Log("[SkillSelectionUI] Confirm → apply & hide (CG)");
     }
 
