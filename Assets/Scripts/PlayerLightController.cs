@@ -14,6 +14,7 @@ public class PlayerLightController : MonoBehaviour {
 
     void Start() {
         lightAction = InputSystem.actions?.FindAction("Light");
+        
         CacheLightComponents();
         SetLightActive(false);
     }
@@ -24,6 +25,7 @@ public class PlayerLightController : MonoBehaviour {
 
     void Update() {
         if (lightAction != null && lightAction.triggered) {
+            Debug.Log("light on");
             ActivateLight();
         }
 
