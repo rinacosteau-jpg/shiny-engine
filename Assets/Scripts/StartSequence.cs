@@ -14,6 +14,11 @@ public class StartSequence : MonoBehaviour
     [Header("Dialogue Starts")]
     [SerializeField] private ArticyRef dialogueStartA;
     [SerializeField] private ArticyRef dialogueStartB;
+    [SerializeField] private ArticyRef dialogueStartC;
+
+    [Header("Movement Trigger")]
+    [SerializeField] private Transform playerTransform;
+    [SerializeField] private float distanceAfterDialogueB = 20f;
 
     [Header("UI")]
     [SerializeField] private GameObject backgroundPanel;
@@ -24,15 +29,35 @@ public class StartSequence : MonoBehaviour
         DialogueA,
         SkillSelection,
         DialogueB,
+        WaitingForMovement,
+        DialogueC,
         Completed
     }
 
     private SequenceStep currentStep = SequenceStep.None;
+    private Vector3 movementStartPosition;
 
     private void Awake()
     {
         if (backgroundPanel != null)
             backgroundPanel.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (currentStep != SequenceStep.WaitingForMovement)
+            return;
+
+        if (playerTransform == null)
+        {
+            Debug.LogError("[StartSequence] Player transform is missing while waiting for movement.");
+            FinishSequence();
+            return;
+        }
+
+        float traveledDistance = Vector3.Distance(playerTransform.position, movementStartPosition);
+        if (traveledDistance >= distanceAfterDialogueB)
+            StartDialogueC();
     }
 
     private void OnEnable()
@@ -93,6 +118,9 @@ public class StartSequence : MonoBehaviour
                 StartSkillSelection();
                 break;
             case SequenceStep.DialogueB:
+                StartWaitingForMovement();
+                break;
+            case SequenceStep.DialogueC:
                 FinishSequence();
                 break;
         }
@@ -139,6 +167,46 @@ public class StartSequence : MonoBehaviour
         }
 
         dialogueUI.StartDialogue(dialogueStartB);
+    }
+
+    private void StartWaitingForMovement()
+    {
+        if (playerTransform == null)
+        {
+            Debug.LogError("[StartSequence] Player transform is not assigned for movement tracking.");
+            FinishSequence();
+            return;
+        }
+
+        currentStep = SequenceStep.WaitingForMovement;
+        movementStartPosition = playerTransform.position;
+
+        if (distanceAfterDialogueB <= 0f)
+            StartDialogueC();
+    }
+
+    private void StartDialogueC()
+    {
+        if (currentStep == SequenceStep.DialogueC)
+            return;
+
+        currentStep = SequenceStep.DialogueC;
+
+        if (dialogueUI == null)
+        {
+            Debug.LogError("[StartSequence] DialogueUI reference is missing when starting dialogue C.");
+            FinishSequence();
+            return;
+        }
+
+        if (dialogueStartC == null)
+        {
+            Debug.LogError("[StartSequence] Dialogue start C is not assigned.");
+            FinishSequence();
+            return;
+        }
+
+        dialogueUI.StartDialogue(dialogueStartC);
     }
 
     private void FinishSequence()
