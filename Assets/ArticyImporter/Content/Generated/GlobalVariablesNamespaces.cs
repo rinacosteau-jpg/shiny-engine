@@ -1127,7 +1127,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         }
         
         // 
-        public int skill_Persuasion
+        public int skill_Confidence
         {
             get
             {
@@ -1153,7 +1153,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         }
         
         // 
-        public int skill_Accuracy
+        public int skill_Dexterity
         {
             get
             {
@@ -1338,14 +1338,14 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         {
             _VariableStorage = aStorage;
             aStorage.RegisterVariable("PS.loopCounter", 0);
-            aStorage.RegisterVariable("PS.skill_Persuasion", 0);
+            aStorage.RegisterVariable("PS.skill_Confidence", 0);
             aStorage.RegisterVariable("PS.skill_Perseption", 0);
-            aStorage.RegisterVariable("PS.skill_Accuracy", 0);
+            aStorage.RegisterVariable("PS.skill_Dexterity", 0);
             aStorage.RegisterVariable("PS.skill_Willpower", 0);
             aStorage.RegisterVariable("PS.standing_purple", 0);
             aStorage.RegisterVariable("PS.standing_akaimoon", 0);
-            aStorage.RegisterVariable("PS.moralCap", 0);
-            aStorage.RegisterVariable("PS.moralVal", 0);
+            aStorage.RegisterVariable("PS.moralCap", 10);
+            aStorage.RegisterVariable("PS.moralVal", 10);
             aStorage.RegisterVariable("PS.skill_Logic", 0);
             aStorage.RegisterVariable("PS.clueTotalScore", 0);
             aStorage.RegisterVariable("PS.skill_Lux", 1);

@@ -142,9 +142,9 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             variableNames.Add("EVT.event_murderAttempt");
             variableNames.Add("EVT.event_gunStealing");
             variableNames.Add("PS.loopCounter");
-            variableNames.Add("PS.skill_Persuasion");
+            variableNames.Add("PS.skill_Confidence");
             variableNames.Add("PS.skill_Perseption");
-            variableNames.Add("PS.skill_Accuracy");
+            variableNames.Add("PS.skill_Dexterity");
             variableNames.Add("PS.skill_Willpower");
             variableNames.Add("PS.standing_purple");
             variableNames.Add("PS.standing_akaimoon");
