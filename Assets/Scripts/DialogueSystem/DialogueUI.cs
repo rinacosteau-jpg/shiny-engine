@@ -31,6 +31,7 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
     private string lastDisplayedText = null;
     private string lastSpeakerName = null;
     public bool IsDialogueOpen { get; private set; }
+    public IFlowObject CurrentStartObject { get; private set; }
 
     public IObjectWithFeatureDuration kek;
     private bool suppressOnFlowPause = false;
@@ -126,6 +127,11 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
             return;
         }
         var obj = startRef.GetObject() as IFlowObject;
+        if (obj == null) {
+            Debug.LogError("[DialogueUI] startRef не указывает на IFlowObject — не могу запустить диалог.");
+            return;
+        }
+
         StartDialogue(obj);
     }
 
@@ -134,6 +140,8 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
             Debug.LogWarning("[DialogueUI] StartDialogue(IFlowObject) — пустой startObject или flowPlayer.");
             return;
         }
+
+        CurrentStartObject = startObject;
 
         // сброс состояния UI
         responseHandler?.ClearResponses();
@@ -210,6 +218,8 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         }
 
         DialogueClosed?.Invoke(this);
+
+        CurrentStartObject = null;
     }
 
     public void OnLoopReset() {

@@ -30,6 +30,11 @@ public class DoorInteractable : MonoBehaviour, IInteractable, ILoopResettable
         ApplyState(startIsOpen);
     }
 
+    public void ForceOpen()
+    {
+        ApplyState(true);
+    }
+
     private void ApplyState(bool open)
     {
         isOpen = open;
