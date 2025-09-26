@@ -1,35 +1,95 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerInteractScript : MonoBehaviour {
-    InputAction interactAction;
+    [SerializeField] private float interactRange = 2f;
+
+    private InputAction interactAction;
     private DialogueUI dialogueUI;
 
-    void Start() {
+    private readonly List<IInteractable> interactablesInRange = new List<IInteractable>();
+    private readonly HashSet<MonoBehaviour> interactableBehavioursInRange = new HashSet<MonoBehaviour>();
+    private readonly Dictionary<MonoBehaviour, InteractableOutline> highlightedInteractables = new Dictionary<MonoBehaviour, InteractableOutline>();
+    private readonly List<MonoBehaviour> highlightRemovalBuffer = new List<MonoBehaviour>();
+
+    private void Start() {
         interactAction = InputSystem.actions.FindAction("Interact");
         dialogueUI = FindObjectOfType<DialogueUI>();
     }
 
-    void Update() {
+    private void Update() {
+        Collider[] colliderArray = Physics.OverlapSphere(
+            transform.position,
+            interactRange,
+            ~0,
+            QueryTriggerInteraction.Collide);
+
+        CollectInteractables(colliderArray);
+
         if (dialogueUI != null && dialogueUI.IsDialogueOpen)
             return;
 
         if (interactAction != null && interactAction.triggered) {
-            Debug.Log("called");
-            float interactRange = 2f;
-            Collider[] colliderArray = Physics.OverlapSphere(
-                transform.position,
-                interactRange,
-                ~0,
-                QueryTriggerInteraction.Collide);
-            foreach (Collider collider in colliderArray) {
-                var interactable = collider.GetComponentInParent<IInteractable>() ??
-                                   collider.GetComponentInChildren<IInteractable>();
-
-                if (interactable != null) {
-                    interactable.Interact();
-                }
-            }
+            foreach (IInteractable interactable in interactablesInRange)
+                interactable.Interact();
         }
+    }
+
+    private void CollectInteractables(Collider[] colliders) {
+        interactablesInRange.Clear();
+        interactableBehavioursInRange.Clear();
+
+        if (colliders == null)
+            return;
+
+        foreach (Collider collider in colliders) {
+            if (collider == null)
+                continue;
+
+            IInteractable interactable = collider.GetComponentInParent<IInteractable>() ??
+                                         collider.GetComponentInChildren<IInteractable>();
+
+            if (interactable == null)
+                continue;
+
+            interactablesInRange.Add(interactable);
+
+            if (interactable is MonoBehaviour behaviour)
+                interactableBehavioursInRange.Add(behaviour);
+        }
+
+        UpdateHighlightedInteractables();
+    }
+
+    private void UpdateHighlightedInteractables() {
+        foreach (MonoBehaviour behaviour in interactableBehavioursInRange) {
+            if (behaviour == null || highlightedInteractables.ContainsKey(behaviour))
+                continue;
+
+            InteractableOutline outline = behaviour.GetComponentInChildren<InteractableOutline>();
+            if (outline == null)
+                outline = behaviour.GetComponentInParent<InteractableOutline>();
+
+            if (outline == null)
+                continue;
+
+            outline.SetHighlighted(true);
+            highlightedInteractables[behaviour] = outline;
+        }
+
+        highlightRemovalBuffer.Clear();
+        foreach (KeyValuePair<MonoBehaviour, InteractableOutline> pair in highlightedInteractables) {
+            if (pair.Key != null && interactableBehavioursInRange.Contains(pair.Key))
+                continue;
+
+            if (pair.Value != null)
+                pair.Value.SetHighlighted(false);
+
+            highlightRemovalBuffer.Add(pair.Key);
+        }
+
+        foreach (MonoBehaviour behaviour in highlightRemovalBuffer)
+            highlightedInteractables.Remove(behaviour);
     }
 }
