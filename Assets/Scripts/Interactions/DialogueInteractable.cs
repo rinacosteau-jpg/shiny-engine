@@ -2,10 +2,12 @@ using UnityEngine;
 using Articy.Unity;
 
 /// <summary>
-/// Base interactable that starts a dialogue when interacted with.
+/// Universal interactable that starts a dialogue when interacted with.
+/// Can be attached to any object with a collider.
 /// Handles the connection to <see cref="DialogueUI"/>.
 /// </summary>
-public abstract class DialogueInteractable : MonoBehaviour, IInteractable
+[RequireComponent(typeof(Collider))]
+public class DialogueInteractable : MonoBehaviour, IInteractable
 {
     [Header("Dialogue")]
     [Tooltip("Articy start node for the dialogue")]
