@@ -35,16 +35,25 @@ public class StartSequence : MonoBehaviour
     }
 
     private SequenceStep currentStep = SequenceStep.None;
-    private Vector3 movementStartPosition;
+    private Vector3 lastTrackedPosition;
+    private bool hasLastTrackedPosition;
+    private float movementStartDistance;
+
+    public static float TotalDistanceTraveled { get; private set; }
 
     private void Awake()
     {
+        TotalDistanceTraveled = 0f;
+        hasLastTrackedPosition = false;
+
         if (backgroundPanel != null)
             backgroundPanel.SetActive(false);
     }
 
     private void Update()
     {
+        UpdateTotalDistance();
+
         if (currentStep != SequenceStep.WaitingForMovement)
             return;
 
@@ -55,7 +64,7 @@ public class StartSequence : MonoBehaviour
             return;
         }
 
-        float traveledDistance = Vector3.Distance(playerTransform.position, movementStartPosition);
+        float traveledDistance = TotalDistanceTraveled - movementStartDistance;
         if (traveledDistance >= distanceAfterDialogueB)
             StartDialogueC();
     }
@@ -179,7 +188,8 @@ public class StartSequence : MonoBehaviour
         }
 
         currentStep = SequenceStep.WaitingForMovement;
-        movementStartPosition = playerTransform.position;
+        movementStartDistance = TotalDistanceTraveled;
+        InitializeTrackingPosition();
 
         if (distanceAfterDialogueB <= 0f)
             StartDialogueC();
@@ -223,5 +233,41 @@ public class StartSequence : MonoBehaviour
             dialogueUI.DialogueClosed -= HandleDialogueClosed;
         if (skillSelectionUI != null)
             skillSelectionUI.Confirmed -= HandleSkillsConfirmed;
+    }
+
+    private void UpdateTotalDistance()
+    {
+        if (playerTransform == null)
+        {
+            hasLastTrackedPosition = false;
+            return;
+        }
+
+        Vector3 currentPosition = playerTransform.position;
+        if (!hasLastTrackedPosition)
+        {
+            lastTrackedPosition = currentPosition;
+            hasLastTrackedPosition = true;
+            return;
+        }
+
+        float frameDistance = Vector3.Distance(currentPosition, lastTrackedPosition);
+        if (frameDistance > 0f)
+        {
+            TotalDistanceTraveled += frameDistance;
+            lastTrackedPosition = currentPosition;
+        }
+    }
+
+    private void InitializeTrackingPosition()
+    {
+        if (playerTransform == null)
+        {
+            hasLastTrackedPosition = false;
+            return;
+        }
+
+        lastTrackedPosition = playerTransform.position;
+        hasLastTrackedPosition = true;
     }
 }
