@@ -697,16 +697,9 @@ aGlobalVariablesState.RQUE.advertise_Obj_B == 0;
         /// </summary>
         public bool Script_720575940379282080x100000000002736Text(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
         {
-            return aGlobalVariablesState.PS.skill_Perseption>1;
-        }
-        
-        /// <summary>
-        /// ObjectID: 0x10000000000273C
-        /// Articy Object ref: articy://localhost/view/6b45a52e-5605-4c95-a051-48da04bae055/72057594037937980?pane=selected&amp;tab=current
-        /// </summary>
-        public bool Script_720575940379282080x10000000000273CText(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
-        {
-            return aGlobalVariablesState.PS.skill_Logic>1;
+            return aGlobalVariablesState.PS.skill_Perseption>1 || aGlobalVariablesState.PS.skill_Logic>1
+// и нет швабры
+;
         }
         
         /// <summary>
@@ -716,6 +709,15 @@ aGlobalVariablesState.RQUE.advertise_Obj_B == 0;
         public bool Script_720575940379282080x100000000002742Text(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
         {
             return aGlobalVariablesState.PS.skill_Confidence>1;
+        }
+        
+        /// <summary>
+        /// ObjectID: 0x100000000002748
+        /// Articy Object ref: articy://localhost/view/6b45a52e-5605-4c95-a051-48da04bae055/72057594037937992?pane=selected&amp;tab=current
+        /// </summary>
+        public bool Script_720575940379282080x100000000002748Text(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
+        {
+            return !aGlobalVariablesState.Seen;
         }
         
         /// <summary>
@@ -770,6 +772,16 @@ aGlobalVariablesState.RQUE.advertise_Obj_B == 0;
         public void Script_720575940379282080x100000000002836Text(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
         {
             aGlobalVariablesState.PS.moralVal--;
+        }
+        
+        /// <summary>
+        /// ObjectID: 0x100000000002959
+        /// Articy Object ref: articy://localhost/view/6b45a52e-5605-4c95-a051-48da04bae055/72057594037938521?pane=selected&amp;tab=current
+        /// </summary>
+        public bool Script_720575940379282080x100000000002959Text(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
+        {
+            return //у тебя есть швабра
+true;
         }
         
         /// <summary>
@@ -1747,14 +1759,15 @@ aGlobalVariablesState.RQUE.getGun_State = 1;
             Conditions.Add(1889306866u, this.Script_720575940379282080x100000000002043Text);
             Conditions.Add(616814891u, this.Script_720575940379282080x1000000000021B2Text);
             Conditions.Add(4013816331u, this.Script_720575940379282080x100000000002736Text);
-            Conditions.Add(3822815065u, this.Script_720575940379282080x10000000000273CText);
             Conditions.Add(721944157u, this.Script_720575940379282080x100000000002742Text);
+            Conditions.Add(2469980137u, this.Script_720575940379282080x100000000002748Text);
             Conditions.Add(1592791659u, this.Script_720575940379282080x10000000000274FText);
             Conditions.Add(3240130151u, this.Script_720575940379282080x100000000002755Text);
             Instructions.Add(243044938u, this.Script_720575940379282080x10000000000275FText);
             Instructions.Add(778353707u, this.Script_720575940379282080x10000000000280EText);
             Instructions.Add(3965806761u, this.Script_720575940379282080x10000000000281EText);
             Instructions.Add(784781872u, this.Script_720575940379282080x100000000002836Text);
+            Conditions.Add(3276585950u, this.Script_720575940379282080x100000000002959Text);
             Conditions.Add(1310603657u, this.Script_720575940379282080x100000000000A2DText);
             Conditions.Add(2485868939u, this.Script_720575940379282080x100000000000A33Text);
             Conditions.Add(902066040u, this.Script_720575940379282080x10000000000113FText);
