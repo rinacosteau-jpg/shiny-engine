@@ -105,6 +105,7 @@ public class JournalUI : MonoBehaviour
 
         var quests = QuestManager
             .GetAllQuests()
+            .Where(q => test || q.State != QuestState.NotStarted)
             .OrderBy(q => q.Name, StringComparer.OrdinalIgnoreCase)
             .ToList();
 
