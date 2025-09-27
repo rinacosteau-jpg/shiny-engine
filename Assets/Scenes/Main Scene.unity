@@ -45001,6 +45001,7 @@ MonoBehaviour:
   questItemsParent: {fileID: 1805083145}
   questItemPrefab: {fileID: 309042542}
   descriptionText: {fileID: 480506563}
+  test: 0
 --- !u!1 &1733290080
 GameObject:
   m_ObjectHideFlags: 0
