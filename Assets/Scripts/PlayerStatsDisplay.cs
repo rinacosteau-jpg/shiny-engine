@@ -39,7 +39,7 @@ public class PlayerStatsDisplay : MonoBehaviour {
 
         string skillsSection = skillsVisible
             ? "Skills:\n" + BuildSkillsBlock()
-            : "Skills: —";
+            : "Skills: ";
 
         targetText.text =
             $"Moral: {player.moralVal}/{player.moralCap}\n" +
