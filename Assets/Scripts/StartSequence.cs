@@ -7,6 +7,9 @@ using Articy.Unity;
 /// </summary>
 public class StartSequence : MonoBehaviour
 {
+    [Header("Configuration")]
+    [SerializeField] private bool skipSequence;
+
     [Header("References")]
     [SerializeField] private DialogueUI dialogueUI;
     [SerializeField] private SkillSelectionUI skillSelectionUI;
@@ -52,6 +55,9 @@ public class StartSequence : MonoBehaviour
 
     private void Update()
     {
+        if (skipSequence)
+            return;
+
         UpdateTotalDistance();
 
         if (currentStep != SequenceStep.WaitingForMovement)
@@ -71,6 +77,9 @@ public class StartSequence : MonoBehaviour
 
     private void OnEnable()
     {
+        if (skipSequence)
+            return;
+
         if (dialogueUI != null)
             dialogueUI.DialogueClosed += HandleDialogueClosed;
         if (skillSelectionUI != null)
@@ -79,6 +88,9 @@ public class StartSequence : MonoBehaviour
 
     private void OnDisable()
     {
+        if (skipSequence)
+            return;
+
         if (dialogueUI != null)
             dialogueUI.DialogueClosed -= HandleDialogueClosed;
         if (skillSelectionUI != null)
@@ -87,11 +99,17 @@ public class StartSequence : MonoBehaviour
 
     private void Start()
     {
+        if (skipSequence)
+            return;
+
         BeginSequence();
     }
 
     private void BeginSequence()
     {
+        if (skipSequence)
+            return;
+
         if (currentStep != SequenceStep.None)
             return;
 
