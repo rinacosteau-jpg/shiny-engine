@@ -11,6 +11,7 @@ public class JournalUI : MonoBehaviour
     [SerializeField] private Transform questItemsParent;
     [SerializeField] private GameObject questItemPrefab;
     [SerializeField] private TMP_Text descriptionText;
+    [SerializeField] private bool test = true;
 
     private readonly List<GameObject> spawnedQuestItems = new();
     private QuestManager.Quest selectedQuest;
@@ -69,7 +70,15 @@ public class JournalUI : MonoBehaviour
         if (descriptionText == null)
             return;
 
-        descriptionText.text = quest == null ? string.Empty : QuestManager.DescribeQuest(quest);
+        if (quest == null)
+        {
+            descriptionText.text = string.Empty;
+            return;
+        }
+
+        descriptionText.text = test
+            ? QuestManager.DescribeQuest(quest)
+            : quest.CurrentDescription ?? string.Empty;
     }
 
     private void HandleQuestChanged(QuestManager.Quest _)
