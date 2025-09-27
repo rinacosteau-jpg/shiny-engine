@@ -697,9 +697,7 @@ aGlobalVariablesState.RQUE.advertise_Obj_B == 0;
         /// </summary>
         public bool Script_720575940379282080x100000000002736Text(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
         {
-            return aGlobalVariablesState.PS.skill_Perseption>1 || aGlobalVariablesState.PS.skill_Logic>1
-// и нет швабры
-;
+            return (aGlobalVariablesState.PS.skill_Perseption>0 || aGlobalVariablesState.PS.skill_Logic>1) && aGlobalVariablesState.ITM.item_Mop_count==0;
         }
         
         /// <summary>
@@ -780,8 +778,7 @@ aGlobalVariablesState.RQUE.advertise_Obj_B == 0;
         /// </summary>
         public bool Script_720575940379282080x100000000002959Text(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
         {
-            return //у тебя есть швабра
-true;
+            return aGlobalVariablesState.ITM.item_Mop_count>0;
         }
         
         /// <summary>

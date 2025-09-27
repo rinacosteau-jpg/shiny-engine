@@ -8,7 +8,7 @@ Shader "Custom/InteractableOutline" {
         Tags { "RenderType" = "Opaque" "Queue" = "Transparent" }
         Cull Front
         ZWrite Off
-        ZTest LessEqual
+        ZTest LEqual
         Blend SrcAlpha OneMinusSrcAlpha
 
         Pass {

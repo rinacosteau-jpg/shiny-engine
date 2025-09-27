@@ -136,6 +136,8 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             variableNames.Add("ITM.item_JapaneseSweets_count");
             variableNames.Add("ITM.item_RatStaff_count");
             variableNames.Add("ITM.item_RatStaff_delta");
+            variableNames.Add("ITM.item_Mop_count");
+            variableNames.Add("ITM.item_Mop_delta");
             variableNames.Add("RCNT.ratTrust");
             variableNames.Add("RCNT.waitForAoRead");
             variableNames.Add("RCNT.distractClerkMistakes");

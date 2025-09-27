@@ -239,6 +239,12 @@ MonoBehaviour:
   - mFullQualifiedName: ITM.item_RatStaff_delta
     mVar:
       values: 00000000
+  - mFullQualifiedName: ITM.item_Mop_count
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: ITM.item_Mop_delta
+    mVar:
+      values: 00000000
   - mFullQualifiedName: RCNT.ratTrust
     mVar:
       values: 00000000
@@ -564,6 +570,12 @@ MonoBehaviour:
     mVar:
       values: 00000000
   - mFullQualifiedName: ITM.item_RatStaff_delta
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: ITM.item_Mop_count
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: ITM.item_Mop_delta
     mVar:
       values: 00000000
   - mFullQualifiedName: RCNT.ratTrust
