@@ -3,24 +3,51 @@ using System.Reflection;
 using System.Text;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using Articy.World_Of_Red_Moon.GlobalVariables;
 
 public class PlayerStatsDisplay : MonoBehaviour {
     [SerializeField] private TMP_Text targetText;
+    [SerializeField] private Button showSkillsButton;
+    [SerializeField] private TMP_Text showSkillsButtonLabel;
+
+    private const string HiddenSkillsPlaceholder = "  —";
+
+    private bool showSkills;
 
     private void Awake() {
         if (targetText == null)
             targetText = GetComponent<TMP_Text>();
+
+        if (showSkillsButton != null)
+            showSkillsButton.onClick.AddListener(ToggleSkillsVisibility);
+
+        UpdateButtonLabel();
+    }
+
+    private void OnEnable() {
+        showSkills = false;
+        UpdateButtonLabel();
+        RefreshDisplay();
+    }
+
+    private void OnDestroy() {
+        if (showSkillsButton != null)
+            showSkillsButton.onClick.RemoveListener(ToggleSkillsVisibility);
     }
 
     private void Update() {
+        RefreshDisplay();
+    }
+
+    private void RefreshDisplay() {
         if (targetText == null || GlobalVariables.Instance == null)
             return;
 
         var player = GlobalVariables.Instance.player;
         int loopState = ArticyGlobalVariables.Default.PS.loopCounter;
 
-        string skillsBlock = BuildSkillsBlock();
+        string skillsBlock = showSkills ? BuildSkillsBlock() : HiddenSkillsPlaceholder;
 
         targetText.text =
             $"Moral: {player.moralVal}/{player.moralCap}\n" +
@@ -29,10 +56,21 @@ public class PlayerStatsDisplay : MonoBehaviour {
             skillsBlock;
     }
 
+    private void ToggleSkillsVisibility() {
+        showSkills = !showSkills;
+        UpdateButtonLabel();
+        RefreshDisplay();
+    }
+
+    private void UpdateButtonLabel() {
+        if (showSkillsButtonLabel != null)
+            showSkillsButtonLabel.text = showSkills ? "-" : "+";
+    }
+
     private static string BuildSkillsBlock() {
         var ps = ArticyGlobalVariables.Default?.PS;
         if (ps == null)
-            return "  —";
+            return HiddenSkillsPlaceholder;
 
         var properties = ps.GetType()
             .GetProperties(BindingFlags.Public | BindingFlags.Instance)
@@ -43,7 +81,7 @@ public class PlayerStatsDisplay : MonoBehaviour {
             .ToList();
 
         if (properties.Count == 0)
-            return "  —";
+            return HiddenSkillsPlaceholder;
 
         var sb = new StringBuilder();
         foreach (var property in properties) {
