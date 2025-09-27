@@ -21,7 +21,25 @@ public static class QuestManager {
         sb.AppendLine(quest.Name);
         sb.AppendLine($"State: {quest.State}");
         sb.AppendLine($"Stage: {quest.Stage}");
+        sb.AppendLine($"Result: {quest.Result}");
         sb.AppendLine($"Temporary: {quest.IsTemporary}");
+        sb.AppendLine($"Description: {quest.Description}");
+        sb.AppendLine($"Current Description: {quest.CurrentDescription}");
+        sb.AppendLine($"Failed Description: {quest.FailedDescription}");
+        sb.AppendLine($"Stage Count: {quest.StageCount}");
+        if (quest.StageDescriptions.Count > 0)
+        {
+            sb.AppendLine("Stage Descriptions:");
+            for (int i = 0; i < quest.StageDescriptions.Count; i++)
+                sb.AppendLine($"  Stage {i + 1}: {quest.StageDescriptions[i]}");
+        }
+        sb.AppendLine($"Result Count: {quest.ResultCount}");
+        if (quest.ResultDescriptions.Count > 0)
+        {
+            sb.AppendLine("Result Descriptions:");
+            for (int i = 0; i < quest.ResultDescriptions.Count; i++)
+                sb.AppendLine($"  Result {i + 1}: {quest.ResultDescriptions[i]}");
+        }
 
         if (quest.Objectives.Count > 0)
         {
@@ -53,8 +71,58 @@ public static class QuestManager {
         public string Name;               // ýòî è åñòü ID êâåñòà
         public QuestState State;
         public int Stage;                 // ëèíåéíûé ïðîãðåññ/÷åêïîèíò
+        public int Result;                // òåêóùèé èòîã êâåñòà
         public bool IsTemporary;          // RQUE = true, NQUE = false
+        public string Description;
+        public string FailedDescription;
+        public readonly List<string> StageDescriptions = new();
+        public readonly List<string> ResultDescriptions = new();
         public readonly Dictionary<string, Objective> Objectives = new();
+
+        public int StageCount => StageDescriptions.Count;
+        public int ResultCount => ResultDescriptions.Count;
+
+        public string CurrentDescription
+        {
+            get
+            {
+                return State switch
+                {
+                    QuestState.Active => GetStageDescription(Stage),
+                    QuestState.Completed => GetResultDescription(Result),
+                    QuestState.Failed => FailedDescription ?? string.Empty,
+                    _ => Description ?? string.Empty,
+                };
+            }
+        }
+
+        public string GetStageDescription(int stageIndex)
+        {
+            if (StageDescriptions.Count == 0)
+                return Description ?? string.Empty;
+
+            if (stageIndex <= 0)
+                stageIndex = 1;
+
+            if (stageIndex > StageDescriptions.Count)
+                stageIndex = StageDescriptions.Count;
+
+            return StageDescriptions[stageIndex - 1];
+        }
+
+        public string GetResultDescription(int resultIndex)
+        {
+            if (ResultDescriptions.Count == 0)
+                return Description ?? string.Empty;
+
+            if (resultIndex <= 0)
+                resultIndex = 1;
+
+            if (resultIndex > ResultDescriptions.Count)
+                resultIndex = ResultDescriptions.Count;
+
+            return ResultDescriptions[resultIndex - 1];
+        }
     }
 
     // ======== Ñîáûòèÿ ========
@@ -70,6 +138,63 @@ public static class QuestManager {
     private static object RQUE => ArticyGlobalVariables.Default.RQUE;
     private static object NQUE => ArticyGlobalVariables.Default.NQUE;
 
+    private static string GenerateQuestDescription(string questName) => $"Quest {questName} overview {Guid.NewGuid():N}";
+    private static string GenerateFailedDescription(string questName) => $"Quest {questName} failure {Guid.NewGuid():N}";
+    private static string GenerateStageDescription(string questName, int index) => $"Quest {questName} stage {index} description {Guid.NewGuid():N}";
+    private static string GenerateResultDescription(string questName, int index) => $"Quest {questName} result {index} description {Guid.NewGuid():N}";
+
+    private static void EnsureQuestMetadata(Quest q)
+    {
+        if (q == null)
+            return;
+
+        if (string.IsNullOrEmpty(q.Description))
+            q.Description = GenerateQuestDescription(q.Name);
+
+        if (string.IsNullOrEmpty(q.FailedDescription))
+            q.FailedDescription = GenerateFailedDescription(q.Name);
+
+        if (q.StageDescriptions.Count == 0)
+            q.StageDescriptions.Add(GenerateStageDescription(q.Name, 1));
+
+        if (q.ResultDescriptions.Count == 0)
+            q.ResultDescriptions.Add(GenerateResultDescription(q.Name, 1));
+    }
+
+    private static void EnsureStageCapacity(Quest q, int requiredStageCount)
+    {
+        if (q == null)
+            return;
+
+        EnsureQuestMetadata(q);
+
+        if (requiredStageCount <= 0)
+            requiredStageCount = 1;
+
+        while (q.StageDescriptions.Count < requiredStageCount)
+        {
+            int nextIndex = q.StageDescriptions.Count + 1;
+            q.StageDescriptions.Add(GenerateStageDescription(q.Name, nextIndex));
+        }
+    }
+
+    private static void EnsureResultCapacity(Quest q, int requiredResultCount)
+    {
+        if (q == null)
+            return;
+
+        EnsureQuestMetadata(q);
+
+        if (requiredResultCount <= 0)
+            requiredResultCount = 1;
+
+        while (q.ResultDescriptions.Count < requiredResultCount)
+        {
+            int nextIndex = q.ResultDescriptions.Count + 1;
+            q.ResultDescriptions.Add(GenerateResultDescription(q.Name, nextIndex));
+        }
+    }
+
     // ======== Õåëïåðû ========
     // isTemp: null — íå òðîãàåì; true — âðåìåííûé (RQUE); false — ïîñòîÿííûé (NQUE).
     private static Quest Ensure(string name, bool? isTemp = null) {
@@ -78,7 +203,8 @@ public static class QuestManager {
                 Name = name,
                 IsTemporary = isTemp ?? false, // ïî óìîë÷àíèþ ñ÷èòàåì ïåðñèñòåíòíûì
                 State = QuestState.NotStarted,
-                Stage = 0
+                Stage = 0,
+                Result = 0
             };
             quests[name] = q;
         } else if (isTemp.HasValue) {
@@ -88,6 +214,7 @@ public static class QuestManager {
             // Åñëè óæå non-temp, íå ïåðåâîäèì îáðàòíî â temp.
             // Åñëè áûë temp è ïðèøëî temp — îñòàâëÿåì temp.
         }
+        EnsureQuestMetadata(q);
         return q;
     }
 
@@ -110,6 +237,8 @@ public static class QuestManager {
         var q = Ensure(name, isTemp);
         q.State = QuestState.Active;
         if (q.Stage == 0) q.Stage = 1;
+        EnsureStageCapacity(q, q.Stage);
+        EnsureResultCapacity(q, q.Result);
         PushToArticy(q);
         RaiseQuestChanged(q);
         return q;
@@ -118,6 +247,8 @@ public static class QuestManager {
     public static void Fail(string name) {
         if (!quests.TryGetValue(name, out var q)) return;
         q.State = QuestState.Failed;
+        EnsureStageCapacity(q, q.Stage);
+        EnsureResultCapacity(q, q.Result);
         PushToArticy(q);
         RaiseQuestChanged(q);
     }
@@ -125,6 +256,8 @@ public static class QuestManager {
     public static void Complete(string name) {
         if (!quests.TryGetValue(name, out var q)) return;
         q.State = QuestState.Completed;
+        EnsureStageCapacity(q, q.Stage);
+        EnsureResultCapacity(q, q.Result);
         PushToArticy(q);
         RaiseQuestChanged(q);
     }
@@ -133,6 +266,8 @@ public static class QuestManager {
         var q = Start(name); // òèï (temp/non-temp) óæå äîëæåí áûòü îïðåäåë¸í ðàíåå èëè ïî óìîë÷àíèþ non-temp
         q.Stage = stage;
         if (q.State == QuestState.NotStarted) q.State = QuestState.Active;
+        EnsureStageCapacity(q, stage);
+        EnsureResultCapacity(q, q.Result);
         PushToArticy(q);
         RaiseQuestChanged(q);
     }
@@ -169,7 +304,7 @@ public static class QuestManager {
     public static string DisplayQuests() {
         var sb = new StringBuilder();
         foreach (var q in quests.Values) {
-            sb.Append($"{q.Name} [State:{q.State}, Stage:{q.Stage}, Temp:{q.IsTemporary}]");
+            sb.Append($"{q.Name} [State:{q.State}, Stage:{q.Stage}, Result:{q.Result}, Temp:{q.IsTemporary}]");
             if (q.Objectives.Count > 0) {
                 sb.Append(" {");
                 bool first = true;
@@ -196,6 +331,7 @@ public static class QuestManager {
             var gv = q.IsTemporary ? RQUE : NQUE;
 
             SetInt(gv, $"{q.Name}_State", (int)q.State);
+            SetInt(gv, $"{q.Name}_Result", q.Result);
             SetInt(gv, $"{q.Name}_Stage", q.Stage);
 
             int completedObjectives = 0;
@@ -256,12 +392,23 @@ public static class QuestManager {
                         var questName = key.Substring(0, key.Length - "_State".Length);
                         var q = Ensure(questName, isTemp);
                         q.State = (QuestState)val;
+                        EnsureStageCapacity(q, q.Stage);
+                        EnsureResultCapacity(q, q.Result);
                         RaiseQuestChanged(q);
                     } else if (key.EndsWith("_Stage")) {
                         var questName = key.Substring(0, key.Length - "_Stage".Length);
                         var q = Ensure(questName, isTemp);
                         q.Stage = val;
                         if (q.State == QuestState.NotStarted && val > 0) q.State = QuestState.Active;
+                        EnsureStageCapacity(q, val);
+                        EnsureResultCapacity(q, q.Result);
+                        RaiseQuestChanged(q);
+                    } else if (key.EndsWith("_Result")) {
+                        var questName = key.Substring(0, key.Length - "_Result".Length);
+                        var q = Ensure(questName, isTemp);
+                        q.Result = val;
+                        EnsureResultCapacity(q, val);
+                        EnsureStageCapacity(q, q.Stage);
                         RaiseQuestChanged(q);
                     } else if (key.Contains("_Obj_")) {
                         var parts = key.Split(new[] { "_Obj_" }, StringSplitOptions.None);
