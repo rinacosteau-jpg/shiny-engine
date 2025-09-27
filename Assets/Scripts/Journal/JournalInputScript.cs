@@ -24,7 +24,10 @@ public class JournalInputScript : MonoBehaviour
                 return;
         }
 
-        if (journalAction.triggered)
+        if (journalAction.triggered) {
             journalUI.Toggle();
+            Debug.Log("journal called");
+        }
+            
     }
 }
