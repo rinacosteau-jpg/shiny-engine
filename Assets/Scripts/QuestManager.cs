@@ -4,57 +4,89 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using Articy.Unity;
-using Articy.World_Of_Red_Moon; // замени на свой, если Articy сгенерил другой namespace
+using Articy.World_Of_Red_Moon; // Г§Г Г¬ГҐГ­ГЁ Г­Г  Г±ГўГ®Г©, ГҐГ±Г«ГЁ Articy Г±ГЈГҐГ­ГҐГ°ГЁГ« Г¤Г°ГіГЈГ®Г© namespace
 using Articy.World_Of_Red_Moon.GlobalVariables;
 
 public enum QuestState { NotStarted = 0, Active = 1, Completed = 2, Failed = 3 }
 
 public static class QuestManager {
-    // ======== Модель ========
+    public static IEnumerable<Quest> GetAllQuests() => quests.Values;
+
+    public static string DescribeQuest(Quest quest)
+    {
+        if (quest == null)
+            return string.Empty;
+
+        var sb = new StringBuilder();
+        sb.AppendLine(quest.Name);
+        sb.AppendLine($"State: {quest.State}");
+        sb.AppendLine($"Stage: {quest.Stage}");
+        sb.AppendLine($"Temporary: {quest.IsTemporary}");
+
+        if (quest.Objectives.Count > 0)
+        {
+            sb.AppendLine();
+            sb.AppendLine("Objectives:");
+            foreach (var obj in quest.Objectives.Values)
+            {
+                sb.Append("- ");
+                sb.Append(obj.Id);
+                sb.Append(": ");
+                sb.Append(obj.State);
+                if (obj.Optional)
+                    sb.Append(" (optional)");
+                sb.AppendLine();
+            }
+        }
+
+        return sb.ToString().TrimEnd();
+    }
+
+    // ======== ГЊГ®Г¤ГҐГ«Гј ========
     public class Objective {
-        public string Id;                 // напр. "A", "B", "C"
+        public string Id;                 // Г­Г ГЇГ°. "A", "B", "C"
         public QuestState State;
         public bool Optional;
     }
 
     public class Quest {
-        public string Name;               // это и есть ID квеста
+        public string Name;               // ГЅГІГ® ГЁ ГҐГ±ГІГј ID ГЄГўГҐГ±ГІГ 
         public QuestState State;
-        public int Stage;                 // линейный прогресс/чекпоинт
+        public int Stage;                 // Г«ГЁГ­ГҐГ©Г­Г»Г© ГЇГ°Г®ГЈГ°ГҐГ±Г±/Г·ГҐГЄГЇГ®ГЁГ­ГІ
         public bool IsTemporary;          // RQUE = true, NQUE = false
         public readonly Dictionary<string, Objective> Objectives = new();
     }
 
-    // ======== События ========
+    // ======== Г‘Г®ГЎГ»ГІГЁГї ========
     public static event Action<Quest> OnQuestChanged;
 
-    // ======== Хранилище ========
+    // ======== Г•Г°Г Г­ГЁГ«ГЁГ№ГҐ ========
     private static readonly Dictionary<string, Quest> quests = new();
 
-    // Глушилка для PushToArticy во время Sync
+    // ГѓГ«ГіГёГЁГ«ГЄГ  Г¤Г«Гї PushToArticy ГўГ® ГўГ°ГҐГ¬Гї Sync
     private static bool _mutePush;
 
-    // Быстрые ссылки на наборы глобалок Articy
+    // ГЃГ»Г±ГІГ°Г»ГҐ Г±Г±Г»Г«ГЄГЁ Г­Г  Г­Г ГЎГ®Г°Г» ГЈГ«Г®ГЎГ Г«Г®ГЄ Articy
     private static object RQUE => ArticyGlobalVariables.Default.RQUE;
     private static object NQUE => ArticyGlobalVariables.Default.NQUE;
 
-    // ======== Хелперы ========
-    // isTemp: null — не трогаем; true — временный (RQUE); false — постоянный (NQUE).
+    // ======== Г•ГҐГ«ГЇГҐГ°Г» ========
+    // isTemp: null вЂ” Г­ГҐ ГІГ°Г®ГЈГ ГҐГ¬; true вЂ” ГўГ°ГҐГ¬ГҐГ­Г­Г»Г© (RQUE); false вЂ” ГЇГ®Г±ГІГ®ГїГ­Г­Г»Г© (NQUE).
     private static Quest Ensure(string name, bool? isTemp = null) {
         if (!quests.TryGetValue(name, out var q)) {
             q = new Quest {
                 Name = name,
-                IsTemporary = isTemp ?? false, // по умолчанию считаем персистентным
+                IsTemporary = isTemp ?? false, // ГЇГ® ГіГ¬Г®Г«Г·Г Г­ГЁГѕ Г±Г·ГЁГІГ ГҐГ¬ ГЇГҐГ°Г±ГЁГ±ГІГҐГ­ГІГ­Г»Г¬
                 State = QuestState.NotStarted,
                 Stage = 0
             };
             quests[name] = q;
         } else if (isTemp.HasValue) {
-            // Если сведения пришли из NQUE — даём приоритет "не временным".
+            // Г…Г±Г«ГЁ Г±ГўГҐГ¤ГҐГ­ГЁГї ГЇГ°ГЁГёГ«ГЁ ГЁГ§ NQUE вЂ” Г¤Г ВёГ¬ ГЇГ°ГЁГ®Г°ГЁГІГҐГІ "Г­ГҐ ГўГ°ГҐГ¬ГҐГ­Г­Г»Г¬".
             if (isTemp.Value == false && q.IsTemporary)
                 q.IsTemporary = false;
-            // Если уже non-temp, не переводим обратно в temp.
-            // Если был temp и пришло temp — оставляем temp.
+            // Г…Г±Г«ГЁ ГіГ¦ГҐ non-temp, Г­ГҐ ГЇГҐГ°ГҐГўГ®Г¤ГЁГ¬ Г®ГЎГ°Г ГІГ­Г® Гў temp.
+            // Г…Г±Г«ГЁ ГЎГ»Г« temp ГЁ ГЇГ°ГЁГёГ«Г® temp вЂ” Г®Г±ГІГ ГўГ«ГїГҐГ¬ temp.
         }
         return q;
     }
@@ -67,13 +99,13 @@ public static class QuestManager {
 
     private static void RaiseQuestChanged(Quest q) => OnQuestChanged?.Invoke(q);
 
-    // ======== Публичный API ========
+    // ======== ГЏГіГЎГ«ГЁГ·Г­Г»Г© API ========
     public static bool Has(string name) => quests.ContainsKey(name);
     public static Quest Get(string name) => quests.TryGetValue(name, out var q) ? q : null;
     public static bool IsActive(string name) => quests.TryGetValue(name, out var q) && q.State == QuestState.Active;
     public static bool IsCompleted(string name) => quests.TryGetValue(name, out var q) && q.State == QuestState.Completed;
 
-    /// <summary>Запусти постоянный квест: Start(name, isTemp:false) или временный: Start(name, isTemp:true)</summary>
+    /// <summary>Г‡Г ГЇГіГ±ГІГЁ ГЇГ®Г±ГІГ®ГїГ­Г­Г»Г© ГЄГўГҐГ±ГІ: Start(name, isTemp:false) ГЁГ«ГЁ ГўГ°ГҐГ¬ГҐГ­Г­Г»Г©: Start(name, isTemp:true)</summary>
     public static Quest Start(string name, bool isTemp = false) {
         var q = Ensure(name, isTemp);
         q.State = QuestState.Active;
@@ -98,7 +130,7 @@ public static class QuestManager {
     }
 
     public static void SetStage(string name, int stage) {
-        var q = Start(name); // тип (temp/non-temp) уже должен быть определён ранее или по умолчанию non-temp
+        var q = Start(name); // ГІГЁГЇ (temp/non-temp) ГіГ¦ГҐ Г¤Г®Г«Г¦ГҐГ­ ГЎГ»ГІГј Г®ГЇГ°ГҐГ¤ГҐГ«ВёГ­ Г°Г Г­ГҐГҐ ГЁГ«ГЁ ГЇГ® ГіГ¬Г®Г«Г·Г Г­ГЁГѕ non-temp
         q.Stage = stage;
         if (q.State == QuestState.NotStarted) q.State = QuestState.Active;
         PushToArticy(q);
@@ -124,10 +156,10 @@ public static class QuestManager {
             if (kv.Value.IsTemporary) toRemove.Add(kv.Key);
 
         foreach (var name in toRemove) {
-            // 1) обнуляем зеркальные переменные именно в RQUE (только по префиксу квеста)
+            // 1) Г®ГЎГ­ГіГ«ГїГҐГ¬ Г§ГҐГ°ГЄГ Г«ГјГ­Г»ГҐ ГЇГҐГ°ГҐГ¬ГҐГ­Г­Г»ГҐ ГЁГ¬ГҐГ­Г­Г® Гў RQUE (ГІГ®Г«ГјГЄГ® ГЇГ® ГЇГ°ГҐГґГЁГЄГ±Гі ГЄГўГҐГ±ГІГ )
             ClearQuestInArticy(name, RQUE);
 
-            // 2) убираем из локального реестра
+            // 2) ГіГЎГЁГ°Г ГҐГ¬ ГЁГ§ Г«Г®ГЄГ Г«ГјГ­Г®ГЈГ® Г°ГҐГҐГ±ГІГ°Г 
             quests.Remove(name);
         }
     }
@@ -153,12 +185,12 @@ public static class QuestManager {
         return sb.ToString();
     }
 
-    // ======== Синхронизация с Articy ========
-    // Пуш в Articy по соглашению имён:
+    // ======== Г‘ГЁГ­ГµГ°Г®Г­ГЁГ§Г Г¶ГЁГї Г± Articy ========
+    // ГЏГіГё Гў Articy ГЇГ® Г±Г®ГЈГ«Г ГёГҐГ­ГЁГѕ ГЁГ¬ВёГ­:
     // <Quest>_State (int), <Quest>_Stage (int), <Quest>_Obj_<Id> (int)
-    // Дополнительно: <Quest>_ObjectivesCompleted (int) если свойство существует.
+    // Г„Г®ГЇГ®Г«Г­ГЁГІГҐГ«ГјГ­Г®: <Quest>_ObjectivesCompleted (int) ГҐГ±Г«ГЁ Г±ГўГ®Г©Г±ГІГўГ® Г±ГіГ№ГҐГ±ГІГўГіГҐГІ.
     private static void PushToArticy(Quest q) {
-        if (_mutePush) return; // не устраиваем пинг-понг во время Sync
+        if (_mutePush) return; // Г­ГҐ ГіГ±ГІГ°Г ГЁГўГ ГҐГ¬ ГЇГЁГ­ГЈ-ГЇГ®Г­ГЈ ГўГ® ГўГ°ГҐГ¬Гї Sync
 
         try {
             var gv = q.IsTemporary ? RQUE : NQUE;
@@ -172,16 +204,16 @@ public static class QuestManager {
                 if (obj.State == QuestState.Completed) completedObjectives++;
             }
 
-            // Общее имя счётчика (если есть — поставим):
+            // ГЋГЎГ№ГҐГҐ ГЁГ¬Гї Г±Г·ВёГІГ·ГЁГЄГ  (ГҐГ±Г«ГЁ ГҐГ±ГІГј вЂ” ГЇГ®Г±ГІГ ГўГЁГ¬):
             SetIntIfExists(gv, $"{q.Name}_ObjectivesCompleted", completedObjectives);
-            // Совместимость с «advertise_TalkedCount», если такая переменная есть:
+            // Г‘Г®ГўГ¬ГҐГ±ГІГЁГ¬Г®Г±ГІГј Г± В«advertise_TalkedCountВ», ГҐГ±Г«ГЁ ГІГ ГЄГ Гї ГЇГҐГ°ГҐГ¬ГҐГ­Г­Г Гї ГҐГ±ГІГј:
             SetIntIfExists(gv, $"{q.Name}_TalkedCount", completedObjectives);
         } catch (Exception e) {
             Debug.LogWarning($"QuestManager.PushToArticy: {e.Message}");
         }
     }
 
-    // Обнулить все int/bool переменные квеста по префиксу "<questName>_" внутри указанного набора (RQUE или NQUE).
+    // ГЋГЎГ­ГіГ«ГЁГІГј ГўГ±ГҐ int/bool ГЇГҐГ°ГҐГ¬ГҐГ­Г­Г»ГҐ ГЄГўГҐГ±ГІГ  ГЇГ® ГЇГ°ГҐГґГЁГЄГ±Гі "<questName>_" ГўГ­ГіГІГ°ГЁ ГіГЄГ Г§Г Г­Г­Г®ГЈГ® Г­Г ГЎГ®Г°Г  (RQUE ГЁГ«ГЁ NQUE).
     private static void ClearQuestInArticy(string questName, object gvset) {
         try {
             var type = gvset.GetType();
@@ -198,9 +230,9 @@ public static class QuestManager {
         }
     }
 
-    // Подтяжка состояния из Articy в локальное хранилище.
-    // Теперь читаем и RQUE (isTemp=true), и NQUE (isTemp=false).
-    // Старые bool (например *_Started) конвертируем в Active один раз.
+    // ГЏГ®Г¤ГІГїГ¦ГЄГ  Г±Г®Г±ГІГ®ГїГ­ГЁГї ГЁГ§ Articy Гў Г«Г®ГЄГ Г«ГјГ­Г®ГҐ ГµГ°Г Г­ГЁГ«ГЁГ№ГҐ.
+    // Г’ГҐГЇГҐГ°Гј Г·ГЁГІГ ГҐГ¬ ГЁ RQUE (isTemp=true), ГЁ NQUE (isTemp=false).
+    // Г‘ГІГ Г°Г»ГҐ bool (Г­Г ГЇГ°ГЁГ¬ГҐГ° *_Started) ГЄГ®Г­ГўГҐГ°ГІГЁГ°ГіГҐГ¬ Гў Active Г®Г¤ГЁГ­ Г°Г Г§.
     public static void SyncFromArticy() {
         _mutePush = true;
         try {
@@ -242,7 +274,7 @@ public static class QuestManager {
                         }
                     }
                 } else if (p.PropertyType == typeof(bool)) {
-                    // Легаси: *_Started == true -> активируем квест
+                    // Г‹ГҐГЈГ Г±ГЁ: *_Started == true -> Г ГЄГІГЁГўГЁГ°ГіГҐГ¬ ГЄГўГҐГ±ГІ
                     bool started = (bool)p.GetValue(gv);
                     if (started && p.Name.EndsWith("_Started")) {
                         string questName = p.Name.Substring(0, p.Name.Length - "_Started".Length);
@@ -260,7 +292,7 @@ public static class QuestManager {
         }
     }
 
-    // ======== Рефлексия-помощники ========
+    // ======== ГђГҐГґГ«ГҐГЄГ±ГЁГї-ГЇГ®Г¬Г®Г№Г­ГЁГЄГЁ ========
     private static void SetInt(object gv, string propName, int value) {
         var p = gv.GetType().GetProperty(propName);
         if (p != null && p.PropertyType == typeof(int)) p.SetValue(gv, value);
