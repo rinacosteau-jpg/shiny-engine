@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using UnityEngine;
 using TMPro;
 using Articy.Unity;
@@ -91,8 +91,11 @@ public class GlobalVariables : MonoBehaviour {
     // Pull quests from Articy and render list
     public void GetTempObjectives() {
         QuestManager.SyncFromArticy();
+        var journalUI = FindObjectOfType<JournalUI>();
+        if (journalUI != null)
+            journalUI.Refresh();
         if (setOfQuests)
-            setOfQuests.text = "Quests:\n" + QuestManager.DisplayQuests();
+            setOfQuests.text = string.Empty;
     }
 
     // Apply item_*_delta from ITM → InventoryStorage; sync *_count back
