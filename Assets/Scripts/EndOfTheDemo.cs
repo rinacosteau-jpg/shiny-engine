@@ -73,18 +73,37 @@ public class EndOfTheDemo : MonoBehaviour {
             CacheTargetFlowObject();
 
         var currentStart = ui.CurrentStartObject;
-        isWatching = currentStart != null && targetFlowObject != null && currentStart == targetFlowObject;
+        isWatching = FlowObjectsMatch(currentStart, targetFlowObject);
     }
 
     private void OnDialogueClosed(DialogueUI ui) {
         if (hasTriggered || ui != dialogueUI)
             return;
 
-        if (!isWatching)
+        var currentStart = ui.CurrentStartObject;
+        var wasTargetDialogue = isWatching || FlowObjectsMatch(currentStart, targetFlowObject);
+        isWatching = false;
+
+        if (!wasTargetDialogue)
             return;
 
-        isWatching = false;
         TriggerEndOfDemo();
+    }
+
+    private static bool FlowObjectsMatch(IFlowObject currentStart, IFlowObject target) {
+        if (ReferenceEquals(currentStart, target))
+            return true;
+
+        if (currentStart == null || target == null)
+            return false;
+
+        if (currentStart.Equals(target))
+            return true;
+
+        if (currentStart is ArticyObject currentArticy && target is ArticyObject targetArticy)
+            return Equals(currentArticy.Id, targetArticy.Id);
+
+        return false;
     }
 
     private void TriggerEndOfDemo() {
