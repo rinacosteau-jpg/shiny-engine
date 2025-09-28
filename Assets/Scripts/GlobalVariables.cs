@@ -132,8 +132,13 @@ public class GlobalVariables : MonoBehaviour {
         int currentVal = ps.moralVal;
         int currentCap = ps.moralCap;
 
-        if (!forceCheck && currentVal == lastArticyMoralVal && currentCap == lastArticyMoralCap)
+        bool reachedZero = currentVal <= 0 || currentCap <= 0;
+
+        if (!forceCheck && currentVal == lastArticyMoralVal && currentCap == lastArticyMoralCap) {
+            if (reachedZero)
+                GameOver.Trigger();
             return;
+        }
 
         int clampedCap = Mathf.Max(0, currentCap);
         if (clampedCap != currentCap)
