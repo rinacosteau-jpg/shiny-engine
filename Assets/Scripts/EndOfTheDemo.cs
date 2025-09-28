@@ -9,6 +9,8 @@ public class EndOfTheDemo : MonoBehaviour {
 
     private IFlowObject targetFlowObject;
     private bool isWatching;
+    private IFlowObject watchedFlowObject;
+    private ArticyId? watchedFragmentId;
     private bool hasTriggered;
 
     private void Reset() {
@@ -72,22 +74,43 @@ public class EndOfTheDemo : MonoBehaviour {
         if (targetFlowObject == null && dialogueFragment != null)
             CacheTargetFlowObject();
 
+        if (isWatching)
+            return;
+
         var currentStart = ui.CurrentStartObject;
-        isWatching = FlowObjectsMatch(currentStart, targetFlowObject);
+        if (!FlowObjectsMatch(currentStart, targetFlowObject))
+            return;
+
+        isWatching = true;
+        watchedFlowObject = currentStart;
+        watchedFragmentId = GetArticyId(currentStart) ?? GetArticyId(targetFlowObject);
     }
 
     private void OnDialogueClosed(DialogueUI ui) {
         if (hasTriggered || ui != dialogueUI)
             return;
 
-        var currentStart = ui.CurrentStartObject;
-        var wasTargetDialogue = isWatching || FlowObjectsMatch(currentStart, targetFlowObject);
-        isWatching = false;
+        var wasTargetDialogue = false;
+        var wasWatching = isWatching;
+
+        if (wasWatching) {
+            if (watchedFragmentId.HasValue)
+                wasTargetDialogue = FlowObjectMatchesId(targetFlowObject, watchedFragmentId.Value);
+
+            if (!wasTargetDialogue)
+                wasTargetDialogue = FlowObjectsMatch(watchedFlowObject, targetFlowObject);
+        }
 
         if (!wasTargetDialogue)
             return;
 
         TriggerEndOfDemo();
+
+        if (wasWatching) {
+            isWatching = false;
+            watchedFlowObject = null;
+            watchedFragmentId = null;
+        }
     }
 
     private static bool FlowObjectsMatch(IFlowObject currentStart, IFlowObject target) {
@@ -104,6 +127,20 @@ public class EndOfTheDemo : MonoBehaviour {
             return Equals(currentArticy.Id, targetArticy.Id);
 
         return false;
+    }
+
+    private static bool FlowObjectMatchesId(IFlowObject flowObject, ArticyId id) {
+        if (flowObject is ArticyObject articyObject)
+            return Equals(articyObject.Id, id);
+
+        return false;
+    }
+
+    private static ArticyId? GetArticyId(IFlowObject flowObject) {
+        if (flowObject is ArticyObject articyObject)
+            return articyObject.Id;
+
+        return null;
     }
 
     private void TriggerEndOfDemo() {
