@@ -336,6 +336,24 @@ namespace Articy.World_Of_Red_Moon
     
     
     [Serializable()]
+    public class ArticyValueQuest_TemplateTemplate : ArticyValue<Articy.World_Of_Red_Moon.Templates.Quest_TemplateTemplate>
+    {
+    }
+}
+namespace Articy.World_Of_Red_Moon
+{
+    
+    
+    [Serializable()]
+    public class ArticyValueQuest_Template : ArticyValue<Quest_Template>
+    {
+    }
+}
+namespace Articy.World_Of_Red_Moon
+{
+    
+    
+    [Serializable()]
     public class ArticyValueLocation : ArticyValue<Location>
     {
     }

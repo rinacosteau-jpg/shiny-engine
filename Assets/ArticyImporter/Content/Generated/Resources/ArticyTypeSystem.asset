@@ -2245,6 +2245,120 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       mConstraintNames: 
       mConstraintValues: []
+  - mTechnicalName: Quest_Template
+    mDisplayName: Quest Template
+    mCSharpType: Articy.World_Of_Red_Moon.Quest_Template, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    mIsEnum: 0
+    mHasTemplate: 1
+    mFeatures: []
+    mProperties:
+    - mTechnicalName: Attachments
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: System.Collections.Generic.List`1[[Articy.Unity.ArticyObject,
+        ArticyRuntime, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib,
+        Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: DisplayName
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
+        Culture=neutral, PublicKeyToken=null
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: Color
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: Text
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: Articy.Unity.ArticyMultiLanguageString, ArticyRuntime, Version=1.3.0.0,
+        Culture=neutral, PublicKeyToken=null
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: ExternalId
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: Position
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: ZIndex
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: Size
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: UnityEngine.Vector2, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: PreviewImage
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: Articy.Unity.PreviewImage, ArticyRuntime, Version=1.3.0.0, Culture=neutral,
+        PublicKeyToken=null
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: ShortId
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: System.UInt32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: Id
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: System.UInt64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: TechnicalName
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: Parent
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: Articy.Unity.ArticyObject, ArticyRuntime, Version=1.3.0.0, Culture=neutral,
+        PublicKeyToken=null
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: ParentId
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: System.UInt64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: InstanceId
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: System.UInt64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      mConstraintNames: 
+      mConstraintValues: []
+    - mTechnicalName: Children
+      mDisplayName: 
+      mIsTemplateProperty: 0
+      mPropertyType: System.Collections.ArrayList, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      mConstraintNames: 
+      mConstraintValues: []
   - mTechnicalName: Location
     mDisplayName: Location
     mCSharpType: Articy.World_Of_Red_Moon.Location, Assembly-CSharp, Version=0.0.0.0,
@@ -4988,6 +5102,7 @@ MonoBehaviour:
   - DefaultSupportingCharacterTemplate
   - DefaultMainCharacterTemplate
   - Item
+  - Quest_Template
   - Location
   - Spot
   - Zone
@@ -5042,6 +5157,8 @@ MonoBehaviour:
   - Articy.World_Of_Red_Moon.DefaultMainCharacterTemplate, Assembly-CSharp, Version=0.0.0.0,
     Culture=neutral, PublicKeyToken=null
   - Articy.World_Of_Red_Moon.Item, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  - Articy.World_Of_Red_Moon.Quest_Template, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   - Articy.World_Of_Red_Moon.Location, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
