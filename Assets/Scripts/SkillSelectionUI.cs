@@ -249,6 +249,10 @@ public class SkillSelectionUI : MonoBehaviour {
         Debug.Log("[SkillSelectionUI] Confirm → apply & hide (CG)");
     }
 
+    public void ForceClose() {
+        HideImmediate();
+    }
+
     private static string MakeDisplayName(string fieldName) {
         const string prefix = "skill_";
         if (fieldName.StartsWith(prefix, StringComparison.OrdinalIgnoreCase)) {
