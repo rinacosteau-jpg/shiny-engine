@@ -2954,7 +2954,7 @@ MonoBehaviour:
     parent: 216172783251375095
     technicalName: Dlg_E64EBBD1
     articyType: Dialogue
-    childCount: 90
+    childCount: 91
   - id: 72057594037931056
     parent: 72057594037930445
     technicalName: DFr_B04B826F
@@ -3069,21 +3069,6 @@ MonoBehaviour:
     parent: 72057594037930445
     technicalName: DFr_5E862938
     articyType: DialogueFragment
-    childCount: 0
-  - id: 72057594037935574
-    parent: 72057594037930445
-    technicalName: 
-    articyType: Comment
-    childCount: 0
-  - id: 72057594037939480
-    parent: 72057594037930445
-    technicalName: 
-    articyType: Comment
-    childCount: 0
-  - id: 72057594037935284
-    parent: 72057594037930445
-    technicalName: 
-    articyType: Comment
     childCount: 0
   - id: 72057594037935334
     parent: 72057594037930445
@@ -3340,6 +3325,11 @@ MonoBehaviour:
     technicalName: DFr_55124340
     articyType: DialogueFragment
     childCount: 0
+  - id: 72057594037939480
+    parent: 72057594037930445
+    technicalName: 
+    articyType: Comment
+    childCount: 0
   - id: 72057594037939393
     parent: 72057594037930445
     technicalName: Cnd_F4B4204E
@@ -3354,6 +3344,16 @@ MonoBehaviour:
     parent: 72057594037930445
     technicalName: DFr_D607864D
     articyType: DialogueFragment
+    childCount: 0
+  - id: 72057594037935574
+    parent: 72057594037930445
+    technicalName: 
+    articyType: Comment
+    childCount: 0
+  - id: 72057594037935284
+    parent: 72057594037930445
+    technicalName: 
+    articyType: Comment
     childCount: 0
   - id: 72057594037932301
     parent: 72057594037930445
@@ -3403,6 +3403,11 @@ MonoBehaviour:
   - id: 72057594037939473
     parent: 72057594037930445
     technicalName: DFr_BE0A671A
+    articyType: DialogueFragment
+    childCount: 0
+  - id: 72057594037939483
+    parent: 72057594037930445
+    technicalName: DFr_8C427E92
     articyType: DialogueFragment
     childCount: 0
   - id: 72057594037930451
