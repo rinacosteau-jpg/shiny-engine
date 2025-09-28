@@ -26,8 +26,6 @@ public class GlobalVariables : MonoBehaviour {
     [SerializeField] public TMP_Text setOfKnowledge;
     [SerializeField] public TMP_Text setOfQuests;
 
-    private int lastPlayerMoralVal;
-    private int lastPlayerMoralCap;
     private int lastArticyMoralVal;
     private int lastArticyMoralCap;
 
@@ -38,8 +36,6 @@ public class GlobalVariables : MonoBehaviour {
         }
         Instance = this;
         player = new PlayerState(null, false, false);
-        player.moralCap = 10;
-        player.moralVal = 10;
         if (!setOfKnowledge) setOfKnowledge = GetComponent<TMP_Text>();
 
         // Subscribe to inventory events to update flags on any change
@@ -51,14 +47,10 @@ public class GlobalVariables : MonoBehaviour {
 
         ArticyClueSync.SyncFromArticy();
 
-        // Sync moral values from Unity to Articy at start
-        SyncMoralToArticy();
-
-        lastPlayerMoralVal = player.moralVal;
-        lastPlayerMoralCap = player.moralCap;
-        
         lastArticyMoralVal = ArticyGlobalVariables.Default.PS.moralVal;
         lastArticyMoralCap = ArticyGlobalVariables.Default.PS.moralCap;
+
+        UpdateMoralState(forceCheck: true);
 
     }
 
@@ -132,9 +124,30 @@ public class GlobalVariables : MonoBehaviour {
         Debug.Log(player.hasGun);
     }
 
-    private void SyncMoralToArticy() {
-        ArticyGlobalVariables.Default.PS.moralVal = player.moralVal;
-        ArticyGlobalVariables.Default.PS.moralCap = player.moralCap;
+    private void UpdateMoralState(bool forceCheck = false) {
+        var ps = ArticyGlobalVariables.Default?.PS;
+        if (ps == null)
+            return;
+
+        int currentVal = ps.moralVal;
+        int currentCap = ps.moralCap;
+
+        if (!forceCheck && currentVal == lastArticyMoralVal && currentCap == lastArticyMoralCap)
+            return;
+
+        int clampedCap = Mathf.Max(0, currentCap);
+        if (clampedCap != currentCap)
+            ps.moralCap = clampedCap;
+
+        int clampedVal = Mathf.Clamp(currentVal, 0, clampedCap);
+        if (clampedVal != currentVal)
+            ps.moralVal = clampedVal;
+
+        lastArticyMoralCap = ps.moralCap;
+        lastArticyMoralVal = ps.moralVal;
+
+        if (ps.moralVal <= 0 || ps.moralCap <= 0)
+            GameOver.Trigger();
     }
 
     private void ResolveSkillChecks() {
@@ -175,55 +188,7 @@ public class GlobalVariables : MonoBehaviour {
     }
 
     private void Update() {
-        var articyMoralVal = ArticyGlobalVariables.Default.PS.moralVal;
-        if (articyMoralVal != lastArticyMoralVal) {
-            player.moralVal = articyMoralVal;
-            if (player.moralVal > player.moralCap) {
-                player.moralVal = player.moralCap;
-                ArticyGlobalVariables.Default.PS.moralVal = player.moralVal;
-            }
-            lastArticyMoralVal = player.moralVal;
-            lastPlayerMoralVal = player.moralVal;
-        }
-
-        var articyMoralCap = ArticyGlobalVariables.Default.PS.moralCap;
-        if (articyMoralCap != lastArticyMoralCap) {
-            player.moralCap = articyMoralCap;
-            if (player.moralCap <= 0) {
-                GameOver.Trigger();
-            }
-            if (player.moralVal > player.moralCap) {
-                player.moralVal = player.moralCap;
-                ArticyGlobalVariables.Default.PS.moralVal = player.moralVal;
-                lastArticyMoralVal = player.moralVal;
-                lastPlayerMoralVal = player.moralVal;
-            }
-            lastArticyMoralCap = articyMoralCap;
-            lastPlayerMoralCap = player.moralCap;
-        }
-
-        if (player.moralVal != lastPlayerMoralVal) {
-            if (player.moralVal > player.moralCap)
-                player.moralVal = player.moralCap;
-            ArticyGlobalVariables.Default.PS.moralVal = player.moralVal;
-            lastPlayerMoralVal = player.moralVal;
-            lastArticyMoralVal = player.moralVal;
-        }
-
-        if (player.moralCap != lastPlayerMoralCap) {
-            if (player.moralCap <= 0) {
-                GameOver.Trigger();
-            }
-            if (player.moralVal > player.moralCap) {
-                player.moralVal = player.moralCap;
-                ArticyGlobalVariables.Default.PS.moralVal = player.moralVal;
-                lastPlayerMoralVal = player.moralVal;
-                lastArticyMoralVal = player.moralVal;
-            }
-            ArticyGlobalVariables.Default.PS.moralCap = player.moralCap;
-            lastPlayerMoralCap = player.moralCap;
-            lastArticyMoralCap = player.moralCap;
-        }
+        UpdateMoralState();
 
         ResolveSkillChecks();
 

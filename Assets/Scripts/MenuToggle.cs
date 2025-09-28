@@ -48,6 +48,26 @@ public class MenuToggle : MonoBehaviour {
         }
     }
 
+    public void HideMenu() {
+        if (menuPanel == null)
+            return;
+
+        isMenuVisible = false;
+
+        if (menuCanvasGroup == null)
+            menuCanvasGroup = menuPanel.GetComponent<CanvasGroup>();
+
+        if (menuCanvasGroup == null) {
+            menuPanel.SetActive(false);
+            return;
+        }
+
+        if (!menuPanel.activeSelf)
+            menuPanel.SetActive(true);
+
+        UpdateMenuVisibility();
+    }
+
     private void UpdateMenuVisibility() {
         if (menuCanvasGroup == null)
             return;
