@@ -1585,7 +1585,7 @@ aGlobalVariablesState.ITM.item_Gun_delta++;
         /// </summary>
         public bool Script_720575940379282080x100000000002CC1Expression(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
         {
-            return random(aGlobalVariablesState, aMethodProvider, 1,101)+aGlobalVariablesState.PS.skill_Dexterity>1;
+            return random(aGlobalVariablesState, aMethodProvider, 1,101)+aGlobalVariablesState.PS.skill_Dexterity>60;
         }
         
         /// <summary>

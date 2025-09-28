@@ -16185,7 +16185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b2d3b07217aba1408ad85bde246204f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StartSequence
-  skipSequence: 1
+  skipSequence: 0
   dialogueUI: {fileID: 2139869256}
   skillSelectionUI: {fileID: 1840982212}
   dialogueStartA:
