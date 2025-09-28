@@ -74,6 +74,7 @@ public class EndOfTheDemo : MonoBehaviour {
             CacheTargetFlowObject();
 
         var currentStart = ui.CurrentStartObject;
+        Debug.Log("start to watch");
         var matchesTarget = currentStart != null && targetFlowObject != null && ReferenceEquals(currentStart, targetFlowObject);
 
         watchedDialogueActive = matchesTarget;
