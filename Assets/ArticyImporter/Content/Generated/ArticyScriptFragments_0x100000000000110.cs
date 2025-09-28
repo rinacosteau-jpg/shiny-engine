@@ -143,6 +143,7 @@ aGlobalVariablesState.PS.moralVal>=1;
         public void Script_720575940379282080x1000000000014F3Text(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
         {
             aGlobalVariablesState.RQUE.stealFromRu_State = 1;
+ aGlobalVariablesState.ITM.item_CubesNote_delta++;
         }
         
         /// <summary>

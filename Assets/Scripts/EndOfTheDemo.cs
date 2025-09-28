@@ -87,6 +87,7 @@ public class EndOfTheDemo : MonoBehaviour {
         if (!watchedDialogueActive)
             return;
 
+        Debug.Log("dialogue not watched anymore");
         watchedDialogueActive = false;
 
         TriggerEndOfDemo();
