@@ -22,6 +22,12 @@ public class SkillSelectionUI : MonoBehaviour {
     [SerializeField] private int topSortingOrder = 5000;
     [SerializeField] private bool activateParentsIfInactive = true; // включать родителей, если выключены
 
+    private static readonly string[] LockedSkillPropertyNames = {
+        "skill_Lux",
+        "skill_Sonus",
+        "skill_Tempus"
+    };
+
     private class RuntimeSlot {
         public string displayName;
         public PropertyInfo property;
@@ -31,6 +37,7 @@ public class SkillSelectionUI : MonoBehaviour {
         public Button plusButton;
         public Button minusButton;
         public GameObject go;
+        public bool isLocked;
     }
 
     private readonly List<RuntimeSlot> _slots = new();
@@ -129,13 +136,14 @@ public class SkillSelectionUI : MonoBehaviour {
             .Where(p => p.PropertyType == typeof(int)
                         && p.GetIndexParameters().Length == 0
                         && p.Name.StartsWith("skill_", StringComparison.OrdinalIgnoreCase))
-            .OrderBy(p => p.Name)
+            .OrderBy(p => GetLockedSkillOrder(p.Name))
+            .ThenBy(p => p.Name, StringComparer.OrdinalIgnoreCase)
             .ToList();
 
         foreach (var property in properties) {
             int currentValue = (int)property.GetValue(ps);
             var displayName = MakeDisplayName(property.Name);
-            var slot = CreateSlot(displayName, property, currentValue);
+            var slot = CreateSlot(displayName, property, currentValue, IsLockedSkill(property.Name));
             _slots.Add(slot);
             totalAllocated += currentValue;
         }
@@ -174,7 +182,7 @@ public class SkillSelectionUI : MonoBehaviour {
         }
     }
 
-    private RuntimeSlot CreateSlot(string displayName, PropertyInfo property, int initialValue) {
+    private RuntimeSlot CreateSlot(string displayName, PropertyInfo property, int initialValue, bool isLocked) {
         var go = Instantiate(slotTemplate, slotContainer);
         go.gameObject.name = $"Slot_{displayName}";
         go.gameObject.SetActive(true);
@@ -195,11 +203,18 @@ public class SkillSelectionUI : MonoBehaviour {
             valueText = valueText,
             plusButton = btnPlus,
             minusButton = btnMinus,
-            go = go.gameObject
+            go = go.gameObject,
+            isLocked = isLocked
         };
 
-        if (btnPlus) btnPlus.onClick.AddListener(() => Change(slot, +1));
-        if (btnMinus) btnMinus.onClick.AddListener(() => Change(slot, -1));
+        if (btnPlus) {
+            btnPlus.interactable = !isLocked;
+            if (!isLocked) btnPlus.onClick.AddListener(() => Change(slot, +1));
+        }
+        if (btnMinus) {
+            btnMinus.interactable = !isLocked;
+            if (!isLocked) btnMinus.onClick.AddListener(() => Change(slot, -1));
+        }
 
         return slot;
     }
@@ -212,6 +227,7 @@ public class SkillSelectionUI : MonoBehaviour {
     }
 
     private void Change(RuntimeSlot s, int delta) {
+        if (s.isLocked) return;
         if (delta > 0 && pointsLeft == 0) return;
         if (delta < 0 && s.value == 0) return;
 
@@ -227,6 +243,11 @@ public class SkillSelectionUI : MonoBehaviour {
         if (okButton) okButton.interactable = (pointsLeft == 0);
 
         foreach (var s in _slots) {
+            if (s.isLocked) {
+                if (s.plusButton) s.plusButton.interactable = false;
+                if (s.minusButton) s.minusButton.interactable = false;
+                continue;
+            }
             if (s.plusButton) s.plusButton.interactable = pointsLeft > 0;
             if (s.minusButton) s.minusButton.interactable = s.value > 0;
         }
@@ -261,6 +282,19 @@ public class SkillSelectionUI : MonoBehaviour {
             return CapitalizeWords(tail.Replace('_', ' '));
         }
         return SplitCamel(fieldName);
+    }
+
+    private static bool IsLockedSkill(string propertyName) {
+        return LockedSkillPropertyNames.Any(name =>
+            string.Equals(name, propertyName, StringComparison.OrdinalIgnoreCase));
+    }
+
+    private static int GetLockedSkillOrder(string propertyName) {
+        for (int i = 0; i < LockedSkillPropertyNames.Length; i++) {
+            if (string.Equals(LockedSkillPropertyNames[i], propertyName, StringComparison.OrdinalIgnoreCase))
+                return i;
+        }
+        return LockedSkillPropertyNames.Length;
     }
 
     private static string CapitalizeWords(string text) {
