@@ -15,6 +15,7 @@ public class KnowledgeUI : MonoBehaviour
 
     private readonly List<GameObject> spawnedKnowledgeItems = new();
     private KnowledgeManager.Knowledge selectedKnowledge;
+    private string pendingSelectionName;
 
     private void OnEnable()
     {
@@ -73,7 +74,10 @@ public class KnowledgeUI : MonoBehaviour
             return;
         }
 
-        string previousSelectionName = selectedKnowledge?.Name;
+        string previousSelectionName = !string.IsNullOrEmpty(pendingSelectionName)
+            ? pendingSelectionName
+            : selectedKnowledge?.Name;
+        pendingSelectionName = null;
 
         foreach (var instance in spawnedKnowledgeItems)
         {
@@ -122,6 +126,12 @@ public class KnowledgeUI : MonoBehaviour
         }
 
         descriptionText.text = FormatKnowledgeName(knowledge.Name);
+    }
+
+    internal void RequestSelectKnowledge(string knowledgeName)
+    {
+        if (!string.IsNullOrWhiteSpace(knowledgeName))
+            pendingSelectionName = knowledgeName;
     }
 
     internal static string FormatKnowledgeName(string rawName)
