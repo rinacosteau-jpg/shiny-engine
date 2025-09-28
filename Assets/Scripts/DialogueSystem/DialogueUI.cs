@@ -148,7 +148,11 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         lastDisplayedText = string.Empty;
         lastSpeakerName = null;
         if (textLabel != null) textLabel.text = string.Empty;
-        if (portraitImage != null) portraitImage.sprite = null;
+        if (portraitImage != null)
+        {
+            portraitImage.sprite = null;
+            portraitImage.gameObject.SetActive(false);
+        }
         dialogueFinished = false;
         shouldPauseCurrentObject = false;
         if (dialogueBox != null) dialogueBox.SetActive(true);
@@ -191,7 +195,11 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
         dialogueBox?.SetActive(false);
         dialogueFinished = false;
         responseHandler?.ClearResponses();
-        if (portraitImage != null) portraitImage.sprite = null;
+        if (portraitImage != null)
+        {
+            portraitImage.sprite = null;
+            portraitImage.gameObject.SetActive(false);
+        }
         IsDialogueOpen = false;
         lastSpeakerName = null;
         shouldPauseCurrentObject = false;
@@ -411,12 +419,19 @@ public class DialogueUI : MonoBehaviour, IArticyFlowPlayerCallbacks, ILoopResett
     private void UpdatePortrait(IFlowObject obj) {
         if (portraitImage == null) return;
         portraitImage.sprite = null;
+        bool hasPortrait = false;
         var speaker = GetSpeakerEntity(obj);
         if (speaker is IObjectWithPreviewImage withPreview) {
             var asset = withPreview.PreviewImage.Asset;
-            if (asset != null)
-                portraitImage.sprite = asset.LoadAssetAsSprite();
+            if (asset != null) {
+                var sprite = asset.LoadAssetAsSprite();
+                if (sprite != null) {
+                    portraitImage.sprite = sprite;
+                    hasPortrait = true;
+                }
+            }
         }
+        portraitImage.gameObject.SetActive(hasPortrait);
     }
 
     private string GetTextFromFlowObject(IFlowObject obj) {
