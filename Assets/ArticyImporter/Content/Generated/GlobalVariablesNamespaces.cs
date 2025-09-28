@@ -365,6 +365,84 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             }
         }
         
+        // 
+        public bool ratHasStealQuest
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueBoolean(15);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueBoolean(15, value);
+            }
+        }
+        
+        // 
+        public bool testA
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueBoolean(16);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueBoolean(16, value);
+            }
+        }
+        
+        // 
+        public bool testB
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueBoolean(17);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueBoolean(17, value);
+            }
+        }
+        
+        // 
+        public bool testC
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueBoolean(18);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueBoolean(18, value);
+            }
+        }
+        
+        // 
+        public bool testD
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueBoolean(19);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueBoolean(19, value);
+            }
+        }
+        
+        // 
+        public bool testE
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueBoolean(20);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueBoolean(20, value);
+            }
+        }
+        
         public void RegisterVariables(BaseGlobalVariables aStorage)
         {
             _VariableStorage = aStorage;
@@ -394,6 +472,12 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             aStorage.RegisterVariable("NKNW.kotIdentify", false);
             aStorage.RegisterVariable("NKNW.purpleCode", false);
             aStorage.RegisterVariable("NKNW.stoleSweets", false);
+            aStorage.RegisterVariable("NKNW.ratHasStealQuest", false);
+            aStorage.RegisterVariable("NKNW.testA", true);
+            aStorage.RegisterVariable("NKNW.testB", true);
+            aStorage.RegisterVariable("NKNW.testC", true);
+            aStorage.RegisterVariable("NKNW.testD", false);
+            aStorage.RegisterVariable("NKNW.testE", false);
         }
     }
 }
@@ -739,11 +823,11 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         {
             get
             {
-                return _VariableStorage.Internal_GetVariableValueBoolean(15);
+                return _VariableStorage.Internal_GetVariableValueBoolean(21);
             }
             set
             {
-                _VariableStorage.Internal_SetVariableValueBoolean(15, value);
+                _VariableStorage.Internal_SetVariableValueBoolean(21, value);
             }
         }
         
@@ -752,11 +836,11 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         {
             get
             {
-                return _VariableStorage.Internal_GetVariableValueBoolean(16);
+                return _VariableStorage.Internal_GetVariableValueBoolean(22);
             }
             set
             {
-                _VariableStorage.Internal_SetVariableValueBoolean(16, value);
+                _VariableStorage.Internal_SetVariableValueBoolean(22, value);
             }
         }
         
@@ -765,11 +849,11 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         {
             get
             {
-                return _VariableStorage.Internal_GetVariableValueBoolean(17);
+                return _VariableStorage.Internal_GetVariableValueBoolean(23);
             }
             set
             {
-                _VariableStorage.Internal_SetVariableValueBoolean(17, value);
+                _VariableStorage.Internal_SetVariableValueBoolean(23, value);
             }
         }
         
@@ -778,11 +862,11 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         {
             get
             {
-                return _VariableStorage.Internal_GetVariableValueBoolean(18);
+                return _VariableStorage.Internal_GetVariableValueBoolean(24);
             }
             set
             {
-                _VariableStorage.Internal_SetVariableValueBoolean(18, value);
+                _VariableStorage.Internal_SetVariableValueBoolean(24, value);
             }
         }
         
@@ -791,11 +875,24 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         {
             get
             {
-                return _VariableStorage.Internal_GetVariableValueBoolean(19);
+                return _VariableStorage.Internal_GetVariableValueBoolean(25);
             }
             set
             {
-                _VariableStorage.Internal_SetVariableValueBoolean(19, value);
+                _VariableStorage.Internal_SetVariableValueBoolean(25, value);
+            }
+        }
+        
+        // 
+        public bool refusedRatStealQuest
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueBoolean(26);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueBoolean(26, value);
             }
         }
         
@@ -807,6 +904,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             aStorage.RegisterVariable("RFLG.helpedAo", false);
             aStorage.RegisterVariable("RFLG.prepareForRatPath", false);
             aStorage.RegisterVariable("RFLG.kotIdentify", false);
+            aStorage.RegisterVariable("RFLG.refusedRatStealQuest", false);
         }
     }
 }
@@ -1618,11 +1716,11 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         {
             get
             {
-                return _VariableStorage.Internal_GetVariableValueBoolean(20);
+                return _VariableStorage.Internal_GetVariableValueBoolean(27);
             }
             set
             {
-                _VariableStorage.Internal_SetVariableValueBoolean(20, value);
+                _VariableStorage.Internal_SetVariableValueBoolean(27, value);
             }
         }
         
@@ -1649,97 +1747,6 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         {
             get
             {
-                return _VariableStorage.Internal_GetVariableValueBoolean(21);
-            }
-            set
-            {
-                _VariableStorage.Internal_SetVariableValueBoolean(21, value);
-            }
-        }
-        
-        // 
-        public bool SonoceramicShard
-        {
-            get
-            {
-                return _VariableStorage.Internal_GetVariableValueBoolean(22);
-            }
-            set
-            {
-                _VariableStorage.Internal_SetVariableValueBoolean(22, value);
-            }
-        }
-        
-        // 
-        public bool SonusGuideTube
-        {
-            get
-            {
-                return _VariableStorage.Internal_GetVariableValueBoolean(23);
-            }
-            set
-            {
-                _VariableStorage.Internal_SetVariableValueBoolean(23, value);
-            }
-        }
-        
-        // 
-        public bool ReceiptWhisperer
-        {
-            get
-            {
-                return _VariableStorage.Internal_GetVariableValueBoolean(24);
-            }
-            set
-            {
-                _VariableStorage.Internal_SetVariableValueBoolean(24, value);
-            }
-        }
-        
-        // 
-        public bool WaxStoppers
-        {
-            get
-            {
-                return _VariableStorage.Internal_GetVariableValueBoolean(25);
-            }
-            set
-            {
-                _VariableStorage.Internal_SetVariableValueBoolean(25, value);
-            }
-        }
-        
-        // 
-        public bool MaintScrollHum
-        {
-            get
-            {
-                return _VariableStorage.Internal_GetVariableValueBoolean(26);
-            }
-            set
-            {
-                _VariableStorage.Internal_SetVariableValueBoolean(26, value);
-            }
-        }
-        
-        // 
-        public bool FloorMark
-        {
-            get
-            {
-                return _VariableStorage.Internal_GetVariableValueBoolean(27);
-            }
-            set
-            {
-                _VariableStorage.Internal_SetVariableValueBoolean(27, value);
-            }
-        }
-        
-        // 
-        public bool VentFiddle
-        {
-            get
-            {
                 return _VariableStorage.Internal_GetVariableValueBoolean(28);
             }
             set
@@ -1749,7 +1756,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         }
         
         // 
-        public bool EarPressureReports
+        public bool SonoceramicShard
         {
             get
             {
@@ -1758,6 +1765,97 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             set
             {
                 _VariableStorage.Internal_SetVariableValueBoolean(29, value);
+            }
+        }
+        
+        // 
+        public bool SonusGuideTube
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueBoolean(30);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueBoolean(30, value);
+            }
+        }
+        
+        // 
+        public bool ReceiptWhisperer
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueBoolean(31);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueBoolean(31, value);
+            }
+        }
+        
+        // 
+        public bool WaxStoppers
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueBoolean(32);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueBoolean(32, value);
+            }
+        }
+        
+        // 
+        public bool MaintScrollHum
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueBoolean(33);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueBoolean(33, value);
+            }
+        }
+        
+        // 
+        public bool FloorMark
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueBoolean(34);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueBoolean(34, value);
+            }
+        }
+        
+        // 
+        public bool VentFiddle
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueBoolean(35);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueBoolean(35, value);
+            }
+        }
+        
+        // 
+        public bool EarPressureReports
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueBoolean(36);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueBoolean(36, value);
             }
         }
         

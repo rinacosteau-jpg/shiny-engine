@@ -58,6 +58,24 @@ MonoBehaviour:
   - mFullQualifiedName: NKNW.stoleSweets
     mVar:
       values: 00
+  - mFullQualifiedName: NKNW.ratHasStealQuest
+    mVar:
+      values: 00
+  - mFullQualifiedName: NKNW.testA
+    mVar:
+      values: 01
+  - mFullQualifiedName: NKNW.testB
+    mVar:
+      values: 01
+  - mFullQualifiedName: NKNW.testC
+    mVar:
+      values: 01
+  - mFullQualifiedName: NKNW.testD
+    mVar:
+      values: 00
+  - mFullQualifiedName: NKNW.testE
+    mVar:
+      values: 00
   - mFullQualifiedName: RFLG.neutralizedByGuard
     mVar:
       values: 00
@@ -71,6 +89,9 @@ MonoBehaviour:
     mVar:
       values: 00
   - mFullQualifiedName: RFLG.kotIdentify
+    mVar:
+      values: 00
+  - mFullQualifiedName: RFLG.refusedRatStealQuest
     mVar:
       values: 00
   - mFullQualifiedName: TEST.test
@@ -397,6 +418,24 @@ MonoBehaviour:
   - mFullQualifiedName: NKNW.stoleSweets
     mVar:
       values: 00
+  - mFullQualifiedName: NKNW.ratHasStealQuest
+    mVar:
+      values: 00
+  - mFullQualifiedName: NKNW.testA
+    mVar:
+      values: 01
+  - mFullQualifiedName: NKNW.testB
+    mVar:
+      values: 01
+  - mFullQualifiedName: NKNW.testC
+    mVar:
+      values: 01
+  - mFullQualifiedName: NKNW.testD
+    mVar:
+      values: 00
+  - mFullQualifiedName: NKNW.testE
+    mVar:
+      values: 00
   - mFullQualifiedName: RFLG.neutralizedByGuard
     mVar:
       values: 00
@@ -410,6 +449,9 @@ MonoBehaviour:
     mVar:
       values: 00
   - mFullQualifiedName: RFLG.kotIdentify
+    mVar:
+      values: 00
+  - mFullQualifiedName: RFLG.refusedRatStealQuest
     mVar:
       values: 00
   - mFullQualifiedName: TEST.test

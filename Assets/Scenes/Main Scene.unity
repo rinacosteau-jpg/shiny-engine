@@ -8569,9 +8569,9 @@ RectTransform:
   - {fileID: 19288151}
   m_Father: {fileID: 1805083145}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 190, y: -35}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 300, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &309042544
@@ -11374,7 +11374,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &369066415
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13390,10 +13390,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1658030269}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 65, y: -65}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &480506563
 MonoBehaviour:
@@ -16058,6 +16058,7 @@ GameObject:
   - component: {fileID: 540866323}
   - component: {fileID: 540866324}
   - component: {fileID: 540866325}
+  - component: {fileID: 540866326}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -16277,6 +16278,18 @@ MonoBehaviour:
     referencingMode: 0
     lowId: 11537
     highId: 16777216
+--- !u!114 &540866326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540866313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83ae8fa7d79e4814a0d2af8e5a49afee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KnowledgeInputScript
 --- !u!1 &547029652
 GameObject:
   m_ObjectHideFlags: 0
@@ -44923,6 +44936,7 @@ GameObject:
   - component: {fileID: 1640953671}
   - component: {fileID: 1640953670}
   - component: {fileID: 1640953669}
+  - component: {fileID: 1640953672}
   m_Layer: 5
   m_Name: Knowledge
   m_TagString: Untagged
@@ -45007,6 +45021,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1640953667}
   m_CullTransparentMesh: 1
+--- !u!114 &1640953672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640953667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc3a92d9b8746f5b0bfb5c9e6f00642, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KnowledgeUI
+  knowledgePanel: {fileID: 1640953667}
+  knowledgeItemsParent: {fileID: 2123118205}
+  knowledgeItemPrefab: {fileID: 1646358741}
+  descriptionText: {fileID: 1919798169}
 --- !u!1 &1646358741
 GameObject:
   m_ObjectHideFlags: 0
@@ -45022,7 +45052,7 @@ GameObject:
   - component: {fileID: 1646358744}
   - component: {fileID: 1646358743}
   m_Layer: 5
-  m_Name: QuestItem
+  m_Name: Fact
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45338,7 +45368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.18039216, g: 0.19607843, b: 0.22745098, a: 1}
+  m_Color: {r: 0.11764706, g: 0.1254902, b: 0.14901961, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -58977,8 +59007,9 @@ GameObject:
   - component: {fileID: 2123118208}
   - component: {fileID: 2123118207}
   - component: {fileID: 2123118206}
+  - component: {fileID: 2123118210}
   m_Layer: 5
-  m_Name: Fact
+  m_Name: Facts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59084,6 +59115,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2123118204}
   m_CullTransparentMesh: 1
+--- !u!114 &2123118210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123118204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93de7d161b4448cdbe3f39d5e21103a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KnowledgeItemUI
 --- !u!1 &2126178451
 GameObject:
   m_ObjectHideFlags: 0
