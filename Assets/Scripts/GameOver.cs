@@ -29,9 +29,6 @@ public static class GameOver {
         foreach (var journal in Object.FindObjectsOfType<JournalUI>(true))
             journal.Hide();
 
-        foreach (var skillUi in Object.FindObjectsOfType<SkillSelectionUI>(true))
-            skillUi.ForceClose();
-
         foreach (var menuToggle in Object.FindObjectsOfType<MenuToggle>(true)) {
             menuToggle.HideMenu();
             menuToggle.enabled = false;
