@@ -159,8 +159,8 @@ public class SkillSelectionUI : MonoBehaviour {
     }
 
     private void HideImmediate() {
-        /*_cg.alpha = 0f; _cg.interactable = false; _cg.blocksRaycasts = false;
-        _isOpen = false;*/
+        _cg.alpha = 0f; _cg.interactable = false; _cg.blocksRaycasts = false;
+        _isOpen = false;
     }
 
     private void ActivateParentsChain() {

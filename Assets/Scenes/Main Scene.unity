@@ -15905,6 +15905,7 @@ GameObject:
   - component: {fileID: 540866322}
   - component: {fileID: 540866323}
   - component: {fileID: 540866324}
+  - component: {fileID: 540866325}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -16106,6 +16107,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04cf36218bff4b7b919d5fced3e9eaac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JournalInputScript
+--- !u!114 &540866325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540866313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03a29f86ab5b42cb8a76d0f8d2bb816b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EndOfTheDemo
+  dialogueUI: {fileID: 2139869256}
+  dialogueFragment:
+    instanceId: 0
+    referencingMode: 0
+    lowId: 11537
+    highId: 16777216
 --- !u!1 &547029652
 GameObject:
   m_ObjectHideFlags: 0
