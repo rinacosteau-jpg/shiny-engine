@@ -8,7 +8,7 @@ public class EndOfTheDemo : MonoBehaviour {
     [SerializeField] private ArticyRef dialogueFragment;
 
     private IFlowObject targetFlowObject;
-    private bool isWatching;
+    private bool watchedDialogueActive;
     private bool hasTriggered;
 
     private void Reset() {
@@ -25,6 +25,7 @@ public class EndOfTheDemo : MonoBehaviour {
     }
 
     private void OnEnable() {
+        CacheTargetFlowObject();
         Subscribe();
     }
 
@@ -73,37 +74,21 @@ public class EndOfTheDemo : MonoBehaviour {
             CacheTargetFlowObject();
 
         var currentStart = ui.CurrentStartObject;
-        isWatching = FlowObjectsMatch(currentStart, targetFlowObject);
+        var matchesTarget = currentStart != null && targetFlowObject != null && ReferenceEquals(currentStart, targetFlowObject);
+
+        watchedDialogueActive = matchesTarget;
     }
 
     private void OnDialogueClosed(DialogueUI ui) {
         if (hasTriggered || ui != dialogueUI)
             return;
 
-        var currentStart = ui.CurrentStartObject;
-        var wasTargetDialogue = isWatching || FlowObjectsMatch(currentStart, targetFlowObject);
-        isWatching = false;
-
-        if (!wasTargetDialogue)
+        if (!watchedDialogueActive)
             return;
 
+        watchedDialogueActive = false;
+
         TriggerEndOfDemo();
-    }
-
-    private static bool FlowObjectsMatch(IFlowObject currentStart, IFlowObject target) {
-        if (ReferenceEquals(currentStart, target))
-            return true;
-
-        if (currentStart == null || target == null)
-            return false;
-
-        if (currentStart.Equals(target))
-            return true;
-
-        if (currentStart is ArticyObject currentArticy && target is ArticyObject targetArticy)
-            return Equals(currentArticy.Id, targetArticy.Id);
-
-        return false;
     }
 
     private void TriggerEndOfDemo() {
