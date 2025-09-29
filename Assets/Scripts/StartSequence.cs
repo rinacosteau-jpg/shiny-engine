@@ -32,7 +32,6 @@ public class StartSequence : MonoBehaviour
     [SerializeField] private TMP_Text interactionBlockedLabel;
     [SerializeField] private CanvasGroup interactionBlockedCanvasGroup;
     [SerializeField] private float interactionBlockedFadeDuration = 1f;
-    [SerializeField] private HintsPanelController hintsPanel;
 
     private enum SequenceStep
     {
@@ -176,7 +175,6 @@ public class StartSequence : MonoBehaviour
                 StartWaitingForMovement();
                 break;
             case SequenceStep.DialogueC:
-                ShowFlashlightHint();
                 FinishSequence();
                 break;
         }
@@ -410,14 +408,5 @@ public class StartSequence : MonoBehaviour
 
         lastTrackedPosition = playerTransform.position;
         hasLastTrackedPosition = true;
-    }
-
-    private void ShowFlashlightHint()
-    {
-        if (hintsPanel == null)
-            return;
-
-        hintsPanel.SetHint("Press L to activate flashlight");
-        hintsPanel.ShowPanel();
     }
 }
