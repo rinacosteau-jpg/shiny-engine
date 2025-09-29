@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -7,11 +8,14 @@ public class PlayerInteractScript : MonoBehaviour {
 
     private InputAction interactAction;
     private DialogueUI dialogueUI;
+    private bool interactionsBlocked;
 
     private readonly List<IInteractable> interactablesInRange = new List<IInteractable>();
     private readonly HashSet<MonoBehaviour> interactableBehavioursInRange = new HashSet<MonoBehaviour>();
     private readonly Dictionary<MonoBehaviour, InteractableOutline> highlightedInteractables = new Dictionary<MonoBehaviour, InteractableOutline>();
     private readonly List<MonoBehaviour> highlightRemovalBuffer = new List<MonoBehaviour>();
+
+    public event Action InteractionWhileBlocked;
 
     private void Start() {
         interactAction = InputSystem.actions.FindAction("Interact");
@@ -31,6 +35,12 @@ public class PlayerInteractScript : MonoBehaviour {
             return;
 
         if (interactAction != null && interactAction.triggered) {
+            if (interactionsBlocked) {
+                if (interactablesInRange.Count > 0)
+                    InteractionWhileBlocked?.Invoke();
+                return;
+            }
+
             foreach (IInteractable interactable in interactablesInRange)
                 interactable.Interact();
         }
@@ -91,5 +101,10 @@ public class PlayerInteractScript : MonoBehaviour {
 
         foreach (MonoBehaviour behaviour in highlightRemovalBuffer)
             highlightedInteractables.Remove(behaviour);
+    }
+
+    public void SetInteractionsBlocked(bool blocked)
+    {
+        interactionsBlocked = blocked;
     }
 }
