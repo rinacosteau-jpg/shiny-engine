@@ -1,5 +1,7 @@
-using UnityEngine;
+using System.Collections;
 using Articy.Unity;
+using TMPro;
+using UnityEngine;
 
 /// <summary>
 /// Controls the opening sequence: dialogue A → skill selection → dialogue B.
@@ -25,6 +27,10 @@ public class StartSequence : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] private GameObject backgroundPanel;
+    [SerializeField] private PlayerInteractScript playerInteract;
+    [SerializeField] private TMP_Text interactionBlockedLabel;
+    [SerializeField] private CanvasGroup interactionBlockedCanvasGroup;
+    [SerializeField] private float interactionBlockedFadeDuration = 1f;
 
     private enum SequenceStep
     {
@@ -41,6 +47,7 @@ public class StartSequence : MonoBehaviour
     private Vector3 lastTrackedPosition;
     private bool hasLastTrackedPosition;
     private float movementStartDistance;
+    private Coroutine interactionBlockedRoutine;
 
     public static float TotalDistanceTraveled { get; private set; }
 
@@ -51,6 +58,15 @@ public class StartSequence : MonoBehaviour
 
         if (backgroundPanel != null)
             backgroundPanel.SetActive(false);
+
+        if (interactionBlockedCanvasGroup != null)
+            interactionBlockedCanvasGroup.alpha = 0f;
+
+        if (interactionBlockedLabel != null)
+        {
+            interactionBlockedLabel.text = string.Empty;
+            interactionBlockedLabel.color = Color.white;
+        }
     }
 
     private void Update()
@@ -84,6 +100,8 @@ public class StartSequence : MonoBehaviour
             dialogueUI.DialogueClosed += HandleDialogueClosed;
         if (skillSelectionUI != null)
             skillSelectionUI.Confirmed += HandleSkillsConfirmed;
+        if (playerInteract != null)
+            playerInteract.InteractionWhileBlocked += HandleInteractionWhileBlocked;
     }
 
     private void OnDisable()
@@ -95,6 +113,8 @@ public class StartSequence : MonoBehaviour
             dialogueUI.DialogueClosed -= HandleDialogueClosed;
         if (skillSelectionUI != null)
             skillSelectionUI.Confirmed -= HandleSkillsConfirmed;
+        if (playerInteract != null)
+            playerInteract.InteractionWhileBlocked -= HandleInteractionWhileBlocked;
     }
 
     private void Start()
@@ -115,6 +135,8 @@ public class StartSequence : MonoBehaviour
 
         if (backgroundPanel != null)
             backgroundPanel.SetActive(true);
+
+        BlockInteractions();
 
         if (dialogueUI == null)
         {
@@ -237,6 +259,53 @@ public class StartSequence : MonoBehaviour
         dialogueUI.StartDialogue(dialogueStartC);
     }
 
+    private void BlockInteractions()
+    {
+        if (playerInteract != null)
+            playerInteract.SetInteractionsBlocked(true);
+    }
+
+    private void UnblockInteractions()
+    {
+        if (playerInteract != null)
+            playerInteract.SetInteractionsBlocked(false);
+    }
+
+    private void HandleInteractionWhileBlocked()
+    {
+        if (interactionBlockedLabel == null || interactionBlockedCanvasGroup == null)
+            return;
+
+        interactionBlockedLabel.text = "It's too dark here.";
+        interactionBlockedLabel.color = Color.white;
+
+        if (interactionBlockedRoutine != null)
+            StopCoroutine(interactionBlockedRoutine);
+
+        interactionBlockedRoutine = StartCoroutine(FadeInteractionBlockedMessage());
+    }
+
+    private IEnumerator FadeInteractionBlockedMessage()
+    {
+        if (interactionBlockedCanvasGroup == null)
+            yield break;
+
+        float duration = Mathf.Max(interactionBlockedFadeDuration, Mathf.Epsilon);
+        interactionBlockedCanvasGroup.alpha = 1f;
+
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
+            interactionBlockedCanvasGroup.alpha = Mathf.Lerp(1f, 0f, t);
+            yield return null;
+        }
+
+        interactionBlockedCanvasGroup.alpha = 0f;
+        interactionBlockedRoutine = null;
+    }
+
     private void FinishSequence()
     {
         if (currentStep == SequenceStep.Completed)
@@ -251,6 +320,22 @@ public class StartSequence : MonoBehaviour
             dialogueUI.DialogueClosed -= HandleDialogueClosed;
         if (skillSelectionUI != null)
             skillSelectionUI.Confirmed -= HandleSkillsConfirmed;
+        if (playerInteract != null)
+            playerInteract.InteractionWhileBlocked -= HandleInteractionWhileBlocked;
+
+        UnblockInteractions();
+
+        if (interactionBlockedRoutine != null)
+        {
+            StopCoroutine(interactionBlockedRoutine);
+            interactionBlockedRoutine = null;
+        }
+
+        if (interactionBlockedCanvasGroup != null)
+            interactionBlockedCanvasGroup.alpha = 0f;
+
+        if (interactionBlockedLabel != null)
+            interactionBlockedLabel.text = string.Empty;
     }
 
     private void UpdateTotalDistance()
