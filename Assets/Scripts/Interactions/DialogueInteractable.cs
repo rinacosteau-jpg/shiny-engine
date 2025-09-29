@@ -71,10 +71,7 @@ public class DialogueInteractable : MonoBehaviour, IInteractable
         }
 
         if (repeatBlockedCanvasGroup != null)
-        {
             repeatBlockedCanvasGroup.alpha = 0f;
-            repeatBlockedCanvasGroup.gameObject.SetActive(false);
-        }
 
         if (repeatBlockedLabel != null)
             repeatBlockedLabel.text = string.Empty;
@@ -89,10 +86,7 @@ public class DialogueInteractable : MonoBehaviour, IInteractable
     private void InitializeRepeatBlockedMessage()
     {
         if (repeatBlockedCanvasGroup != null)
-        {
             repeatBlockedCanvasGroup.alpha = 0f;
-            repeatBlockedCanvasGroup.gameObject.SetActive(false);
-        }
 
         if (repeatBlockedLabel != null)
         {
@@ -108,7 +102,6 @@ public class DialogueInteractable : MonoBehaviour, IInteractable
 
         repeatBlockedLabel.text = "Nothing interesting here";
         repeatBlockedLabel.color = Color.white;
-        repeatBlockedCanvasGroup.gameObject.SetActive(true);
 
         if (repeatBlockedRoutine != null)
             StopCoroutine(repeatBlockedRoutine);
@@ -134,7 +127,6 @@ public class DialogueInteractable : MonoBehaviour, IInteractable
         }
 
         repeatBlockedCanvasGroup.alpha = 0f;
-        repeatBlockedCanvasGroup.gameObject.SetActive(false);
         repeatBlockedRoutine = null;
     }
 }
