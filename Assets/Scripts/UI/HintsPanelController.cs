@@ -16,7 +16,7 @@ public class HintsPanelController : MonoBehaviour
         if (panelRoot == null)
             panelRoot = gameObject;
 
-        EnsurePanelIsLowestLayer();
+        EnsurePanelIsTopLayer();
 
         if (closeButton != null)
             closeButton.onClick.AddListener(HidePanel);
@@ -33,7 +33,7 @@ public class HintsPanelController : MonoBehaviour
     /// </summary>
     public void ShowPanel()
     {
-        EnsurePanelIsLowestLayer();
+        EnsurePanelIsTopLayer();
 
         if (panelRoot != null && !panelRoot.activeSelf)
             panelRoot.SetActive(true);
@@ -65,7 +65,7 @@ public class HintsPanelController : MonoBehaviour
         return panelRoot != null && panelRoot.activeSelf;
     }
 
-    private void EnsurePanelIsLowestLayer()
+    private void EnsurePanelIsTopLayer()
     {
         if (panelRoot == null)
             return;
@@ -73,6 +73,6 @@ public class HintsPanelController : MonoBehaviour
         Transform panelTransform = panelRoot.transform;
 
         if (panelTransform.parent != null)
-            panelTransform.SetAsFirstSibling();
+            panelTransform.SetAsLastSibling();
     }
 }
