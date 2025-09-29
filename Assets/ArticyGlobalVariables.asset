@@ -148,7 +148,7 @@ MonoBehaviour:
       values: 00000000
   - mFullQualifiedName: NKNW.kill_lib
     mVar:
-      values: 00000000
+      values: f5ffffff
   - mFullQualifiedName: NKNW.kill_guard
     mVar:
       values: 00000000
@@ -508,7 +508,7 @@ MonoBehaviour:
       values: 00000000
   - mFullQualifiedName: NKNW.kill_lib
     mVar:
-      values: 00000000
+      values: f5ffffff
   - mFullQualifiedName: NKNW.kill_guard
     mVar:
       values: 00000000

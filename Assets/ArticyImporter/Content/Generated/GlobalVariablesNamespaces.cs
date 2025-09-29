@@ -460,7 +460,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             aStorage.RegisterVariable("NKNW.kill_vaza", 0);
             aStorage.RegisterVariable("NKNW.kill_ru", 0);
             aStorage.RegisterVariable("NKNW.kill_kot", 0);
-            aStorage.RegisterVariable("NKNW.kill_lib", 0);
+            aStorage.RegisterVariable("NKNW.kill_lib", -11);
             aStorage.RegisterVariable("NKNW.kill_guard", 0);
             aStorage.RegisterVariable("NKNW.kill_ao", 0);
             aStorage.RegisterVariable("NKNW.kill_tom", 0);
