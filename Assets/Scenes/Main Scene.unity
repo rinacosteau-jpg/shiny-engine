@@ -2736,9 +2736,9 @@ MonoBehaviour:
     referencingMode: 0
     lowId: 10426
     highId: 16777216
-  repeatable: 1
-  repeatBlockedLabel: {fileID: 0}
-  repeatBlockedCanvasGroup: {fileID: 0}
+  repeatable: 0
+  repeatBlockedLabel: {fileID: 977804132}
+  repeatBlockedCanvasGroup: {fileID: 977804131}
   repeatBlockedFadeDuration: 1
 --- !u!1001 &47396568
 PrefabInstance:
@@ -31922,7 +31922,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &977804129
 RectTransform:
   m_ObjectHideFlags: 0

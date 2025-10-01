@@ -148,6 +148,8 @@ public class PlayerLightController : MonoBehaviour {
         }
 
         Vector3 targetPosition = playerTransform != null ? playerTransform.position : cachedTransform.position;
-        lightTransform.position = targetPosition + lightOffset;
+        Vector3 finalPosition = targetPosition + lightOffset;
+        finalPosition.y = 0.7f;
+        lightTransform.position = finalPosition;
     }
 }
