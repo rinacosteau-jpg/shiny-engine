@@ -84,6 +84,8 @@ public class LoopResetInputScript : MonoBehaviour {
             Debug.Log("[LoopReset] preserving inventory (artefact present)");
         }
 
+        QuestManager.OnLoopReset();
+
         var monoBehaviours = Object.FindObjectsOfType<MonoBehaviour>(true);
         foreach (var mb in monoBehaviours) {
             if (mb is ILoopResettable resettable) {
