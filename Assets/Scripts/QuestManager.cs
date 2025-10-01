@@ -10,6 +10,11 @@ using Articy.World_Of_Red_Moon.GlobalVariables;
 public enum QuestState { NotStarted = 0, Active = 1, Completed = 2, Failed = 3 }
 
 public static class QuestManager {
+    static QuestManager()
+    {
+        RegisterWrapper(new StealFromRuQuestWrapper());
+    }
+
     public static IEnumerable<Quest> GetAllQuests() => quests.Values;
 
     public static string DescribeQuest(Quest quest)
@@ -78,6 +83,7 @@ public static class QuestManager {
         public readonly List<string> StageDescriptions = new();
         public readonly List<string> ResultDescriptions = new();
         public readonly Dictionary<string, Objective> Objectives = new();
+        public bool LoopChanged;
 
         public int StageCount => StageDescriptions.Count;
         public int ResultCount => ResultDescriptions.Count;
@@ -130,6 +136,26 @@ public static class QuestManager {
 
     // ======== Õðàíèëèùå ========
     private static readonly Dictionary<string, Quest> quests = new();
+    private static readonly Dictionary<string, QuestWrapper> wrappers = new(StringComparer.Ordinal);
+
+    public static void RegisterWrapper(QuestWrapper wrapper)
+    {
+        if (wrapper == null || string.IsNullOrEmpty(wrapper.QuestName))
+            return;
+
+        wrappers[wrapper.QuestName] = wrapper;
+    }
+
+    private static bool TryGetWrapper(string questName, out QuestWrapper wrapper)
+    {
+        if (string.IsNullOrEmpty(questName))
+        {
+            wrapper = null;
+            return false;
+        }
+
+        return wrappers.TryGetValue(questName, out wrapper);
+    }
 
     // Ãëóøèëêà äëÿ PushToArticy âî âðåìÿ Sync
     private static bool _mutePush;
@@ -154,8 +180,11 @@ public static class QuestManager {
         if (string.IsNullOrEmpty(q.FailedDescription))
             q.FailedDescription = GenerateFailedDescription(q.Name);
 
-        if (q.StageDescriptions.Count == 0)
-            q.StageDescriptions.Add(GenerateStageDescription(q.Name, 1));
+        if (!TryGetWrapper(q.Name, out _))
+        {
+            if (q.StageDescriptions.Count == 0)
+                q.StageDescriptions.Add(GenerateStageDescription(q.Name, 1));
+        }
 
         if (q.ResultDescriptions.Count == 0)
             q.ResultDescriptions.Add(GenerateResultDescription(q.Name, 1));
@@ -170,6 +199,12 @@ public static class QuestManager {
 
         if (requiredStageCount <= 0)
             requiredStageCount = 1;
+
+        if (TryGetWrapper(q.Name, out var wrapper))
+        {
+            wrapper.EnsureStageCapacity(q, requiredStageCount);
+            return;
+        }
 
         while (q.StageDescriptions.Count < requiredStageCount)
         {
@@ -204,7 +239,8 @@ public static class QuestManager {
                 IsTemporary = isTemp ?? false, // ïî óìîë÷àíèþ ñ÷èòàåì ïåðñèñòåíòíûì
                 State = QuestState.NotStarted,
                 Stage = 0,
-                Result = 0
+                Result = 0,
+                LoopChanged = false
             };
             quests[name] = q;
         } else if (isTemp.HasValue) {
@@ -215,6 +251,8 @@ public static class QuestManager {
             // Åñëè áûë temp è ïðèøëî temp — îñòàâëÿåì temp.
         }
         EnsureQuestMetadata(q);
+        if (TryGetWrapper(name, out var wrapper))
+            wrapper.EnsureStageCapacity(q, Math.Max(q.Stage, 1));
         return q;
     }
 
@@ -296,6 +334,30 @@ public static class QuestManager {
 
             // 2) óáèðàåì èç ëîêàëüíîãî ðååñòðà
             quests.Remove(name);
+        }
+    }
+
+    public static void OnLoopReset()
+    {
+        foreach (var quest in quests.Values)
+        {
+            quest.LoopChanged = false;
+
+            if (!TryGetWrapper(quest.Name, out var wrapper))
+                continue;
+
+            int previousStage = quest.Stage;
+
+            wrapper.OnLoopReset(quest);
+            wrapper.EnsureStageCapacity(quest, Math.Max(quest.Stage, 1));
+
+            if (quest.Stage != previousStage)
+            {
+                quest.LoopChanged = true;
+                EnsureResultCapacity(quest, quest.Result);
+                PushToArticy(quest);
+                RaiseQuestChanged(quest);
+            }
         }
     }
 
@@ -391,23 +453,32 @@ public static class QuestManager {
                     if (key.EndsWith("_State")) {
                         var questName = key.Substring(0, key.Length - "_State".Length);
                         var q = Ensure(questName, isTemp);
-                        q.State = (QuestState)val;
+                        var newState = (QuestState)val;
+                        if (TryGetWrapper(questName, out var stateWrapper))
+                            newState = stateWrapper.ProcessStateFromArticy(q, newState);
+                        q.State = newState;
                         EnsureStageCapacity(q, q.Stage);
                         EnsureResultCapacity(q, q.Result);
                         RaiseQuestChanged(q);
                     } else if (key.EndsWith("_Stage")) {
                         var questName = key.Substring(0, key.Length - "_Stage".Length);
                         var q = Ensure(questName, isTemp);
-                        q.Stage = val;
-                        if (q.State == QuestState.NotStarted && val > 0) q.State = QuestState.Active;
-                        EnsureStageCapacity(q, val);
+                        int newStage = val;
+                        if (TryGetWrapper(questName, out var stageWrapper))
+                            newStage = stageWrapper.ProcessStageFromArticy(q, newStage);
+                        q.Stage = newStage;
+                        if (q.State == QuestState.NotStarted && newStage > 0) q.State = QuestState.Active;
+                        EnsureStageCapacity(q, newStage);
                         EnsureResultCapacity(q, q.Result);
                         RaiseQuestChanged(q);
                     } else if (key.EndsWith("_Result")) {
                         var questName = key.Substring(0, key.Length - "_Result".Length);
                         var q = Ensure(questName, isTemp);
-                        q.Result = val;
-                        EnsureResultCapacity(q, val);
+                        int newResult = val;
+                        if (TryGetWrapper(questName, out var resultWrapper))
+                            newResult = resultWrapper.ProcessResultFromArticy(q, newResult);
+                        q.Result = newResult;
+                        EnsureResultCapacity(q, newResult);
                         EnsureStageCapacity(q, q.Stage);
                         RaiseQuestChanged(q);
                     } else if (key.Contains("_Obj_")) {
