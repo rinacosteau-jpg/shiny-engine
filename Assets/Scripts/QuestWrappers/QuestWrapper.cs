@@ -38,13 +38,12 @@ public abstract class QuestWrapper
 
         quest.StageDescriptions.Clear();
 
-        string lastDescription = quest.Description ?? string.Empty;
         for (int stage = 1; stage <= maxStage; stage++)
         {
-            if (stageDescriptions.TryGetValue(stage, out var desc) && !string.IsNullOrEmpty(desc))
-                lastDescription = desc;
-
-            quest.StageDescriptions.Add(lastDescription);
+            if (stageDescriptions.TryGetValue(stage, out var desc))
+                quest.StageDescriptions.Add(desc ?? string.Empty);
+            else
+                quest.StageDescriptions.Add(string.Empty);
         }
     }
 
