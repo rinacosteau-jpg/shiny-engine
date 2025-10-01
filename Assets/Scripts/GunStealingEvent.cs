@@ -37,16 +37,16 @@ public class GunStealingEvent : MonoBehaviour, ILoopResettable {
         if (playerMovement != null) playerMovement.enabled = false;
         if (playerInteract != null) playerInteract.enabled = false;
 
-        bool isPathB = ArticyGlobalVariables.Default.RQUE.getGun_Obj_ratB == 1;
+      //  bool isPathB = ArticyGlobalVariables.Default.RQUE.getGun_Obj_ratB == 1;
         Transform targetPlayerPos = positionA;
         Transform targetRatkoPos = positionB;
         ArticyRef pathStart = pathAStart;
 
-        if (isPathB) {
+       /* if (isPathB) {
             targetPlayerPos = positionB;
             targetRatkoPos = positionA;
             pathStart = pathBStart;
-        }
+        }*/
 
         if (playerNpc != null && targetPlayerPos != null)
             playerNpc.position = targetPlayerPos.position;

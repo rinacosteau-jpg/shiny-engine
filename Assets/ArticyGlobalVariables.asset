@@ -158,70 +158,10 @@ MonoBehaviour:
   - mFullQualifiedName: NKNW.kill_tom
     mVar:
       values: 00000000
-  - mFullQualifiedName: RQUE.advertise_State
+  - mFullQualifiedName: NKNW.getGun_State
     mVar:
       values: 00000000
-  - mFullQualifiedName: RQUE.advertise_Obj_A
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.advertise_TalkedCount
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.advertise_Obj_B
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.advertise_Obj_C
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.advertise_Result
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.advertise_Stage
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.getArtefact_State
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.getArtefact_Stage
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.getArtefact_Result
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.preventMurderAttempt_Result
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.preventMurderAttempt_State
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.preventMurderAttempt_Stage
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.stealFromRu_State
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.stealFromRu_Stage
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.stealFromRu_Result
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.getGun_Result
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.getGun_Stage
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.getGun_State
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.getGun_Obj_getRuleBook
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.getGun_Obj_ratA
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.getGun_Obj_ratB
+  - mFullQualifiedName: RQUE.testic
     mVar:
       values: 00000000
   - mFullQualifiedName: ITM.item_kotsukiNote_delta
@@ -338,22 +278,7 @@ MonoBehaviour:
   - mFullQualifiedName: PS.magicCap_Sonus
     mVar:
       values: 01000000
-  - mFullQualifiedName: NQUE.FindMemories_State
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: NQUE.FindMemories_Stage
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: NQUE.FindMemories_Result
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: NQUE.BackgroundCheck_State
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: NQUE.BackgroundCheck_Stage
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: NQUE.BackgroundCheck_Result
+  - mFullQualifiedName: NQUE.testic
     mVar:
       values: 00000000
   - mFullQualifiedName: SCH.Perseption
@@ -369,6 +294,87 @@ MonoBehaviour:
     mVar:
       values: 00000000
   - mFullQualifiedName: SCH.boost
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.BackgroundCheck_Result
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.BackgroundCheck_Stage
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.BackgroundCheck_State
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.FindMemories_Result
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.FindMemories_Stage
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.FindMemories_State
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.advertise_Obj_A
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.advertise_Result
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.advertise_Obj_B
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.advertise_Obj_C
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.advertise_Stage
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.advertise_State
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.getArtefact_Result
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.preventMurderAttempt_State
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.getGun_Result
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.getGun_Obj_ratA
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.getArtefact_State
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.getGun_Obj_getRuleBook
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.getArtefact_Stage
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.getGun_Obj_ratB
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.advertise_TalkedCount
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.getGun_Stage
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.preventMurderAttempt_Result
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.preventMurderAttempt_Stage
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.stealFromRu_Result
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.stealFromRu_Stage
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.stealFromRu_State
     mVar:
       values: 00000000
   mStringVariableCache: []
@@ -518,70 +524,10 @@ MonoBehaviour:
   - mFullQualifiedName: NKNW.kill_tom
     mVar:
       values: 00000000
-  - mFullQualifiedName: RQUE.advertise_State
+  - mFullQualifiedName: NKNW.getGun_State
     mVar:
       values: 00000000
-  - mFullQualifiedName: RQUE.advertise_Obj_A
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.advertise_TalkedCount
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.advertise_Obj_B
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.advertise_Obj_C
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.advertise_Result
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.advertise_Stage
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.getArtefact_State
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.getArtefact_Stage
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.getArtefact_Result
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.preventMurderAttempt_Result
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.preventMurderAttempt_State
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.preventMurderAttempt_Stage
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.stealFromRu_State
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.stealFromRu_Stage
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.stealFromRu_Result
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.getGun_Result
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.getGun_Stage
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.getGun_State
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.getGun_Obj_getRuleBook
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.getGun_Obj_ratA
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: RQUE.getGun_Obj_ratB
+  - mFullQualifiedName: RQUE.testic
     mVar:
       values: 00000000
   - mFullQualifiedName: ITM.item_kotsukiNote_delta
@@ -698,22 +644,7 @@ MonoBehaviour:
   - mFullQualifiedName: PS.magicCap_Sonus
     mVar:
       values: 01000000
-  - mFullQualifiedName: NQUE.FindMemories_State
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: NQUE.FindMemories_Stage
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: NQUE.FindMemories_Result
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: NQUE.BackgroundCheck_State
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: NQUE.BackgroundCheck_Stage
-    mVar:
-      values: 00000000
-  - mFullQualifiedName: NQUE.BackgroundCheck_Result
+  - mFullQualifiedName: NQUE.testic
     mVar:
       values: 00000000
   - mFullQualifiedName: SCH.Perseption
@@ -729,6 +660,87 @@ MonoBehaviour:
     mVar:
       values: 00000000
   - mFullQualifiedName: SCH.boost
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.BackgroundCheck_Result
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.BackgroundCheck_Stage
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.BackgroundCheck_State
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.FindMemories_Result
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.FindMemories_Stage
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.FindMemories_State
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.advertise_Obj_A
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.advertise_Result
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.advertise_Obj_B
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.advertise_Obj_C
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.advertise_Stage
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.advertise_State
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.getArtefact_Result
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.preventMurderAttempt_State
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.getGun_Result
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.getGun_Obj_ratA
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.getArtefact_State
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.getGun_Obj_getRuleBook
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.getArtefact_Stage
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.getGun_Obj_ratB
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.advertise_TalkedCount
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.getGun_Stage
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.preventMurderAttempt_Result
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.preventMurderAttempt_Stage
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.stealFromRu_Result
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.stealFromRu_Stage
+    mVar:
+      values: 00000000
+  - mFullQualifiedName: QUEST.stealFromRu_State
     mVar:
       values: 00000000
   mLiveStringVariableCache: []
@@ -754,4 +766,6 @@ MonoBehaviour:
   mTEST:
     _VariableStorage: {fileID: 11400000}
   mCLUE:
+    _VariableStorage: {fileID: 11400000}
+  mQUEST:
     _VariableStorage: {fileID: 11400000}

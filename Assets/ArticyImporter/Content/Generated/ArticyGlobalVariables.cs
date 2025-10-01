@@ -68,6 +68,10 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         [HideInInspector()]
         private CLUE mCLUE = new CLUE();
         
+        [SerializeField()]
+        [HideInInspector()]
+        private QUEST mQUEST = new QUEST();
+        
         #region Initialize static VariableName set
         static ArticyGlobalVariables()
         {
@@ -103,28 +107,8 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             variableNames.Add("NKNW.testC");
             variableNames.Add("NKNW.testD");
             variableNames.Add("NKNW.testE");
-            variableNames.Add("RQUE.advertise_State");
-            variableNames.Add("RQUE.advertise_Obj_A");
-            variableNames.Add("RQUE.advertise_TalkedCount");
-            variableNames.Add("RQUE.advertise_Obj_B");
-            variableNames.Add("RQUE.advertise_Obj_C");
-            variableNames.Add("RQUE.advertise_Result");
-            variableNames.Add("RQUE.advertise_Stage");
-            variableNames.Add("RQUE.getArtefact_State");
-            variableNames.Add("RQUE.getArtefact_Stage");
-            variableNames.Add("RQUE.getArtefact_Result");
-            variableNames.Add("RQUE.preventMurderAttempt_Result");
-            variableNames.Add("RQUE.preventMurderAttempt_State");
-            variableNames.Add("RQUE.preventMurderAttempt_Stage");
-            variableNames.Add("RQUE.stealFromRu_State");
-            variableNames.Add("RQUE.stealFromRu_Stage");
-            variableNames.Add("RQUE.stealFromRu_Result");
-            variableNames.Add("RQUE.getGun_Result");
-            variableNames.Add("RQUE.getGun_Stage");
-            variableNames.Add("RQUE.getGun_State");
-            variableNames.Add("RQUE.getGun_Obj_getRuleBook");
-            variableNames.Add("RQUE.getGun_Obj_ratA");
-            variableNames.Add("RQUE.getGun_Obj_ratB");
+            variableNames.Add("NKNW.getGun_State");
+            variableNames.Add("RQUE.testic");
             variableNames.Add("RFLG.neutralizedByGuard");
             variableNames.Add("RFLG.murderAttempt");
             variableNames.Add("RFLG.helpedAo");
@@ -169,12 +153,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             variableNames.Add("PS.magicCap_Lux");
             variableNames.Add("PS.magicCap_Tempus");
             variableNames.Add("PS.magicCap_Sonus");
-            variableNames.Add("NQUE.FindMemories_State");
-            variableNames.Add("NQUE.FindMemories_Stage");
-            variableNames.Add("NQUE.FindMemories_Result");
-            variableNames.Add("NQUE.BackgroundCheck_State");
-            variableNames.Add("NQUE.BackgroundCheck_Stage");
-            variableNames.Add("NQUE.BackgroundCheck_Result");
+            variableNames.Add("NQUE.testic");
             variableNames.Add("SCH.Perseption");
             variableNames.Add("SCH.Persuasion");
             variableNames.Add("SCH.Accuracy");
@@ -190,6 +169,33 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             variableNames.Add("CLUE.FloorMark");
             variableNames.Add("CLUE.VentFiddle");
             variableNames.Add("CLUE.EarPressureReports");
+            variableNames.Add("QUEST.BackgroundCheck_Result");
+            variableNames.Add("QUEST.BackgroundCheck_Stage");
+            variableNames.Add("QUEST.BackgroundCheck_State");
+            variableNames.Add("QUEST.FindMemories_Result");
+            variableNames.Add("QUEST.FindMemories_Stage");
+            variableNames.Add("QUEST.FindMemories_State");
+            variableNames.Add("QUEST.advertise_Obj_A");
+            variableNames.Add("QUEST.advertise_Result");
+            variableNames.Add("QUEST.advertise_Obj_B");
+            variableNames.Add("QUEST.advertise_Obj_C");
+            variableNames.Add("QUEST.advertise_Stage");
+            variableNames.Add("QUEST.advertise_State");
+            variableNames.Add("QUEST.getArtefact_Result");
+            variableNames.Add("QUEST.preventMurderAttempt_State");
+            variableNames.Add("QUEST.getGun_Result");
+            variableNames.Add("QUEST.getGun_Obj_ratA");
+            variableNames.Add("QUEST.getArtefact_State");
+            variableNames.Add("QUEST.getGun_Obj_getRuleBook");
+            variableNames.Add("QUEST.getArtefact_Stage");
+            variableNames.Add("QUEST.getGun_Obj_ratB");
+            variableNames.Add("QUEST.advertise_TalkedCount");
+            variableNames.Add("QUEST.getGun_Stage");
+            variableNames.Add("QUEST.preventMurderAttempt_Result");
+            variableNames.Add("QUEST.preventMurderAttempt_Stage");
+            variableNames.Add("QUEST.stealFromRu_Result");
+            variableNames.Add("QUEST.stealFromRu_Stage");
+            variableNames.Add("QUEST.stealFromRu_State");
         }
         #endregion
         
@@ -281,6 +287,14 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             }
         }
         
+        public QUEST QUEST
+        {
+            get
+            {
+                return mQUEST;
+            }
+        }
+        
         public static ArticyGlobalVariables Default
         {
             get
@@ -302,6 +316,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             SCH.RegisterVariables(this);
             TEST.RegisterVariables(this);
             CLUE.RegisterVariables(this);
+            QUEST.RegisterVariables(this);
         }
         
         public static ArticyGlobalVariables CreateGlobalVariablesClone()
