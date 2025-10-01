@@ -41,10 +41,15 @@ public class PlayerStatsDisplay : MonoBehaviour {
             ? "Skills:\n" + BuildSkillsBlock()
             : "Skills: ";
 
-        targetText.text =
-            $"Moral: {player.moralVal}/{player.moralCap}\n" +
-            $"Loop: {loopState}\n" +
-            skillsSection;
+        var displayBuilder = new StringBuilder();
+        displayBuilder.AppendFormat("Moral: {0}/{1}\n", player.moralVal, player.moralCap);
+
+        if (loopState >= 2)
+            displayBuilder.AppendFormat("Loop: {0}\n", loopState);
+
+        displayBuilder.Append(skillsSection);
+
+        targetText.text = displayBuilder.ToString();
     }
 
     private void CacheShowSkillsButton() {
