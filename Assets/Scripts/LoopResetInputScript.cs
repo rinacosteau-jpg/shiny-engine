@@ -62,8 +62,6 @@ public class LoopResetInputScript : MonoBehaviour {
     private static void DoLoopReset() {
         Debug.Log("[LoopReset] start");
 
-        QuestManager.ResetTemporary();
-
         GameTime.Instance.Hours = 12;
         GameTime.Instance.Minutes = 12;
 
