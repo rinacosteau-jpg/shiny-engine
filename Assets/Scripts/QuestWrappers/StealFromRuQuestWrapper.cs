@@ -24,6 +24,14 @@ public sealed class StealFromRuQuestWrapper : QuestWrapper
                 return 4;
         }
 
+        if (stage == 5)
+        {
+            if (quest?.Stage == 1)
+                return 5;
+
+            return 6;
+        }
+
         return base.ProcessStageFromArticy(quest, stage);
     }
 }
