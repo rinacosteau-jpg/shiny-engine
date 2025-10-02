@@ -5,6 +5,7 @@ public abstract class QuestWrapper
 {
     private readonly Dictionary<int, string> stageDescriptions = new();
     private readonly HashSet<int> stagesToAdvanceOnLoopReset = new();
+    private readonly Dictionary<int, QuestState> stageStateOverrides = new();
 
     protected QuestWrapper(string questName)
     {
@@ -19,6 +20,31 @@ public abstract class QuestWrapper
             return;
 
         stageDescriptions[stage] = description ?? string.Empty;
+    }
+
+    protected void MarkStageAsCompleted(params int[] stages)
+    {
+        MarkStageWithState(QuestState.Completed, stages);
+    }
+
+    protected void MarkStageAsFailed(params int[] stages)
+    {
+        MarkStageWithState(QuestState.Failed, stages);
+    }
+
+    private void MarkStageWithState(QuestState state, params int[] stages)
+    {
+        if (stages == null || stages.Length == 0)
+            return;
+
+        if (state != QuestState.Completed && state != QuestState.Failed)
+            return;
+
+        foreach (var stage in stages)
+        {
+            if (stage > 0)
+                stageStateOverrides[stage] = state;
+        }
     }
 
     private int GetMaxDefinedStage()
@@ -76,5 +102,16 @@ public abstract class QuestWrapper
 
         if (stagesToAdvanceOnLoopReset.Contains(quest.Stage))
             quest.Stage += 1;
+
+        ApplyStageStateForCurrentStage(quest);
+    }
+
+    internal void ApplyStageStateForCurrentStage(QuestManager.Quest quest)
+    {
+        if (quest == null)
+            return;
+
+        if (stageStateOverrides.TryGetValue(quest.Stage, out var state))
+            quest.State = state;
     }
 }

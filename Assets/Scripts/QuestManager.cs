@@ -154,6 +154,15 @@ public static class QuestManager {
         }
     }
 
+    private static void ApplyWrapperStageState(Quest quest)
+    {
+        if (quest == null)
+            return;
+
+        if (TryGetWrapper(quest.Name, out var wrapper))
+            wrapper.ApplyStageStateForCurrentStage(quest);
+    }
+
     // ======== Õåëïåðû ========
     // isTemp: null — íå òðîãàåì; true — âðåìåííûé (RQUE); false — ïîñòîÿííûé (NQUE).
     private static Quest Ensure(string name) {
@@ -217,6 +226,7 @@ public static class QuestManager {
         var q = Start(name);
         q.Stage = stage;
         if (q.State == QuestState.NotStarted) q.State = QuestState.Active;
+        ApplyWrapperStageState(q);
         EnsureStageCapacity(q, stage);
         PushToArticy(q);
         RaiseQuestChanged(q);
@@ -247,6 +257,7 @@ public static class QuestManager {
             {
                 wrapper.OnLoopReset(quest);
                 wrapper.EnsureStageCapacity(quest, Math.Max(quest.Stage, 1));
+                wrapper.ApplyStageStateForCurrentStage(quest);
             }
             else if ((quest.Stage & 1) == 1)
             {
@@ -341,6 +352,7 @@ public static class QuestManager {
                         if (TryGetWrapper(questName, out var stateWrapper))
                             newState = stateWrapper.ProcessStateFromArticy(q, newState);
                         q.State = newState;
+                        ApplyWrapperStageState(q);
                         EnsureStageCapacity(q, q.Stage);
                         RaiseQuestChanged(q);
                     } else if (key.EndsWith("_Stage")) {
@@ -351,6 +363,7 @@ public static class QuestManager {
                             newStage = stageWrapper.ProcessStageFromArticy(q, newStage);
                         q.Stage = newStage;
                         if (q.State == QuestState.NotStarted && newStage > 0) q.State = QuestState.Active;
+                        ApplyWrapperStageState(q);
                         EnsureStageCapacity(q, newStage);
                         RaiseQuestChanged(q);
                     } else if (key.EndsWith("_Result")) {
