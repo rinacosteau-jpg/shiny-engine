@@ -1392,7 +1392,7 @@ MonoBehaviour:
     parent: 216172783251375095
     technicalName: Dlg_1FB33FDD
     articyType: Dialogue
-    childCount: 30
+    childCount: 34
   - id: 72057594037930808
     parent: 72057594037930348
     technicalName: DFr_51E5E710
@@ -1491,6 +1491,26 @@ MonoBehaviour:
   - id: 72057594037939215
     parent: 72057594037930348
     technicalName: Jmp_C7E4CEB6
+    articyType: Jump
+    childCount: 0
+  - id: 72057594037940967
+    parent: 72057594037930348
+    technicalName: DFr_DDBA0274
+    articyType: DialogueFragment
+    childCount: 0
+  - id: 72057594037940973
+    parent: 72057594037930348
+    technicalName: DFr_9587D380
+    articyType: DialogueFragment
+    childCount: 0
+  - id: 72057594037940979
+    parent: 72057594037930348
+    technicalName: DFr_D1489C33
+    articyType: DialogueFragment
+    childCount: 0
+  - id: 72057594037940989
+    parent: 72057594037930348
+    technicalName: Jmp_B576E85B
     articyType: Jump
     childCount: 0
   - id: 72057594037939556
