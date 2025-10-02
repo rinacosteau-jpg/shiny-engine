@@ -13,6 +13,8 @@ public sealed class StealFromRuQuestWrapper : QuestWrapper
         SetStageDescription(7, "Теперь Ратко отвечает на мои вопросы. Точнее, отвечает на те вопросы, на которые хочет отвечать. Это лучше, чем ничего.");
         SetStageDescription(8, "Если я хочу, чтобы Ратко снова мне помогал, я должна снова принести ему эти кубы. Что ж, я уже знаю, как их получить.");
         AddStagesToAdvanceOnLoopReset(1, 5, 7);
+        MarkStageAsFailed(3, 4);
+        MarkStageAsCompleted(7);
     }
 
     public override int ProcessStageFromArticy(QuestManager.Quest quest, int stage)
@@ -33,5 +35,21 @@ public sealed class StealFromRuQuestWrapper : QuestWrapper
         }
 
         return base.ProcessStageFromArticy(quest, stage);
+    }
+
+    public override void OnLoopReset(QuestManager.Quest quest)
+    {
+        if (quest == null)
+            return;
+
+        bool wasFailed = quest.State == QuestState.Failed;
+
+        base.OnLoopReset(quest);
+
+        if (wasFailed)
+        {
+            quest.Stage = 2;
+            quest.State = QuestState.Active;
+        }
     }
 }
