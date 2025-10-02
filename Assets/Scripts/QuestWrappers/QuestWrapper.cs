@@ -4,6 +4,7 @@ using System.Collections.Generic;
 public abstract class QuestWrapper
 {
     private readonly Dictionary<int, string> stageDescriptions = new();
+    private readonly HashSet<int> stagesToAdvanceOnLoopReset = new();
 
     protected QuestWrapper(string questName)
     {
@@ -53,6 +54,18 @@ public abstract class QuestWrapper
 
     public virtual int ProcessResultFromArticy(QuestManager.Quest quest, int result) => result;
 
+    protected void AddStagesToAdvanceOnLoopReset(params int[] stages)
+    {
+        if (stages == null)
+            return;
+
+        foreach (var stage in stages)
+        {
+            if (stage > 0)
+                stagesToAdvanceOnLoopReset.Add(stage);
+        }
+    }
+
     public virtual void OnLoopReset(QuestManager.Quest quest)
     {
         if (quest == null)
@@ -61,7 +74,7 @@ public abstract class QuestWrapper
         if (quest.State == QuestState.NotStarted)
             return;
 
-        if ((quest.Stage & 1) == 1)
+        if (stagesToAdvanceOnLoopReset.Contains(quest.Stage))
             quest.Stage += 1;
     }
 }
