@@ -12,7 +12,7 @@ public sealed class StealFromRuQuestWrapper : QuestWrapper
         SetStageDescription(6, "У меня есть кубы! Чем бы они ни были. Я бы могла вернуться к Ратко и обсудить награду... Только вот он ничего не вспомнит. Ладно, что-нибудь придумаю. Зря я что ли этим занималась?");
         SetStageDescription(7, "Теперь Ратко отвечает на мои вопросы. Точнее, отвечает на те вопросы, на которые хочет отвечать. Это лучше, чем ничего.");
         SetStageDescription(8, "Если я хочу, чтобы Ратко снова мне помогал, я должна снова принести ему эти кубы. Что ж, я уже знаю, как их получить.");
-        AddStagesToAdvanceOnLoopReset(1, 5, 7);
+        AddStagesToAdvanceOnLoopReset(1, 7);
         MarkStageAsFailed(3, 4);
         MarkStageAsCompleted(7);
     }

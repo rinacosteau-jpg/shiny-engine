@@ -58,9 +58,6 @@ MonoBehaviour:
   - mFullQualifiedName: NKNW.stoleSweets
     mVar:
       values: 00
-  - mFullQualifiedName: NKNW.ratHasStealQuest
-    mVar:
-      values: 00
   - mFullQualifiedName: NKNW.testA
     mVar:
       values: 01
@@ -92,6 +89,9 @@ MonoBehaviour:
     mVar:
       values: 00
   - mFullQualifiedName: RFLG.refusedRatStealQuest
+    mVar:
+      values: 00
+  - mFullQualifiedName: RFLG.ratHasStealQuest
     mVar:
       values: 00
   - mFullQualifiedName: TEST.test
@@ -424,9 +424,6 @@ MonoBehaviour:
   - mFullQualifiedName: NKNW.stoleSweets
     mVar:
       values: 00
-  - mFullQualifiedName: NKNW.ratHasStealQuest
-    mVar:
-      values: 00
   - mFullQualifiedName: NKNW.testA
     mVar:
       values: 01
@@ -458,6 +455,9 @@ MonoBehaviour:
     mVar:
       values: 00
   - mFullQualifiedName: RFLG.refusedRatStealQuest
+    mVar:
+      values: 00
+  - mFullQualifiedName: RFLG.ratHasStealQuest
     mVar:
       values: 00
   - mFullQualifiedName: TEST.test

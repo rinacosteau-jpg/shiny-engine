@@ -366,7 +366,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         }
         
         // 
-        public bool ratHasStealQuest
+        public bool testA
         {
             get
             {
@@ -379,7 +379,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         }
         
         // 
-        public bool testA
+        public bool testB
         {
             get
             {
@@ -392,7 +392,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         }
         
         // 
-        public bool testB
+        public bool testC
         {
             get
             {
@@ -405,7 +405,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         }
         
         // 
-        public bool testC
+        public bool testD
         {
             get
             {
@@ -418,7 +418,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         }
         
         // 
-        public bool testD
+        public bool testE
         {
             get
             {
@@ -427,19 +427,6 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             set
             {
                 _VariableStorage.Internal_SetVariableValueBoolean(19, value);
-            }
-        }
-        
-        // 
-        public bool testE
-        {
-            get
-            {
-                return _VariableStorage.Internal_GetVariableValueBoolean(20);
-            }
-            set
-            {
-                _VariableStorage.Internal_SetVariableValueBoolean(20, value);
             }
         }
         
@@ -485,7 +472,6 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             aStorage.RegisterVariable("NKNW.kotIdentify", false);
             aStorage.RegisterVariable("NKNW.purpleCode", false);
             aStorage.RegisterVariable("NKNW.stoleSweets", false);
-            aStorage.RegisterVariable("NKNW.ratHasStealQuest", false);
             aStorage.RegisterVariable("NKNW.testA", true);
             aStorage.RegisterVariable("NKNW.testB", true);
             aStorage.RegisterVariable("NKNW.testC", true);
@@ -543,6 +529,19 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         {
             get
             {
+                return _VariableStorage.Internal_GetVariableValueBoolean(20);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueBoolean(20, value);
+            }
+        }
+        
+        // 
+        public bool murderAttempt
+        {
+            get
+            {
                 return _VariableStorage.Internal_GetVariableValueBoolean(21);
             }
             set
@@ -552,7 +551,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         }
         
         // 
-        public bool murderAttempt
+        public bool helpedAo
         {
             get
             {
@@ -565,7 +564,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         }
         
         // 
-        public bool helpedAo
+        public bool prepareForRatPath
         {
             get
             {
@@ -578,7 +577,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         }
         
         // 
-        public bool prepareForRatPath
+        public bool kotIdentify
         {
             get
             {
@@ -591,7 +590,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         }
         
         // 
-        public bool kotIdentify
+        public bool refusedRatStealQuest
         {
             get
             {
@@ -604,7 +603,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
         }
         
         // 
-        public bool refusedRatStealQuest
+        public bool ratHasStealQuest
         {
             get
             {
@@ -625,6 +624,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             aStorage.RegisterVariable("RFLG.prepareForRatPath", false);
             aStorage.RegisterVariable("RFLG.kotIdentify", false);
             aStorage.RegisterVariable("RFLG.refusedRatStealQuest", false);
+            aStorage.RegisterVariable("RFLG.ratHasStealQuest", false);
         }
     }
 }

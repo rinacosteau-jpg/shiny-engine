@@ -101,7 +101,6 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             variableNames.Add("NKNW.kotIdentify");
             variableNames.Add("NKNW.purpleCode");
             variableNames.Add("NKNW.stoleSweets");
-            variableNames.Add("NKNW.ratHasStealQuest");
             variableNames.Add("NKNW.testA");
             variableNames.Add("NKNW.testB");
             variableNames.Add("NKNW.testC");
@@ -115,6 +114,7 @@ namespace Articy.World_Of_Red_Moon.GlobalVariables
             variableNames.Add("RFLG.prepareForRatPath");
             variableNames.Add("RFLG.kotIdentify");
             variableNames.Add("RFLG.refusedRatStealQuest");
+            variableNames.Add("RFLG.ratHasStealQuest");
             variableNames.Add("ITM.item_kotsukiNote_delta");
             variableNames.Add("ITM.item_kotsukiNote_count");
             variableNames.Add("ITM.item_InventoryArtefact_count");

@@ -12,6 +12,7 @@ public static class ItemIds {
     public const string VentFiddle = "VentFiddle";
     public const string EarPressureReports = "EarPressureReports";
     public const string TestCube = "TestCube";
+    public const string CubesNote = "CubesNote";
     public const string JapaneseSweets = "JapaneseSweets";
 
     public static readonly Dictionary<string, string> Descriptions = new Dictionary<string, string>
@@ -19,6 +20,7 @@ public static class ItemIds {
         { InventoryArtefact, "wandering artifact scribbles" },
         { TestCube, "cool cube" },
         { JapaneseSweets, "wow truly magnificent artefact" },
+        { CubesNote, "Странное описание на мятой бумажке. \n\"Они изменят ход времени. Идеальные гексаэдры, в божественном количестве. Изысканные ощущения для тех, кто достоин. Расставание тяжело, но неизбежно.\"\nОкей, это звучит глупо. Мы ищем кубики. С идиотским описанием." },
         { Gun, "super gun" },
         { HarmonicRow, "gobbledygook melody of squirrels" },
         { SonoceramicShard, "fragment of whispering teapots" },
