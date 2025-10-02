@@ -328,15 +328,22 @@ public static class QuestManager {
     // Ïîäòÿæêà ñîñòîÿíèÿ èç Articy â ëîêàëüíîå õðàíèëèùå.
     // ÷èòàåì íàáîð QUEST è îáíîâëÿåì ëîêàëüíûå äàííûå êâåñòîâ.
     public static void SyncFromArticy() {
+        var questsToPush = new HashSet<string>(StringComparer.Ordinal);
+
         _mutePush = true;
         try {
-            ProcessQuestVariables(QuestVariables);
+            ProcessQuestVariables(QuestVariables, questsToPush);
         } finally {
             _mutePush = false;
         }
+
+        foreach (var questName in questsToPush) {
+            if (quests.TryGetValue(questName, out var quest))
+                PushToArticy(quest);
+        }
     }
 
-    private static void ProcessQuestVariables(object gv) {
+    private static void ProcessQuestVariables(object gv, ISet<string> questsToPush) {
         try {
             var props = gv.GetType().GetProperties();
 
@@ -353,6 +360,8 @@ public static class QuestManager {
                             newState = stateWrapper.ProcessStateFromArticy(q, newState);
                         q.State = newState;
                         ApplyWrapperStageState(q);
+                        if (q.State != (QuestState)val)
+                            questsToPush?.Add(questName);
                         EnsureStageCapacity(q, q.Stage);
                         RaiseQuestChanged(q);
                     } else if (key.EndsWith("_Stage")) {
@@ -364,6 +373,8 @@ public static class QuestManager {
                         q.Stage = newStage;
                         if (q.State == QuestState.NotStarted && newStage > 0) q.State = QuestState.Active;
                         ApplyWrapperStageState(q);
+                        if (q.Stage != val)
+                            questsToPush?.Add(questName);
                         EnsureStageCapacity(q, newStage);
                         RaiseQuestChanged(q);
                     } else if (key.EndsWith("_Result")) {
@@ -373,6 +384,8 @@ public static class QuestManager {
                         if (TryGetWrapper(questName, out var resultWrapper))
                             newResult = resultWrapper.ProcessResultFromArticy(q, newResult);
                         q.Result = newResult;
+                        if (q.Result != val)
+                            questsToPush?.Add(questName);
                         EnsureStageCapacity(q, q.Stage);
                         RaiseQuestChanged(q);
                     } else if (key.Contains("_Obj_")) {
