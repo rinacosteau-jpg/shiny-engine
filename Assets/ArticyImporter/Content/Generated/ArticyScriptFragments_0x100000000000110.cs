@@ -1752,12 +1752,7 @@ aGlobalVariablesState.QUEST.getGun_Obj_getRuleBook = 2;
         /// </summary>
         public bool Script_720575940379282080x1000000000010CAExpression(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
         {
-            var roll = random(aGlobalVariablesState, aMethodProvider, 1,101);
-            var dexterity = aGlobalVariablesState.PS.skill_Dexterity;
-            var total = roll + dexterity;
-            var success = total>50;
-            Debug.Log($"[Articy Skill Check] {nameof(Script_720575940379282080x1000000000010CAExpression)}: roll={roll}, dexterity={dexterity}, total={total}, threshold=50, success={success}");
-            return success;
+            return random(aGlobalVariablesState, aMethodProvider, 1,101)+aGlobalVariablesState.PS.skill_Dexterity>50;
         }
         
         /// <summary>
@@ -1784,12 +1779,7 @@ aGlobalVariablesState.QUEST.getGun_Obj_getRuleBook = 2;
         /// </summary>
         public bool Script_720575940379282080x100000000002CC1Expression(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
         {
-            var roll = random(aGlobalVariablesState, aMethodProvider, 1,101);
-            var dexterity = aGlobalVariablesState.PS.skill_Dexterity;
-            var total = roll + dexterity;
-            var success = total>60;
-            Debug.Log($"[Articy Skill Check] {nameof(Script_720575940379282080x100000000002CC1Expression)}: roll={roll}, dexterity={dexterity}, total={total}, threshold=60, success={success}");
-            return success;
+            return random(aGlobalVariablesState, aMethodProvider, 1,101)+aGlobalVariablesState.PS.skill_Dexterity>60;
         }
         
         /// <summary>
@@ -1816,12 +1806,7 @@ aGlobalVariablesState.QUEST.getGun_Obj_getRuleBook = 2;
         /// </summary>
         public bool Script_720575940379282080x10000000000325EExpression(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
         {
-            var roll = random(aGlobalVariablesState, aMethodProvider, 1,101);
-            var dexterity = aGlobalVariablesState.PS.skill_Dexterity;
-            var total = roll + dexterity;
-            var success = total>40;
-            Debug.Log($"[Articy Skill Check] {nameof(Script_720575940379282080x10000000000325EExpression)}: roll={roll}, dexterity={dexterity}, total={total}, threshold=40, success={success}");
-            return success;
+            return random(aGlobalVariablesState, aMethodProvider, 1,101)+aGlobalVariablesState.PS.skill_Dexterity>40;
         }
         
         /// <summary>
@@ -1857,12 +1842,7 @@ aGlobalVariablesState.QUEST.getGun_Obj_getRuleBook = 2;
         /// </summary>
         public bool Script_720575940379282080x1000000000015FEExpression(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
         {
-            var roll = random(aGlobalVariablesState, aMethodProvider, 1,101);
-            var dexterity = aGlobalVariablesState.PS.skill_Dexterity;
-            var total = roll + dexterity;
-            var success = total>70;
-            Debug.Log($"[Articy Skill Check] {nameof(Script_720575940379282080x1000000000015FEExpression)}: roll={roll}, dexterity={dexterity}, total={total}, threshold=70, success={success}");
-            return success;
+            return random(aGlobalVariablesState, aMethodProvider, 1,101)+aGlobalVariablesState.PS.skill_Dexterity>70;
         }
         
         /// <summary>
@@ -1871,12 +1851,7 @@ aGlobalVariablesState.QUEST.getGun_Obj_getRuleBook = 2;
         /// </summary>
         public bool Script_720575940379282080x100000000002DA7Expression(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
         {
-            var roll = random(aGlobalVariablesState, aMethodProvider, 1,101);
-            var dexterity = aGlobalVariablesState.PS.skill_Dexterity;
-            var total = roll + dexterity;
-            var success = total>40;
-            Debug.Log($"[Articy Skill Check] {nameof(Script_720575940379282080x100000000002DA7Expression)}: roll={roll}, dexterity={dexterity}, total={total}, threshold=40, success={success}");
-            return success;
+            return random(aGlobalVariablesState, aMethodProvider, 1,101)+aGlobalVariablesState.PS.skill_Dexterity>40;
         }
         
         /// <summary>
