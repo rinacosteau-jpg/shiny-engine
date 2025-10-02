@@ -965,6 +965,7 @@ aGlobalVariablesState.QUEST.stealFromRu_Stage = 1;
             aGlobalVariablesState.QUEST.stealFromRu_State = 2;
 aGlobalVariablesState.QUEST.stealFromRu_Stage = 7;
 aGlobalVariablesState.RCNT.ratTrust+=2;
+aGlobalVariablesState.ITM.item_JapaneseSweets_delta--;
         }
         
         /// <summary>
@@ -1003,6 +1004,15 @@ aGlobalVariablesState.RCNT.ratTrust+=2;
             aGlobalVariablesState.PS.moralVal--;
 aGlobalVariablesState.QUEST.stealFromRu_Stage=3;
 aGlobalVariablesState.QUEST.stealFromRu_State=3;
+        }
+        
+        /// <summary>
+        /// ObjectID: 0x1000000000032DB
+        /// Articy Object ref: articy://localhost/view/6b45a52e-5605-4c95-a051-48da04bae055/72057594037940955?pane=selected&amp;tab=current
+        /// </summary>
+        public bool Script_720575940379282080x1000000000032DBText(ArticyGlobalVariables aGlobalVariablesState, Articy.Unity.IBaseScriptMethodProvider aMethodProvider)
+        {
+            return aGlobalVariablesState.QUEST.stealFromRu_Stage == 7;
         }
         
         /// <summary>
@@ -2018,6 +2028,7 @@ aGlobalVariablesState.QUEST.advertise_TalkedCount++;
             Conditions.Add(482947763u, this.Script_720575940379282080x100000000003237Text);
             Conditions.Add(557020218u, this.Script_720575940379282080x100000000003250Text);
             Instructions.Add(2534480189u, this.Script_720575940379282080x10000000000328EText);
+            Conditions.Add(726674794u, this.Script_720575940379282080x1000000000032DBText);
             Instructions.Add(2611131124u, this.Script_720575940379282080x1000000000010AFText);
             Instructions.Add(654511513u, this.Script_720575940379282080x100000000001045Text);
             Instructions.Add(928952407u, this.Script_720575940379282080x1000000000012B9Text);
