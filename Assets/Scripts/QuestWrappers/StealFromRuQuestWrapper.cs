@@ -1,3 +1,5 @@
+using Articy.World_Of_Red_Moon.GlobalVariables;
+
 public sealed class StealFromRuQuestWrapper : QuestWrapper
 {
     public StealFromRuQuestWrapper() : base("stealFromRu")
@@ -11,5 +13,17 @@ public sealed class StealFromRuQuestWrapper : QuestWrapper
         SetStageDescription(7, "Теперь Ратко отвечает на мои вопросы. Точнее, отвечает на те вопросы, на которые хочет отвечать. Это лучше, чем ничего.");
         SetStageDescription(8, "Если я хочу, чтобы Ратко снова мне помогал, я должна снова принести ему эти кубы. Что ж, я уже знаю, как их получить.");
         AddStagesToAdvanceOnLoopReset(1, 5, 7);
+    }
+
+    public override int ProcessStageFromArticy(QuestManager.Quest quest, int stage)
+    {
+        if (stage == 3)
+        {
+            var ps = ArticyGlobalVariables.Default?.PS;
+            if (ps != null && ps.loopCounter > 0)
+                return 4;
+        }
+
+        return base.ProcessStageFromArticy(quest, stage);
     }
 }
