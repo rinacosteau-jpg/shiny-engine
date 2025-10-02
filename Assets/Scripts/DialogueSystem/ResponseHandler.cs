@@ -28,6 +28,7 @@ public class ResponseHandler : MonoBehaviour {
 
         ClearResponses();
 
+        int responseIndex = 1;
         foreach (var branch in branches) {
             if (branch == null || branch.Target == null) continue;
 
@@ -38,7 +39,8 @@ public class ResponseHandler : MonoBehaviour {
                     continue; // íå îòâåò èãðîêà — ïðîïóñêàåì
             }
 
-            CreateButtonForBranch(branch, flowPlayer);
+            CreateButtonForBranch(branch, flowPlayer, responseIndex);
+            responseIndex++;
         }
         
         responseBox.gameObject.SetActive(tempResponseButtons.Count > 0);
@@ -119,7 +121,7 @@ public class ResponseHandler : MonoBehaviour {
 
     // --- Âíóòðåííèå âñïîìîãàòåëüíûå ìåòîäû ---
 
-    private void CreateButtonForBranch(Branch branch, ArticyFlowPlayer flowPlayer) {
+    private void CreateButtonForBranch(Branch branch, ArticyFlowPlayer flowPlayer, int responseIndex) {
         if (branch == null || branch.Target == null || flowPlayer == null) return;
 
         GameObject buttonObj = Instantiate(responseButtonTemplate.gameObject, responseContainer);
@@ -133,7 +135,7 @@ public class ResponseHandler : MonoBehaviour {
             buttonText = branch.Target.GetType().Name;
 
         TMP_Text tmpText = buttonObj.GetComponentInChildren<TMP_Text>();
-        if (tmpText != null) tmpText.text = buttonText;
+        if (tmpText != null) tmpText.text = $"{responseIndex}. {buttonText}";
 
         var localBranch = branch; // ôèêñèðóåì äëÿ çàìûêàíèÿ
         Button btnComponent = buttonObj.GetComponent<Button>();
