@@ -5,8 +5,14 @@ public class DoorInteractable : MonoBehaviour, IInteractable, ILoopResettable
     [SerializeField] private bool isLocked;
     [SerializeField] private bool isOpen;
     [SerializeField] private GameObject doorObject;
+    [SerializeField] private float openRotationZ;
+    [SerializeField] private AudioSource doorAudioSource;
+    [SerializeField] private AudioClip openSound;
 
     private bool startIsOpen;
+    private Quaternion originalRotation;
+    private Quaternion loopStartRotation;
+    private Quaternion openRotation;
 
     private void Awake()
     {
@@ -14,7 +20,18 @@ public class DoorInteractable : MonoBehaviour, IInteractable, ILoopResettable
             doorObject = transform.GetChild(0).gameObject;
 
         startIsOpen = isOpen;
-        ApplyState(isOpen);
+
+        if (doorObject != null)
+        {
+            originalRotation = doorObject.transform.localRotation;
+            loopStartRotation = originalRotation;
+
+            Vector3 originalEuler = doorObject.transform.localEulerAngles;
+            openRotation = Quaternion.Euler(originalEuler + new Vector3(0f, 0f, openRotationZ));
+
+            SetState(isOpen, false);
+            loopStartRotation = doorObject.transform.localRotation;
+        }
     }
 
     public void Interact()
@@ -22,24 +39,40 @@ public class DoorInteractable : MonoBehaviour, IInteractable, ILoopResettable
         if (isLocked)
             return;
 
-        ApplyState(!isOpen);
+        if (doorObject == null)
+            return;
+
+        SetState(!isOpen, true);
     }
 
     public void OnLoopReset()
     {
-        ApplyState(startIsOpen);
+        if (doorObject == null)
+            return;
+
+        doorObject.transform.localRotation = loopStartRotation;
+        isOpen = startIsOpen;
     }
 
     public void ForceOpen()
     {
-        ApplyState(true);
+        if (doorObject == null)
+            return;
+
+        SetState(true, false);
     }
 
-    private void ApplyState(bool open)
+    private void SetState(bool open, bool playAudio)
     {
+        if (doorObject == null)
+            return;
+
+        bool wasOpen = isOpen;
         isOpen = open;
 
-        if (doorObject != null)
-            doorObject.SetActive(!open);
+        doorObject.transform.localRotation = open ? openRotation : originalRotation;
+
+        if (playAudio && open && !wasOpen && doorAudioSource != null && openSound != null)
+            doorAudioSource.PlayOneShot(openSound);
     }
 }
